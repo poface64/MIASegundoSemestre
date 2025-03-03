@@ -1,0 +1,43 @@
+---
+title: ""
+author: ""
+date: ""
+output: 
+  pdf_document:
+    toc: True
+toc-title: "Índice"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F,
+                      warning = F,
+                      message = F)
+```
+
+\newpage
+
+
+
+# Introducción Problema de las 8 Reinas
+
+# Propuesta de algoritmo
+
+## Representación de soluciones
+
+## Función de aptitud
+
+## Polbación de soluciones
+
+## Mecanismo de selecciónb de padres
+
+## Operadores de variación (cruza y/o mutación)
+
+
+# Resultados
+
+# Conclusión
+
+
+
+
+
