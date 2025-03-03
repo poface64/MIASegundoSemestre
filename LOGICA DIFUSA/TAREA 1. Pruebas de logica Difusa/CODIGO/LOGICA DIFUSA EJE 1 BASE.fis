@@ -1,0 +1,51 @@
+[System]
+Name='LOGICA DIFUSA EJE 1'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=12
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='SERVICIO'
+Range=[0 10]
+NumMFs=3
+MF1='Malo':'trapmf',[0 0 3.5 4]
+MF2='Regular':'trapmf',[3.5 4 7 8]
+MF3='Bueno':'trapmf',[7.5 8 10 10]
+
+[Input2]
+Name='COMIDA'
+Range=[0 100]
+NumMFs=4
+MF1='Mala':'trapmf',[0 0 25 30]
+MF2='Normal':'trapmf',[25 30 50 60]
+MF3='Buena':'trapmf',[50 60 85 95]
+MF4='Excelente':'trapmf',[85 100 100 100]
+
+[Output1]
+Name='PROPINA'
+Range=[0 20]
+NumMFs=3
+MF1='Baja':'trapmf',[0 0 0 5]
+MF2='Normal':'trapmf',[4 7 10 15]
+MF3='Alta':'trapmf',[11 16 20 20]
+
+[Rules]
+1 1, 1 (1) : 1
+3 2, 2 (1) : 1
+2 2, 2 (1) : 1
+2 3, 2 (1) : 1
+3 4, 3 (1) : 1
+1 4, 1 (1) : 1
+3 1, 1 (1) : 1
+1 2, 1 (1) : 1
+1 3, 1 (1) : 1
+3 3, 3 (1) : 1
+2 1, 1 (1) : 1
+2 4, 3 (1) : 1

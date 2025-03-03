@@ -1,0 +1,20 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Problema 1: Problema del mesero}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Explicación del Problema}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Variables y sus codificaciones}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Reglas de inferencia.}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Gráficos}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Propuestas de mejora}{6}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}Propuesta 1: Añadir todas las posibles reglas}{6}{subsubsection.1.5.1}%
+\contentsline {subsubsection}{\numberline {1.5.2}Propuesta 2: Regresar a la base con las 12 reglas originales y aplicar funciones de membresía singleton}{8}{subsubsection.1.5.2}%
+\contentsline {subsubsection}{\numberline {1.5.3}Propuesta 3: Regresar a la base con las 12 reglas originales y aplicar funciones de membresía GAUSSIANAS}{10}{subsubsection.1.5.3}%
+\contentsline {subsection}{\numberline {1.6}Conclusiones}{12}{subsection.1.6}%
+\contentsline {section}{\numberline {2}Problema 2: Problema del comfort y el clima.}{13}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Explicación del Problema}{13}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Variables y sus codificaciones}{13}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Reglas de inferencia.}{14}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Gráficos}{15}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Propuestas de mejora}{17}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Propuesta 1: Base con 12 originales y aplicar funciones de membresía singleton}{17}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Propuesta 2: Base con las 10 reglas originales y aplicar funciones de membresía GAUSSIANAS}{20}{subsubsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.6}Conclusiones}{22}{subsection.2.6}%

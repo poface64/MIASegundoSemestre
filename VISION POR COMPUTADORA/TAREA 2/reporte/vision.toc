@@ -1,0 +1,12 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Objetivo de la práctica}{2}{section.1}%
+\contentsline {section}{\numberline {2}Metodología}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Interpolacion por vecino más cercano}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Interpolación Bilineal}{3}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Resultados}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Interpolacion bilineal}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Interpolacion por vecino más cercano}{6}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Conclusiones}{7}{section.4}%
+\contentsline {section}{\numberline {5}Referencias}{8}{section.5}%
+\contentsline {section}{\numberline {6}Anexos}{9}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Implementación de los filtros}{9}{subsection.6.1}%

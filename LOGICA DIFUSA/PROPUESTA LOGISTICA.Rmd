@@ -1,0 +1,128 @@
+---
+title: "Untitled"
+output: html_document
+date: "2025-02-26"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Para los problemas hechos en la tarea 1
+
+1.- Hallar el grádo de pertenencia mediante las correspondientes funciones de membresia
+
+2.- Una vez identificadas las formulas, evaluar que rango de pertenencia va a tener la salida.
+
+# Funciones necesarias
+
+## Función Sigmoidal
+
+$$
+A(x) =
+\begin{cases} 
+0, & \text{si } x < 0, \\
+2[(x-a)/(b-a)]^2 , & x>a \text{ y } x\leq m, \\
+1-2[(x-a)/(b-a)]^2 , & \text{si } x>m \text{ y } x<b, \\
+1, & \text{si } x \geq b.
+\end{cases}
+$$
+
+## Función Trapezoidal
+
+$$
+A(x) =
+\begin{cases} 
+0, & \text{si } (x\leq a) \text{ o } (x\geq d), \\
+(x-a)/(b-a) , & \text{si }x > a \text{ y } x<b, \\
+1 , & \text{si } x > b \text{ y } x<c, \\
+(d-x)/(d-c), & \text{si } x > c \text{ y } x<d.
+\end{cases}
+$$
+
+```{r}
+#### Defino la función trapezoidal ####
+trapezoidal = function(a,b,c1,d,x){
+
+#a = 0
+#b = 1
+#c1 = 3
+#d = 4
+# Entra 
+#el vector de parametros
+#v = c(a,b,c,d)
+#x = 3
+
+# Caso 1, evalua si se sale de los rangos y devuelve 0
+if(x<=a|x>=d){
+  # Devolver 0
+  return(0)
+}
+# Caso 2, Evalua cuanto hay entre el inicio u el primer pico del trapecio
+if(x>a & x<=b){
+  # Devolver (x-a)/(b-a)
+  return((x-a)/(b-a))
+}
+# Caso 3, Evalua en la zona plana
+if(x>b & x<c1){
+  # Devolver 1
+  return(1)
+}
+# Caso 4, Evalua la parte final del trapecio
+if(x>=c1 & x<d){
+  # Devolver 1
+  return((d-x)/(d-c1))
+  }
+}
+```
+
+
+# Declarar el problema
+
+Se tiene el problema de determinar cuanta propina dejarle a un mesero en un restaurante después de comer. Para ello, se toman en cuenta las variables de Servicio y la Comida.
+
+A continuación se listan los valores de las variables lingüísticas que se propusieron para SERVICIO, COMIDA y PROPINA como sigue:
+
+*   Servicio: Malo (0,4), Regular (3.5,8) y Bueno (7.5,10).
+*   Comida: Malo (0,30), Normal (25,60), Buena (50,95) y Excelente (85 a 100)
+*   Propina: Baja (0 a 5), Normal (4 a 14.5) y Alta (11,20).
+
+
+```{r}
+# Definir por variables los rangos
+#### Variable de Servicio ####
+ServicioMalo = c(0,0,3.5,4)
+ServicioRegular = c(3.5,4,7,8)
+ServicioBueno = c(7.5,8,10,10)
+
+#### Variable de Comida ####
+ComidaMala = c(0,0,25,30)
+ComidaNormal = c(25,30,50,60)
+ComidaBuena = c(50,60,85,95)
+ComidaExcelente = c(85,100,100,100)
+
+
+#### Variable de Propina ####
+PropinaoBaja = c(0,0,0,4.5)
+PropinaNormal = c(4,7,10 ,15)
+PropinaAlta = c(11,16,20,20)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+% !TeX TXS-program:compile = txs:///pdflatex/[--shell-escape]
+
+\documentclass[11pt, letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage[spanish]{babel}
+\usepackage[round]{natbib}
+\usepackage{subcaption}
+\usepackage{minted}
+
+
+\title{\bfseries Tarea}
+\author{Ángel García Báez}
+\date{\today}
+\setcounter{tocdepth}{3} 
+
+\begin{document}
+	
+	% Página de presentación
+	\begin{titlepage}
+		\centering
+		\includegraphics[width=0.2\textwidth]{logo.png}\par
+		\vspace{1cm}
+		{\LARGE \bfseries Universidad Veracruzana \par}
+		\vspace{1cm}
+		{\Large Maestría en Inteligencia Artificial\par}
+		\vspace{3cm}
+		{\LARGE \bfseries Visión por Computadora \par}
+		\vspace{1cm}
+		{\Large \bfseries Tarea 2. Propuesta de implementación del filtro bilineal y del filtro por vecinos más cercanos para el re-escalado de imágenes en Julia. \par}
+		\vfill
+		{\Large \textit{Ángel García Báez}\par}
+		\vspace{1cm}
+		{\Large Profesor: Dr. Héctor Acosta Mesa\par}
+		\vfill
+		{\Large \today \par}
+	\end{titlepage}
+	
+	% Página exclusiva para la tabla de contenidos
+	\newpage
+	\tableofcontents
+	\newpage
+	
+% Sección para el problema 1
+\section{Objetivo de la práctica}
+
+\section{Metodología}
+
+\section{Resultados}
+
+\section{Conclusiones}
+
+\section{Referencias}
+
+\section{Anexos}
+
+\subsection{Implementación de los filtros}
+
+
+
+\newpage
+
+
+
+
+
+\newpage
+
+
+
+
+
+
+
+
+\end{document}
+
