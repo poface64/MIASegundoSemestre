@@ -1,0 +1,25 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introducción}{2}{section.1}%
+\contentsline {section}{\numberline {2}Problema 1: Problema del mesero}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Explicación del Problema}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Variables y sus codificaciones}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Reglas de inferencia.}{5}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Gráficos del problema 1}{6}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Implementación del problema 1 paso a paso}{7}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Comparativa para el problema 1}{9}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Caso mínimo}{9}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}Caso medio}{10}{subsubsection.2.6.2}%
+\contentsline {subsubsection}{\numberline {2.6.3}Caso máximo}{11}{subsubsection.2.6.3}%
+\contentsline {section}{\numberline {3}Problema 2: Problema del confort}{12}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Explicación del Problema}{12}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Variables y sus codificaciones}{12}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Reglas de inferencia.}{14}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Gráficos del problema 2}{15}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Implementación del problema 2 paso a paso}{16}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Comparativa para el problema 2}{18}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Caso mínimo}{18}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}Caso medio}{19}{subsubsection.3.6.2}%
+\contentsline {subsubsection}{\numberline {3.6.3}Caso máximo}{20}{subsubsection.3.6.3}%
+\contentsline {section}{\numberline {4}Conclusiones}{21}{section.4}%
+\contentsline {section}{\numberline {5}Referencias}{22}{section.5}%
+\contentsline {section}{\numberline {6}Anexos}{23}{section.6}%

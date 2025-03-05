@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.3.5)  5 MAR 2025 05:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.3.5)  5 MAR 2025 09:01
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**vision.tex
-(./vision.tex
+**"TAREA 2.tex"
+(./TAREA 2.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (c:/texlive/2024/texmf-dist/tex/latex/base/article.cls
@@ -22,6 +22,11 @@ File: size11.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen141
+)
+(c:/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
 )
 (c:/texlive/2024/texmf-dist/tex/latex/minted/minted.sty
 Package: minted 2025/02/12 v3.5.1 Yet another Pygments shim for LaTeX
@@ -54,7 +59,7 @@ Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
 
 (c:/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks17
+\KV@toks@=\toks19
 )
 \FV@CodeLineNo=\count271
 \FV@InFile=\read2
@@ -77,7 +82,7 @@ Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 ))
 \linenopenalty=\count274
-\output=\toks18
+\output=\toks20
 \linenoprevgraf=\count275
 \linenumbersep=\dimen142
 \linenumberwidth=\dimen143
@@ -132,16 +137,16 @@ Package pdftexcmds Info: \pdfdraftmode found.
 ))
 (c:/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks19
-\pgfkeys@temptoks=\toks20
+\pgfkeys@pathtoks=\toks21
+\pgfkeys@temptoks=\toks22
 
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.co
 de.tex
-\pgfkeys@tmptoks=\toks21
+\pgfkeys@tmptoks=\toks23
 ))) (c:/texlive/2024/texmf-dist/tex/latex/pgfopts/pgfopts.sty
 Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
-\pgfopts@list@add@a@toks=\toks22
-\pgfopts@list@add@b@toks=\toks23
+\pgfopts@list@add@a@toks=\toks24
+\pgfopts@list@add@b@toks=\toks25
 )
 (c:/texlive/2024/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
@@ -150,19 +155,14 @@ Package shellesc Info: Unrestricted shell escape enabled on input line 75.
 (c:/texlive/2024/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count295
-\float@exts=\toks24
+\float@exts=\toks26
 \float@box=\box59
-\@float@everytoks=\toks25
+\@float@everytoks=\toks27
 \@floatcapt=\box60
 )
 \c@minted@FancyVerbLineTemp=\count296
-\@float@every@listing=\toks26
+\@float@every@listing=\toks28
 \c@listing=\count297
-)
-(c:/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2024/02/08 v1.3d Input encoding file
-\inpenc@prehook=\toks27
-\inpenc@posthook=\toks28
 )
 (c:/texlive/2024/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
@@ -542,7 +542,7 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 27
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 26
 .
 
 (c:/texlive/2024/texmf-dist/tex/latex/lm/t1lmr.fd
@@ -553,40 +553,30 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count337
 \l__pdf_internal_box=\box70
 )
-(./vision.aux
+(./TAREA 2.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
-
-
-LaTeX Warning: Label `fig:b1' multiply defined.
-
-
-LaTeX Warning: Label `fig:b2' multiply defined.
-
-
-LaTeX Warning: Label `fig:comparacion' multiply defined.
-
 )
-\openout1 = `vision.aux'.
+\openout1 = `"TAREA 2.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
  (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count338
@@ -609,27 +599,27 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 27.
+Package hyperref Info: Link coloring OFF on input line 26.
 
-(./vision.out) (./vision.out)
+(./TAREA 2.out) (./TAREA 2.out)
 \@outlinefile=\write4
-\openout4 = `vision.out'.
+\openout4 = `"TAREA 2.out"'.
 
-LaTeX Info: Redefining \. on input line 27.
-LaTeX Info: Redefining \% on input line 27.
+LaTeX Info: Redefining \. on input line 26.
+LaTeX Info: Redefining \% on input line 26.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<logo.png, id=48, 501.875pt x 501.875pt>
+<logo.png, id=100, 501.875pt x 501.875pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
-Package pdftex.def Info: logo.png  used on input line 32.
+Package pdftex.def Info: logo.png  used on input line 31.
 (pdftex.def)             Requested size: 71.9989pt x 71.99272pt.
 
 
 [1
 
 {c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2024/
-texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./logo.png>] (./vision.toc
+texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./logo.png>] (./TAREA 2.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
@@ -673,7 +663,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
 \tf@toc=\write5
-\openout5 = `vision.toc'.
+\openout5 = `"TAREA 2.toc"'.
 
 
 
@@ -682,116 +672,276 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.52 	\newpage
+l.51 	\newpage
                [1]
-<IMG/Fig2.19(a).jpg, id=76, 1027.84pt x 1027.84pt>
-File: IMG/Fig2.19(a).jpg Graphic file (type jpg)
-<use IMG/Fig2.19(a).jpg>
-Package pdftex.def Info: IMG/Fig2.19(a).jpg  used on input line 61.
-(pdftex.def)             Requested size: 251.9989pt x 251.98769pt.
+
+[2]
+<IMG/P11.png, id=145, 425.1885pt x 213.1965pt>
+File: IMG/P11.png Graphic file (type png)
+<use IMG/P11.png>
+Package pdftex.def Info: IMG/P11.png  used on input line 79.
+(pdftex.def)             Requested size: 288.0011pt x 144.41866pt.
 
 
-[2 <./IMG/Fig2.19(a).jpg>]
+[3{c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2024
+/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <./IMG/P11.PNG>]
+<IMG/P12.png, id=155, 421.575pt x 208.98074pt>
+File: IMG/P12.png Graphic file (type png)
+<use IMG/P12.png>
+Package pdftex.def Info: IMG/P12.png  used on input line 87.
+(pdftex.def)             Requested size: 288.0011pt x 142.76828pt.
+<IMG/P13.png, id=156, 433.62pt x 194.52675pt>
+File: IMG/P13.png Graphic file (type png)
+<use IMG/P13.png>
+Package pdftex.def Info: IMG/P13.png  used on input line 93.
+(pdftex.def)             Requested size: 288.0011pt x 129.20728pt.
 
-Package natbib Warning: Citation `gonzalez2018digital' on page 3 undefined on i
-nput line 73.
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
 
-
-
-[3{c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2024/tex
-mf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2024/texmf-dist/fonts/enc/
-dvips/lm/lm-mathsy.enc}{c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex
-.enc}]
-
-[4]
-<IMG/b1.jpg, id=105, 256.96pt x 256.96pt>
-File: IMG/b1.jpg Graphic file (type jpg)
-<use IMG/b1.jpg>
-Package pdftex.def Info: IMG/b1.jpg  used on input line 154.
-(pdftex.def)             Requested size: 161.9989pt x 161.99936pt.
-<IMG/b2.jpg, id=106, 1027.84pt x 1027.84pt>
-File: IMG/b2.jpg Graphic file (type jpg)
-<use IMG/b2.jpg>
-Package pdftex.def Info: IMG/b2.jpg  used on input line 162.
-(pdftex.def)             Requested size: 161.9989pt x 161.99544pt.
+ []
 
 
-[5 <./IMG/b1.jpg> <./IMG/b2.jpg>]
-<IMG/v1.jpg, id=112, 256.96pt x 256.96pt>
-File: IMG/v1.jpg Graphic file (type jpg)
-<use IMG/v1.jpg>
-Package pdftex.def Info: IMG/v1.jpg  used on input line 183.
-(pdftex.def)             Requested size: 161.9989pt x 161.99936pt.
-<IMG/v2.jpg, id=113, 1027.84pt x 1027.84pt>
-File: IMG/v2.jpg Graphic file (type jpg)
-<use IMG/v2.jpg>
-Package pdftex.def Info: IMG/v2.jpg  used on input line 191.
-(pdftex.def)             Requested size: 161.9989pt x 161.99544pt.
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+
+ []
 
 
-[6 <./IMG/v1.jpg> <./IMG/v2.jpg>]
 
-[7]
-No file vision.bbl.
+[4 <./IMG/P12.PNG> <./IMG/P13.PNG>]
 
+[5]
+<IMG/P14.png, id=185, 337.86224pt x 241.50224pt>
+File: IMG/P14.png Graphic file (type png)
+<use IMG/P14.png>
+Package pdftex.def Info: IMG/P14.png  used on input line 132.
+(pdftex.def)             Requested size: 196.5596pt x 140.49884pt.
+
+Overfull \hbox (45.36026pt too wide) in paragraph at lines 132--134
+ [][] 
+ []
+
+<IMG/P15.png, id=186, 330.033pt x 249.93375pt>
+File: IMG/P15.png Graphic file (type png)
+<use IMG/P15.png>
+Package pdftex.def Info: IMG/P15.png  used on input line 138.
+(pdftex.def)             Requested size: 181.43874pt x 137.40295pt.
+
+Overfull \hbox (30.2394pt too wide) in paragraph at lines 138--140
+ [][] 
+ []
+
+
+
+[6 <./IMG/P14.PNG> <./IMG/P15.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+
+ []
+
+
+
+[7{c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/texlive/2024
+/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
 
 [8]
-! FancyVerb Error:
-  Extraneous input `	\end{}' between \end{minted} and line end
-.
-\FV@Error ... {FancyVerb Error:
-\space \space #1
-}
-                                                  
-l.372 \end{minted}	
-                   
-This input will be discarded. Type <return> to continue.
+<IMG/RP11.png, id=216, 528.7755pt x 437.2335pt>
+File: IMG/RP11.png Graphic file (type png)
+<use IMG/RP11.png>
+Package pdftex.def Info: IMG/RP11.png  used on input line 209.
+(pdftex.def)             Requested size: 201.59604pt x 166.69753pt.
 
-\pydata@fh@_F42087059B37AE7F4D9F0D3A475801A8.data.minted=\write6
-\openout6 = `_F42087059B37AE7F4D9F0D3A475801A8.data.minted'.
+Overfull \hbox (57.59824pt too wide) in paragraph at lines 209--211
+ [][] 
+ []
 
-runsystem(latexminted config  --timestamp 20250305055125 F42087059B37AE7F4D9F0D
-3A475801A8)...executed.
-
-(./_F42087059B37AE7F4D9F0D3A475801A8.config.minted)
-runsystem(latexminted cleanconfig  --timestamp 20250305055125 F42087059B37AE7F4
-D9F0D3A475801A8)...executed.
+<IMG/M11.png, id=217, 79.497pt x 54.80475pt>
+File: IMG/M11.png Graphic file (type png)
+<use IMG/M11.png>
+Package pdftex.def Info: IMG/M11.png  used on input line 215.
+(pdftex.def)             Requested size: 120.95993pt x 83.39352pt.
 
 
-(./_minted/default.style.minted)
-(./_minted/E0DE80589637E690914654D5A908D555.highlight.minted
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-.
+[9 <./IMG/RP11.PNG> <./IMG/M11.PNG>]
+<IMG/RP12.png, id=225, 526.96875pt x 443.85825pt>
+File: IMG/RP12.png Graphic file (type png)
+<use IMG/RP12.png>
+Package pdftex.def Info: IMG/RP12.png  used on input line 232.
+(pdftex.def)             Requested size: 201.59604pt x 169.8057pt.
 
-(c:/texlive/2024/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 9.
+Overfull \hbox (57.59824pt too wide) in paragraph at lines 232--234
+ [][] 
+ []
 
-
-[9]
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-66.
- (c:/texlive/2024/texmf-dist/tex/latex/lm/ts1lmtt.fd
-File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-
-[10{c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-
-[11])
-
-Package natbib Warning: There were undefined citations.
+<IMG/M12.png, id=226, 84.315pt x 62.634pt>
+File: IMG/M12.png Graphic file (type png)
+<use IMG/M12.png>
+Package pdftex.def Info: IMG/M12.png  used on input line 238.
+(pdftex.def)             Requested size: 120.95993pt x 89.85837pt.
 
 
+[10 <./IMG/RP12.PNG> <./IMG/M12.PNG>]
+Overfull \hbox (5.468pt too wide) in paragraph at lines 249--250
+[]\T1/lmr/m/n/10.95 Para el ca-so mí-ni-mo, se pro-po-ne un $\OML/lmm/m/it/10.9
+5 SERVICIO \OT1/lmr/m/n/10.95 = 10$ \T1/lmr/m/n/10.95 y una $\OML/lmm/m/it/10.9
+5 COMIDA \OT1/lmr/m/n/10.95 =
+ []
 
-[12]
-\openout6 = `_F42087059B37AE7F4D9F0D3A475801A8.data.minted'.
+<IMG/RP13.png, id=234, 525.162pt x 434.22224pt>
+File: IMG/RP13.png Graphic file (type png)
+<use IMG/RP13.png>
+Package pdftex.def Info: IMG/RP13.png  used on input line 255.
+(pdftex.def)             Requested size: 201.59604pt x 166.68246pt.
 
-runsystem(latexminted clean  --timestamp 20250305055125 F42087059B37AE7F4D9F0D3
-A475801A8)...executed.
+Overfull \hbox (57.59824pt too wide) in paragraph at lines 255--257
+ [][] 
+ []
 
- (./vision.aux
+<IMG/M13.png, id=235, 78.2925pt x 59.62276pt>
+File: IMG/M13.png Graphic file (type png)
+<use IMG/M13.png>
+Package pdftex.def Info: IMG/M13.png  used on input line 261.
+(pdftex.def)             Requested size: 120.95993pt x 92.11862pt.
+
+
+[11 <./IMG/RP13.PNG> <./IMG/M13.PNG>]
+<IMG/P21.png, id=243, 428.802pt x 201.75375pt>
+File: IMG/P21.png Graphic file (type png)
+<use IMG/P21.png>
+Package pdftex.def Info: IMG/P21.png  used on input line 287.
+(pdftex.def)             Requested size: 288.0011pt x 135.50986pt.
+
+
+[12 <./IMG/P21.PNG>]
+<IMG/P22.png, id=252, 427.5975pt x 202.95825pt>
+File: IMG/P22.png Graphic file (type png)
+<use IMG/P22.png>
+Package pdftex.def Info: IMG/P22.png  used on input line 293.
+(pdftex.def)             Requested size: 288.0011pt x 136.69978pt.
+<IMG/P23.png, id=253, 425.1885pt x 200.54926pt>
+File: IMG/P23.png Graphic file (type png)
+<use IMG/P23.png>
+Package pdftex.def Info: IMG/P23.png  used on input line 298.
+(pdftex.def)             Requested size: 288.0011pt x 135.85146pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 303--304
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 305--306
+
+ []
+
+
+
+[13 <./IMG/P22.PNG> <./IMG/P23.PNG>]
+
+[14]
+<IMG/P24.png, id=278, 373.395pt x 268.6035pt>
+File: IMG/P24.png Graphic file (type png)
+<use IMG/P24.png>
+Package pdftex.def Info: IMG/P24.png  used on input line 337.
+(pdftex.def)             Requested size: 196.5596pt x 141.39601pt.
+
+Overfull \hbox (45.36026pt too wide) in paragraph at lines 337--339
+ [][] 
+ []
+
+<IMG/P25.png, id=279, 358.941pt x 260.77425pt>
+File: IMG/P25.png Graphic file (type png)
+<use IMG/P25.png>
+Package pdftex.def Info: IMG/P25.png  used on input line 344.
+(pdftex.def)             Requested size: 181.43874pt x 131.81529pt.
+
+Overfull \hbox (30.2394pt too wide) in paragraph at lines 344--346
+ [][] 
+ []
+
+
+
+[15 <./IMG/P24.PNG> <./IMG/P25.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 356--357
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 358--359
+
+ []
+
+
+
+[16]
+
+[17]
+<IMG/RP21.png, id=300, 460.72125pt x 261.97874pt>
+File: IMG/RP21.png Graphic file (type png)
+<use IMG/RP21.png>
+Package pdftex.def Info: IMG/RP21.png  used on input line 412.
+(pdftex.def)             Requested size: 201.59604pt x 114.63141pt.
+
+Overfull \hbox (57.59824pt too wide) in paragraph at lines 412--414
+ [][] 
+ []
+
+<IMG/M21.png, id=301, 80.09924pt x 66.2475pt>
+File: IMG/M21.png Graphic file (type png)
+<use IMG/M21.png>
+Package pdftex.def Info: IMG/M21.png  used on input line 418.
+(pdftex.def)             Requested size: 120.95993pt x 100.04826pt.
+
+
+[18 <./IMG/RP21.PNG> <./IMG/M21.PNG>]
+<IMG/RP22.png, id=311, 468.5505pt x 268.00125pt>
+File: IMG/RP22.png Graphic file (type png)
+<use IMG/RP22.png>
+Package pdftex.def Info: IMG/RP22.png  used on input line 435.
+(pdftex.def)             Requested size: 201.59604pt x 115.3078pt.
+
+Overfull \hbox (57.59824pt too wide) in paragraph at lines 435--437
+ [][] 
+ []
+
+<IMG/M22.png, id=312, 74.07675pt x 60.225pt>
+File: IMG/M22.png Graphic file (type png)
+<use IMG/M22.png>
+Package pdftex.def Info: IMG/M22.png  used on input line 441.
+(pdftex.def)             Requested size: 120.95993pt x 98.34964pt.
+
+
+[19 <./IMG/RP22.PNG> <./IMG/M22.PNG>]
+<IMG/RP23.png, id=320, 473.3685pt x 268.00125pt>
+File: IMG/RP23.png Graphic file (type png)
+<use IMG/RP23.png>
+Package pdftex.def Info: IMG/RP23.png  used on input line 460.
+(pdftex.def)             Requested size: 201.59604pt x 114.13416pt.
+
+Overfull \hbox (57.59824pt too wide) in paragraph at lines 460--462
+ [][] 
+ []
+
+<IMG/M23.png, id=321, 82.50826pt x 52.998pt>
+File: IMG/M23.png Graphic file (type png)
+<use IMG/M23.png>
+Package pdftex.def Info: IMG/M23.png  used on input line 466.
+(pdftex.def)             Requested size: 120.95993pt x 77.69666pt.
+
+
+[20 <./IMG/RP23.PNG> <./IMG/M23.PNG>]
+
+[21] (./TAREA 2.bbl)
+
+[22]
+
+[23]
+runsystem(latexminted cleantemp  --timestamp 20250305090113 C940E7680F8CDD6348F
+ED7FC02A358DC)...executed.
+
+ (./TAREA 2.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -799,36 +949,33 @@ LaTeX Info: Redefining \% on input line 11.
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package rerunfilecheck Info: File `vision.out' has not changed.
-(rerunfilecheck)             Checksum: 26487DC88E484A290B55AAC260E00171;1701.
+Package rerunfilecheck Info: File `"TAREA 2".out' has not changed.
+(rerunfilecheck)             Checksum: 9AA926280B5EA99630E7FCBDEB3DF5B2;4084.
  ) 
 Here is how much of TeX's memory you used:
- 18880 strings out of 473200
- 353148 string characters out of 5720279
- 856431 words of memory out of 5000000
- 41824 multiletter control sequences out of 15000+600000
- 601679 words of font info for 67 fonts, out of 8000000 for 9000
+ 18637 strings out of 473200
+ 345034 string characters out of 5720279
+ 860476 words of memory out of 5000000
+ 41529 multiletter control sequences out of 15000+600000
+ 614930 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,11n,93p,682b,1018s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 85i,8n,93p,541b,577s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2024
 /texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/
-type1/public/lm/lmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lm
-mi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texliv
-e/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2024/texmf-dist/f
-onts/type1/public/lm/lmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/l
-m/lmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/tex
-live/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2024/texmf-di
-st/fonts/type1/public/lm/lmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/publ
-ic/lm/lmtk10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><
-c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on vision.pdf (13 pages, 1176300 bytes).
+type1/public/lm/lmbxi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/l
+mex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texl
+ive/2024/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/texlive/2024/texmf-dist
+/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public
+/lm/lmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/t
+exlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/texlive/2024/texmf-di
+st/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/publi
+c/lm/lmri10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c
+:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2024/tex
+mf-dist/fonts/type1/public/lm/lmsy6.pfb>
+Output written on "TAREA 2.pdf" (24 pages, 758122 bytes).
 PDF statistics:
- 228 PDF objects out of 1000 (max. 8388607)
- 174 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
- 119 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 442 PDF objects out of 1000 (max. 8388607)
+ 335 compressed objects within 4 object streams
+ 103 named destinations out of 1000 (max. 500000)
+ 308 words of extra memory for PDF output out of 10000 (max. 10000000)
 

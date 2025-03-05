@@ -1,0 +1,144 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{} Interpolación bilineal \PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+
+\PYG{c}{\PYGZsh{} Definir el filtro bilineal}
+\PYG{c}{\PYGZsh{} Parametros de entrada:}
+\PYG{c}{\PYGZsh{}\PYGZsh{} Imagen de entrada}
+\PYG{c}{\PYGZsh{}\PYGZsh{} Ancho de salida}
+\PYG{c}{\PYGZsh{}\PYGZsh{} Alto de salida}
+\PYG{k}{function}\PYG{+w}{ }\PYG{n}{bilineal}\PYG{p}{(}\PYG{n}{Imagen}\PYG{p}{,}\PYG{n}{Ancho}\PYG{p}{,}\PYG{n}{Alto}\PYG{p}{)}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Parametros de salida de la nueva matriz \PYGZsh{}}
+\PYG{+w}{	}\PYG{n}{naltura}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Ancho}
+\PYG{+w}{	}\PYG{n}{nancho}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Alto}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Crear la nueva matriz de enteros de tamaño naltura X nancho}
+\PYG{+w}{	}\PYG{n}{nueva}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{zeros}\PYG{p}{(}\PYG{k+kt}{Int}\PYG{p}{,}\PYG{n}{naltura}\PYG{p}{,}\PYG{n}{nancho}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{} Dmensiones originales de la matriz}
+\PYG{+w}{	}\PYG{n}{Oaltura}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{size}\PYG{p}{(}\PYG{n}{Imagen}\PYG{p}{)}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}
+\PYG{+w}{	}\PYG{n}{Oancho}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{size}\PYG{p}{(}\PYG{n}{Imagen}\PYG{p}{)}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{} Definir la relación entre los tamaños}
+\PYG{+w}{	}\PYG{n}{escalaX}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{Oancho}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{/}\PYG{p}{(}\PYG{n}{nancho}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{escalaY}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{Oaltura}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{/}\PYG{p}{(}\PYG{n}{naltura}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{} Aplicación del escalado \PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{+w}{	}\PYG{k}{for}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{naltura}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Segundo loop}
+\PYG{+w}{		}\PYG{k}{for}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{nancho}
+\PYG{+w}{		}\PYG{c}{\PYGZsh{} Coordenadas de la imagen original}
+\PYG{+w}{		}\PYG{n}{X}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{escalaX}\PYG{o}{*}\PYG{p}{(}\PYG{n}{j}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{c}{\PYGZsh{} Adelante del borde}
+\PYG{+w}{		}\PYG{n}{Y}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{escalaY}\PYG{o}{*}\PYG{p}{(}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{c}{\PYGZsh{} Adelante del borde}
+\PYG{+w}{		}\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{} Datos para hacer el interpolado \PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{+w}{		}\PYG{c}{\PYGZsh{}\PYGZsh{} Coordenadas en X \PYGZsh{}\PYGZsh{}}
+\PYG{+w}{		}\PYG{n}{x1}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{floor}\PYG{p}{(}\PYG{k+kt}{Int}\PYG{p}{,}\PYG{n}{X}\PYG{p}{)}
+\PYG{+w}{		}\PYG{n}{x2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{min}\PYG{p}{(}\PYG{n}{x1}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{Oancho}\PYG{p}{)}
+\PYG{+w}{		}\PYG{c}{\PYGZsh{}\PYGZsh{} Coordenadas en Y \PYGZsh{}\PYGZsh{}}
+\PYG{+w}{		}\PYG{n}{y1}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{floor}\PYG{p}{(}\PYG{k+kt}{Int}\PYG{p}{,}\PYG{n}{Y}\PYG{p}{)}
+\PYG{+w}{		}\PYG{n}{y2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{min}\PYG{p}{(}\PYG{n}{y1}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{Oaltura}\PYG{p}{)}
+\PYG{+w}{		}\PYG{c}{\PYGZsh{} Pesos para la interpolación \PYGZsh{}}
+\PYG{+w}{		}\PYG{n}{dx}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{X}\PYG{o}{\PYGZhy{}}\PYG{n}{x1}
+\PYG{+w}{		}\PYG{n}{dy}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Y}\PYG{o}{\PYGZhy{}}\PYG{n}{y1}
+\PYG{+w}{		}\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{} Extraer los valores de los pixeles vecinos \PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{+w}{		}\PYG{n}{Q11}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Imagen}\PYG{p}{[}\PYG{n}{y1}\PYG{p}{,}\PYG{n}{x1}\PYG{p}{]}
+\PYG{+w}{		}\PYG{n}{Q12}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Imagen}\PYG{p}{[}\PYG{n}{y2}\PYG{p}{,}\PYG{n}{x1}\PYG{p}{]}
+\PYG{+w}{		}\PYG{n}{Q21}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Imagen}\PYG{p}{[}\PYG{n}{y1}\PYG{p}{,}\PYG{n}{x2}\PYG{p}{]}
+\PYG{+w}{		}\PYG{n}{Q22}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Imagen}\PYG{p}{[}\PYG{n}{y2}\PYG{p}{,}\PYG{n}{x2}\PYG{p}{]}
+\PYG{+w}{		}\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{} Crear el pixel con la interpolación \PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{+w}{		}\PYG{n}{px}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{dx}\PYG{p}{)}\PYG{o}{*}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{dy}\PYG{p}{)}\PYG{o}{*}\PYG{n}{Q11}\PYG{+w}{ }\PYG{o}{+}
+\PYG{+w}{		}\PYG{n}{dx}\PYG{o}{*}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{dy}\PYG{p}{)}\PYG{o}{*}\PYG{n}{Q21}\PYG{+w}{ }\PYG{o}{+}
+\PYG{+w}{		}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{dx}\PYG{p}{)}\PYG{o}{*}\PYG{n}{dy}\PYG{o}{*}\PYG{n}{Q12}\PYG{+w}{ }\PYG{o}{+}
+\PYG{+w}{		}\PYG{n}{dx}\PYG{o}{*}\PYG{p}{(}\PYG{n}{dy}\PYG{p}{)}\PYG{o}{*}\PYG{n}{Q22}
+\PYG{+w}{		}\PYG{c}{\PYGZsh{} Guardarlo en la matriz de salida \PYGZsh{}}
+\PYG{+w}{		}\PYG{n}{nueva}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{n}{j}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{round}\PYG{o}{.}\PYG{p}{(}\PYG{k+kt}{Int}\PYG{p}{,}\PYG{n}{px}\PYG{p}{)}
+\PYG{+w}{		}\PYG{k}{end}
+\PYG{+w}{	}\PYG{k}{end}
+\PYG{c}{\PYGZsh{} Devolver la matriz resultante}
+\PYG{c}{\PYGZsh{} Convertir en escala de grises \PYGZsh{}}
+\PYG{n}{res}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{clamp}\PYG{o}{.}\PYG{p}{(}\PYG{n}{nueva}\PYG{o}{./}\PYG{l+m+mi}{255}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{;}
+\PYG{c}{\PYGZsh{} Convertir la matriz en escala de grises}
+\PYG{k}{return}\PYG{p}{(}\PYG{n}{Gray}\PYG{o}{.}\PYG{p}{(}\PYG{n}{res}\PYG{p}{)}\PYG{p}{)}
+\PYG{k}{end}
+
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{} Interpolación del vecino más cercano \PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+
+\PYG{c}{\PYGZsh{} Función de interpolación por vecinos más cercanos}
+\PYG{k}{function}\PYG{+w}{ }\PYG{n}{vecinos}\PYG{p}{(}\PYG{n}{Imagen}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Ancho}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Alto}\PYG{p}{)}
+\PYG{c}{\PYGZsh{} Dimensiones de la nueva imagen}
+\PYG{n}{naltura}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Alto}
+\PYG{n}{nancho}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Ancho}
+\PYG{c}{\PYGZsh{} Crear la nueva matriz de enteros de tamaño naltura × nancho}
+\PYG{n}{nueva}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{zeros}\PYG{p}{(}\PYG{k+kt}{Int}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{naltura}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{nancho}\PYG{p}{)}
+
+\PYG{c}{\PYGZsh{} Dimensiones originales de la imagen}
+\PYG{n}{Oaltura}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Oancho}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{size}\PYG{p}{(}\PYG{n}{Imagen}\PYG{p}{)}
+
+\PYG{c}{\PYGZsh{} Relación de escalado}
+\PYG{n}{escalaX}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Oancho}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{n}{nancho}
+\PYG{n}{escalaY}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Oaltura}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{n}{naltura}
+
+\PYG{c}{\PYGZsh{} Aplicar el escalado con vecinos más cercanos}
+\PYG{k}{for}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{naltura}
+\PYG{+w}{	}\PYG{k}{for}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{nancho}
+\PYG{+w}{		}\PYG{c}{\PYGZsh{} Coordenadas en la imagen original}
+\PYG{+w}{		}\PYG{n}{X}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{round}\PYG{p}{(}\PYG{k+kt}{Int}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{escalaX}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{j}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mf}{0.5}\PYG{p}{)}\PYG{p}{)}\PYG{+w}{  }\PYG{c}{\PYGZsh{} Píxel más cercano en X}
+\PYG{+w}{		}\PYG{n}{Y}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{round}\PYG{p}{(}\PYG{k+kt}{Int}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{escalaY}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mf}{0.5}\PYG{p}{)}\PYG{p}{)}\PYG{+w}{  }\PYG{c}{\PYGZsh{} Píxel más cercano en Y}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{c}{\PYGZsh{} Asegurar que las coordenadas estén dentro del rango}
+\PYG{+w}{		}\PYG{n}{X}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{clamp}\PYG{p}{(}\PYG{n}{X}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Oancho}\PYG{p}{)}
+\PYG{+w}{		}\PYG{n}{Y}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{clamp}\PYG{p}{(}\PYG{n}{Y}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Oaltura}\PYG{p}{)}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{c}{\PYGZsh{} Asignar el valor del píxel más cercano}
+\PYG{+w}{		}\PYG{n}{nueva}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{j}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Imagen}\PYG{p}{[}\PYG{n}{Y}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{X}\PYG{p}{]}
+\PYG{+w}{	}\PYG{k}{end}
+\PYG{k}{end}
+
+\PYG{c}{\PYGZsh{} Convertir en escala de grises y normalizar}
+\PYG{n}{res}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{clamp}\PYG{o}{.}\PYG{p}{(}\PYG{n}{nueva}\PYG{+w}{ }\PYG{o}{./}\PYG{+w}{ }\PYG{l+m+mi}{255}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{k}{return}\PYG{+w}{ }\PYG{n}{Gray}\PYG{o}{.}\PYG{p}{(}\PYG{n}{res}\PYG{p}{)}
+\PYG{k}{end}
+
+
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{} Cargar la imagen de la rosa \PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c}{\PYGZsh{} Cargar las librerias para el procesado de imagenes}
+\PYG{k}{using}\PYG{+w}{ }\PYG{n}{Images}
+\PYG{c}{\PYGZsh{}using ImageView}
+\PYG{c}{\PYGZsh{} Imagen De referencia}
+\PYG{n}{ruta}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{IMG/Fig2.19(a).jpg}\PYG{l+s}{\PYGZdq{}}
+\PYG{n}{img}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{load}\PYG{p}{(}\PYG{n}{ruta}\PYG{p}{)}
+\PYG{n}{img1}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Gray}\PYG{o}{.}\PYG{p}{(}\PYG{n}{img}\PYG{p}{)}
+\PYG{c}{\PYGZsh{} Guardar la imagenm}
+\PYG{c}{\PYGZsh{}save(\PYGZdq{}IMG/IM1gray.jpg\PYGZdq{}, img1)}
+
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{} Pruebas para el filtro bilieal \PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{} Re escalar la imagen original a 256x256 pixeles \PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+
+\PYG{c}{\PYGZsh{} Imagen De referencia}
+\PYG{n}{img1}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{round}\PYG{o}{.}\PYG{p}{(}\PYG{k+kt}{Int}\PYG{p}{,}\PYG{n}{Gray}\PYG{o}{.}\PYG{p}{(}\PYG{n}{img}\PYG{p}{)}\PYG{o}{.*}\PYG{+w}{ }\PYG{l+m+mi}{255}\PYG{p}{)}
+\PYG{n}{res1}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{bilineal}\PYG{p}{(}\PYG{n}{img1}\PYG{p}{,}\PYG{l+m+mi}{256}\PYG{p}{,}\PYG{l+m+mi}{256}\PYG{p}{)}
+\PYG{n}{save}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{IMG/b1.jpg}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{res1}\PYG{p}{)}\PYG{+w}{ }\PYG{c}{\PYGZsh{}  Guardar el resultado}
+\PYG{n}{res1}
+
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{} Re escalar la imagen de 256x256 pixeles a 1024x1024 \PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c}{\PYGZsh{} Imagen De referencia}
+\PYG{n}{ruta1}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{IMG/b1.jpg}\PYG{l+s}{\PYGZdq{}}
+\PYG{n}{img}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{load}\PYG{p}{(}\PYG{n}{ruta1}\PYG{p}{)}
+\PYG{n}{img2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{round}\PYG{o}{.}\PYG{p}{(}\PYG{k+kt}{Int}\PYG{p}{,}\PYG{n}{Gray}\PYG{o}{.}\PYG{p}{(}\PYG{n}{img}\PYG{p}{)}\PYG{o}{.*}\PYG{+w}{ }\PYG{l+m+mi}{255}\PYG{p}{)}
+\PYG{n}{res2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{bilineal}\PYG{p}{(}\PYG{n}{img2}\PYG{p}{,}\PYG{l+m+mi}{1024}\PYG{p}{,}\PYG{l+m+mi}{1024}\PYG{p}{)}
+\PYG{n}{save}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{IMG/b2.jpg}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{res2}\PYG{p}{)}\PYG{+w}{ }\PYG{c}{\PYGZsh{}  Guardar el resultado}
+\PYG{n}{res2}
+
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{} Pruebas para el filtro del vecino más cercano \PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{} Re escalar la imagen original a 256x256 pixeles \PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+
+\PYG{c}{\PYGZsh{} Imagen De referencia}
+\PYG{n}{img3}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{round}\PYG{o}{.}\PYG{p}{(}\PYG{k+kt}{Int}\PYG{p}{,}\PYG{n}{Gray}\PYG{o}{.}\PYG{p}{(}\PYG{n}{img}\PYG{p}{)}\PYG{o}{.*}\PYG{+w}{ }\PYG{l+m+mi}{255}\PYG{p}{)}
+\PYG{n}{res3}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{vecinos}\PYG{p}{(}\PYG{n}{img3}\PYG{p}{,}\PYG{l+m+mi}{256}\PYG{p}{,}\PYG{l+m+mi}{256}\PYG{p}{)}
+\PYG{n}{save}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{IMG/v1.jpg}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{res3}\PYG{p}{)}\PYG{+w}{ }\PYG{c}{\PYGZsh{}  Guardar el resultado}
+\PYG{n}{res3}
+
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{} Re escalar la imagen de 256x256 pixeles a 1024x1024 \PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c}{\PYGZsh{} Imagen De referencia}
+\PYG{n}{ruta2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{IMG/v1.jpg}\PYG{l+s}{\PYGZdq{}}
+\PYG{n}{img}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{load}\PYG{p}{(}\PYG{n}{ruta2}\PYG{p}{)}
+\PYG{n}{img4}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{round}\PYG{o}{.}\PYG{p}{(}\PYG{k+kt}{Int}\PYG{p}{,}\PYG{n}{Gray}\PYG{o}{.}\PYG{p}{(}\PYG{n}{img}\PYG{p}{)}\PYG{o}{.*}\PYG{+w}{ }\PYG{l+m+mi}{255}\PYG{p}{)}
+\PYG{n}{res4}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{vecinos}\PYG{p}{(}\PYG{n}{img4}\PYG{p}{,}\PYG{l+m+mi}{1024}\PYG{p}{,}\PYG{l+m+mi}{1024}\PYG{p}{)}
+\PYG{n}{save}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{IMG/v2.jpg}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{res4}\PYG{p}{)}\PYG{+w}{ }\PYG{c}{\PYGZsh{}  Guardar el resultado}
+\PYG{n}{res4}
+\end{MintedVerbatim}
