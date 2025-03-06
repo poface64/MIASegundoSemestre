@@ -1,0 +1,108 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{} Paquetes necesarios \PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{k}{using}\PYG{+w}{ }\PYG{n}{Plots}\PYG{+w}{ }\PYG{c}{\PYGZsh{} Para gráficar}
+\PYG{k}{using}\PYG{+w}{ }\PYG{n}{Images}\PYG{+w}{ }\PYG{c}{\PYGZsh{} Para manipular imagenes}
+\PYG{k}{using}\PYG{+w}{ }\PYG{n}{StatsBase}\PYG{+w}{ }\PYG{c}{\PYGZsh{} Función basicas de estadística}
+
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{} Función que hace todo el proceso, genera las gráficas y las imagenes}
+\PYG{k}{function}\PYG{+w}{ }\PYG{n}{ecualizado}\PYG{p}{(}\PYG{n}{img}\PYG{p}{)}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Convertir la imagen a rango de 0 a 255}
+\PYG{+w}{	}\PYG{n}{img1}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{round}\PYG{o}{.}\PYG{p}{(}\PYG{k+kt}{Int}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Gray}\PYG{o}{.}\PYG{p}{(}\PYG{n}{img}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{.*}\PYG{+w}{ }\PYG{l+m+mi}{255}\PYG{p}{)}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Obtener la tabla de frecuencias de la imagen original}
+\PYG{+w}{	}\PYG{n}{tabla}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{countmap}\PYG{p}{(}\PYG{n}{img1}\PYG{p}{)}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Definir los niveles de 0 a 255}
+\PYG{+w}{	}\PYG{n}{niveles}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{o}{:}\PYG{l+m+mi}{255}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Asegurarse de que todos los niveles estén presentes}
+\PYG{+w}{	}\PYG{n}{tabla1}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k+kt}{Dict}\PYG{p}{(}\PYG{n}{level}\PYG{+w}{ }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n}{get}\PYG{p}{(}\PYG{n}{tabla}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{level}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }\PYG{n}{level}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{niveles}\PYG{p}{)}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Descomponer el resultado en 2 vectores}
+\PYG{+w}{	}\PYG{n}{x}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{collect}\PYG{p}{(}\PYG{n}{keys}\PYG{p}{(}\PYG{n}{tabla1}\PYG{p}{)}\PYG{p}{)}
+\PYG{+w}{	}\PYG{n}{y}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{collect}\PYG{p}{(}\PYG{n}{values}\PYG{p}{(}\PYG{n}{tabla1}\PYG{p}{)}\PYG{p}{)}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Ordenar x y obtener los índices de la ordenación}
+\PYG{+w}{	}\PYG{n}{indices}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{sortperm}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Reordenar x y y según los índices ordenados}
+\PYG{+w}{	}\PYG{n}{x}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{[}\PYG{n}{indices}\PYG{p}{]}
+\PYG{+w}{	}\PYG{n}{y}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{y}\PYG{p}{[}\PYG{n}{indices}\PYG{p}{]}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Calcular las probabilidades}
+\PYG{+w}{	}\PYG{n}{N}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{sum}\PYG{p}{(}\PYG{n}{y}\PYG{p}{)}\PYG{+w}{  }\PYG{c}{\PYGZsh{} Total de píxeles}
+\PYG{+w}{	}\PYG{n}{pp}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{y}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{n}{N}\PYG{+w}{  }\PYG{c}{\PYGZsh{} Probabilidad de aparición de cada píxel}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Acumulador de las probabilidades}
+\PYG{+w}{	}\PYG{n}{acum}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{copy}\PYG{p}{(}\PYG{n}{pp}\PYG{p}{)}\PYG{+w}{  }\PYG{c}{\PYGZsh{} Vector de probabilidades para hacer la acumulada}
+\PYG{+w}{	}\PYG{k}{for}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{o}{:}\PYG{n}{length}\PYG{p}{(}\PYG{n}{acum}\PYG{p}{)}
+\PYG{+w}{		}\PYG{n}{acum}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{acum}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{acum}\PYG{p}{[}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{]}
+\PYG{+w}{	}\PYG{k}{end}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Mostrar el histograma original}
+\PYG{+w}{	}\PYG{n}{p1}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{bar}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{y}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{label}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Histograma Original}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{legend}\PYG{o}{=}\PYG{l+s+ss}{:false}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n}{xlabel}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Valor de píxel}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ylabel}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Frecuencia}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n}{title}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Histograma de la Imagen Original}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Mostrar la distribución acumulada original}
+\PYG{+w}{	}\PYG{n}{p2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{plot}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{acum}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{label}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Distribución Acumulada Original}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{legend}\PYG{o}{=}\PYG{l+s+ss}{:false}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n}{xlabel}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Valor de píxel}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ylabel}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Probabilidad Acumulada}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n}{title}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Distribución Acumulada de la Imagen Original}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Usar la probabilidad acumulada para asignar el nuevo valor de cada píxel}
+\PYG{+w}{	}\PYG{n}{imgt}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{vec}\PYG{p}{(}\PYG{n}{img1}\PYG{p}{)}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Ajuste de los valores de los píxeles}
+\PYG{+w}{	}\PYG{n}{Fk}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{round}\PYG{o}{.}\PYG{p}{(}\PYG{l+m+mi}{255}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{acum}\PYG{p}{[}\PYG{n}{imgt}\PYG{+w}{ }\PYG{o}{.+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)}\PYG{+w}{  }\PYG{c}{\PYGZsh{} Fk es el valor ajustado}
+\PYG{+w}{	}\PYG{n}{F0}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{minimum}\PYG{p}{(}\PYG{n}{Fk}\PYG{p}{)}\PYG{+w}{  }\PYG{c}{\PYGZsh{} Valor mínimo ajustado}
+\PYG{+w}{	}\PYG{n}{salida}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{round}\PYG{o}{.}\PYG{p}{(}\PYG{l+m+mi}{255}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{p}{(}\PYG{p}{(}\PYG{n}{Fk}\PYG{+w}{ }\PYG{o}{.\PYGZhy{}}\PYG{+w}{ }\PYG{n}{F0}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mi}{255}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{F0}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}\PYG{+w}{  }\PYG{c}{\PYGZsh{} Normalizar a [0, 255]}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Darle el formato original de la matriz}
+\PYG{+w}{	}\PYG{n}{D}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{size}\PYG{p}{(}\PYG{n}{img1}\PYG{p}{)}\PYG{+w}{ }\PYG{c}{\PYGZsh{} Dimensiones de la imagen}
+\PYG{+w}{	}\PYG{n}{salida}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{reshape}\PYG{p}{(}\PYG{n}{salida}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{D}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{D}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{p}{)}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Convertir la matriz a una salida que se rasterice como imagen}
+\PYG{+w}{	}\PYG{n}{res}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{clamp}\PYG{o}{.}\PYG{p}{(}\PYG{n}{salida}\PYG{+w}{ }\PYG{o}{./}\PYG{+w}{ }\PYG{l+m+mi}{255}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{  }\PYG{c}{\PYGZsh{} Salidas entre 0 y 1}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Mostrar el histograma de la imagen ecualizada}
+\PYG{+w}{	}\PYG{n}{tabla2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{countmap}\PYG{p}{(}\PYG{n}{round}\PYG{o}{.}\PYG{p}{(}\PYG{k+kt}{Int}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{res}\PYG{+w}{ }\PYG{o}{.*}\PYG{+w}{ }\PYG{l+m+mi}{255}\PYG{p}{)}\PYG{p}{)}\PYG{+w}{  }\PYG{c}{\PYGZsh{} Conteos ecualizada}
+\PYG{+w}{	}\PYG{n}{tabla2\PYGZus{}ordenada}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k+kt}{Dict}\PYG{p}{(}\PYG{n}{level}\PYG{+w}{ }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n}{get}\PYG{p}{(}\PYG{n}{tabla2}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{level}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }\PYG{n}{level}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{niveles}\PYG{p}{)}
+\PYG{+w}{	}\PYG{n}{x2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{collect}\PYG{p}{(}\PYG{n}{keys}\PYG{p}{(}\PYG{n}{tabla2\PYGZus{}ordenada}\PYG{p}{)}\PYG{p}{)}
+\PYG{+w}{	}\PYG{n}{y2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{collect}\PYG{p}{(}\PYG{n}{values}\PYG{p}{(}\PYG{n}{tabla2\PYGZus{}ordenada}\PYG{p}{)}\PYG{p}{)}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Ordenar en función de los indices}
+\PYG{+w}{	}\PYG{n}{indices2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{sortperm}\PYG{p}{(}\PYG{n}{x2}\PYG{p}{)}
+\PYG{+w}{	}\PYG{n}{x2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{x2}\PYG{p}{[}\PYG{n}{indices2}\PYG{p}{]}
+\PYG{+w}{	}\PYG{n}{y2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{y2}\PYG{p}{[}\PYG{n}{indices2}\PYG{p}{]}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Proyectar el histograma}
+\PYG{+w}{	}\PYG{n}{p3}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{bar}\PYG{p}{(}\PYG{n}{x2}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{y2}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{label}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Histograma Ecualizado}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n}{legend}\PYG{o}{=}\PYG{l+s+ss}{:false}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{xlabel}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Valor de píxel}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n}{ylabel}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Frecuencia}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{title}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Histograma de la Imagen Ecualizada}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Calcular la distribución acumulada de la imagen ecualizada}
+\PYG{+w}{	}\PYG{n}{N2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{sum}\PYG{p}{(}\PYG{n}{y2}\PYG{p}{)}
+\PYG{+w}{	}\PYG{n}{pp2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{y2}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{n}{N2}
+\PYG{+w}{	}\PYG{n}{acum2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{copy}\PYG{p}{(}\PYG{n}{pp2}\PYG{p}{)}
+\PYG{+w}{	}\PYG{k}{for}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{o}{:}\PYG{n}{length}\PYG{p}{(}\PYG{n}{acum2}\PYG{p}{)}
+\PYG{+w}{		}\PYG{n}{acum2}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{acum2}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{acum2}\PYG{p}{[}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{]}
+\PYG{+w}{	}\PYG{k}{end}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Mostrar la distribución acumulada de la imagen ecualizada}
+\PYG{+w}{	}\PYG{n}{p4}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{plot}\PYG{p}{(}\PYG{n}{x2}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{acum2}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n}{label}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Distribución Acumulada Ecualizada}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{legend}\PYG{o}{=}\PYG{l+s+ss}{:false}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n}{xlabel}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Valor de píxel}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ylabel}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Probabilidad Acumulada}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{	}\PYG{n}{title}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Distribución Acumulada de la Imagen Ecualizada}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Regresar la imagen ecualizada en formato Gray}
+\PYG{+w}{	}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{p1}\PYG{p}{,}\PYG{n}{p2}\PYG{p}{,}\PYG{n}{p3}\PYG{p}{,}\PYG{n}{p4}\PYG{p}{,}\PYG{n}{Gray}\PYG{o}{.}\PYG{p}{(}\PYG{n}{res}\PYG{p}{)}\PYG{p}{;}
+\PYG{k}{end}
+
+
+
+
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{} Lista de rutas de imágenes para las salidas \PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+
+\PYG{n}{rutas}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{IMG/Fig3.15(a)1.jpg}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{IMG/Fig3.15(a)2.jpg}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}
+\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{IMG/Fig3.15(a)3.jpg}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{IMG/Fig3.15(a)4.jpg}\PYG{l+s}{\PYGZdq{}}\PYG{p}{]}
+
+\PYG{c}{\PYGZsh{} Procesar cada imagen y obtener sus salidas \PYGZsh{}}
+\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ruta}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{enumerate}\PYG{p}{(}\PYG{n}{rutas}\PYG{p}{)}
+\PYG{+w}{	}\PYG{n}{img}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{load}\PYG{p}{(}\PYG{n}{ruta}\PYG{p}{)}
+\PYG{+w}{	}\PYG{n}{res}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{ecualizado}\PYG{p}{(}\PYG{n}{img}\PYG{p}{)}
+\PYG{+w}{	}\PYG{c}{\PYGZsh{} Guardar los gráficos y la imagen ecualizada}
+\PYG{+w}{	}\PYG{n}{savefig}\PYG{p}{(}\PYG{n}{res}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{RESULTADOS/img}\PYG{l+s+si}{\PYGZdl{}}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}\PYG{l+s}{1.png}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}
+\PYG{+w}{	}\PYG{n}{savefig}\PYG{p}{(}\PYG{n}{res}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{RESULTADOS/img}\PYG{l+s+si}{\PYGZdl{}}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}\PYG{l+s}{2.png}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}
+\PYG{+w}{	}\PYG{n}{savefig}\PYG{p}{(}\PYG{n}{res}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{RESULTADOS/img}\PYG{l+s+si}{\PYGZdl{}}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}\PYG{l+s}{3.png}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}
+\PYG{+w}{	}\PYG{n}{savefig}\PYG{p}{(}\PYG{n}{res}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{]}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{RESULTADOS/img}\PYG{l+s+si}{\PYGZdl{}}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}\PYG{l+s}{4.png}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}
+\PYG{+w}{	}\PYG{n}{save}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{RESULTADOS/img}\PYG{l+s+si}{\PYGZdl{}}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}\PYG{l+s}{5.png}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{res}\PYG{p}{[}\PYG{l+m+mi}{5}\PYG{p}{]}\PYG{p}{)}
+\PYG{k}{end}
+\end{MintedVerbatim}
