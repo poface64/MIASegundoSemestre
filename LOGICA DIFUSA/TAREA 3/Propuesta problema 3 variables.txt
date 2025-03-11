@@ -1,0 +1,115 @@
+Variables de entrada
+
+Jugabilidad
+
+- Mala 0-50
+mu = 25
+sigma = 10
+- Regular 40-80
+mu = 60
+sigma = 10
+- Buena 60-100
+mu = 80
+sigma = 10
+
+Gráficos
+
+- Malos 0-40
+mu = 20
+sigma = 15
+- Decentes 30-80
+mu = 50
+sigma = 10
+- Excelentes 65-100
+mu = 80
+sigma = 15
+
+Historia
+
+- Pesima 0-60
+mu = 30
+sigma = 15
+
+- Pasable 50-90
+mu = 70
+sigma = 15
+
+- Excelente 70-100
+mu = 85
+sigma = 10
+
+Variable de salida
+
+Calificación
+
+0-70 Pesimo
+mu = 45
+sigma = 15
+
+60-80 Pasable
+mu = 70
+sigma = 10
+
+
+70-100 Excelente
+mu = 85
+sigma = 10
+
+%%%%%%%%%%%%%%%%%%%%%
+Variables de entrada
+
+Jugabilidad
+
+- Mala 0-50
+- Regular 40-80
+- Buena 60-100
+
+Gráficos
+- Malos 0-40
+- Decentes 30-80
+- Excelentes 65-100
+
+Historia
+- Pesima 0-60
+- Pasable 50-90
+- Excelente 70-100
+
+Variable de salida
+Calificación
+0-70 Pesimo
+60-80 Pasable
+70-100 Excelente
+
+Pesimo 70,
+Pasable es 80
+Excelente es 100
+
+
+
+
+1.- Juga MALA Y Graf Malos Y Historia PESIMA entonces Calif PESIMO
+2.- Juga MALA Y Graf Decentes Y Historia Pasable entonces Calif PESIMO
+3.- Juga MALA Y Graf Excelentes Y Historia Pasable entonces Calif PESIMO
+4.- Juga MALA Y Graf Excelentes Y Historia Excelente entonces Calif PASABLE
+
+5.- Juga Regular Y Graf Malos Y Historia PESIMA entonces Calif PESIMO
+6.- Juga Regular Y Graf Decentes Y Historia PESIMA entonces Calif PASABLE
+7.- Juga Regular Y Graf Excelentes Y Historia Pesima entonces Calif PASABLE
+8.- Juga REGULAR Y Graf Excelentes Y Historia Regular entonces Calif EXCELENTE
+
+9.- Juga EXCELENTE Y Graf Malos Y Historia PESIMA entonces Calif PASABLE
+10.-Juga EXCELENTE Y Graf Decentes Y Historia PESIMA entonces Calif PASABLE
+11.-Juga EXCELENTE Y Graf Excelentes Y Historia Pesima entonces Calif PASABLE
+12.-Juga EXCELENTE Y Graf Excelentes Y Historia Regular entonces Calif EXCELENTE
+13.-Juga EXCELENTE Y Graf Excelentes Y Historia EXCELENTE entonces Calif EXCELENTE
+
+REPORTE
+- Explicar el método de Desfuzzificación
+- 3 corridas: Caso minimo, caso maximo y caso intermedio
+- Entregar: Reporte PDF, .FIZ y .M
+
+
+
+
+
+
