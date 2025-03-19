@@ -1,0 +1,15 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introducción}{2}{section.1}%
+\contentsline {section}{\numberline {2}Problema 1: Calificación de videojuegos}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Explicación del Problema}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Variables y sus codificaciones}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Reglas de inferencia.}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Gráficos del problema de las calificaciones}{9}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Implementación del problema de la calificación de videojuegos con desfuzzificación del centro de sumas paso a paso}{10}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Comparativa para el problema de la calificación de videojuegos}{12}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Caso mínimo}{12}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}Caso medio}{13}{subsubsection.2.6.2}%
+\contentsline {subsubsection}{\numberline {2.6.3}Caso máximo}{14}{subsubsection.2.6.3}%
+\contentsline {section}{\numberline {3}Conclusiones}{15}{section.3}%
+\contentsline {section}{\numberline {4}Referencias}{16}{section.4}%
+\contentsline {section}{\numberline {5}Anexos}{17}{section.5}%

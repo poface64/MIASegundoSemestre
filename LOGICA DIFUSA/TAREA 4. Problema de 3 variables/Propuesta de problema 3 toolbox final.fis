@@ -1,0 +1,73 @@
+[System]
+Name='Propuesta de problema 3 toolbox final'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=27
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Jugabilidad'
+Range=[0 100]
+NumMFs=3
+MF1='Mala':'gaussmf',[25 10]
+MF2='Regular':'gaussmf',[10 60]
+MF3='Buena':'gaussmf',[10 80]
+
+[Input2]
+Name='Graficos'
+Range=[0 100]
+NumMFs=3
+MF1='Malos':'gaussmf',[15 20]
+MF2='Decentes':'gaussmf',[10 50]
+MF3='Excelentes':'gaussmf',[15 80]
+
+[Input3]
+Name='Historia'
+Range=[0 100]
+NumMFs=3
+MF1='Pesima':'gaussmf',[15 20]
+MF2='Pasable':'gaussmf',[12 60]
+MF3='Excelente':'gaussmf',[10 85]
+
+[Output1]
+Name='Calificacion'
+Range=[0 100]
+NumMFs=3
+MF1='Pesimo':'gaussmf',[15 20]
+MF2='Pasable':'gaussmf',[12 55]
+MF3='Excelente':'gaussmf',[10 85]
+
+[Rules]
+1 1 1, 1 (1) : 1
+1 1 2, 1 (1) : 1
+1 1 3, 1 (1) : 1
+1 2 1, 1 (1) : 1
+1 2 2, 1 (1) : 1
+1 2 3, 2 (1) : 1
+1 3 1, 1 (1) : 1
+1 3 2, 2 (1) : 1
+1 3 3, 2 (1) : 1
+2 1 1, 1 (1) : 1
+2 1 2, 2 (1) : 1
+2 1 3, 2 (1) : 1
+2 2 1, 2 (1) : 1
+2 2 2, 2 (1) : 1
+2 2 3, 3 (1) : 1
+2 3 1, 2 (1) : 1
+2 3 2, 3 (1) : 1
+2 3 3, 3 (1) : 1
+3 1 1, 2 (1) : 1
+3 1 2, 2 (1) : 1
+3 1 3, 2 (1) : 1
+3 2 1, 2 (1) : 1
+3 2 2, 3 (1) : 1
+3 2 3, 3 (1) : 1
+3 3 1, 2 (1) : 1
+3 3 2, 3 (1) : 1
+3 3 3, 3 (1) : 1
