@@ -8,6 +8,8 @@ PC = 0.5 # Porcentaje de cruza
 PM = 0.3 # Porcentaje de mutación
 LIM = 10000 # Criterio de paro: Evaluaciones 10,000 o solución encontrada
 
+reinas(pobsize,NP,PC,PM,LIM)
+
 
 # No converge #
 resu = data.frame(Gen = 0,APT = 0, Eval = 0)
