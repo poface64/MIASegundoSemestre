@@ -1,0 +1,110 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{function}\PYG{+w}{ }\PYG{n+nf}{[q1, q2, q3, q4, Gx, Gy] = imsobel}\PYG{p}{(}img\PYGZus{}ruta\PYG{p}{)}
+\PYG{+w}{	}\PYG{c}{\PYGZpc{} Cargar la imagen}
+\PYG{+w}{	}\PYG{n}{img}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{imread}\PYG{p}{(}\PYG{n}{img\PYGZus{}ruta}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{c}{\PYGZpc{} Convertir la imagen a escala de grises y a double}
+\PYG{+w}{	}\PYG{k}{if}\PYG{+w}{ }\PYG{n+nb}{size}\PYG{p}{(}\PYG{n}{img}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+m+mi}{3}
+\PYG{+w}{	}\PYG{n}{img1}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{double}\PYG{p}{(}\PYG{n+nb}{rgb2gray}\PYG{p}{(}\PYG{n}{img}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{else}
+\PYG{+w}{	}\PYG{n}{img1}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{double}\PYG{p}{(}\PYG{n}{img}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{end}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c}{\PYGZpc{} Generar la matriz que detecta en Gx}
+\PYG{+w}{	}\PYG{n}{gxk}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{;}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{;}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c}{\PYGZpc{} Generar la matriz que detecta en Gy}
+\PYG{+w}{	}\PYG{n}{gyk}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{gxk}\PYG{o}{\PYGZsq{}}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} Usamos la transpuesta de gxk}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c}{\PYGZpc{} Obtener las dimensiones de la imagen y el kernel}
+\PYG{+w}{	}\PYG{p}{[}\PYG{n}{imdim\PYGZus{}rows}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{imdim\PYGZus{}cols}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{size}\PYG{p}{(}\PYG{n}{img1}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{p}{[}\PYG{n}{kerdim\PYGZus{}rows}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{kerdim\PYGZus{}cols}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{size}\PYG{p}{(}\PYG{n}{gxk}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c}{\PYGZpc{} Calcular las dimensiones de la imagen resultante}
+\PYG{+w}{	}\PYG{n}{rf}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{imdim\PYGZus{}rows}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{kerdim\PYGZus{}rows}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{rc}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{imdim\PYGZus{}cols}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{kerdim\PYGZus{}cols}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c}{\PYGZpc{} Crear un array para guardar los resultados}
+\PYG{+w}{	}\PYG{n}{resultado}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{zeros}\PYG{p}{(}\PYG{n}{rf}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{rc}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c}{\PYGZpc{} Aplicar la convolución}
+\PYG{+w}{	}\PYG{k}{for}\PYG{+w}{ }\PYG{n+nb}{i}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{rf}
+\PYG{+w}{		}\PYG{k}{for}\PYG{+w}{ }\PYG{n+nb}{j}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{rc}
+\PYG{+w}{		}\PYG{c}{\PYGZpc{} Extraer una submatriz de nxn de la imagen}
+\PYG{+w}{		}\PYG{n}{subim}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{img1}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{:}\PYG{n+nb}{i}\PYG{o}{+}\PYG{n}{kerdim\PYGZus{}rows}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{j}\PYG{p}{:}\PYG{n+nb}{j}\PYG{o}{+}\PYG{n}{kerdim\PYGZus{}cols}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{c}{\PYGZpc{} Aplicar la convolución sobre GX}
+\PYG{+w}{		}\PYG{n}{resultado}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{j}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{sum}\PYG{p}{(}\PYG{n}{subim}\PYG{+w}{ }\PYG{o}{.*}\PYG{+w}{ }\PYG{n}{gxk}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{all\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{c}{\PYGZpc{} Aplicar la convolución sobre GY}
+\PYG{+w}{		}\PYG{n}{resultado}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{j}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{sum}\PYG{p}{(}\PYG{n}{subim}\PYG{+w}{ }\PYG{o}{.*}\PYG{+w}{ }\PYG{n}{gyk}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{all\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{c}{\PYGZpc{} Calcular el operador de Sobel}
+\PYG{+w}{		}\PYG{n}{sobel}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{sqrt}\PYG{p}{(}\PYG{n}{resultado}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{j}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{resultado}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{j}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{c}{\PYGZpc{} Guardar el valor del gradiente}
+\PYG{+w}{		}\PYG{n}{resultado}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{j}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{sobel}\PYG{p}{;}
+\PYG{+w}{		}\PYG{k}{end}
+\PYG{+w}{	}\PYG{k}{end}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c}{\PYGZpc{} Operador de la dirección}
+\PYG{+w}{	}\PYG{n}{resultado}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{4}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{atan2}\PYG{p}{(}\PYG{n}{resultado}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{resultado}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c}{\PYGZpc{} Reportar Gx}
+\PYG{+w}{	}\PYG{n}{Gx}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{resultado}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{c}{\PYGZpc{} Estandarizar}
+\PYG{+w}{	}\PYG{n}{minr}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{Gx}\PYG{p}{(}\PYG{p}{:}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{maxr}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{Gx}\PYG{p}{(}\PYG{p}{:}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{p1}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{Gx}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{minr}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{maxr}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{minr}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{q1}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{p1}\PYG{p}{;}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c}{\PYGZpc{} Reportar Gy}
+\PYG{+w}{	}\PYG{n}{Gy}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{resultado}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{c}{\PYGZpc{} Estandarizar}
+\PYG{+w}{	}\PYG{n}{minr}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{Gy}\PYG{p}{(}\PYG{p}{:}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{maxr}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{Gy}\PYG{p}{(}\PYG{p}{:}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{p2}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{Gy}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{minr}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{maxr}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{minr}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{q2}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{p2}\PYG{p}{;}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c}{\PYGZpc{} Reportar Sobel}
+\PYG{+w}{	}\PYG{n}{rg}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{resultado}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{c}{\PYGZpc{} Estandarizar}
+\PYG{+w}{	}\PYG{n}{minr}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{rg}\PYG{p}{(}\PYG{p}{:}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{maxr}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{rg}\PYG{p}{(}\PYG{p}{:}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{p3}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{rg}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{minr}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{maxr}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{minr}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{q3}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{p3}\PYG{p}{;}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c}{\PYGZpc{} Operador de la dirección}
+\PYG{+w}{	}\PYG{n}{q4}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{resultado}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{4}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{c}{\PYGZpc{} Normalizar el ángulo a [0, 1]}
+\PYG{+w}{	}\PYG{n}{q4}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{q4}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n+nb}{pi}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n+nb}{pi}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c}{\PYGZpc{} Mostrar y guardar los vectores de flujo óptico}
+\PYG{+w}{	}\PYG{n+nb}{figure}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n+nb}{quiver}\PYG{p}{(}\PYG{n}{Gx}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{n}{Gy}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} Se invierte Gy para la visualización correcta}
+\PYG{+w}{	}\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Vectores de flujo óptico (quiver)\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n+nb}{saveas}\PYG{p}{(}\PYG{n+nb}{gcf}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{quiver.png\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} Guardar la figura en la carpeta actual}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c}{\PYGZpc{} Exportar salidas}
+\PYG{+w}{	}\PYG{n}{q1}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{uint8}\PYG{p}{(}\PYG{n}{q1}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{l+m+mi}{255}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{q2}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{uint8}\PYG{p}{(}\PYG{n}{q2}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{l+m+mi}{255}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{q3}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{uint8}\PYG{p}{(}\PYG{n}{q3}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{l+m+mi}{255}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{q4}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{q4}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} q4 ya está normalizado a [0, 1]}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c}{\PYGZpc{} Guardar las imágenes resultantes en la carpeta actual}
+\PYG{+w}{	}\PYG{n+nb}{imwrite}\PYG{p}{(}\PYG{n}{q1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{q1.png\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n+nb}{imwrite}\PYG{p}{(}\PYG{n}{q2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{q2.png\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n+nb}{imwrite}\PYG{p}{(}\PYG{n}{q3}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{q3.png\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n+nb}{imwrite}\PYG{p}{(}\PYG{n}{q4}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{q4.png\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{k}{end}
+
+\PYG{c}{\PYGZpc{} Ejemplo de uso}
+\PYG{n}{img\PYGZus{}ruta}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Fig3.45(a).jpg\PYGZsq{}}\PYG{p}{;}
+\PYG{p}{[}\PYG{n}{q1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{q2}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{q3}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{q4}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Gx}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Gy}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{imsobel}\PYG{p}{(}\PYG{n}{img\PYGZus{}ruta}\PYG{p}{)}\PYG{p}{;}
+
+
+\PYG{c}{\PYGZpc{} Mostrar las imágenes resultantes}
+\PYG{n+nb}{figure}\PYG{p}{;}\PYG{+w}{ }\PYG{n+nb}{imshow}\PYG{p}{(}\PYG{n}{q1}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{ }\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{q1 (1 \PYGZhy{} Gx)\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{figure}\PYG{p}{;}\PYG{+w}{ }\PYG{n+nb}{imshow}\PYG{p}{(}\PYG{n}{q2}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{ }\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{q2 (1 \PYGZhy{} Gy)\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{figure}\PYG{p}{;}\PYG{+w}{ }\PYG{n+nb}{imshow}\PYG{p}{(}\PYG{n}{q3}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{ }\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{q3 (1 \PYGZhy{} Sobel)\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{figure}\PYG{p}{;}\PYG{+w}{ }\PYG{n+nb}{imshow}\PYG{p}{(}\PYG{n}{q4}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{ }\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{q4 (Dirección)\PYGZsq{}}\PYG{p}{)}
+\end{MintedVerbatim}
