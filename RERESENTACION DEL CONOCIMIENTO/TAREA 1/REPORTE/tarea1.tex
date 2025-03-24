@@ -52,50 +52,84 @@
 	\begin{enumerate}
 		\item[a)] ¿En qué sentido la atención que recibe actualmente la IA es diferente de la atención que recibía en los 90s?
 		
+		R: La IA recibía especial atención en el enfoque lógico (IA simbólica) donde brillaban los sistemas expertos y lenguajes de programación como Prolog y Lisp. En la actualidad (para el contexto del articulo \cite{Shoham2015} y sigue siendo valido en 2025) la IA actual se a enfocado principalmente en el machine learning basado en algoritmos estadísticos y el procesamiento de grandes volúmenes de información de todo tipo.
+		
 		\item[b)] De un ejemplo de aplicación donde el enfoque actual de la IA es muy exitoso.
+		
+		R: Uno de estos casos de aplicación donde el enfoque actual de la IA es exitoso, es el caso del reconocimiento y procesamiento de imágenes.
 		
 		
 		\item[c)]  Explique por qué Shoham considera el caso considerado como \textit{filosofía aplicada}.
 		
+		R: Se considera así porque llevo conceptos filosóficos (teóricos) hacia un caso de aplicación (el desarrollo del programa) de manera inteligente y fue un caso de éxito.
 		
 		\item[d)] Explique qué significa ese término en el contexto del artículo.
 		
+		R: Lo maneja como la representación de nociones de sentido común con un énfasis en la claridad semántica.
 		
 		\item[e)] ¿Qué significado tiene la abreviatura AGM en el artículo?
 		
+		R: Dentro del contexto del artículo, AGM es la abreviatura del modelo Alchourrón, Gärdenfors y Makinson para la revisión de creencias \cite{Huber2013}. 
+		
+		\newpage
 		
 		\item[f)]  Explique en qué consiste el problema de mantenimiento de creencias e intenciones.
 		
+		R: En el marco de trabajo inicial, los agentes únicamente contaban con una sola base de datos que era la responsable de almacenar sus creencias y también de garantizar su consistencia. Después el marco fue expandido o enriquecido para que ahora sean 2 bases de datos, una para creencias y la otra para las intenciones del agente, el problema ahora es más grande, debido a que es necesario que cada una de estas 2 bases de datos sean consistentes individualmente y además, que tengan consistencia mutuamente.
+		
 		\item[g)] ¿Qué es un PTA?
+		
+		R: Un PTA es la abreviatura de Personal Assistant Time y tiene la tarea de ayudar a manejar el tiempo y las tareas del usuario.
 		
 		\item[h)] ¿Cuáles son los tres pilares en la construcción de Timeful 1.0?
 		
+		R: El primer y más destacable de los pilares fue permitir la representación de las tareas a los usuarios de una forma natural (casi que platicada) debido a que esta funciona principalmente gracias a la representación del conocimiento. El segundo pilar fue la aplicación de machine learning junto con otros algoritmos para resolver el problema de la optimización de los tiempos. El tercer pilar fue la ciencia del comportamiento con la cual, se pudo construir un entorno que permitiera corregir errores naturales en la gestión del tiempo, como lo podían ser eventos no cumplidos en tiempo (procrastinación) o la sobre estimación de tiempo.
 		
 		\item[i)] ¿Qué significa que citas, eventos, etc. sean intenciones?
 		
+		R: Haciendo una breve simplificación de la realidad, las citas, los eventos, las actividades recreativas (deporte, entretenimiento, etc..) y el descanso comparten la característica de que hacen uso del recurso más finito y valioso que tenemos, el tiempo. Pese a que sucedan bajo diferentes contextos se necesita disponer de tiempo para participar o realizar cualquiera de las actividades.
+		
+		\newpage
+		
 		\item[j)] Explique el concepto de IO.
+		
+		R: IO u Objeto intencional, es un modelo de datos donde se representa mediante un vector de atributos, en donde se guarda la descripción textual, los atributos relacionados al tiempo (cuando va a ocurrir, cuando debería ser, la duración  y toda especificación respecto al tiempo con diferentes grados de precisión), las condiciones para que sea llevada a cabo la intención como el lugar donde va a ser, entre otros atributos.
 		
 		\item[k)] ¿Qué clases de intenciones se consideraban en la versión de 2015?
 		
+		R: Hasta la versión del 2015 se tenían 4 tipos de clases para las intenciones:
+		La clase de eventos (como reuniones), tareas (como hacer una llamada telefónica o mandar un correo), los hábitos (como salir a trotar x cantidad de veces por semana) y proyectos (tales como escribir un reporte extenso.
+		
+		
 		\item[l)] Explique uno de los mejores ejemplos de como la filosofía influyó las decisiones en el diseño de Timeful.
+		
+		R:  En el primer ejemplo, se explica cómo la marca de "realizado" estaba implementada únicamente para las tareas, pero no para los eventos ni otras clases de IO. Antes de decidir agregar esta checkmark a todas las demás clases (ya que, al ser IO, podían hacerlo con relativa facilidad), se detuvieron a reflexionar sobre el verdadero propósito de la función. Más allá de la estética y la comodidad, se encontraron con una cuestión filosófica: ¿realmente tenía sentido? Una tarea implica una intención (lo que se debe hacer) y un compromiso (llevarla a cabo), lo que conlleva un seguimiento hasta su conclusión, momento en el que se marca como realizada. En cambio, los eventos simplemente se programan, ocurren bajo ciertas condiciones y se asiste a ellos, sin un seguimiento o compromiso en el mismo sentido que una tarea. Por esta razón, decidieron incluir la checkmark en todos los IO, excepto en los eventos, respetando la relación entre intención, compromiso y seguimiento.
 		
 		\item[m)]  ¿De qué manera contribuyó la representación de conocimiento en el desarrollo de Timeful?
 		
+		R: A lo largo del artículo, se destaca la importancia de la representación del conocimiento, señalando que su mayor fortaleza radica en la forma en que lograron diseñar una estructura de datos capaz de establecer una comunicación directa y amigable con el usuario en sus actividades. Como menciona el autor al final del texto, el verdadero éxito del producto se debió a la manera en que se pensó y diseñó su arquitectura principal los IO que representan las cosas por hacer, aplicando técnicas de representación del conocimiento (KR) y realizando un análisis filosófico de sus fundamentos y propósitos.
+		
 		\item[n)] ¿Qué problemas hay al querer usar aprendizaje automático en una aplicación como Timeful?
+		
+		R: Si se intentara manejar desde un enfoque más orientado al machine learning y las técnicas actuales, surgirían varios problemas. El primero radica en la representación de los eventos como datos de entrada, lo que crearía una barrera significativa entre el producto y el usuario, ya que implicaría definir rígidamente la incorporación de su IO al sistema bajo un formato de trabajo estandarizado. Además, el procesamiento de los IOs sería más complejo, dado que los enfoques de machine learning dependen de grandes volúmenes de datos para generar estadísticas y ofrecer resultados plausibles, lo que, a su vez, conllevaría un alto costo computacional. Por lo que su enfoque desde esta perspectiva en la actualidad, podría ser abordado pero probablemente sea más complicado.
 		
 		\item[ñ)] ¿Cuál es su conclusión tras la lectura del artículo?
 		
+		R: En conclusión, destaco la importancia de conocer distintos paradigmas de programación, así como sus fortalezas y debilidades, para desarrollar herramientas según las necesidades de cada caso. Además, comprender la representación del conocimiento es fundamental para comprender, diseñar y estructurar adecuadamente todo el proceso lógico de la información que se manipulará, permitiendo así crear programas limpios y fáciles de manejar.
+		
 	\end{enumerate}
+	
+	\newpage
 	
 	\section{Realizar una demostración}
 	
 	Pruebe que $\neg p \vee q \vdash p \implies q$. Demuestre que también son sintácticamente equivalentes. [20/100] \\
 	
-	Para la realización de esta demostración, se hizo uso del conocimiento adquirido durante las clases, así como de las notas largas DEL DR GUERRA a base de prueba y error, como si se intentara armar un rompecabezas, tratando de entender las reglas fundamentales para poder mover las piezas.
+	Para la realización de esta demostración, se hizo uso del conocimiento adquirido durante las clases, así como de las notas largas \cite{Guerra2025} a base de prueba y error, como si se intentara armar un rompecabezas, tratando de entender las reglas fundamentales para poder mover las piezas.
 	
 	\subsection{Primera demostración}
 	
-	Primero, se hizo la demostración usando la parte izquierda $\neg p \vee q$ para probar que de ahi se sigue $p \implies q$:
+	Primero, se hizo la demostración usando la parte izquierda $\neg p \vee q$ para probar que de ahí se sigue $p \implies q$:
 	\begin{logicproof}{3}
 		\neg p \vee q & premisa \\
 		\begin{subproof}
@@ -196,6 +230,8 @@
 	
 	Finalmente, las premisas no se demuestran directamente, es necesario ir construyendo sub pruebas que prueban los argumentos a utilizar, para ello, dentro de la lógica del programa se manda a llamar al predicado \texttt{subproof/12} dentro de los casos de la función \texttt{proves/7}.
 	
+	\newpage
+	
 	A modo de probar el potencial de dicho programa, se agrego al archivo de $queries.pl$ la siguiente regla que representa la demostración del inciso 3.2 probado anteriormente a mano:
 	
 	
@@ -220,10 +256,13 @@
 		
 	Es importante señalar que se intentó realizar el complemento de la demostración ($p \implies q$), pero el árbol de búsqueda creció rápidamente, alcanzando una profundidad de 12 sin generar ningún resultado. Se sospecha que, debido a esta limitación, una posible área de mejora del programa sería incorporar la ley del medio excluido, la cual, como se mostró en el inciso 3.1, es fundamental para la correcta resolución de la demostración.
 	
-	
-	\newpage 
-	
-	REFERENCIAS
+		
+\newpage
+
+
+\section{Referencias}  % Sección numerada de referencias
+\bibliographystyle{apalike}  % Estilo de citas (puedes cambiarlo)
+\bibliography{Biblio}        % Nombre del archivo BibTeX (sin extensión)
 
 
 	
