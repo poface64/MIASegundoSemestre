@@ -3,8 +3,6 @@ clear all
 close all
 
 datos=imread('lena_pattern.tif');
-datos=rgb2gray(datos);
-datos2=double(datos);
 figure
 colormap(gray)
 subplot(1,3,1)
