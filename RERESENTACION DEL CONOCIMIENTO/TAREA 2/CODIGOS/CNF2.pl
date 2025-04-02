@@ -69,7 +69,6 @@ distrib(A, B ^ C, CNF_B ^ CNF_C) :-
 
 %%%% NNF %%%%
 % Procesar los casos no tan agradables con negaciones %
-
 % Caso 1: Si FI es una literal, devuelve esa literal
 nnf(X, X) :- atom(X).  % Lo devuelve tal cual.
 

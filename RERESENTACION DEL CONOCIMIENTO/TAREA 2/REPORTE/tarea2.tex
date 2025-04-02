@@ -18,7 +18,7 @@
 \usepackage[spanish]{babel}
 \usepackage[round]{natbib}
 \usepackage{logicproof}
-
+\usepackage{enumerate}%
 
 \title{\textsc{Representación del conocimiento} \\
 	Tarea 2
@@ -46,6 +46,56 @@
 	universidad, defina en lógica proposicional los requisitos que debe cumplir la
 	persona para presentar el examen para obtener su grado académico (Artículo
 	65)[30/100] \\
+	
+	Se hizo la consulta del Articulo 65 del Reglamento General de Estudios de Posgrado de la Universidad Veracruzana. Dicho articulo abarca los siguientes requisitos para poder presentar el examen de la obtención del diploma o grado académico que deben cumplir los estudiantes:
+	
+	\begin{enumerate}[I]
+		\item Haber acreditado todas las experiencias educativas y actividades academicas que establezca el plan de estudios del programa educativo correspondiente;		
+		\item Presentar el certificado de estudio del posgrado cursado;
+		\item Presentar los votos aprobatorios de los sinodales;
+		\item Presentar la carta responsiva anexa a este reglamento, firmada por el director del trabajo recepcional;
+		\item Aval del Consejo Tecnico u organo equivalente, en caso de haber excedido el tiempo reglamentario para la presentación del examen;
+		\item No tener adeudos con la Universidad Veracruza;
+		\item Pagar el arancel correspondiente; y
+		\item Las demas que señale la normatividad universitaria.		
+	\end{enumerate}
+	
+	\newpage 
+	
+	En un primer intento por descomponer la normativa para pasarla a lenguaje de logica proposicional, se hizo una lectura detenida de las condiciones para presentar el examen, dicho primer intento busca convertir los enunciados en variables logicas como se muestra:
+	
+	\begin{enumerate}[I]
+	\item Haber acreditado todas las experiencias educativas ($a$) y ($\wedge$) actividades academicas que establezca el plan de estudios del programa educativo correspondiente ($b$);
+	
+	\item Presentar el certificado de estudio del posgrado cursado ($c$);
+	\item Presentar los votos aprobatorios de los sinodales ($d$);
+	\item Presentar la carta responsiva anexa a este reglamento, firmada por el director del trabajo recepcional; ($e$)
+	\item Aval del Consejo Tecnico ($f$) u ($\vee$) organo equivalente ($g$), en caso de haber excedido el tiempo reglamentario para la presentación del examen ($h$);
+	\item No tener adeudos con la Universidad Veracruza; ($i$)
+	\item Pagar el arancel correspondiente; y ($j$)
+	\item Las demas que señale la normatividad universitaria. ($k$).
+	\item Si se cumplen con las condiciones requeridas, implica que se lleva a cabo la presentación del examen. ($l$).
+	\end{enumerate}
+
+	Identificadas las posibles variables, se re escribe una versión simplificada antes de pasarla totalmente a logica proposicional: \\
+	
+	Si $a$ se cumple y $b$ se cumple junto con $c$, $d$ y $e$. Ademas, si $h$ se presenta, entonces se debe cumplir $f$ o $g$. Junto con todo lo demas, es indispensable que se cumpla $i$, $j$, y $k$. Si todo se cumple adecuadamente, entonces se lleva a cabo $l$ \\
+	
+	Pasandolas en forma de logica proposicional:
+	
+	$$((a \wedge b) \wedge c \wedge d \wedge e \wedge (h \implies (f \vee g)) \wedge i \wedge j \wedge k) \implies l$$
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	\newpage
