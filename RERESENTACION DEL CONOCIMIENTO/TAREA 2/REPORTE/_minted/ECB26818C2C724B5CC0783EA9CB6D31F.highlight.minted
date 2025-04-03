@@ -1,0 +1,30 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZpc{}\PYGZpc{}\PYGZpc{} CNF \PYGZpc{}\PYGZpc{}\PYGZpc{}}
+\PYG{c+c1}{\PYGZpc{} Transformación a forma normal conjuntiva (CNF)}
+\PYG{n+nf}{cnf}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{,} \PYG{n+nv}{X}\PYG{p}{)} \PYG{p}{:\PYGZhy{}} \PYG{n+nf}{atom}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{)}\PYG{p}{.}  \PYG{c+c1}{\PYGZpc{} Caso base: si es literal, ya está en CNF}
+\PYG{n+nf}{cnf}\PYG{p}{(}\PYG{l+s+sAtom}{\PYGZti{}}\PYG{n+nv}{X}\PYG{p}{,} \PYG{l+s+sAtom}{\PYGZti{}}\PYG{n+nv}{X}\PYG{p}{)} \PYG{p}{:\PYGZhy{}} \PYG{n+nf}{atom}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{)}\PYG{p}{.}  \PYG{c+c1}{\PYGZpc{} Negación de un literal}
+\PYG{c+c1}{\PYGZpc{} Caso 1: Conjunción de fórmulas}
+\PYG{n+nf}{cnf}\PYG{p}{(}\PYG{n+nv}{X} \PYG{l+s+sAtom}{\PYGZca{}} \PYG{n+nv}{Y}\PYG{p}{,} \PYG{n+nv}{C}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{cnf}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{,} \PYG{n+nv}{CX}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{cnf}\PYG{p}{(}\PYG{n+nv}{Y}\PYG{p}{,} \PYG{n+nv}{CY}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nv}{C} \PYG{o}{=} \PYG{n+nv}{CX} \PYG{l+s+sAtom}{\PYGZca{}} \PYG{n+nv}{CY}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} Caso 2: Disyunción de fórmulas, distribución sobre la conjunción}
+\PYG{n+nf}{cnf}\PYG{p}{(}\PYG{n+nv}{X} \PYG{l+s+sAtom}{v} \PYG{n+nv}{Y}\PYG{p}{,} \PYG{n+nv}{C}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{cnf}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{,} \PYG{n+nv}{CX}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{cnf}\PYG{p}{(}\PYG{n+nv}{Y}\PYG{p}{,} \PYG{n+nv}{CY}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{distribuye}\PYG{p}{(}\PYG{n+nv}{CX}\PYG{p}{,} \PYG{n+nv}{CY}\PYG{p}{,} \PYG{n+nv}{C}\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{}\PYGZpc{}\PYGZpc{} DISTRB \PYGZpc{}\PYGZpc{}\PYGZpc{}}
+\PYG{c+c1}{\PYGZpc{} Caso base: Si ninguno de los dos es una conjunción, simplemente devolvemos A v B}
+\PYG{n+nf}{distribuye}\PYG{p}{(}\PYG{n+nv}{A}\PYG{p}{,} \PYG{n+nv}{B}\PYG{p}{,} \PYG{n+nv}{A} \PYG{l+s+sAtom}{v} \PYG{n+nv}{B}\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} Distribuye A v (B \PYGZca{} C) \PYGZhy{}\PYGZgt{} (A v B) \PYGZca{} (A v C)}
+\PYG{c+c1}{\PYGZpc{} Caso 1: Si n1 es una conjunción (n1 = n11 \PYGZca{} n12), entonces distribuimos sobre n2}
+\PYG{n+nf}{distribuye}\PYG{p}{(}\PYG{n+nv}{A} \PYG{l+s+sAtom}{\PYGZca{}} \PYG{n+nv}{B}\PYG{p}{,} \PYG{n+nv}{C}\PYG{p}{,} \PYG{n+nv}{R}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{distribuye}\PYG{p}{(}\PYG{n+nv}{A}\PYG{p}{,} \PYG{n+nv}{C}\PYG{p}{,} \PYG{n+nv}{AC}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{distribuye}\PYG{p}{(}\PYG{n+nv}{B}\PYG{p}{,} \PYG{n+nv}{C}\PYG{p}{,} \PYG{n+nv}{BC}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nv}{R} \PYG{o}{=} \PYG{n+nv}{AC} \PYG{l+s+sAtom}{\PYGZca{}} \PYG{n+nv}{BC}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} Caso 2: Si n2 es una conjunción (n2 = n21 \PYGZca{} n22), distribuimos sobre n1}
+\PYG{n+nf}{distribuye}\PYG{p}{(}\PYG{n+nv}{A}\PYG{p}{,} \PYG{n+nv}{B} \PYG{l+s+sAtom}{\PYGZca{}} \PYG{n+nv}{C}\PYG{p}{,} \PYG{n+nv}{R}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{distribuye}\PYG{p}{(}\PYG{n+nv}{A}\PYG{p}{,} \PYG{n+nv}{B}\PYG{p}{,} \PYG{n+nv}{AB}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{distribuye}\PYG{p}{(}\PYG{n+nv}{A}\PYG{p}{,} \PYG{n+nv}{C}\PYG{p}{,} \PYG{n+nv}{AC}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nv}{R} \PYG{o}{=} \PYG{n+nv}{AB} \PYG{l+s+sAtom}{\PYGZca{}} \PYG{n+nv}{AC}\PYG{p}{.}
+\end{MintedVerbatim}

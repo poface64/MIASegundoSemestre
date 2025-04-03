@@ -1,0 +1,10 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sAtom}{?.\PYGZhy{}} \PYG{n+nv}{FORMULA} \PYG{o}{=} \PYG{p}{(}\PYG{l+s+sAtom}{a}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{l+s+sAtom}{b}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{l+s+sAtom}{c}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{l+s+sAtom}{d}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{l+s+sAtom}{e}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{p}{(}\PYG{l+s+sAtom}{h} \PYG{l+s+sAtom}{\PYGZhy{}\PYGZgt{}} \PYG{p}{(}\PYG{l+s+sAtom}{f} \PYG{l+s+sAtom}{v} \PYG{l+s+sAtom}{g}\PYG{p}{)}\PYG{p}{)}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{l+s+sAtom}{i}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{l+s+sAtom}{j}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{l+s+sAtom}{k}\PYG{p}{)}\PYG{p}{,}
+	\PYG{n+nf}{implfree}\PYG{p}{(}\PYG{n+nv}{FORMULA}\PYG{p}{,}\PYG{n+nv}{Q}\PYG{p}{)}\PYG{p}{,}\PYG{n+nf}{nnf}\PYG{p}{(}\PYG{n+nv}{Q}\PYG{p}{,}\PYG{n+nv}{P}\PYG{p}{)}\PYG{p}{,}
+	\PYG{n+nf}{cnf}\PYG{p}{(}\PYG{n+nv}{P}\PYG{p}{,}\PYG{n+nv}{R}\PYG{p}{)}\PYG{p}{.}
+	\PYG{n+nv}{FORMULA} \PYG{o}{=} \PYG{l+s+sAtom}{a}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{l+s+sAtom}{b}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{l+s+sAtom}{c}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{l+s+sAtom}{d}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{l+s+sAtom}{e}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{p}{(}\PYG{l+s+sAtom}{h}\PYG{l+s+sAtom}{\PYGZhy{}\PYGZgt{}}\PYG{l+s+sAtom}{f} \PYG{l+s+sAtom}{v} \PYG{l+s+sAtom}{g}\PYG{p}{)}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{l+s+sAtom}{i}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{l+s+sAtom}{j}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{l+s+sAtom}{k}\PYG{p}{,}
+	\PYG{n+nv}{Q} \PYG{o}{=} \PYG{n+nv}{P}\PYG{p}{,}
+	\PYG{n+nv}{P} \PYG{o}{=} \PYG{n+nv}{R}\PYG{p}{,}
+	\PYG{n+nv}{R} \PYG{o}{=} \PYG{l+s+sAtom}{a}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{l+s+sAtom}{b}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{l+s+sAtom}{c}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{l+s+sAtom}{d}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{l+s+sAtom}{e}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{p}{(}\PYG{l+s+sAtom}{\PYGZti{}}\PYG{l+s+sAtom}{h} \PYG{l+s+sAtom}{v} \PYG{l+s+sAtom}{f} \PYG{l+s+sAtom}{v} \PYG{l+s+sAtom}{g}\PYG{p}{)}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{l+s+sAtom}{i}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{l+s+sAtom}{j}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{l+s+sAtom}{k} \PYG{p}{.}
+	
+\end{MintedVerbatim}

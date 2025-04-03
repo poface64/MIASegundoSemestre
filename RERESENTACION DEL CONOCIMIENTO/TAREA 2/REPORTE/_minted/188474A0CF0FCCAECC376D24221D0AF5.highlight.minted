@@ -1,0 +1,13 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZpc{}\PYGZpc{} Declaración de los operadores \PYGZpc{}\PYGZpc{}}
+\PYG{p}{:\PYGZhy{}} \PYG{n+nf}{op}\PYG{p}{(}\PYG{l+m+mi}{700}\PYG{p}{,} \PYG{l+s+sAtom}{xfy}\PYG{p}{,} \PYG{l+s+sAtom}{\PYGZhy{}\PYGZgt{}}\PYG{p}{)}\PYG{p}{.} \PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZgt{} para la implicación}
+\PYG{p}{:\PYGZhy{}} \PYG{n+nf}{op}\PYG{p}{(}\PYG{l+m+mi}{500}\PYG{p}{,} \PYG{l+s+sAtom}{xfy}\PYG{p}{,} \PYG{l+s+sAtom}{\PYGZca{}}\PYG{p}{)}\PYG{p}{.}  \PYG{c+c1}{\PYGZpc{} \PYGZsq{}\PYGZca{}\PYGZsq{} para conjunción}
+\PYG{p}{:\PYGZhy{}} \PYG{n+nf}{op}\PYG{p}{(}\PYG{l+m+mi}{600}\PYG{p}{,} \PYG{l+s+sAtom}{xfy}\PYG{p}{,} \PYG{l+s+sAtom}{v}\PYG{p}{)}\PYG{p}{.}  \PYG{c+c1}{\PYGZpc{} \PYGZsq{}v\PYGZsq{} para disyunción}
+\PYG{p}{:\PYGZhy{}} \PYG{n+nf}{op}\PYG{p}{(}\PYG{l+m+mi}{400}\PYG{p}{,} \PYG{l+s+sAtom}{fy}\PYG{p}{,} \PYG{l+s+sAtom}{\PYGZti{}}\PYG{p}{)}\PYG{p}{.}   \PYG{c+c1}{\PYGZpc{} \PYGZsq{}neg\PYGZsq{} para negación}
+\PYG{c+c1}{\PYGZpc{}\PYGZpc{} Semantica \PYGZpc{}\PYGZpc{}}
+\PYG{n+nf}{v}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{,}\PYG{n+nv}{Y}\PYG{p}{)}\PYG{p}{:\PYGZhy{}} \PYG{n+nv}{X}\PYG{p}{;}\PYG{n+nv}{Y}\PYG{p}{.}              \PYG{c+c1}{\PYGZpc{} Disyunción}
+\PYG{l+s+sAtom}{\PYGZca{}}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{,}\PYG{n+nv}{Y}\PYG{p}{)}\PYG{p}{:\PYGZhy{}} \PYG{n+nv}{X}\PYG{p}{,}\PYG{n+nv}{Y}\PYG{p}{.}              \PYG{c+c1}{\PYGZpc{} Conjunción}
+\PYG{l+s+sAtom}{\PYGZti{}}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{)}\PYG{p}{:\PYGZhy{}} \PYG{l+s+sAtom}{\PYGZbs{}+} \PYG{n+nv}{X}\PYG{p}{.}               \PYG{c+c1}{\PYGZpc{} Negación}
+\PYG{l+s+sAtom}{\PYGZhy{}\PYGZgt{}}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{,}\PYG{n+nv}{Y}\PYG{p}{)}\PYG{p}{:\PYGZhy{}} \PYG{p}{(}\PYG{l+s+sAtom}{\PYGZbs{}}\PYG{n+nv}{X}\PYG{p}{;}\PYG{n+nv}{Y}\PYG{p}{)}\PYG{p}{.}          \PYG{c+c1}{\PYGZpc{} Implicación}
+			
+\end{MintedVerbatim}

@@ -1,0 +1,6 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n+nv}{FORMULA} \PYG{o}{=}  \PYG{p}{(}\PYG{l+s+sAtom}{\PYGZti{}}\PYG{l+s+sAtom}{p}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{l+s+sAtom}{q}\PYG{l+s+sAtom}{\PYGZhy{}\PYGZgt{}}\PYG{l+s+sAtom}{p}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{p}{(}\PYG{l+s+sAtom}{r}\PYG{l+s+sAtom}{\PYGZhy{}\PYGZgt{}}\PYG{l+s+sAtom}{q}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nv}{Q} \PYG{o}{=} \PYG{l+s+sAtom}{\PYGZti{}} \PYG{p}{(}\PYG{l+s+sAtom}{\PYGZti{}}\PYG{l+s+sAtom}{p}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{l+s+sAtom}{q}\PYG{p}{)}\PYG{l+s+sAtom}{v} \PYG{l+s+sAtom}{p}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{p}{(}\PYG{l+s+sAtom}{\PYGZti{}}\PYG{l+s+sAtom}{r} \PYG{l+s+sAtom}{v} \PYG{l+s+sAtom}{q}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nv}{P} \PYG{o}{=} \PYG{n+nv}{R}\PYG{p}{,} \PYG{n+nv}{R} \PYG{o}{=}  \PYG{p}{(}\PYG{l+s+sAtom}{p} \PYG{l+s+sAtom}{v} \PYG{l+s+sAtom}{\PYGZti{}}\PYG{l+s+sAtom}{q}\PYG{p}{)}\PYG{l+s+sAtom}{v} \PYG{l+s+sAtom}{p}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{p}{(}\PYG{l+s+sAtom}{\PYGZti{}}\PYG{l+s+sAtom}{r} \PYG{l+s+sAtom}{v} \PYG{l+s+sAtom}{q}\PYG{p}{)}\PYG{p}{;}
+\PYG{l+s+sAtom}{false}\PYG{p}{.}
+\end{MintedVerbatim}

@@ -79,23 +79,11 @@
 
 	Identificadas las posibles variables, se re escribe una versión simplificada antes de pasarla totalmente a logica proposicional: \\
 	
-	Si $a$ se cumple y $b$ se cumple junto con $c$, $d$ y $e$. Ademas, si $h$ se presenta, entonces se debe cumplir $f$ o $g$. Junto con todo lo demas, es indispensable que se cumpla $i$, $j$, y $k$. Si todo se cumple adecuadamente, entonces se lleva a cabo $l$ \\
+	Si $a$ se cumple y $b$ se cumple junto con $c$, $d$ y $e$. Ademas, si $h$ se presenta, entonces se debe cumplir $f$ o $g$. Junto con todo lo demas, es indispensable que se cumpla $i$, $j$, y $k$. Si todo se cumple adecuadamente, entonces se lleva a cabo el examen. \\
 	
 	Pasandolas en forma de logica proposicional:
 	
-	$$((a \wedge b) \wedge c \wedge d \wedge e \wedge (h \implies (f \vee g)) \wedge i \wedge j \wedge k) \implies l$$
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	$$((a \wedge b) \wedge c \wedge d \wedge e \wedge (h \implies (f \vee g)) \wedge i \wedge j \wedge k)$$
 	
 	
 	\newpage
@@ -105,20 +93,201 @@
 	Implemente en Prolog el algoritmo CNF visto en clase, para convertir una
 	fbf proposicional en su equivalente en forma normal conjuntiva. Pruebe su
 	implementación con el ejemplo visto en clase.[30/100]
-		
+	
+	Para la implementación del algoritmo CNF, fue necesario guiarse de el algoritmo en pseudocódigo de la diapositivas de \cite{Guerra2025}.
+	
+	El primer paso, fue definir la semántica y la función de los operadores de implicación, negación, conjunción y disyunción como se muestra:
+	
+	\begin{minted}{prolog}
+%% Declaración de los operadores %%
+:- op(700, xfy, ->). % -> para la implicación
+:- op(500, xfy, ^).  % '^' para conjunción
+:- op(600, xfy, v).  % 'v' para disyunción
+:- op(400, fy, ~).   % 'neg' para negación
+%% Semantica %%
+v(X,Y):- X;Y.              % Disyunción
+^(X,Y):- X,Y.              % Conjunción
+~(X):- \+ X.               % Negación
+->(X,Y):- (\X;Y).          % Implicación
+			
+	\end{minted}
+	
+	Nota, en el código se utilizo el símbolo $\implies$ en lugar de -> pero se representa así a lo largo del reporte con cuestiones de incompatibilidad con el símbolo ascii.
+
+\newpage
+	
+	Dada la forma que tiene el algoritmo de funcionar, donde primero de sebe eliminar la implicación, manejar las negaciones y finalmente, aplicar el algoritmo CNF, el siguiente paso es mostrar la implementación de la eliminación de la implicación bajo una función recursiva de 3 casos compuestos y 2 casos base (1 cuando la literal es positiva y otro cuando sea negativa, se hizo así para evitar errores y omisiones con los operadores):
+	
+	\begin{minted}{prolog}
+% Predicado para verificar si una expresión es un literal
+es_literal(X) :- atom(X).
+es_literal(~X) :- atom(X). 
+
+% Eliminación de la implicación (IMPL FREE)
+implfree(Literal, Literal):- atom(Literal).
+implfree(~X, ~FX):- implfree(X,FX). % Caso para la negación
+% Implicación A -> B -> ¬A v B
+implfree(A -> B, ~FA v FB):-         
+implfree(A, FA),
+implfree(B, FB).
+% Conjunción
+implfree(A ^ B, FA ^ FB):-           
+implfree(A, FA),
+implfree(B, FB).
+% Disyunción
+implfree(A v B, FA v FB):-           
+implfree(A, FA),
+implfree(B, FB).
+	\end{minted}
+	
 	\newpage
 	
-	\section{Conversión de logica proposicional a CNF}
+	El siguiente paso a dar, es la implementación de la NNF para manejar las formas negativas que resultan de la eliminación de la implicación, para ello se definió la función NNF bajo una función recursiva de 5 casos compuestos y 2 casos base (el caso base donde la literal es positiva y el caso base donde la literal es negativa).
+	
+\begin{minted}{prolog}
+%%% NNF %%%
+% Transformación a forma normal negativa (NNF)
+nnf(X, X) :- atom(X).  % Literal no necesita transformación
+nnf(~X, ~X) :- atom(X).  % Negación de un literal
+nnf(~ ~X, NNF) :- nnf(X, NNF).  % Eliminar doble negación
+% Conjunción
+nnf(X ^ Y, NNF) :- 
+nnf(X, NNF_X),
+nnf(Y, NNF_Y),
+NNF = NNF_X ^ NNF_Y.  
+% Disyunción
+nnf(X v Y, NNF) :- 
+nnf(X, NNF_X),
+nnf(Y, NNF_Y),
+NNF = NNF_X v NNF_Y.  
+% De Morgan: ~(X ^ Y) -> ~X v ~Y
+nnf(~(X ^ Y), NNF) :- 
+nnf(~X, NNF_X),
+nnf(~Y, NNF_Y),
+NNF = NNF_X v NNF_Y.  
+% De Morgan: ~(X v Y) -> ~X ^ ~Y
+nnf(~(X v Y), NNF) :- 
+nnf(~X, NNF_X),
+nnf(~Y, NNF_Y),
+NNF = NNF_X ^ NNF_Y.  
+
+\end{minted}
+
+\newpage
+
+El ultimo paso, una vez que se tiene la función para eliminar la implicación y manejar las negaciones del enunciado, el resto es hacer un predicado que permita verificar si la cosa ya es una CNF o si por el contrario, aun falta hacer procesado de la expresión para garantizar que ya sea una CNF. Para ello se define a continuación el CNF con su correspondiente función de distribución para propagarse recursivamente:
+
+\begin{minted}{prolog}
+%%% CNF %%%
+% Transformación a forma normal conjuntiva (CNF)
+cnf(X, X) :- atom(X).  % Caso base: si es literal, ya está en CNF
+cnf(~X, ~X) :- atom(X).  % Negación de un literal
+% Caso 1: Conjunción de fórmulas
+cnf(X ^ Y, C) :- 
+cnf(X, CX),
+cnf(Y, CY),
+C = CX ^ CY.
+% Caso 2: Disyunción de fórmulas, distribución sobre la conjunción
+cnf(X v Y, C) :- 
+cnf(X, CX),
+cnf(Y, CY),
+distribuye(CX, CY, C).
+%%% DISTRB %%%
+% Caso base: Si ninguno de los dos es una conjunción, simplemente devolvemos A v B
+distribuye(A, B, A v B).
+% Distribuye A v (B ^ C) -> (A v B) ^ (A v C)
+% Caso 1: Si n1 es una conjunción (n1 = n11 ^ n12), entonces distribuimos sobre n2
+distribuye(A ^ B, C, R) :-
+distribuye(A, C, AC),
+distribuye(B, C, BC),
+R = AC ^ BC.
+% Caso 2: Si n2 es una conjunción (n2 = n21 ^ n22), distribuimos sobre n1
+distribuye(A, B ^ C, R) :-
+distribuye(A, B, AB),
+distribuye(A, C, AC),
+R = AB ^ AC.
+\end{minted}
+
+Con todo esto, tenemos un algorito CNF funcional que debe ser estructurado bajo el siguiente orden para pedirle las consultas:
+
+\begin{minted}{prolog}
+?.- implfree(FORMULA,R),nnf(R,Q),cnf(Q,FINAL).
+
+\end{minted}
+
+
+Finalmente, para probar que la cosa funciona, se pide que se haga la prueba con el ejercicio visto en clase que corresponde a la siguiente formula:
+
+$$(\neg p \wedge q \implies p \wedge (r \implies q))$$
+
+El resultado de ejecutar la consulta al programa es el siguiente:
+
+\begin{minted}{prolog}
+?.- FORMULA =(~p^q-> p^(r-q)),implfree(FORMULA,Q),nnf(Q,P),cnf(P,R).
+FORMULA =  (~p^q->p^(r->q)),
+Q = ~ (~p^q)v p^(~r v q),
+P =  (p v ~q)v p^(~r v q),
+R =  ((p v ~q)v p)^((p v ~q)v~r v q) 
+	
+\end{minted}
+
+Llega satisfactoriamente a lo mismo que esta en las diapositivas de clase.
+
+Cabe mencionar que debido a la forma en que esta construido, el programa da pie a hacer una reconsideración y encuentra otra formula de la cual se duda sobre su correcto resultado. \\
+
+A continuación se muestra por fines ilustrativos:
+
+\begin{minted}{prolog}
+FORMULA =  (~p^q->p^(r->q)),
+Q = ~ (~p^q)v p^(~r v q),
+P = R, R =  (p v ~q)v p^(~r v q);
+false.
+\end{minted}
+
+
+
+			
+	\newpage
+	
+	\section{Conversión de lógica proposicional a CNF}
 	
 	Convierta los requisitos del ejercicio uno a forma normal conjuntiva, usando
 	su programa CNF. [20/100] \\
+	
+	Se retoma la propuesta dada en el ejercicio uno de este reporte, donde se busca convertir los requisitos para presentar el examen de grado a su forma CNF.
+	
+	La expresión que se propuso fue:
+	
+	$$((a \wedge b) \wedge c \wedge d \wedge e \wedge (h \implies (f \vee g)) \wedge i \wedge j \wedge k)$$
+	
+	A continuación se muestra la query y los resultados obtenidos en prolog:
+	
+\begin{minted}{prolog}
+?.- FORMULA = (a^b^c^d^e^(h -> (f v g))^i^j^k),
+	implfree(FORMULA,Q),nnf(Q,P),
+	cnf(P,R).
+	FORMULA = a^b^c^d^e^(h->f v g)^i^j^k,
+	Q = P,
+	P = R, 
+	R = a^b^c^d^e^(~h v f v g)^i^j^k .
+	
+\end{minted}
+	
+	Lo más que hace en esta expresión, dada su estructura es hacer la eliminación de la implicación, de ahí en fuera, el algoritmo considera que ya esta en forma cnf.
+	
+	
+	
+	
+	
+	
 	
 	\newpage
 
 	\section{Conversión de logica proposicional a CNF}
 
 	Utilice los algoritmos CNF y SAT para verifivar que $p \implies q$ es equivalente a $\neg p \vee q$ (Ejercicio 3 de la tarea anterior). [20/100] \\
-
+	
+	Primero, se hace uso del algoritmo CNF implementado y descrito previamente para ejecutar la query relacionada
 
 		
 \newpage

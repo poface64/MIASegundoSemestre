@@ -1,0 +1,21 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZpc{} Predicado para verificar si una expresión es un literal}
+\PYG{n+nf}{es\PYGZus{}literal}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{)} \PYG{p}{:\PYGZhy{}} \PYG{n+nf}{atom}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{es\PYGZus{}literal}\PYG{p}{(}\PYG{l+s+sAtom}{\PYGZti{}}\PYG{n+nv}{X}\PYG{p}{)} \PYG{p}{:\PYGZhy{}} \PYG{n+nf}{atom}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{)}\PYG{p}{.}
+
+\PYG{c+c1}{\PYGZpc{} Eliminación de la implicación (IMPL FREE)}
+\PYG{n+nf}{implfree}\PYG{p}{(}\PYG{n+nv}{Literal}\PYG{p}{,} \PYG{n+nv}{Literal}\PYG{p}{)}\PYG{p}{:\PYGZhy{}} \PYG{n+nf}{atom}\PYG{p}{(}\PYG{n+nv}{Literal}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{implfree}\PYG{p}{(}\PYG{l+s+sAtom}{\PYGZti{}}\PYG{n+nv}{X}\PYG{p}{,} \PYG{l+s+sAtom}{\PYGZti{}}\PYG{n+nv}{FX}\PYG{p}{)}\PYG{p}{:\PYGZhy{}} \PYG{n+nf}{implfree}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{,}\PYG{n+nv}{FX}\PYG{p}{)}\PYG{p}{.} \PYG{c+c1}{\PYGZpc{} Caso para la negación}
+\PYG{c+c1}{\PYGZpc{} Implicación A \PYGZhy{}\PYGZgt{} B \PYGZhy{}\PYGZgt{} ¬A v B}
+\PYG{n+nf}{implfree}\PYG{p}{(}\PYG{n+nv}{A} \PYG{l+s+sAtom}{\PYGZhy{}\PYGZgt{}} \PYG{n+nv}{B}\PYG{p}{,} \PYG{l+s+sAtom}{\PYGZti{}}\PYG{n+nv}{FA} \PYG{l+s+sAtom}{v} \PYG{n+nv}{FB}\PYG{p}{)}\PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{implfree}\PYG{p}{(}\PYG{n+nv}{A}\PYG{p}{,} \PYG{n+nv}{FA}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{implfree}\PYG{p}{(}\PYG{n+nv}{B}\PYG{p}{,} \PYG{n+nv}{FB}\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} Conjunción}
+\PYG{n+nf}{implfree}\PYG{p}{(}\PYG{n+nv}{A} \PYG{l+s+sAtom}{\PYGZca{}} \PYG{n+nv}{B}\PYG{p}{,} \PYG{n+nv}{FA} \PYG{l+s+sAtom}{\PYGZca{}} \PYG{n+nv}{FB}\PYG{p}{)}\PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{implfree}\PYG{p}{(}\PYG{n+nv}{A}\PYG{p}{,} \PYG{n+nv}{FA}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{implfree}\PYG{p}{(}\PYG{n+nv}{B}\PYG{p}{,} \PYG{n+nv}{FB}\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} Disyunción}
+\PYG{n+nf}{implfree}\PYG{p}{(}\PYG{n+nv}{A} \PYG{l+s+sAtom}{v} \PYG{n+nv}{B}\PYG{p}{,} \PYG{n+nv}{FA} \PYG{l+s+sAtom}{v} \PYG{n+nv}{FB}\PYG{p}{)}\PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{implfree}\PYG{p}{(}\PYG{n+nv}{A}\PYG{p}{,} \PYG{n+nv}{FA}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{implfree}\PYG{p}{(}\PYG{n+nv}{B}\PYG{p}{,} \PYG{n+nv}{FB}\PYG{p}{)}\PYG{p}{.}
+\end{MintedVerbatim}

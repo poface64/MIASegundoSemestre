@@ -1,4 +1,0 @@
-\begin{MintedVerbatim}[commandchars=\\\{\}]
-	\PYG{l+s+sAtom}{?\PYGZhy{}} \PYG{n+nf}{connectives}\PYG{p}{(}\PYG{p}{[}\PYG{n+nf}{and}\PYG{p}{(}\PYG{l+s+sAtom}{p}\PYG{p}{,}\PYG{l+s+sAtom}{q}\PYG{p}{)}\PYG{p}{,}\PYG{n+nf}{if}\PYG{p}{(}\PYG{l+s+sAtom}{r}\PYG{p}{,}\PYG{l+s+sAtom}{s}\PYG{p}{)}\PYG{p}{]}\PYG{p}{,} \PYG{n+nf}{or}\PYG{p}{(}\PYG{l+s+sAtom}{p}\PYG{p}{,}\PYG{o}{not}\PYG{p}{(}\PYG{l+s+sAtom}{s}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,} \PYG{n+nv}{L}\PYG{p}{)}
-	\PYG{n+nv}{L} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+sAtom}{and}\PYG{p}{,} \PYG{l+s+sAtom}{if}\PYG{p}{,} \PYG{l+s+sAtom}{or}\PYG{p}{,} \PYG{o}{not}\PYG{p}{]}
-\end{MintedVerbatim}

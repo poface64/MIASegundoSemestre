@@ -66,20 +66,36 @@ cnf(X v Y, C) :-
     cnf(Y, CY),
     distribuye(CX, CY, C).
 
-%%% Distribución según el pseudocódigo %%%
+%%% DISTRB %%%
+% Caso base: Si ninguno de los dos es una conjunción, simplemente devolvemos A v B
+distribuye(A, B, A v B).
+
 % Distribuye A v (B ^ C) -> (A v B) ^ (A v C)
-% Caso 1: Si η1 es una conjunción (η1 = η11 ^ η12), entonces distribuimos sobre η2
+% Caso 1: Si n1 es una conjunción (n1 = n11 ^ n12), entonces distribuimos sobre n2
 distribuye(A ^ B, C, R) :-
     distribuye(A, C, AC),
     distribuye(B, C, BC),
     R = AC ^ BC.
 
-% Caso 2: Si η2 es una conjunción (η2 = η21 ^ η22), distribuimos sobre η1
+% Caso 2: Si n2 es una conjunción (n2 = n21 ^ n22), distribuimos sobre n1
 distribuye(A, B ^ C, R) :-
     distribuye(A, B, AB),
     distribuye(A, C, AC),
     R = AB ^ AC.
 
-% Caso base: Si ninguno de los dos es una conjunción, simplemente devolvemos A v B
-distribuye(A, B, A v B).
+
+%% Query del inciso 2
+
+%FORMULA =(~p^q⇒ p^(r⇒q)),implfree(FORMULA,Q),nnf(Q,P),cnf(P,R).
+%FORMULA =  (~p^q⇒p^(r⇒q)),
+%Q = ~ (~p^q)v p^(~r v q),
+%P = R, R =  (p v ~q)v p^(~r v q) .
+
+%% Query del inciso 3
+
+%FORMULA = (a^b^c^d^e^(h ⇒ (f v g))^i^j^k),implfree(FORMULA,Q),nnf(Q,P),cnf(P,R).
+%FORMULA = a^b^c^d^e^(h⇒f v g)^i^j^k,
+%Q = P, P = R, R = a^b^c^d^e^(~h v f v g)^i^j^k 
+
+
 
