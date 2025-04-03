@@ -1,10 +1,11 @@
-%% Declaración de los operadores %%
-:- op(700, xfy, ⇒). % ⇒ para la implicación
+
+% Operadores %
+
+:- op(700, xfy, ⇒).  % ⇒ para la implicación
 :- op(500, xfy, ^).  % '^' para conjunción
 :- op(600, xfy, v).  % 'v' para disyunción
 :- op(400, fy, ~).   % 'neg' para negación
 
-%% Semantica %%
 v(X,Y):- X;Y.
 ^(X,Y):- X,Y.
 ~(X):- \+ X.
@@ -136,4 +137,13 @@ distribuye(A, B, A v B).
 %FORMULA = (a^b^c^d^e^(h ⇒ (f v g))^i^j^k),implfree(FORMULA,Q),nnf(Q,P),cnf(P,R).
 %FORMULA = a^b^c^d^e^(h⇒f v g)^i^j^k,
 %Q = P, P = R, R = a^b^c^d^e^(~h v f v g)^i^j^k 
+
+%%Query del inciso 4 para cnf
+%FORMULA = (p⇒ q),implfree(FORMULA,Q),nnf(Q,P),cnf(P,R).
+%P = Q, Q = R, R = ~p v q.
+
+%Query para el inciso 4 con SAT
+%Clauses = [[false-P, true-Q]], sat(Clauses, [P, Q]).
+%Clauses = [[false-true, true-true]],
+%P = Q, Q = true.
 

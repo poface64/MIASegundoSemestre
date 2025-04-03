@@ -40,7 +40,7 @@
 
 	\newpage
 	
-	\section{Logica proposicional en base al reglamento de posgrados}
+	\section{Lógica proposicional en base al reglamento de posgrados}
 	
 	Con base en el Reglamento General de Estudios de Posgrado de nuestra
 	universidad, defina en lógica proposicional los requisitos que debe cumplir la
@@ -50,38 +50,38 @@
 	Se hizo la consulta del Articulo 65 del Reglamento General de Estudios de Posgrado de la Universidad Veracruzana. Dicho articulo abarca los siguientes requisitos para poder presentar el examen de la obtención del diploma o grado académico que deben cumplir los estudiantes:
 	
 	\begin{enumerate}[I]
-		\item Haber acreditado todas las experiencias educativas y actividades academicas que establezca el plan de estudios del programa educativo correspondiente;		
+		\item Haber acreditado todas las experiencias educativas y actividades académicas que establezca el plan de estudios del programa educativo correspondiente;		
 		\item Presentar el certificado de estudio del posgrado cursado;
 		\item Presentar los votos aprobatorios de los sinodales;
 		\item Presentar la carta responsiva anexa a este reglamento, firmada por el director del trabajo recepcional;
-		\item Aval del Consejo Tecnico u organo equivalente, en caso de haber excedido el tiempo reglamentario para la presentación del examen;
-		\item No tener adeudos con la Universidad Veracruza;
+		\item Aval del Consejo Técnico u órgano equivalente, en caso de haber excedido el tiempo reglamentario para la presentación del examen;
+		\item No tener adeudo con la Universidad VeracruzaNA;
 		\item Pagar el arancel correspondiente; y
-		\item Las demas que señale la normatividad universitaria.		
+		\item Las demás que señale la normatividad universitaria.		
 	\end{enumerate}
 	
 	\newpage 
 	
-	En un primer intento por descomponer la normativa para pasarla a lenguaje de logica proposicional, se hizo una lectura detenida de las condiciones para presentar el examen, dicho primer intento busca convertir los enunciados en variables logicas como se muestra:
+	En un primer intento por descomponer la normativa para pasarla a lenguaje de lógica proposicional, se hizo una lectura detenida de las condiciones para presentar el examen, dicho primer intento busca convertir los enunciados en variables lógicas como se muestra:
 	
 	\begin{enumerate}[I]
-	\item Haber acreditado todas las experiencias educativas ($a$) y ($\wedge$) actividades academicas que establezca el plan de estudios del programa educativo correspondiente ($b$);
+	\item Haber acreditado todas las experiencias educativas ($a$) y ($\wedge$) actividades académicas que establezca el plan de estudios del programa educativo correspondiente ($b$);
 	
 	\item Presentar el certificado de estudio del posgrado cursado ($c$);
 	\item Presentar los votos aprobatorios de los sinodales ($d$);
 	\item Presentar la carta responsiva anexa a este reglamento, firmada por el director del trabajo recepcional; ($e$)
-	\item Aval del Consejo Tecnico ($f$) u ($\vee$) organo equivalente ($g$), en caso de haber excedido el tiempo reglamentario para la presentación del examen ($h$);
-	\item No tener adeudos con la Universidad Veracruza; ($i$)
+	\item Aval del Consejo Técnico ($f$) u ($\vee$) órgano equivalente ($g$), en caso de haber excedido el tiempo reglamentario para la presentación del examen ($h$);
+	\item No tener adeudo con la Universidad Veracruzana; ($i$)
 	\item Pagar el arancel correspondiente; y ($j$)
-	\item Las demas que señale la normatividad universitaria. ($k$).
+	\item Las demás que señale la normatividad universitaria. ($k$).
 	\item Si se cumplen con las condiciones requeridas, implica que se lleva a cabo la presentación del examen. ($l$).
 	\end{enumerate}
 
-	Identificadas las posibles variables, se re escribe una versión simplificada antes de pasarla totalmente a logica proposicional: \\
+	Identificadas las posibles variables, se re escribe una versión simplificada antes de pasarla totalmente a lógica proposicional: \\
 	
-	Si $a$ se cumple y $b$ se cumple junto con $c$, $d$ y $e$. Ademas, si $h$ se presenta, entonces se debe cumplir $f$ o $g$. Junto con todo lo demas, es indispensable que se cumpla $i$, $j$, y $k$. Si todo se cumple adecuadamente, entonces se lleva a cabo el examen. \\
+	Si $a$ se cumple y $b$ se cumple junto con $c$, $d$ y $e$. Ademas, si $h$ se presenta, entonces se debe cumplir $f$ o $g$. Junto con todo lo demás, es indispensable que se cumpla $i$, $j$, y $k$. Si todo se cumple adecuadamente, entonces se lleva a cabo el examen. \\
 	
-	Pasandolas en forma de logica proposicional:
+	Pasándolas en forma de lógica proposicional:
 	
 	$$((a \wedge b) \wedge c \wedge d \wedge e \wedge (h \implies (f \vee g)) \wedge i \wedge j \wedge k)$$
 	
@@ -208,7 +208,7 @@ distribuye(A, C, AC),
 R = AB ^ AC.
 \end{minted}
 
-Con todo esto, tenemos un algorito CNF funcional que debe ser estructurado bajo el siguiente orden para pedirle las consultas:
+Con todo esto, tenemos un algoritmo CNF funcional que debe ser estructurado bajo el siguiente orden para pedirle las consultas:
 
 \begin{minted}{prolog}
 ?.- implfree(FORMULA,R),nnf(R,Q),cnf(Q,FINAL).
@@ -260,7 +260,7 @@ false.
 	
 	$$((a \wedge b) \wedge c \wedge d \wedge e \wedge (h \implies (f \vee g)) \wedge i \wedge j \wedge k)$$
 	
-	A continuación se muestra la query y los resultados obtenidos en prolog:
+	A continuación se muestra la consulta y los resultados obtenidos en prolog:
 	
 \begin{minted}{prolog}
 ?.- FORMULA = (a^b^c^d^e^(h -> (f v g))^i^j^k),
@@ -285,9 +285,41 @@ false.
 
 	\section{Conversión de logica proposicional a CNF}
 
-	Utilice los algoritmos CNF y SAT para verifivar que $p \implies q$ es equivalente a $\neg p \vee q$ (Ejercicio 3 de la tarea anterior). [20/100] \\
+	Utilice los algoritmos CNF y SAT para verificar que $p \implies q$ es equivalente a $\neg p \vee q$ (Ejercicio 3 de la tarea anterior). [20/100] \\
 	
-	Primero, se hace uso del algoritmo CNF implementado y descrito previamente para ejecutar la query relacionada
+	Primero, se hace uso del algoritmo CNF implementado y descrito previamente para ejecutar la query relacionada al ejercicio 3 de la tarea 1. 
+	
+	Mediante la implementación de CNF, el resultado obtenido para la consulta es el siguiente:
+
+\begin{minted}{prolog}
+?.- FORMULA = (p -> q),implfree(FORMULA,Q),nnf(Q,P),cnf(P,R).
+FORMULA = (p -> q),
+P = Q,
+Q = R,
+R = ~p vq.
+		
+\end{minted}
+
+	
+	El resultado obtenido por el CNF es el esperado (en el fondo solo aplico la eliminación de la implicación, como ya estaba en forma conjuntiva, no fue necesario que se dispararan más cosas como el nnf y el cnf como tal).
+	
+	A continuación se muestra el resultado de la consulta en el algoritmo SAT:
+	
+	\begin{minted}{prolog}
+?.- Clauses = [[false-P, true-Q]], sat(Clauses, [P, Q]).
+Clauses = [[false-true, true-true]],
+P = Q, 
+Q = true
+		
+	\end{minted}
+	
+	El algoritmo SAT llega a computar que P y Q deben de ser ambos verdaderos, y de esta forma se cumple que $p implies q$ y que a su vez, $\neg p \wedge q$, dado que si vemos sus valores de tabla de verdad, son equivalentes. Para este caso particular, si P es verdadero (lo niega la negación de P) y Q es verdadero, por el OR, hace que sea verdadera toda la expresión.
+	
+	
+	
+	
+	
+	
 
 		
 \newpage
