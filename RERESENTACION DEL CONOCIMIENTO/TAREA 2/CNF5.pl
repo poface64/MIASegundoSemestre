@@ -6,10 +6,17 @@
 :- op(600, xfy, v).  % 'v' para disyunción
 :- op(400, fy, ~).   % 'neg' para negación
 
-v(X,Y):- X;Y.
-^(X,Y):- X,Y.
-~(X):- \+ X.
-⇒(X,Y):- (\X;Y).
+v(X,Y):-
+  X;Y.
+
+^(X,Y):- 
+  X,Y.
+
+~(X):- 
+  \+ X.
+
+⇒(X,Y):-
+  (\X;Y).
 
 
 % Predicado para verificar si una expresión es un literal
