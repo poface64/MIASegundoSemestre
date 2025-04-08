@@ -79,30 +79,34 @@ n = size(datos1);
 Si = (cdatos'*cdatos)/(n(1)-1)
 
 %% Calcular los eigen valores %%
-[V, D] = eig(S)
+[V, D] = eig(Si)
 
 100*diag(D)/sum(diag(D))
 
 %% Calcular los scores %%
-NB = cdatos * V % Las primeras 3 variables explican más
+%% Calcular los scores %%
+NB = cdatos * V; % Proyección de los datos
 
-gscatter(NB(:,4), NB(:,4), especie,"filled");
-xlabel('Longitud del pico'); % Etiqueta del eje x
-ylabel('Masa corporal'); % Etiqueta del eje y
-title('G3'); % Título del gráfico
-%%
+% Crear una dispersión en 1D (todos los puntos con la misma Y)
+y = zeros(size(NB, 1), 1); % Todos los puntos en Y=0
+gscatter(NB(:,4), y, especie, 'rgb', '.', 15);
+xlabel('Componente 1');
+yticks([]); % Eliminar marcas del eje Y
+ylabel('');
+title('Proyección 1D sobre el componente 1');
+
+%% Gráfico en 2d con la primer y segunda componente %%
 gscatter(NB(:,4), NB(:,3), especie,"filled");
-xlabel('Longitud del pico'); % Etiqueta del eje x
-ylabel('Masa corporal'); % Etiqueta del eje y
-title('G3'); % Título del gráfico
-
+xlabel('Componente 1'); % Etiqueta del eje x
+ylabel('Componente 2'); % Etiqueta del eje y
+title(''); % Título del gráfico
 
 %% Crear un gráfico 3D %%
 scatter3(NB(:,4), NB(:,3), NB(:,2), 50, especie, 'filled'); 
 % Ajustar etiquetas y título
-xlabel('Longitud del pico');
-ylabel('Profundidad del pico');
-zlabel('Longitud del aletín');
+xlabel('Componente 1');
+ylabel('Componente 2');
+zlabel('Componente 3');
 title('');
 
 
