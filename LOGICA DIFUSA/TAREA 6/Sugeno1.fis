@@ -1,0 +1,39 @@
+[System]
+Name='Sugeno1'
+Type='sugeno'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=0
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='input1'
+Range=[0 10]
+NumMFs=3
+MF1='Malo':'trimf',[0 2 5]
+MF2='Regular':'trimf',[0.8333 5 9.167]
+MF3='Bueno':'trimf',[4 7.5 10]
+
+[Input2]
+Name='input2'
+Range=[0 100]
+NumMFs=4
+MF1='Mala':'trimf',[0 15 45]
+MF2='Normal':'trimf',[15 45 80]
+MF3='Buena':'trimf',[40 65 90]
+MF4='Excelente':'trimf',[60 90 100]
+
+[Output1]
+Name='output1'
+Range=[0 20]
+NumMFs=3
+MF1='Malo':'constant',[5]
+MF2='Normal':'constant',[12]
+MF3='Alta':'constant',[16]
+
+[Rules]
