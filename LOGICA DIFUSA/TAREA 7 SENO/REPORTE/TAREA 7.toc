@@ -1,0 +1,15 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introducción}{2}{section.1}%
+\contentsline {section}{\numberline {2}Problema 1: Aproximación del $sen(x)$}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Explicación del Problema}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Variables y sus codificaciones}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Reglas de inferencia.}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Gráficos del problema del problema}{7}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Implementación del problema del mesero paso a paso}{8}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Comparativa para la aproximación del seno}{10}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Caso mínimo}{10}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}Caso medio}{11}{subsubsection.2.6.2}%
+\contentsline {subsubsection}{\numberline {2.6.3}Caso máximo}{12}{subsubsection.2.6.3}%
+\contentsline {section}{\numberline {3}Conclusiones}{12}{section.3}%
+\contentsline {section}{\numberline {4}Referencias}{13}{section.4}%
+\contentsline {section}{\numberline {5}Anexos}{14}{section.5}%
