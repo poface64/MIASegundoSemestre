@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.3.5)  9 APR 2025 21:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.3.5)  10 APR 2025 01:16
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**TAREA5.tex
-(./TAREA5.tex
+**TAREA6.tex
+(./TAREA6.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (c:/texlive/2024/texmf-dist/tex/latex/base/article.cls
@@ -529,8 +529,15 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count334
 \l__pdf_internal_box=\box70
 )
-(./TAREA5.aux)
-\openout1 = `TAREA5.aux'.
+(./TAREA6.aux
+
+LaTeX Warning: Label `fig:f4' multiply defined.
+
+
+LaTeX Warning: Label `fig:f5' multiply defined.
+
+)
+\openout1 = `TAREA6.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
 LaTeX Font Info:    ... okay on input line 26.
@@ -574,13 +581,13 @@ e
 ))
 Package hyperref Info: Link coloring OFF on input line 26.
 
-(./TAREA5.out) (./TAREA5.out)
+(./TAREA6.out) (./TAREA6.out)
 \@outlinefile=\write4
-\openout4 = `TAREA5.out'.
+\openout4 = `TAREA6.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<logo.png, id=60, 501.875pt x 501.875pt>
+<logo.png, id=84, 501.875pt x 501.875pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
 Package pdftex.def Info: logo.png  used on input line 31.
@@ -590,7 +597,7 @@ Package pdftex.def Info: logo.png  used on input line 31.
 [1
 
 {c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2024/
-texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./logo.png>] (./TAREA5.toc
+texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./logo.png>] (./TAREA6.toc
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
 .
 
@@ -632,7 +639,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
 \tf@toc=\write5
-\openout5 = `TAREA5.toc'.
+\openout5 = `TAREA6.toc'.
 
 
 
@@ -643,34 +650,36 @@ been already used, duplicate ignored
                    \relax 
 l.51 	\newpage
                [1]
-<IMG/T1.png, id=91, 870.25125pt x 276.43275pt>
+<IMG/T1.png, id=121, 870.25125pt x 276.43275pt>
 File: IMG/T1.png Graphic file (type png)
 <use IMG/T1.png>
-Package pdftex.def Info: IMG/T1.png  used on input line 65.
+Package pdftex.def Info: IMG/T1.png  used on input line 63.
 (pdftex.def)             Requested size: 360.0pt x 114.35469pt.
 
 
 [2 <./IMG/T1.PNG>]
-<IMG/G1.png, id=98, 886.81313pt x 548.0475pt>
+<IMG/G1.png, id=128, 886.81313pt x 548.0475pt>
 File: IMG/G1.png Graphic file (type png)
 <use IMG/G1.png>
-Package pdftex.def Info: IMG/G1.png  used on input line 85.
+Package pdftex.def Info: IMG/G1.png  used on input line 83.
 (pdftex.def)             Requested size: 396.0022pt x 244.72916pt.
 
-Overfull \hbox (36.0022pt too wide) in paragraph at lines 83--89
+Overfull \hbox (36.0022pt too wide) in paragraph at lines 81--87
  []$[]$ 
  []
 
 
 
-[3 <./IMG/G1.png (PNG copy)>]
-<IMG/G2.png, id=104, 931.98187pt x 429.10312pt>
+[3{c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2024
+/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2024/texmf-dist/fonts/
+enc/dvips/lm/lm-rm.enc} <./IMG/G1.png (PNG copy)>]
+<IMG/G2.png, id=137, 931.98187pt x 429.10312pt>
 File: IMG/G2.png Graphic file (type png)
 <use IMG/G2.png>
-Package pdftex.def Info: IMG/G2.png  used on input line 101.
+Package pdftex.def Info: IMG/G2.png  used on input line 99.
 (pdftex.def)             Requested size: 396.0022pt x 182.32385pt.
 
-Overfull \hbox (36.0022pt too wide) in paragraph at lines 99--105
+Overfull \hbox (36.0022pt too wide) in paragraph at lines 97--103
  []$[]$ 
  []
 
@@ -678,84 +687,87 @@ Overfull \hbox (36.0022pt too wide) in paragraph at lines 99--105
 
 [4 <./IMG/G2.png (PNG copy)>]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-30.
+27.
 
 (c:/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-[5{c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2024
-/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2024/texmf-dist/fonts/enc/
-dvips/lm/lm-mathsy.enc}{c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.en
-c}]
+[5{c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/texlive/2024/te
+xmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
 
 [6]
 
-[7{c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+[7]
 
 [8]
 
 [9]
-<IMG/T2.png, id=142, 263.7855pt x 165.0165pt>
+
+[10]
+
+[11]
+
+[12]
+<IMG/T2.png, id=186, 121.05225pt x 296.307pt>
 File: IMG/T2.png Graphic file (type png)
 <use IMG/T2.png>
-Package pdftex.def Info: IMG/T2.png  used on input line 283.
-(pdftex.def)             Requested size: 288.0011pt x 180.16653pt.
+Package pdftex.def Info: IMG/T2.png  used on input line 366.
+(pdftex.def)             Requested size: 86.4012pt x 211.49619pt.
 
 
-[10 <./IMG/T2.PNG>]
-<IMG/G3.png, id=149, 705.38531pt x 395.22656pt>
+[13 <./IMG/T2.PNG>]
+<IMG/G3.png, id=193, 705.38531pt x 395.22656pt>
 File: IMG/G3.png Graphic file (type png)
 <use IMG/G3.png>
-Package pdftex.def Info: IMG/G3.png  used on input line 301.
+Package pdftex.def Info: IMG/G3.png  used on input line 384.
 (pdftex.def)             Requested size: 396.0022pt x 221.88017pt.
 
-Overfull \hbox (36.0022pt too wide) in paragraph at lines 299--305
+Overfull \hbox (36.0022pt too wide) in paragraph at lines 382--388
  []$[]$ 
  []
 
 
 
-[11 <./IMG/G3.png (PNG copy)>]
-<IMG/G4.png, id=155, 705.38531pt x 395.22656pt>
-File: IMG/G4.png Graphic file (type png)
-<use IMG/G4.png>
-Package pdftex.def Info: IMG/G4.png  used on input line 317.
-(pdftex.def)             Requested size: 396.0022pt x 221.88017pt.
-
-Overfull \hbox (36.0022pt too wide) in paragraph at lines 315--321
- []$[]$ 
- []
-
-
-
-[12 <./IMG/G4.png (PNG copy)>]
-<IMG/G5.png, id=163, 705.38531pt x 395.22656pt>
-File: IMG/G5.png Graphic file (type png)
-<use IMG/G5.png>
-Package pdftex.def Info: IMG/G5.png  used on input line 333.
-(pdftex.def)             Requested size: 396.0022pt x 221.88017pt.
-
-Overfull \hbox (36.0022pt too wide) in paragraph at lines 331--337
- []$[]$ 
- []
-
-
-
-[13 <./IMG/G5.png (PNG copy)>]
-
-[14] (./TAREA5.bbl)
+[14 <./IMG/G3.png (PNG copy)>]
 
 [15]
-\pydata@fh@_5C8F7AE26363AD94FB17331FD96962AA.data.minted=\write6
-\openout6 = `_5C8F7AE26363AD94FB17331FD96962AA.data.minted'.
 
-runsystem(latexminted config  --timestamp 20250409215611 5C8F7AE26363AD94FB1733
-1FD96962AA)...executed.
+[16]
 
- (./_5C8F7AE26363AD94FB17331FD96962AA.config.minted)
-runsystem(latexminted cleanconfig  --timestamp 20250409215611 5C8F7AE26363AD94F
-B17331FD96962AA)...executed.
+[17]
+File: IMG/T2.png Graphic file (type png)
+<use IMG/T2.png>
+Package pdftex.def Info: IMG/T2.png  used on input line 519.
+(pdftex.def)             Requested size: 86.4012pt x 211.49619pt.
+
+
+[18]
+File: IMG/G3.png Graphic file (type png)
+<use IMG/G3.png>
+Package pdftex.def Info: IMG/G3.png  used on input line 537.
+(pdftex.def)             Requested size: 396.0022pt x 221.88017pt.
+
+Overfull \hbox (36.0022pt too wide) in paragraph at lines 535--541
+ []$[]$ 
+ []
+
+
+
+[19]
+
+[20] (./TAREA6.bbl)
+
+[21]
+\pydata@fh@_1BDB02401324BB5A966AE52C61AB56AE.data.minted=\write6
+\openout6 = `_1BDB02401324BB5A966AE52C61AB56AE.data.minted'.
+
+runsystem(latexminted config  --timestamp 20250410011635 1BDB02401324BB5A966AE5
+2C61AB56AE)...executed.
+
+ (./_1BDB02401324BB5A966AE52C61AB56AE.config.minted)
+runsystem(latexminted cleanconfig  --timestamp 20250410011635 1BDB02401324BB5A9
+66AE52C61AB56AE)...executed.
 
 
 (./_minted/default.style.minted)
@@ -773,23 +785,27 @@ LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-[16]
+[22]
 
-[17])
+[23])
 
-[18] (./TAREA5.aux)
+[24] (./TAREA6.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-Package rerunfilecheck Info: File `TAREA5.out' has not changed.
-(rerunfilecheck)             Checksum: 2C3F263DAD6EAA246802643EE99632A9;2182.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `TAREA6.out' has not changed.
+(rerunfilecheck)             Checksum: E4B9D894CAF883B3FE33159BEB43AD4F;3755.
  ) 
 Here is how much of TeX's memory you used:
- 17476 strings out of 473200
- 328616 string characters out of 5720279
- 820907 words of memory out of 5000000
- 40419 multiletter control sequences out of 15000+600000
+ 17480 strings out of 473200
+ 328592 string characters out of 5720279
+ 820798 words of memory out of 5000000
+ 40411 multiletter control sequences out of 15000+600000
  609282 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  85i,8n,93p,740b,1016s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -805,10 +821,10 @@ ve/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2024/texmf-dist
 c/lm/lmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:
 /texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/texlive/2024/texm
 f-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on TAREA5.pdf (19 pages, 799060 bytes).
+Output written on TAREA6.pdf (25 pages, 714214 bytes).
 PDF statistics:
- 288 PDF objects out of 1000 (max. 8388607)
- 219 compressed objects within 3 object streams
- 43 named destinations out of 1000 (max. 500000)
- 153 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 343 PDF objects out of 1000 (max. 8388607)
+ 270 compressed objects within 3 object streams
+ 55 named destinations out of 1000 (max. 500000)
+ 191 words of extra memory for PDF output out of 10000 (max. 10000000)
 
