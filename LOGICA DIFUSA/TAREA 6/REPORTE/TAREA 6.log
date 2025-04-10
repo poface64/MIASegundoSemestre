@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  9 APR 2025 08:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  9 APR 2025 16:33
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -678,15 +678,10 @@ l.51 	\newpage
                [1]
 
 [2]
-Overfull \hbox (82.49893pt too wide) in paragraph at lines 77--80
-[]\T1/lmr/m/n/10.95 MF1='Malo':'trimf',[0 0 5] MF2='Regular':'trimf',[0.8333 5 
-9.167] MF3='Bueno':'trimf',[4
- []
-
 <IMG/P11.png, id=95, 550.4565pt x 206.57175pt>
 File: IMG/P11.png Graphic file (type png)
 <use IMG/P11.png>
-Package pdftex.def Info: IMG/P11.png  used on input line 86.
+Package pdftex.def Info: IMG/P11.png  used on input line 81.
 (pdftex.def)             Requested size: 288.0011pt x 108.07983pt.
 
 
@@ -695,15 +690,15 @@ mf-dist/fonts/enc/dvips/lm/lm-mathit.enc} <./IMG/P11.PNG>]
 <IMG/P12.png, id=105, 551.661pt x 210.7875pt>
 File: IMG/P12.png Graphic file (type png)
 <use IMG/P12.png>
-Package pdftex.def Info: IMG/P12.png  used on input line 95.
+Package pdftex.def Info: IMG/P12.png  used on input line 90.
 (pdftex.def)             Requested size: 288.0011pt x 110.04433pt.
 <IMG/P13.png, id=106, 537.207pt x 205.36725pt>
 File: IMG/P13.png Graphic file (type png)
 <use IMG/P13.png>
-Package pdftex.def Info: IMG/P13.png  used on input line 102.
+Package pdftex.def Info: IMG/P13.png  used on input line 97.
 (pdftex.def)             Requested size: 288.0011pt x 110.10071pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 108--109
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
@@ -715,32 +710,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 108--109
 <IMG/P14.png, id=134, 481.19775pt x 278.2395pt>
 File: IMG/P14.png Graphic file (type png)
 <use IMG/P14.png>
-Package pdftex.def Info: IMG/P14.png  used on input line 143.
+Package pdftex.def Info: IMG/P14.png  used on input line 138.
 (pdftex.def)             Requested size: 196.5596pt x 113.65437pt.
 
-Overfull \hbox (45.36026pt too wide) in paragraph at lines 143--145
+Overfull \hbox (45.36026pt too wide) in paragraph at lines 138--140
  [][] 
  []
 
 <IMG/P15.png, id=135, 503.481pt x 260.172pt>
 File: IMG/P15.png Graphic file (type png)
 <use IMG/P15.png>
-Package pdftex.def Info: IMG/P15.png  used on input line 149.
+Package pdftex.def Info: IMG/P15.png  used on input line 144.
 (pdftex.def)             Requested size: 185.75636pt x 95.98819pt.
 
-Overfull \hbox (30.959pt too wide) in paragraph at lines 149--151
+Overfull \hbox (30.959pt too wide) in paragraph at lines 144--146
  [][] 
  []
 
 
 
 [6 <./IMG/P14.PNG> <./IMG/P15.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 163--164
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
 
  []
 
@@ -753,17 +748,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 163--164
 <IMG/RP11.png, id=165, 1047.31274pt x 469.755pt>
 File: IMG/RP11.png Graphic file (type png)
 <use IMG/RP11.png>
-Package pdftex.def Info: IMG/RP11.png  used on input line 236.
+Package pdftex.def Info: IMG/RP11.png  used on input line 231.
 (pdftex.def)             Requested size: 201.59604pt x 90.42273pt.
 
-Overfull \hbox (57.59824pt too wide) in paragraph at lines 236--238
+Overfull \hbox (57.59824pt too wide) in paragraph at lines 231--233
  [][] 
  []
 
 <IMG/M11.png, id=166, 62.634pt x 62.03175pt>
 File: IMG/M11.png Graphic file (type png)
 <use IMG/M11.png>
-Package pdftex.def Info: IMG/M11.png  used on input line 242.
+Package pdftex.def Info: IMG/M11.png  used on input line 237.
 (pdftex.def)             Requested size: 60.4788pt x 59.8981pt.
 
 
@@ -771,23 +766,23 @@ Package pdftex.def Info: IMG/M11.png  used on input line 242.
 <IMG/RP12.png, id=174, 1050.92625pt x 463.7325pt>
 File: IMG/RP12.png Graphic file (type png)
 <use IMG/RP12.png>
-Package pdftex.def Info: IMG/RP12.png  used on input line 259.
+Package pdftex.def Info: IMG/RP12.png  used on input line 254.
 (pdftex.def)             Requested size: 201.59604pt x 88.95212pt.
 
-Overfull \hbox (57.59824pt too wide) in paragraph at lines 259--261
+Overfull \hbox (57.59824pt too wide) in paragraph at lines 254--256
  [][] 
  []
 
 <IMG/M12.png, id=175, 65.043pt x 54.80475pt>
 File: IMG/M12.png Graphic file (type png)
 <use IMG/M12.png>
-Package pdftex.def Info: IMG/M12.png  used on input line 265.
+Package pdftex.def Info: IMG/M12.png  used on input line 260.
 (pdftex.def)             Requested size: 60.4788pt x 50.96118pt.
 
 
 [10 <./IMG/RP12.PNG> <./IMG/M12.PNG>]
-Overfull \hbox (5.468pt too wide) in paragraph at lines 276--277
-[]\T1/lmr/m/n/10.95 Para el ca-so mí-ni-mo, se pro-po-ne un $\OML/lmm/m/it/10.9
+Overfull \hbox (7.5975pt too wide) in paragraph at lines 271--272
+[]\T1/lmr/m/n/10.95 Para el ca-so má-xi-mo, se pro-po-ne un $\OML/lmm/m/it/10.9
 5 SERVICIO \OT1/lmr/m/n/10.95 = 10$ \T1/lmr/m/n/10.95 y una $\OML/lmm/m/it/10.9
 5 COMIDA \OT1/lmr/m/n/10.95 =
  []
@@ -795,17 +790,17 @@ Overfull \hbox (5.468pt too wide) in paragraph at lines 276--277
 <IMG/RP13.png, id=183, 1047.915pt x 461.3235pt>
 File: IMG/RP13.png Graphic file (type png)
 <use IMG/RP13.png>
-Package pdftex.def Info: IMG/RP13.png  used on input line 282.
+Package pdftex.def Info: IMG/RP13.png  used on input line 277.
 (pdftex.def)             Requested size: 201.59604pt x 88.74345pt.
 
-Overfull \hbox (57.59824pt too wide) in paragraph at lines 282--284
+Overfull \hbox (57.59824pt too wide) in paragraph at lines 277--279
  [][] 
  []
 
 <IMG/M13.png, id=184, 50.589pt x 53.60025pt>
 File: IMG/M13.png Graphic file (type png)
 <use IMG/M13.png>
-Package pdftex.def Info: IMG/M13.png  used on input line 288.
+Package pdftex.def Info: IMG/M13.png  used on input line 283.
 (pdftex.def)             Requested size: 60.4788pt x 64.08194pt.
 
 
@@ -814,7 +809,7 @@ Package pdftex.def Info: IMG/M13.png  used on input line 288.
 [12]
 
 [13]
-runsystem(latexminted cleantemp  --timestamp 20250409083615 1BD85659B0C97A28A41
+runsystem(latexminted cleantemp  --timestamp 20250409163334 1BD85659B0C97A28A41
 BB408B71E5BC1)...executed.
 
  (./TAREA 6.aux
@@ -835,7 +830,7 @@ Here is how much of TeX's memory you used:
  41453 multiletter control sequences out of 15000+600000
  608950 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,8n,93p,750b,575s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 85i,8n,93p,750b,577s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2025
 /texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/
 type1/public/lm/lmbxi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/l
@@ -847,7 +842,7 @@ exlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2025/texmf-di
 st/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/pub
 lic/lm/lmri12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
 <c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on "TAREA 6.pdf" (14 pages, 760796 bytes).
+Output written on "TAREA 6.pdf" (14 pages, 760568 bytes).
 PDF statistics:
  287 PDF objects out of 1000 (max. 8388607)
  215 compressed objects within 3 object streams

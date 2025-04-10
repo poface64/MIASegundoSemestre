@@ -36,7 +36,7 @@
 		\vspace{3cm}
 		{\LARGE \bfseries Lógica difusa \par}
 		\vspace{1cm}
-		{\Large \bfseries Tarea 7. Modelando una función sen(x) con lógica difusa usando el método de Sugeno con FuzzyToolbox y en código matlab. \par}
+		{\Large \bfseries Tarea 7. Modelando una función sen(x) con lógica difusa usando el método de Sugeno con Fuzzy Toolbox y en código matlab. \par}
 		\vfill
 		{\Large \textit{Ángel García Báez}\par}
 		\vfill
@@ -54,7 +54,7 @@
 
 \section{Introducción}
 
-En el presente reporte se plantea el problema de modelar o aproximar una función $sen(x)$ en el rango de $(0,2\pi)$ con lógica difusa y usando el método de Sugeno. Para ello, se tomo de base la función $sen(x)$ y se dividio en 8 pedacitos que posteriormente pasaron a ser las funciones de membresia de la variable de entrada y que mapean a la variable de salida.
+En el presente reporte se plantea el problema de modelar o aproximar una función $sen(x)$ en el rango de $(0,2\pi)$ con lógica difusa y usando el método de Sugeno. Para ello, se tomo de base la función $sen(x)$ y se dividió en 9 tramos que posteriormente pasaron a ser las funciones de membresia de la variable de entrada y que mapean a la variable de salida.
 Se hizo la implementación mediante el fuzzytoolbox de y se programo paso a paso.
 
 Se muestra la comparativa de los resultados obtenidos tanto con el fuzzy toolbox como con el código hecho en matlab paso a paso para 3 escenarios distintos:
@@ -68,12 +68,9 @@ Cuando la variable de entrada es mínima, cuando es media y cuando es máxima.
 
 \subsection{Explicación del Problema}
 
-Se quiere aproximar el comportamiento de la función $sen(x)$ en el rango de $(0,2\pi)$ haciendo uso de un sistema de logica difusa con el método de Sugeno. Para ello unicamente se toma una variable de entrada X que tiene el rango ya mencionado.
+Se quiere aproximar el comportamiento de la función $sen(x)$ en el rango de $(0,2\pi)$ haciendo uso de un sistema de lógica difusa con el método de Sugeno. Para ello unicamente se toma una variable de entrada X que tiene el rango ya mencionado.
 
-La propuesta es dividir en 8 pedacitos el comportamiento de la función seno para generar 8 funciones de membresia triangulares en $X$. 
-
-
-
+La propuesta es dividir en 9 tramos el comportamiento de la función seno para generar 9 funciones de membresia triangulares en $X$. 
 
 
 \subsection{Variables y sus codificaciones}
@@ -153,7 +150,7 @@ La gráfica de superficie resultante de todo lo descrito previamente, es la sigu
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\textwidth]{IMG/P14.png}
+	\includegraphics[width=1\textwidth]{IMG/P13.png}
 \end{figure}
 
 La gráfica resultante es un gráfico en 2 dimensiones que simula bastante bien el comportamiento del seno.
@@ -162,9 +159,9 @@ La gráfica resultante es un gráfico en 2 dimensiones que simula bastante bien 
 
 \subsection{Implementación del problema del mesero paso a paso}
 
-A continuación se explica como se implemento el sistema difuso para aproximar el seno pero programandolo paso a paso en matlab.
+A continuación se explica como se implemento el sistema difuso para aproximar el seno paso a paso en matlab.
 
-El primer paso  identificar las variables de discurso Ángulo (X) y la salida del $seno(x)$ en 0.\\
+El primer paso fue identificar las variables de discurso: Ángulo (X) y la salida del $seno(x)$ en 0.\\
 
 Con referencia a lo explicado en el libro de \cite{Cisneros2004}, se implemento la función de membresía tiangular tal y como la define a continuación:
 
@@ -195,14 +192,14 @@ $$
 contribucion_i = w_i \cdot z_i
 $$
 
+\newpage
+
 Por ultimo, ya que se contaban con las funciones de membresía y el sistema de reglas, dado que se van a trabajar con salidas singleton, la forma de deffuzificar las entradas para generar las salidas es mediante el método del promedio ponderado:
 
 
 $$
 z = \frac{\sum_{i=1}^{N} w_i \cdot z_i}{\sum_{i=1}^{N} w_i}
 $$
-
-
 
 
 donde:
@@ -264,7 +261,7 @@ Para el caso medio, se propone un valor de $X = 3.14$.
 	\label{fig:comparacion3}
 \end{figure}
 
-A la izquierda se muestran los resultados del toolbox y a la derecha el resultado del sistema programado paso a paso. El toolbox reporta un valor de 0 para el caso planteado, mientras que el sistema programado paso a paso muestra un valor de 3.14. La diferencia entre ambos casos es nula, por lo que se puede afirmar que llegan al mismo resultado. Un valor de 0 en $X$ llegan a dar como resultado del seno de 0.
+A la izquierda se muestran los resultados del toolbox y a la derecha el resultado del sistema programado paso a paso. El toolbox reporta un valor de $-6.61*e^(-6)$ para el caso planteado, mientras que el sistema programado paso a paso muestra un valor de $-6.61*e^(-6)$. La diferencia entre ambos casos es nula, por lo que se puede afirmar que llegan al mismo resultado. Un valor de 3.14 en $X$ llegan a dar como resultado un seno de practicamente 0.
 
 \newpage
 
@@ -287,12 +284,15 @@ Para el caso máximo, se propone un valor de $X = 6.28$.
 	\label{fig:comparacion4}
 \end{figure}
 
-A la izquierda se muestran los resultados del toolbox y a la derecha el resultado del sistema programado paso a paso. El toolbox reporta un valor de 0 para el caso planteado, mientras que el sistema programado paso a paso muestra un valor de 6.28. La diferencia entre ambos casos es nula, por lo que se puede afirmar que llegan al mismo resultado. Un valor de 0 en $X$ llegan a dar como resultado del seno un valor de casi 0.
+A la izquierda se muestran los resultados del toolbox y a la derecha el resultado del sistema programado paso a paso. El toolbox reporta un valor de $-0.00287$ para el caso planteado, mientras que el sistema programado paso a paso muestra un valor de $-2.44*e^(-16)$. La diferencia entre ambos casos es de decimales, es relativamente pequeña, pero para efectos practicas, ambos se encuentran en casi 0, por lo que se puede afirmar que llegan al mismo resultado. Un valor de 6.28 en $X$ llegan a dar como resultado un seno de prácticamente 0.
 
 
 \section{Conclusiones}
 
-A rasg
+A grandes rasgos, la aproximación obtenida para la función del seno con el método de Sugeno es bastante bien acercada al comportamiento real de la función.
+
+Se observa que no existe prácticamente diferencia entre la resolución con el toolbox y con la resolución por la implementación propia.
+
 \newpage
 
 \section{Referencias}
