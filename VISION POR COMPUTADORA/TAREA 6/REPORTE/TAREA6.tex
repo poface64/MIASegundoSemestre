@@ -112,16 +112,19 @@ Es por ello que se quiere usar LDA para proyectar la información y reducir la d
 	
 	\section{Metodología}
 	
-	Para realizar el calculo del LDA  es necesario desglosarlo en varios pasos. Primero, cabe mencionar que el discriminante lineal es una técnica multivariada de aprendizaje supervisado que permite reducir la dimensionalidad de datos cuantitativos continuos que se encuentren etiquetados por una variable de clase, donde el resultado son $k-1$ combinaciones lineales donde proyectar los datos \cite{johnson2007}. 
+El discriminante lineal es una técnica multivariada de aprendizaje supervisado que permite reducir la dimensionalidad de datos cuantitativos continuos que se encuentren etiquetados por una variable de clase, donde el resultado son $k-1$ combinaciones lineales donde proyectar los datos \cite{johnson2007}.
+
+ Cabe mencionar que esto se hace bajo supuestos fuertemente ligados a que los conjuntos de datos por grupo siguen una distribución normal multivariada, tienen una matriz de varianzas y covarianzas similar distinta de la matriz nula y que son independientes entre sí.
 	
-	Para ejecutar la técnica, es necesario tener identificados a la matriz de caracteristicas $X$ y al vector de etiquetas o clases $Y$: 
+Para ejecutar la técnica, es necesario tener identificados a la matriz de características $X$ y al vector de etiquetas o clases $Y$: 
 	
 	$$
 	 \begin{matrix}
 	 	X = \{x_1,x_2,\dots,x_n\} \\
-	 	Y = \{Y_1, Y_2,\dots ,Y_k\}
+	 	Y = \{y_1, y_2,\dots ,y_k\}
 	 \end{matrix}
 	$$
+	
 	Donde: 
 	\begin{itemize}
 		\item $X$ Es la matriz de datos de tamaño $N\times P$.
@@ -212,6 +215,7 @@ Finalmente, se calcula la variabilidad explicada por cada componente mediante lo
 $$VE = 100*\frac{\lambda_i}{\sum_{i = 1}^P{\lambda_i}}$$
 
 Donde: 
+
 \begin{itemize}
 	\item $VE$ Es la variabilidad explicada por el $i$-ésimo valor propio.
 	\item $\lambda_i$ Es el $i$-ésimo valor propio.
@@ -232,12 +236,22 @@ Otro ejemplo, si se tienen 3 clases y 4 variables, el sistema va a calcular 4 va
 
 A continuación, se aplico un breve pre-procesamiento de los datos:
 
-- Se identificaron y eliminaron las filas con valores faltantes (2 filas eliminadas)
-- Se guardo en $X$  las variables numéricas de longitud del pico, profundidad del pico, largo de la aleta y masa corporal.
-- Se guardo en $Y$ las etiquetas de la especie a la que pertenecen los individuos.
 
-Posteriormente, se aplico LDA para reducir dimensionalidad en 2 casos: para los datos recortados unicamente con 2 especies de pingüinos (Adelie y Chinstrap) y para el caso de la base de datos completa que contempla las 3 especies de pingüinos (Adelie, Chinstrap y Gentoo).
-	
+\begin{itemize}
+	\item Se identificaron y eliminaron las filas con valores faltantes (2 filas eliminadas)
+	\item Se guardo en $X$  las variables numéricas de longitud del pico, profundidad del pico, largo de la aleta y masa corporal.
+	\item Se guardo en $Y$ las etiquetas de la especie a la que pertenecen los individuos.
+\end{itemize}
+
+Posteriormente, se aplico LDA para reducir dimensionalidad en 2 casos: 
+
+
+\begin{itemize}
+	\item Para los datos recortados unicamente con 2 especies de pingüinos (Adelie y Chinstrap)
+	\item Para el caso de la base de datos completa que contempla las 3 especies de pingüinos (Adelie, Chinstrap y Gentoo).
+\end{itemize}
+
+
 \newpage
 	
 \section{Resultados para dos clases}
@@ -257,7 +271,7 @@ $$
 $$
 
 
-Se observa la evidente diferencia de las escalas entre las variables, siendo la masa corporal la que tiene valores más altos respecto al resto de variables.
+Se observa la evidente diferencia de las escalas entre las variables, siendo la masa corporal la que tiene valores más altos respecto al resto de variables en su media para los 3 vectores.
 
 \subsection{Matriz de dispersión dentro de clases}
 
@@ -272,6 +286,8 @@ S_w =
 144719.7580 & 65889.0407 & 328426.6946 & 41439235.25
 \end{bmatrix}
 $$
+
+Se observa como las varianzas y covarianzas de la matriz son mayores en los pares donde esta involucrada la variable de masa corporal (variable 4), mientras que por otro lado, resultan menores en aquellas parejas donde se encuentra involucrada la variable ancho del pico (variable 2).
 
 \newpage
 
@@ -335,7 +351,7 @@ $$ W =
 \end{bmatrix}
 $$
 
-Se observa como el valor asociado a la variable de masa corporal en el primer vector propio es el que tiene un mayor peso en la primer componente, siendo así mismo que la longitud de la aleta tiene mayor peso sobre la componente 2, la componente 3 se caracteriza porque su mayor peso recae en la variable de longitud del pico y la variable 4 indica que el mayor peso recae sobre la variable de la profundidad del pico.
+Se observa como el primer vector propio de la un mayor peso a la variable de la longitud del pico para hacer la proyección en el nuevo espacio, siendo la masa corporal la que menor peso tiene en este nuevo eje.
 
 Haciendo las cuentas, a continuación se muestra cuanta variabilidad explica cada componente:
 
@@ -348,10 +364,17 @@ $$VE =
 \end{bmatrix}
 $$
 
+Recordando que solo vamos a tener 1 vector característico que proyecta a los datos y 1 solo valor característico distinto de 0 asociado a dicho vector, lo anterior se puede re-escribir dicho vector propio y vector propio como sigue:
 
+$$ W = 
+\begin{bmatrix}
+	0.8401 & -0.5409 & 0.0408 & -0.0023 
+\end{bmatrix}, \quad \lambda = 3.8054, \quad VE = 100\%
+$$
 
-Se observa como más del 99\% de la variabilidad explicada recae sobre el primer componente.
+El vector $W$ proyecta en un solo nuevo eje a la matriz de características $X$, dicho vector proyector explica un 100\% de la variabilidad de los datos.
 
+ 
 
 \newpage
 
@@ -364,30 +387,30 @@ A continuación se muestra una pequeña fracción de los datos al ser proyectado
 	\begin{minipage}{0.8\textwidth}
 		\centering
 		\includegraphics[width=0.3\textwidth]{IMG/T2.png}
-		\caption{Base de datos centrada y proyectada sobre los vectores propios (primeros 5 casos).}
+		\caption{Matriz de caracteristicas $X$ proyectadas sobre 1 nuevo eje).}
 		\label{fig:f4}
 	\end{minipage}\hfill
 \end{figure}
 
-Se observa como los valores más grandes de los valores proyectados se encuentran entre las componentes 1 y 2.
+El nuevo sistema de proyección consta unicamente de un eje en donde se proyectaron los datos, debido a que solo el primer eje resulto explicar el 100\% de la variabilidad de los datos.
 
 \newpage
 
 \subsection{Proyección en 1D}
 
-Debido al sorprendente resultado que indica que el 99\% de la variabilidad de los datos recae sobre la primer componente, se decidió probar a graficar la primer componente en un gráfico de puntos unidimensional. El resultado fue el siguiente:
+Debido a que el primer y único eje de la proyección de los datos es el único que se tiene para cuando hay 2 clases, se procede a proyectarlo en un espacio unidimensional para observar como se comporta:
 
 \begin{figure}[h!]
 	\centering
 	\begin{minipage}{1.1\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{IMG/G3.png}
-		\caption{Proyección en 1D sobre el componente 1.}
+		\caption{Proyección en 1D sobre el eje 1.}
 		\label{fig:f5}
 	\end{minipage}\hfill
 \end{figure}
 
-El gráfico muestra la proyección de los datos en un espacio unidimensional, donde se observa que la mitad derecha esta mayormente representada por pingüinos de la especie Gentoo, mientras que la mitad izquierda presenta el problema del traslape entre clases. Pese a que la varianza explicada sea del 99\%, no se puede interpretar mucho a simple vista.
+El gráfico de la proyección unidimensional del discriminante lineal muestra un traslape entre las especies, siendo que Algunos Adelie tienen caracteristiacs que los hacen parecer Chinstrap y biceversa. 
 
 \newpage
 
@@ -404,9 +427,10 @@ $$
 	\mu_{Adelie} =  &\{38.7914 & 18.3464 & 189.9536 & 3700.662\}	 \\
 	\mu_{Chinstrap} = & \{48.8338 & 18.4206 & 195.8235 & 3733.088\}	 \\
 	\mu_{Gentoo} = & \{47.5049 & 14.9821 &  217.1870  & 5076.016\}	 \\
-	\mu = & \{43.9219 & 17.1512 & 200.9152 & 4201.7544 \}	 
+	\mu = & \{43.92193 & 17.15117 & 200.91520 & 4201.75439\}	 
 \end{matrix}
 $$
+ 
 
 
 
@@ -425,6 +449,9 @@ S_w =
 271554.1482 & 109283.7765 & 608678.321 & 72443483.2
 \end{bmatrix}
 $$
+
+Se observa como las varianzas y covarianzas de la matriz son mayores en los pares donde esta involucrada la variable de masa corporal (variable 4), mientras que por otro lado, resultan menores en aquellas parejas donde se encuentra involucrada la variable ancho del pico (variable 2).
+
 
 \newpage
 
@@ -488,7 +515,7 @@ $$ W =
 \end{bmatrix}
 $$
 
-Se observa como el valor asociado a la variable de masa corporal en el primer vector propio es el que tiene un mayor peso en la primer componente, siendo así mismo que la longitud de la aleta tiene mayor peso sobre la componente 2, la componente 3 se caracteriza porque su mayor peso recae en la variable de longitud del pico y la variable 4 indica que el mayor peso recae sobre la variable de la profundidad del pico.
+Se observa como el primer vector propio tiene un mayor peso en la variable de la longitud del pico mientras que en el segundo vector propio, el mayor peso lo recibe la variable de la longitud del pico. Siendo la longitud de la masa corporal la que menos peso tiene en cada uno de los respectivos vectores.
 
 Haciendo las cuentas, a continuación se muestra cuanta variabilidad explica cada componente:
 
@@ -501,62 +528,71 @@ $$VE =
 \end{bmatrix}
 $$
 
+Recordando que solo los primeros 2 vectores característicos proyectan los datos en un nuevo espacio de 2 dimensiones, esto se refleja en la variabilidad explicada con los valores propios, donde el primer nuevo eje explica el 86.6\% la variabilidad de los datos y el segundo explica el 13.4\%. A raiz de esto, solo importan los primeros 2 valores propios y vectores propios, por lo que se re-escriben los resultados como sigue:
+
+ 
+ 
 
 
-Se observa como más del 99\% de la variabilidad explicada recae sobre el primer componente.
+
+$$ W = 
+\begin{bmatrix}
+	-0.0846 & 0.9930 & -0.0825 & -0.0012  \\\
+	-0.9982 & -0.0502 & 0.0322  & 0.0041
+\end{bmatrix}, \quad \lambda =[15.0192, 2.3231] \quad VE = [86.6064, 13.3954]\%
+$$
+
 
 
 \newpage
 
 \subsection{Proyección de las nuevas componentes}
 
-A continuación se muestra una pequeña fracción de los datos al ser proyectados sobre el nuevo sistema creado con ayuda de los vectores propios:
+A continuación se muestra una pequeña fracción de los datos al ser proyectados sobre el nuevo sistema creado con ayuda de los vectores propios significativos obtenidos:
 
 \begin{figure}[h!]
 	\centering
 	\begin{minipage}{0.8\textwidth}
 		\centering
-		\includegraphics[width=0.3\textwidth]{IMG/T2.png}
-		\caption{Base de datos centrada y proyectada sobre los vectores propios (primeros 5 casos).}
+		\includegraphics[width=0.6\textwidth]{IMG/T3.png}
+		\caption{Base de datos centrada y proyectada sobre los vectores propios (primeros 6 casos).}
 		\label{fig:f6}
 	\end{minipage}\hfill
 \end{figure}
 
-Se observa como los valores más grandes de los valores proyectados se encuentran entre las componentes 1 y 2.
+Se observa como en los 2 nuevos ejes encontrados, los datos son proyectados hacia valores negativos.
 
 \newpage
 
-\subsection{Proyección en 1D}
+\subsection{Proyección en 2D}
 
-Debido al sorprendente resultado que indica que el 99\% de la variabilidad de los datos recae sobre la primer componente, se decidió probar a graficar la primer componente en un gráfico de puntos unidimensional. El resultado fue el siguiente:
+Debido a que entre la primera y la segunda nueva dimensión se explica un 100\% de la variabilidad, a continuación se muestran sus proyecciones en un gráfico de dispersión: 
 
 \begin{figure}[h!]
 	\centering
 	\begin{minipage}{1.1\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{IMG/G3.png}
-		\caption{Proyección en 1D sobre el componente 1.}
+		\includegraphics[width=\textwidth]{IMG/G6.png}
+		\caption{Proyección en 2D sobre los nuevos ejes.}
 		\label{fig:f7}
 	\end{minipage}\hfill
 \end{figure}
 
-El gráfico muestra la proyección de los datos en un espacio unidimensional, donde se observa que la mitad derecha esta mayormente representada por pingüinos de la especie Gentoo, mientras que la mitad izquierda presenta el problema del traslape entre clases. Pese a que la varianza explicada sea del 99\%, no se puede interpretar mucho a simple vista.
-
-
+El gráfico muestra una proyección de los datos en donde se observa claramente la separación de la especie Gentoo respecto a las demás, mientras que la separación entre Adelie y Chinstrap es más evidente que en las gráficas mostradas al inicio del documento. El discriminante cumple bien su función de reducir la dimensionalidad y proyectar los datos originales en un nuevo espacio donde sea más evidente la separabilidad de los mismos.
 
 
 \newpage
 	
 \section{Conclusiones}
 	
-Después de realizar el ejercicio de explorar una base de datos y aplicarle PCA para poder proyectar su información concentrada en un espacio de menor dimensionalidad, se pudo observar como el PCA mejora sustancialmente la representación de los datos al poder comprimir las variables en un espacio de menor dimensionalidad sin perder apenas información.
+Tras la exploración e implementación del algoritmo para la obtención del LDA, la tecnica reporta resultados bastante buenos al reducir la dimensionalidad de un conjunto de 4 dimensiones al lograr proyectarlo unicamente en 2, manteniendo entendible y explicable quienes son las variables de mayor peso en cada nueva dimensión para lograr dicha separabilidad.
 
-La técnica es eficaz, relativamente simple y bastante potente, aunque presenta algunas debilidades. Una de las principales es su sensibilidad a la escala de las variables. Como se observó en el ejercicio, la variable masa corporal, que tenía los valores más grandes, resultó ser la que más aportó a la primera componente principal. Esto se debe a que, al tener mayor variabilidad absoluta, influye más en el cálculo de los valores propios, lo que provoca que se le atribuya una mayor capacidad explicativa. Para enfrentar este tipo de situaciones, se recomienda estandarizar los datos mediante una transformación $Z$, o bien utilizar la matriz de correlaciones en lugar de la matriz de covarianzas.
+Funciona bien a rasgos generales, puesto que como se observo en los resultados, la especie de Adelie y Chinstrap estan mezcladas entre sí, efecto que se logra atenuar mediante LDA al momento de visualizar los datos.
 
-El otro problema que acarrea consigo el PCA es la posibilidad de que la matriz de varianzas y covarianzas o la de correlaciones (cualquiera que se este usando) tenga la particularidad de ser NO invertible, por lo que ahí la técnica ya no es posible aplicarla.
+Por otro lado, aquí se trabajo el caso para 2 y 3 grupos, que son los que finalmente determinan cuantos ejes nuevos van a resultar del proceso, pero el problema se complica cuando se tienen 5 o más grupos, puesto que no es posible visibilizar los 4 tentativos nuevos ejes al mismo tiempo, por lo que seria necesario buscar o proponer alternativas que preserven la consistencia de los datos y puedan ser fácilmente representados en espacios de a lo más 3 dimensiones aunque se tengan 5 o más grupos.
 
-Más allá de estos problemas, la técnica probo ser buena para mejorar la visualización de los datos para este caso de aplicación.
-
+Finalmente, la presencia de normalidad, homocedasticidad e independencia para los datos se asumió para este ejemplo, es importante la verificación de dichos supuestos debido a que la técnica clásica esta supuesta a ellos, en caso de no cumplirse, el proceso puede presentar problemas como matrices singulares no invertibles y de ultimas, que los resultados e inferencias obtenidos carezcan de 
+robustez.
 \newpage
 
 	
@@ -567,29 +603,25 @@ Más allá de estos problemas, la técnica probo ser buena para mejorar la visua
 \newpage
 	
 \section{Anexos}	
-\subsection{Implementación de la exploración y el PCA en MATLAB}
+\subsection{Implementación de la exploración y el LDA en MATLAB}
 \begin{minted}[linenos,firstnumber=1]{matlab}
 %% Cargar la base de datos en formato CSV %%
 ruta = "penguins.csv";
 datos = readtable(ruta); % Leer el archivo CSV en una tabla
 size(datos); % Ver el tamaño de los datos
-
 % 1 etiqueta de clasificación (Species)
 % 3 características categóricas (Isla, sexo y año de observación)
 % 4 variables continuas: bill length, bill depth, fliper y bodymass
-
 % Filtrar solo las columnas numéricas y eliminar filas con datos faltantes
 indices = find(any(isnan(datos{:, 4:7}), 2)); % Buscar filas con valores NaN en las columnas 4 a 7
 datos1 = datos;
 datos1(indices, :) = []; % Eliminar esas filas
-
 % Extraer las variables numéricas y la especie para el gráfico
 % Extraer las variables numéricas y la especie para el gráfico
 especie = datos1.species; % Columna 'species' con las etiquetas de especies
 % Convertir la columna 'especie' en un vector de tipo categorical
 especie = categorical(especie); % Convertir a tipo categorical, que gscatter entiende
 datos1 = table2array(datos1(:, 4:7)); % Convertir las columnas 4 a 7 a un arreglo numérico
-
 %% Gráficos descriptivos %%
 % Graficar el gráfico de dispersión usando gscatter
 % Longitud del pico y ancho del pico
@@ -598,7 +630,6 @@ gscatter(datos1(:,1), datos1(:,2), especie,"filled");
 xlabel('Longitud del pico'); % Etiqueta del eje x
 ylabel('Profundidad del pico'); % Etiqueta del eje y
 title('G1'); % Título del gráfico
-
 % Longitud del pico y longitud de la aleta %
 subplot(2,2,2)
 gscatter(datos1(:,1), datos1(:,3), especie,"filled");
@@ -617,7 +648,6 @@ gscatter(datos1(:,2), datos1(:,3), especie,"filled");
 xlabel('Profundidad del pico'); % Etiqueta del eje x
 ylabel('Longitud de la aleta'); % Etiqueta del eje y
 title('G4'); % Título del gráfico
-
 %% Exploración en 3D %&
 % Crear un gráfico 3D
 subplot(1,2,1)
@@ -627,7 +657,6 @@ xlabel('Longitud del pico');
 ylabel('Profundidad del pico');
 zlabel('Longitud del aletín');
 title('');
-
 subplot(1,2,2)
 scatter3(datos1(:,2), datos1(:,3), datos1(:,4), 50, especie, 'filled'); 
 % Ajustar etiquetas y título
@@ -638,48 +667,92 @@ title('');
 % Mostrar la leyenda de colores
 % Guardar como archivo PNG
 
-%% HACER EL PCA %%
-
-% Obtener la media de los datos
-%% Cambio de coordenadas %%
-medias = mean(datos1)
-cdatos = datos1 - medias % Centrar en la media
-
-
-% Calculo de la covarianza %
-n = size(datos1);
-Si = (cdatos'*cdatos)/(n(1)-1)
-
-%% Calcular los eigen valores %%
-[V, D] = eig(Si)
-
-100*diag(D)/sum(diag(D))
-
-%% Calcular los scores %%
-%% Calcular los scores %%
-NB = cdatos * V; % Proyección de los datos
-
-% Crear una dispersión en 1D (todos los puntos con la misma Y)
-y = zeros(size(NB, 1), 1); % Todos los puntos en Y=0
-gscatter(NB(:,4), y, especie, 'rgb', '.', 15);
-xlabel('Componente 1');
+%% FUNCIÓN LDA %%
+function resu = LDA(X, Y)
+	% Asegúrate de que X es una matriz
+	X = double(X);    
+	% Número de variables (columnas)
+	nc = size(X, 2);
+	% Clases únicas
+	clas = unique(Y);
+	nr = length(clas); % número de clases    
+	% Inicializar matrices
+	medias = zeros(nr, nc);
+	Sw = zeros(nc, nc);
+	for i = 1:nr
+		% Subconjunto para la clase k-ésima
+		mini1 = X(Y == clas(i), :);        
+		% Vector de medias clase k
+		medias(i, :) = mean(mini1, 1);        
+		% Matriz de covarianza clase k
+		centered = mini1 - medias(i, :);
+		Sn = centered' * centered;        
+		% Acumular la varianza dentro de clase
+		Sw = Sw + Sn;
+	end
+	% Vector de medias global
+	m = mean(X, 1);
+	% Dispersión total
+	centered_global = X - m;
+	St = centered_global' * centered_global;
+	% Matriz de dispersión entre clases
+	Sb = St - Sw;
+	% Matriz S = inv(Sw) * Sb
+	S = inv(Sw) * Sb;
+	% Eigenvalores y eigenvectores
+	[V, D] = eig(S);
+	[eigenvalues, idx] = sort(diag(D), 'descend');
+	V = V(:, idx);
+	% Varianza explicada
+	VE = round(100 * eigenvalues / sum(eigenvalues), 4);
+	% Filtrar vectores con varianza explicada significativa
+	DS = VE > 0.0001;
+	SV = V(:, DS);
+	% Proyección de los datos
+	Z = X * SV;
+	% Renombrar las columnas
+	for i = 1:size(Z, 2)
+		colnames{i} = ['ND', num2str(i)];
+	end
+	% Armar resultado
+	resu.varianza = VE;
+	resu.coeficientes = SV;
+	resu.proyecciones = array2table(Z, 'VariableNames', colnames);
+end
+%% Caso para 2 grupos (Adelie y Chinstrap)
+X1 = datos1(Y ~= "Gentoo",:);
+Y1 = especie(Y ~= "Gentoo");
+%% Aplicar el LDA %%
+salida1 = LDA(X1,Y1)
+% Varianza explicada
+salida1.varianza
+% Vectores propios
+salida1.coeficientes
+% Proyecciones
+Z1 = table2array(salida1.proyecciones);
+%% Crear una dispersión en 1D (todos los puntos con la misma Y)
+y = zeros(size(Z1, 1), 1); % Todos los puntos en Y=0
+gscatter(Z1, y, Y1, 'rgb', '.', 15);
+xlabel('ND1');
 yticks([]); % Eliminar marcas del eje Y
 ylabel('');
-title('Proyección 1D sobre el componente 1');
-
-%% Gráfico en 2d con la primer y segunda componente %%
-gscatter(NB(:,4), NB(:,3), especie,"filled");
-xlabel('Componente 1'); % Etiqueta del eje x
-ylabel('Componente 2'); % Etiqueta del eje y
-title(''); % Título del gráfico
-
-%% Crear un gráfico 3D %%
-scatter3(NB(:,4), NB(:,3), NB(:,2), 50, especie, 'filled'); 
-% Ajustar etiquetas y título
-xlabel('Componente 1');
-ylabel('Componente 2');
-zlabel('Componente 3');
 title('');
+%% Caso para 3 grupos (Adelie, Chinstrap y Gentoo)
+X2 = datos1;
+Y2 = especie;
+%% Aplicar el LDA %%
+salida2 = LDA(X2,Y2)
+% Varianza explicada
+salida2.varianza
+% Vectores propios
+salida2.coeficientes
+% Proyecciones
+Z2 = table2array(salida2.proyecciones) 
+%% Gráficar en 2D %%
+gscatter(Z2(:,1), Z2(:,2), Y2,"filled");
+xlabel('ND1'); % Etiqueta del eje x
+ylabel('ND2'); % Etiqueta del eje y
+title(''); % Título del gráfico
 \end{minted}
 	
 	

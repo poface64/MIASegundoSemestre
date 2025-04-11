@@ -13,8 +13,8 @@
 \contentsline {subsection}{\numberline {4.3}Matriz de dispersión entre clases}{16}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Valores y vectores propios}{17}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Proyección de las nuevas componentes}{18}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Proyección en 1D}{19}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.6}Proyección en 2D}{19}{subsection.4.6}%
 \contentsline {section}{\numberline {5}Conclusiones}{20}{section.5}%
 \contentsline {section}{\numberline {6}Referencias}{21}{section.6}%
 \contentsline {section}{\numberline {7}Anexos}{22}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Implementación de la exploración y el PCA en MATLAB}{22}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.1}Implementación de la exploración y el LDA en MATLAB}{22}{subsection.7.1}%

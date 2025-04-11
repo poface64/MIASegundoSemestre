@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.3.5)  10 APR 2025 01:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.3.5)  11 APR 2025 08:53
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -529,14 +529,7 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count334
 \l__pdf_internal_box=\box70
 )
-(./TAREA6.aux
-
-LaTeX Warning: Label `fig:f4' multiply defined.
-
-
-LaTeX Warning: Label `fig:f5' multiply defined.
-
-)
+(./TAREA6.aux)
 \openout1 = `TAREA6.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
@@ -687,7 +680,7 @@ Overfull \hbox (36.0022pt too wide) in paragraph at lines 97--103
 
 [4 <./IMG/G2.png (PNG copy)>]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-27.
+30.
 
 (c:/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -709,21 +702,21 @@ xmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
 [11]
 
 [12]
-<IMG/T2.png, id=186, 121.05225pt x 296.307pt>
+<IMG/T2.png, id=187, 121.05225pt x 296.307pt>
 File: IMG/T2.png Graphic file (type png)
 <use IMG/T2.png>
-Package pdftex.def Info: IMG/T2.png  used on input line 366.
+Package pdftex.def Info: IMG/T2.png  used on input line 389.
 (pdftex.def)             Requested size: 86.4012pt x 211.49619pt.
 
 
 [13 <./IMG/T2.PNG>]
-<IMG/G3.png, id=193, 705.38531pt x 395.22656pt>
+<IMG/G3.png, id=194, 450.483pt x 277.5168pt>
 File: IMG/G3.png Graphic file (type png)
 <use IMG/G3.png>
-Package pdftex.def Info: IMG/G3.png  used on input line 384.
-(pdftex.def)             Requested size: 396.0022pt x 221.88017pt.
+Package pdftex.def Info: IMG/G3.png  used on input line 407.
+(pdftex.def)             Requested size: 396.0022pt x 243.95721pt.
 
-Overfull \hbox (36.0022pt too wide) in paragraph at lines 382--388
+Overfull \hbox (36.0022pt too wide) in paragraph at lines 405--411
  []$[]$ 
  []
 
@@ -734,27 +727,39 @@ Overfull \hbox (36.0022pt too wide) in paragraph at lines 382--388
 [15]
 
 [16]
+Overfull \hbox (118.45259pt too wide) detected at line 543
+\OML/lmm/m/it/10.95 W \OT1/lmr/m/n/10.95 = [] \OML/lmm/m/it/10.95 ;  ^^U \OT1/l
+mr/m/n/10.95 = [15\OML/lmm/m/it/10.95 :\OT1/lmr/m/n/10.95 0192\OML/lmm/m/it/10.
+95 ; \OT1/lmr/m/n/10.95 2\OML/lmm/m/it/10.95 :\OT1/lmr/m/n/10.95 3231] \OML/lmm
+/m/it/10.95 VE \OT1/lmr/m/n/10.95 = [86\OML/lmm/m/it/10.95 :\OT1/lmr/m/n/10.95 
+6064\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 13\OML/lmm/m/it/10.95 :\OT1/lmr/m/
+n/10.95 3954]%
+ []
+
+
 
 [17]
-File: IMG/T2.png Graphic file (type png)
-<use IMG/T2.png>
-Package pdftex.def Info: IMG/T2.png  used on input line 519.
-(pdftex.def)             Requested size: 86.4012pt x 211.49619pt.
+<IMG/T3.png, id=212, 214.401pt x 283.0575pt>
+File: IMG/T3.png Graphic file (type png)
+<use IMG/T3.png>
+Package pdftex.def Info: IMG/T3.png  used on input line 557.
+(pdftex.def)             Requested size: 172.80241pt x 228.14801pt.
 
 
-[18]
-File: IMG/G3.png Graphic file (type png)
-<use IMG/G3.png>
-Package pdftex.def Info: IMG/G3.png  used on input line 537.
-(pdftex.def)             Requested size: 396.0022pt x 221.88017pt.
+[18 <./IMG/T3.PNG>]
+<IMG/G6.png, id=220, 378.6948pt x 287.6346pt>
+File: IMG/G6.png Graphic file (type png)
+<use IMG/G6.png>
+Package pdftex.def Info: IMG/G6.png  used on input line 575.
+(pdftex.def)             Requested size: 396.0022pt x 300.78316pt.
 
-Overfull \hbox (36.0022pt too wide) in paragraph at lines 535--541
+Overfull \hbox (36.0022pt too wide) in paragraph at lines 573--579
  []$[]$ 
  []
 
 
 
-[19]
+[19 <./IMG/G6.png (PNG copy)>]
 
 [20] (./TAREA6.bbl)
 
@@ -762,16 +767,16 @@ Overfull \hbox (36.0022pt too wide) in paragraph at lines 535--541
 \pydata@fh@_1BDB02401324BB5A966AE52C61AB56AE.data.minted=\write6
 \openout6 = `_1BDB02401324BB5A966AE52C61AB56AE.data.minted'.
 
-runsystem(latexminted config  --timestamp 20250410011635 1BDB02401324BB5A966AE5
+runsystem(latexminted config  --timestamp 20250411085357 1BDB02401324BB5A966AE5
 2C61AB56AE)...executed.
 
  (./_1BDB02401324BB5A966AE52C61AB56AE.config.minted)
-runsystem(latexminted cleanconfig  --timestamp 20250410011635 1BDB02401324BB5A9
+runsystem(latexminted cleanconfig  --timestamp 20250411085357 1BDB02401324BB5A9
 66AE52C61AB56AE)...executed.
 
 
 (./_minted/default.style.minted)
-(./_minted/5448CF96FD32AABDBD9331BCE7FBAA1D.highlight.minted
+(./_minted/C13E434F911E9EFB3C5C15FBDE1F6CE4.highlight.minted
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 .
 
@@ -779,36 +784,37 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-18.
+15.
 
 (c:/texlive/2024/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
 [22]
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 65.
 
-[23])
 
-[24] (./TAREA6.aux)
+[23]
+
+[24])
+
+[25] (./TAREA6.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `TAREA6.out' has not changed.
-(rerunfilecheck)             Checksum: E4B9D894CAF883B3FE33159BEB43AD4F;3755.
+(rerunfilecheck)             Checksum: 959901EF8570CA1CB10AD6134D0937A8;3755.
  ) 
 Here is how much of TeX's memory you used:
- 17480 strings out of 473200
- 328592 string characters out of 5720279
- 820798 words of memory out of 5000000
- 40411 multiletter control sequences out of 15000+600000
- 609282 words of font info for 70 fonts, out of 8000000 for 9000
+ 17572 strings out of 473200
+ 330877 string characters out of 5720279
+ 821913 words of memory out of 5000000
+ 40501 multiletter control sequences out of 15000+600000
+ 609600 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,8n,93p,740b,1016s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 85i,8n,93p,548b,1053s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2024
 /texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/
 type1/public/lm/lmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lm
@@ -819,12 +825,13 @@ m/lmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texli
 ve/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2024/texmf-dist
 /fonts/type1/public/lm/lmri12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/publi
 c/lm/lmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:
-/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/texlive/2024/texm
-f-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on TAREA6.pdf (25 pages, 714214 bytes).
+/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/texlive/2024/texm
+f-dist/fonts/type1/public/lm/lmtt10.pfb><c:/texlive/2024/texmf-dist/fonts/type1
+/public/lm/lmtti10.pfb>
+Output written on TAREA6.pdf (26 pages, 862240 bytes).
 PDF statistics:
- 343 PDF objects out of 1000 (max. 8388607)
- 270 compressed objects within 3 object streams
- 55 named destinations out of 1000 (max. 500000)
- 191 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 356 PDF objects out of 1000 (max. 8388607)
+ 277 compressed objects within 3 object streams
+ 56 named destinations out of 1000 (max. 500000)
+ 201 words of extra memory for PDF output out of 10000 (max. 10000000)
 
