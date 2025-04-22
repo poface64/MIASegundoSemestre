@@ -36,7 +36,7 @@
 		\vspace{3cm}
 		{\LARGE \bfseries Visión por Computadora \par}
 		\vspace{1cm}
-		{\Large \bfseries Tarea 7. Aplicación de transformaciones afines en imagenes con escala de grises en MATLAB. \par}
+		{\Large \bfseries Tarea 7. Aplicación de transformaciones afines en imágenes con escala de grises en MATLAB. \par}
 		\vfill
 		{\Large \textit{Ángel García Báez}\par}
 		\vspace{1cm}
@@ -75,7 +75,102 @@ Se desea implementar y aplicar transformaciones afines, digase la posibilidad de
 	
 \section{Metodología}
 	
-Acorde con lo mencionado en \cite{gonzalez2018digital}
+Una forma de definir las transformaciones afines sobre imágenes acorde con \cite{coste2012image} es una función que mapea un objeto desde un espacio afín a otro con la particularidad de que mantiene su estructura. Esta idea aplicada al procesamiento de imágenes, se traduce en un conjunto de transformaciones que se aplican sobre los pixeles de la imagen original de tal forma que logran rotarla, escalarla o trasladarla respecto a su espacio original pero sin perder la estructura de la imagen.
+
+Para llevar a cabo esto sobre cada uno de los pixeles de una imagen, es necesario escribir a cada pixel en base a su posición en fila y en columna, de forma entonces que lo que nos interesa del pixel es su posición como un punto en un plano de dos dimensiones.
+
+Dado que se están trabajando con imágenes en 2 dimensiones, es necesario dotar a cada uno de las coordenadas de los pixeles de una dimensión extra para mantener la homogeneidad de tras aplicar las transformaciones.
+
+Las transformaciones que se van a manejar acorde con \cite{gonzalez2018digital} y para los fines de esta tarea son: traslación, escalamiento y rotación.
+
+La matriz de traslación representa que tanto se va a recorrer la imagen en $X$ y en $Y$ respecto a la imagen original y toma la siguiente forma:
+
+$$
+T = 
+\begin{bmatrix}
+	1 & 0 & T_x \\
+	0 & 1 & T_y \\
+	0 & 0 & 1
+\end{bmatrix}
+$$
+
+
+La matriz de rotación representa la rotación respecto a la esquina superior izquierda de la imagen de magnitud $\theta$ y toma la siguiente forma:
+
+\[
+R = 
+\begin{bmatrix}
+	\cos(\theta) & -\sin(\theta) & 0 \\
+	\sin(\theta) & \cos(\theta)  & 0 \\
+	0            & 0             & 1
+\end{bmatrix}
+\]
+
+
+La matriz de escalado representa la magnitud respecto a la cual se va a escalar la imagen tanto en $X$ como en $Y$ respecto a la imagen original y toma la siguiente forma toma la siguiente forma:
+
+$$
+S = 
+\begin{bmatrix}
+	s_x & 0   & 0 \\
+	0   & s_y & 0 \\
+	0   & 0   & 1
+\end{bmatrix}
+$$
+
+\newpage
+
+Definidas las matrices que se van a aplicar, se define el orden de las transformaciones, el orden en que se aplican las transformaciones impacta en el resultado final de la imagen, en este caso se define a toda la matriz de transformaciones afines como sigue:
+
+
+$$
+M = T \cdot R \cdot S
+$$
+
+Primero se aplica el escalado, luego la rotación y finalmente la traslación.
+
+Definiendo a $P$ como el vector que contiene las coordenadas $X,Y$ del pixel más una tercerda dimensión con la unidad, la transformación del pixel con el espacio afín se ve como sigue:
+
+$$
+\mathbf{p'} = M \cdot \mathbf{p} = T \cdot R \cdot S \cdot 
+\begin{bmatrix}
+	X \\
+	Y \\
+	1
+\end{bmatrix}
+$$
+
+Ahora que se tienen los valores remapeados en el espacio de transformación, es necesario encontrar su correspondiente en el espacio de la imagen original para que se vea reflejada dicha transformación. Para ello se hace el calculo de la inversa de la matriz de transformaciones M como sigue:
+
+$$
+\mathbf{p} = M^{-1} \cdot \mathbf{p'}
+$$
+
+Aplicandolo
+
+$$
+\mathbf{p'} =
+\begin{bmatrix}
+	x' \\
+	y' \\
+	1
+\end{bmatrix},
+\quad
+\mathbf{p} =
+\begin{bmatrix}
+	x \\
+	y \\
+	1
+\end{bmatrix}
+$$
+
+De esta forma, se recuperan los valores pero en escala continua, esto debe ser corregido debido a que el dominio original de las coordenadas de la imagen es discreto, aquí se aplica la interpolación bilineal que ya se hizo y se explico en el desarrollo de la tarea 2.
+
+Con toda la maquinaria teórica para poner en funcionamiento las transformaciones afines, se programo la implementación en matlab y se hicieron 4 aplicaciones de la implementación mostrando cada una de las transformaciones de manera individual y una donde se combinan las 3.
+
+
+
+
 
 \newpage
 
@@ -180,6 +275,7 @@ Se muestra el resultado de aplicar una traslación de -40 unidades en $X$, 60 un
 	
 \section{Conclusiones}
 	
+Tras la implementación y los experimentos realizados con las transformaciones afines, se observa que cumple bastante bien su trabajo de aplicar las transformaciones sobre la imagen original para proyectarla y luego representarla sobre su espacio original. Lo destacable aquí es que la imagen utilizada al no tener alguna rotación o re escalado por si misma no permite poner en practica que tan buena seria la transformación en el caso de tratar de restaurar la imagen a su estado original. Es decir, partir de una imagen como la mostrada en el resultado de aplicar todas las transformaciones o en donde se aplica el escalado uniforme y tratar de dejarla como se ve la imagen base.
 \newpage
 
 	

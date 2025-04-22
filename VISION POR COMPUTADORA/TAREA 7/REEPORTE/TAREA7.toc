@@ -1,11 +1,11 @@
 \contentsline {section}{\numberline {1}Objetivo de la práctica}{2}{section.1}%
 \contentsline {section}{\numberline {2}Metodología}{3}{section.2}%
-\contentsline {section}{\numberline {3}Resultados de aplicar traslación}{4}{section.3}%
-\contentsline {section}{\numberline {4}Resultados de aplicar rotación}{5}{section.4}%
-\contentsline {section}{\numberline {5}Resultados de aplicar escalado no uniforme}{6}{section.5}%
-\contentsline {section}{\numberline {6}Resultados de aplicar todo}{7}{section.6}%
-\contentsline {section}{\numberline {7}Resultados de todas las pruebas}{8}{section.7}%
-\contentsline {section}{\numberline {8}Conclusiones}{9}{section.8}%
-\contentsline {section}{\numberline {9}Referencias}{10}{section.9}%
-\contentsline {section}{\numberline {10}Anexos}{11}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Implementación de las transformaciones afines con la interpolación bilineal}{11}{subsection.10.1}%
+\contentsline {section}{\numberline {3}Resultados de aplicar traslación}{5}{section.3}%
+\contentsline {section}{\numberline {4}Resultados de aplicar rotación}{6}{section.4}%
+\contentsline {section}{\numberline {5}Resultados de aplicar escalado no uniforme}{7}{section.5}%
+\contentsline {section}{\numberline {6}Resultados de aplicar todo}{8}{section.6}%
+\contentsline {section}{\numberline {7}Resultados de todas las pruebas}{9}{section.7}%
+\contentsline {section}{\numberline {8}Conclusiones}{10}{section.8}%
+\contentsline {section}{\numberline {9}Referencias}{11}{section.9}%
+\contentsline {section}{\numberline {10}Anexos}{12}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Implementación de las transformaciones afines con la interpolación bilineal}{12}{subsection.10.1}%

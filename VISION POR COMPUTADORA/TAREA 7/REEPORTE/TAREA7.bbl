@@ -1,5 +1,13 @@
 \begin{thebibliography}{}
 
+\bibitem[Coste, 2012]{coste2012image}
+Coste, A. (2012).
+\newblock Cs6640: Image processing – project 3: Affine transformation,
+  landmarks registration, non-linear warping.
+\newblock
+  \url{https://www.sci.utah.edu/~acoste/uou/Image/project3/ArthurCOSTE_Project3.pdf}.
+\newblock Course project for CS6640, University of Utah.
+
 \bibitem[Gonzalez and Woods, 2018]{gonzalez2018digital}
 Gonzalez, R.~C. and Woods, R.~E. (2018).
 \newblock {\em Digital Image Processing}.
