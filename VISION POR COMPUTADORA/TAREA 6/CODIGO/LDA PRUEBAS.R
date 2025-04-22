@@ -74,8 +74,11 @@ LDA = function(X,Y){
               proyecciones = Z)
 }
 
-
-
+A = LDA(X,Y)
+A$proyecciones
+plot(A$proyecciones,
+     pch = 16,
+     col = Y)
 
 
 

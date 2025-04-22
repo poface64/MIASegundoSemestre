@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.3.5)  13 APR 2025 13:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.3.5)  22 APR 2025 06:40
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**TAREA6.tex
-(./TAREA6.tex
+**TAREA7.tex
+(./TAREA7.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (c:/texlive/2024/texmf-dist/tex/latex/base/article.cls
@@ -529,8 +529,8 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count334
 \l__pdf_internal_box=\box70
 )
-(./TAREA6.aux)
-\openout1 = `TAREA6.aux'.
+(./TAREA7.aux)
+\openout1 = `TAREA7.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
 LaTeX Font Info:    ... okay on input line 26.
@@ -574,13 +574,13 @@ e
 ))
 Package hyperref Info: Link coloring OFF on input line 26.
 
-(./TAREA6.out) (./TAREA6.out)
+(./TAREA7.out) (./TAREA7.out)
 \@outlinefile=\write4
-\openout4 = `TAREA6.out'.
+\openout4 = `TAREA7.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<logo.png, id=84, 501.875pt x 501.875pt>
+<logo.png, id=48, 501.875pt x 501.875pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
 Package pdftex.def Info: logo.png  used on input line 31.
@@ -590,49 +590,51 @@ Package pdftex.def Info: logo.png  used on input line 31.
 [1
 
 {c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2024/
-texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./logo.png>] (./TAREA6.toc
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
-.
+texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./logo.png>] (./TAREA7.toc
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
+1.
 
 (c:/texlive/2024/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
-.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
+1.
 
 (c:/texlive/2024/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-4.
+11.
 
 (c:/texlive/2024/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-4.
+11.
 
 (c:/texlive/2024/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 4.
+(Font)              <10.95> on input line 11.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 4.
+(Font)              <8> on input line 11.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 4.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+(Font)              <6> on input line 11.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 11.
+
 
 (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 11.
+
 
 (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
 \tf@toc=\write5
-\openout5 = `TAREA6.toc'.
+\openout5 = `TAREA7.toc'.
 
 
 
@@ -643,195 +645,133 @@ been already used, duplicate ignored
                    \relax 
 l.51 	\newpage
                [1]
-<IMG/T1.png, id=121, 870.25125pt x 276.43275pt>
-File: IMG/T1.png Graphic file (type png)
-<use IMG/T1.png>
-Package pdftex.def Info: IMG/T1.png  used on input line 63.
-(pdftex.def)             Requested size: 360.0pt x 114.35469pt.
+<IMG/F1.jpg, id=77, 752.8125pt x 656.4525pt>
+File: IMG/F1.jpg Graphic file (type jpg)
+<use IMG/F1.jpg>
+Package pdftex.def Info: IMG/F1.jpg  used on input line 62.
+(pdftex.def)             Requested size: 288.0011pt x 251.13733pt.
 
 
-[2 <./IMG/T1.PNG>]
-<IMG/G1.png, id=128, 886.81313pt x 548.0475pt>
-File: IMG/G1.png Graphic file (type png)
-<use IMG/G1.png>
-Package pdftex.def Info: IMG/G1.png  used on input line 83.
-(pdftex.def)             Requested size: 396.0022pt x 244.72916pt.
-
-Overfull \hbox (36.0022pt too wide) in paragraph at lines 81--87
- []$[]$ 
- []
+[2{c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc} <./IMG/F1.jpg>]
 
 
-
-[3{c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2024
-/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2024/texmf-dist/fonts/
-enc/dvips/lm/lm-rm.enc} <./IMG/G1.png (PNG copy)>]
-<IMG/G2.png, id=137, 931.98187pt x 429.10312pt>
-File: IMG/G2.png Graphic file (type png)
-<use IMG/G2.png>
-Package pdftex.def Info: IMG/G2.png  used on input line 99.
-(pdftex.def)             Requested size: 396.0022pt x 182.32385pt.
-
-Overfull \hbox (36.0022pt too wide) in paragraph at lines 97--103
- []$[]$ 
- []
+[3]
+<IMG/R1.jpg, id=91, 937.5025pt x 769.87625pt>
+File: IMG/R1.jpg Graphic file (type jpg)
+<use IMG/R1.jpg>
+Package pdftex.def Info: IMG/R1.jpg  used on input line 88.
+(pdftex.def)             Requested size: 288.0011pt x 236.49765pt.
 
 
+[4{c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <./IMG/R1.jpg>]
+<IMG/R2.jpg, id=98, 937.5025pt x 769.87625pt>
+File: IMG/R2.jpg Graphic file (type jpg)
+<use IMG/R2.jpg>
+Package pdftex.def Info: IMG/R2.jpg  used on input line 105.
+(pdftex.def)             Requested size: 288.0011pt x 236.49765pt.
 
-[4 <./IMG/G2.png (PNG copy)>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-30.
 
-(c:/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
+[5 <./IMG/R2.jpg>]
+<IMG/R3.jpg, id=104, 937.5025pt x 769.87625pt>
+File: IMG/R3.jpg Graphic file (type jpg)
+<use IMG/R3.jpg>
+Package pdftex.def Info: IMG/R3.jpg  used on input line 121.
+(pdftex.def)             Requested size: 288.0011pt x 236.49765pt.
 
-[5{c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/texlive/2024/te
-xmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
 
-[6]
+[6 <./IMG/R3.jpg>]
+<IMG/R4.jpg, id=111, 937.5025pt x 769.87625pt>
+File: IMG/R4.jpg Graphic file (type jpg)
+<use IMG/R4.jpg>
+Package pdftex.def Info: IMG/R4.jpg  used on input line 137.
+(pdftex.def)             Requested size: 288.0011pt x 236.49765pt.
 
-[7]
+
+[7 <./IMG/R4.jpg>]
+File: IMG/R1.jpg Graphic file (type jpg)
+<use IMG/R1.jpg>
+Package pdftex.def Info: IMG/R1.jpg  used on input line 152.
+(pdftex.def)             Requested size: 161.9989pt x 133.027pt.
+File: IMG/R2.jpg Graphic file (type jpg)
+<use IMG/R2.jpg>
+Package pdftex.def Info: IMG/R2.jpg  used on input line 157.
+(pdftex.def)             Requested size: 161.9989pt x 133.027pt.
+File: IMG/R3.jpg Graphic file (type jpg)
+<use IMG/R3.jpg>
+Package pdftex.def Info: IMG/R3.jpg  used on input line 163.
+(pdftex.def)             Requested size: 161.9989pt x 133.027pt.
+File: IMG/R4.jpg Graphic file (type jpg)
+<use IMG/R4.jpg>
+Package pdftex.def Info: IMG/R4.jpg  used on input line 168.
+(pdftex.def)             Requested size: 161.9989pt x 133.027pt.
+
 
 [8]
 
-[9]
+[9] (./TAREA7.bbl)
 
 [10]
+\pydata@fh@_203A2E1C084038CE3F5BD12365B379C6.data.minted=\write6
+\openout6 = `_203A2E1C084038CE3F5BD12365B379C6.data.minted'.
 
-[11]
+runsystem(latexminted config  --timestamp 20250422064041 203A2E1C084038CE3F5BD1
+2365B379C6)...executed.
 
-[12]
-<IMG/T2.png, id=187, 121.05225pt x 296.307pt>
-File: IMG/T2.png Graphic file (type png)
-<use IMG/T2.png>
-Package pdftex.def Info: IMG/T2.png  used on input line 389.
-(pdftex.def)             Requested size: 86.4012pt x 211.49619pt.
-
-
-[13 <./IMG/T2.PNG>]
-<IMG/G3.png, id=194, 450.483pt x 277.5168pt>
-File: IMG/G3.png Graphic file (type png)
-<use IMG/G3.png>
-Package pdftex.def Info: IMG/G3.png  used on input line 407.
-(pdftex.def)             Requested size: 396.0022pt x 243.95721pt.
-
-Overfull \hbox (36.0022pt too wide) in paragraph at lines 405--411
- []$[]$ 
- []
-
-
-
-[14 <./IMG/G3.png (PNG copy)>]
-
-[15]
-
-[16]
-Overfull \hbox (118.45259pt too wide) detected at line 543
-\OML/lmm/m/it/10.95 W \OT1/lmr/m/n/10.95 = [] \OML/lmm/m/it/10.95 ;  ^^U \OT1/l
-mr/m/n/10.95 = [15\OML/lmm/m/it/10.95 :\OT1/lmr/m/n/10.95 0192\OML/lmm/m/it/10.
-95 ; \OT1/lmr/m/n/10.95 2\OML/lmm/m/it/10.95 :\OT1/lmr/m/n/10.95 3231] \OML/lmm
-/m/it/10.95 VE \OT1/lmr/m/n/10.95 = [86\OML/lmm/m/it/10.95 :\OT1/lmr/m/n/10.95 
-6064\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 13\OML/lmm/m/it/10.95 :\OT1/lmr/m/
-n/10.95 3954]%
- []
-
-
-
-[17]
-<IMG/T3.png, id=212, 214.401pt x 283.0575pt>
-File: IMG/T3.png Graphic file (type png)
-<use IMG/T3.png>
-Package pdftex.def Info: IMG/T3.png  used on input line 557.
-(pdftex.def)             Requested size: 172.80241pt x 228.14801pt.
-
-
-[18 <./IMG/T3.PNG>]
-<IMG/G6.png, id=220, 378.6948pt x 287.6346pt>
-File: IMG/G6.png Graphic file (type png)
-<use IMG/G6.png>
-Package pdftex.def Info: IMG/G6.png  used on input line 575.
-(pdftex.def)             Requested size: 396.0022pt x 300.78316pt.
-
-Overfull \hbox (36.0022pt too wide) in paragraph at lines 573--579
- []$[]$ 
- []
-
-
-
-[19 <./IMG/G6.png (PNG copy)>]
-
-[20] (./TAREA6.bbl)
-
-[21]
-\pydata@fh@_1BDB02401324BB5A966AE52C61AB56AE.data.minted=\write6
-\openout6 = `_1BDB02401324BB5A966AE52C61AB56AE.data.minted'.
-
-runsystem(latexminted config  --timestamp 20250413135505 1BDB02401324BB5A966AE5
-2C61AB56AE)...executed.
-
- (./_1BDB02401324BB5A966AE52C61AB56AE.config.minted)
-runsystem(latexminted cleanconfig  --timestamp 20250413135505 1BDB02401324BB5A9
-66AE52C61AB56AE)...executed.
+ (./_203A2E1C084038CE3F5BD12365B379C6.config.minted)
+runsystem(latexminted cleanconfig  --timestamp 20250422064041 203A2E1C084038CE3
+F5BD12365B379C6)...executed.
 
 
 (./_minted/default.style.minted)
-(./_minted/C13E434F911E9EFB3C5C15FBDE1F6CE4.highlight.minted
+(./_minted/F70D83B2DAE9D21207F07DCC8D4D6570.highlight.minted
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 .
 
 (c:/texlive/2024/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-15.
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 4.
 
-(c:/texlive/2024/texmf-dist/tex/latex/lm/ts1lmtt.fd
+
+[11]
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
+63.
+ (c:/texlive/2024/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-[22]
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 65.
+[12{c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}])
 
-
-[23]
-
-[24])
-
-[25] (./TAREA6.aux)
+[13] (./TAREA7.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-Package rerunfilecheck Info: File `TAREA6.out' has not changed.
-(rerunfilecheck)             Checksum: 959901EF8570CA1CB10AD6134D0937A8;3755.
+Package rerunfilecheck Info: File `TAREA7.out' has not changed.
+(rerunfilecheck)             Checksum: 6FDC0A6FB14963DF0675D1336B8B2F1F;2092.
  ) 
 Here is how much of TeX's memory you used:
- 17572 strings out of 473200
- 330877 string characters out of 5720279
- 821913 words of memory out of 5000000
- 40501 multiletter control sequences out of 15000+600000
- 609600 words of font info for 71 fonts, out of 8000000 for 9000
+ 17400 strings out of 473200
+ 326778 string characters out of 5720279
+ 821187 words of memory out of 5000000
+ 40358 multiletter control sequences out of 15000+600000
+ 611920 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,8n,93p,548b,1053s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 85i,8n,93p,512b,1003s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2024
 /texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/
-type1/public/lm/lmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lm
-mi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texliv
-e/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2024/texmf-dist/f
-onts/type1/public/lm/lmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/l
-m/lmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texli
-ve/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2024/texmf-dist
-/fonts/type1/public/lm/lmri12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/publi
-c/lm/lmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:
-/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/texlive/2024/texm
-f-dist/fonts/type1/public/lm/lmtt10.pfb><c:/texlive/2024/texmf-dist/fonts/type1
-/public/lm/lmtti10.pfb>
-Output written on TAREA6.pdf (26 pages, 862552 bytes).
+type1/public/lm/lmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lm
+r10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive
+/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/texlive/2024/texmf-dist/fon
+ts/type1/public/lm/lmri10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm
+/lmri12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/te
+xlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/texlive/2024/texmf-d
+ist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on TAREA7.pdf (14 pages, 734467 bytes).
 PDF statistics:
- 356 PDF objects out of 1000 (max. 8388607)
- 277 compressed objects within 3 object streams
- 56 named destinations out of 1000 (max. 500000)
- 201 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 215 PDF objects out of 1000 (max. 8388607)
+ 166 compressed objects within 2 object streams
+ 34 named destinations out of 1000 (max. 500000)
+ 119 words of extra memory for PDF output out of 10000 (max. 10000000)
 
