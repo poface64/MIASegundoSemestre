@@ -1,0 +1,12 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZpc{}\PYGZpc{} Cargar imagen 1}
+\PYG{n}{ruta1}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}imagen1.png\PYGZdq{}}\PYG{p}{;}
+\PYG{n}{I1}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{imread}\PYG{p}{(}\PYG{n}{ruta1}\PYG{p}{)}\PYG{p}{;}
+\PYG{c}{\PYGZpc{}\PYGZpc{} Aplicar el histograma \PYGZpc{}\PYGZpc{}}
+\PYG{n}{R1}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{histeq}\PYG{p}{(}\PYG{n}{I1}\PYG{p}{)}\PYG{p}{;}
+\PYG{c}{\PYGZpc{}\PYGZpc{} Comparativa \PYGZpc{}\PYGZpc{}}
+\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{n+nb}{imshow}\PYG{p}{(}\PYG{n}{I1}\PYG{p}{)}
+\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n+nb}{imshow}\PYG{p}{(}\PYG{n}{R1}\PYG{p}{)}
+\end{MintedVerbatim}

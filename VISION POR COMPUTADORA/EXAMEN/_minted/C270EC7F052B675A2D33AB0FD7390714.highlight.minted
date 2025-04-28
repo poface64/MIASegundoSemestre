@@ -1,0 +1,32 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZpc{}\PYGZpc{} Imagen 2 ESCANEO \PYGZpc{}\PYGZpc{}}
+\PYG{n}{original}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{imread}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Imagen2\PYGZus{}A.jpg\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} Reemplaza con la ruta de tu imagen de referencia}
+\PYG{n}{distorted}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{rgb2gray}\PYG{p}{(}\PYG{n+nb}{imread}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Imagen2\PYGZus{}B.jpg\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} Reemplaza con la ruta de la imagen a registrar}
+\PYG{c}{\PYGZpc{}\PYGZpc{} Detect and extract features from both images.}
+\PYG{n}{ptsOriginal}\PYG{+w}{  }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{detectSURFFeatures}\PYG{p}{(}\PYG{n}{original}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{ptsDistorted}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{detectSURFFeatures}\PYG{p}{(}\PYG{n}{distorted}\PYG{p}{)}\PYG{p}{;}
+\PYG{p}{[}\PYG{n}{featuresOriginal}\PYG{p}{,}\PYG{n}{validPtsOriginal}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{...}
+\PYG{n}{extractFeatures}\PYG{p}{(}\PYG{n}{original}\PYG{p}{,}\PYG{n}{ptsOriginal}\PYG{p}{)}\PYG{p}{;}
+\PYG{p}{[}\PYG{n}{featuresDistorted}\PYG{p}{,}\PYG{n}{validPtsDistorted}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{...}
+\PYG{n}{extractFeatures}\PYG{p}{(}\PYG{n}{distorted}\PYG{p}{,}\PYG{n}{ptsDistorted}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{index\PYGZus{}pairs}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{matchFeatures}\PYG{p}{(}\PYG{n}{featuresOriginal}\PYG{p}{,}\PYG{n}{featuresDistorted}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{matchedPtsOriginal}\PYG{+w}{  }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{validPtsOriginal}\PYG{p}{(}\PYG{n}{index\PYGZus{}pairs}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{matchedPtsDistorted}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{validPtsDistorted}\PYG{p}{(}\PYG{n}{index\PYGZus{}pairs}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{c}{\PYGZpc{}\PYGZpc{} Hacer el match \PYGZpc{}\PYGZpc{}}
+\PYG{n}{showMatchedFeatures}\PYG{p}{(}\PYG{n}{original}\PYG{p}{,}\PYG{n}{distorted}\PYG{p}{,}\PYG{k}{...}
+\PYG{n}{matchedPtsOriginal}\PYG{p}{,}\PYG{n}{matchedPtsDistorted}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Matched SURF points,including outliers\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{c}{\PYGZpc{}\PYGZpc{} Excluir los outliers \PYGZpc{}\PYGZpc{}}
+\PYG{p}{[}\PYG{n}{tform}\PYG{p}{,}\PYG{n}{inlierPtsDistorted}\PYG{p}{,}\PYG{n}{inlierPtsOriginal}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{...}
+\PYG{n}{estimateGeometricTransform}\PYG{p}{(}\PYG{n}{matchedPtsDistorted}\PYG{p}{,}\PYG{n}{matchedPtsOriginal}\PYG{p}{,}\PYG{k}{...}
+\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{similarity\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{showMatchedFeatures}\PYG{p}{(}\PYG{n}{original}\PYG{p}{,}\PYG{n}{distorted}\PYG{p}{,}\PYG{k}{...}
+\PYG{n}{inlierPtsOriginal}\PYG{p}{,}\PYG{n}{inlierPtsDistorted}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Matched inlier points\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{c}{\PYGZpc{}\PYGZpc{} Recover the original image from the distorted image.}
+\PYG{n}{outputView}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{imref2d}\PYG{p}{(}\PYG{n+nb}{size}\PYG{p}{(}\PYG{n}{original}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{Ir}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{imwarp}\PYG{p}{(}\PYG{n}{distorted}\PYG{p}{,}\PYG{n}{tform}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{OutputView\PYGZsq{}}\PYG{p}{,}\PYG{n}{outputView}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{imshow}\PYG{p}{(}\PYG{n}{Ir}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Recovered image\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{imshowpair}\PYG{p}{(}\PYG{n}{original}\PYG{p}{,}\PYG{n}{Ir}\PYG{p}{)}
+\end{MintedVerbatim}
