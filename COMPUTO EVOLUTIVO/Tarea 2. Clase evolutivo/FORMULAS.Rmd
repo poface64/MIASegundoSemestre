@@ -1,0 +1,58 @@
+---
+title: "Untitled"
+output: word_document
+date: "2025-04-29"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Formulas para Laplace #
+
+$$f(x) = \frac{1}{2b}\exp(-\frac{|x-a|}{b}), \quad -\infty < x <\infty$$
+
+$$
+  F(x) = \left.
+  \begin{cases}
+    \frac{1}{2}\exp(\frac{|x-a|}{b}), & x\leq a \\
+  1-  \frac{1}{2}\exp(-\frac{|x-a|}{b}), & x\leq a
+  \end{cases}
+  \right\}
+$$
+
+
+Donde $a \in R$ es el parametro de localización de la función y $b>0$ es el parametro de escala.
+
+Lo particular aquí, es que la probabilidad de crear descendientes que se encuentren cerca de los padres cuando $b = 0.5$ o menor y cuando b = 1 o mayor, la probabilidad de seleccionar puntos distantes respecto a los padres es mayor. 
+
+
+El operador se comporta de la siguiente forma:
+
+Usando LX, se generan dos hijos $y^{(1)} = (y^{(1)}_1,y^{(1)}_2,\dots,y_n^{(1)})$  y $y^{(2)} = (y^{(2)}_1,y^{(2)}_2,\dots,y_n^{(2)})$ que provienen de padres
+
+$x^{(1)} = (x^{(1)}_1,x^{(1)}_2,\dots,x_n^{(1)})$ y $x^{(2)} = (x^{(2)}_1,x^{(2)}_2,\dots,x_n^{(2)})$.
+
+Primero, se genera un numero random con distribución uniforme $u \in [0,1]$.
+Entonces, un número random $\beta$ es generado como sigue:
+
+$$
+  \beta  = \left.
+  \begin{cases}
+  a - b\ln(u), & u \leq \frac{1}{2} \\
+  a + b\ln(u), & u > \frac{1}{2} \\
+  \end{cases}
+  \right\}
+$$
+
+Los hijos vienen dados de la siguiente expresion:
+
+ $$y_i^{(1)} = x_i^{(1)} + \beta |x_i^{(1)}-x_i^{(2)}|$$
+ 
+ $$y_i^{(2)} = x_i^{(2)} + \beta |x_i^{(1)}-x_i^{(2)}|$$
+
+
+
+SE USA a = 0 para centrarlo
+
+
