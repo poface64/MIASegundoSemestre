@@ -8,15 +8,19 @@ end
 ruta = "FUZZY.xlsx";
 X = xlsread(ruta);
 
+
+
 %% Parametros iniciales %%
 % Definir un K
-k = 3;
+k = 2;
 % Definir un m
 m = 1.5;
 % Tamaño de la matriz
 n = size(X);
 % Error de tolerancia
 tol = 0.001;
+% Maximo de iteraciones %
+mi = 10;
 %% Paso 1: Crear la matriz fuzzy random original %%
 % Crear una matriz de tamaño N x K %
 U = rand(n(1),k);
@@ -25,7 +29,9 @@ for i =  1:n(1)
     U(i,:) =  U(i,:)/sum(U(i,:));
 end
 
-%% Paso 2: Calcular los centroides %%
+for iter = 1:mi
+
+%% Paso 2: Proponer la matriz de centroides %%
 Vc = zeros(k,n(2));
 % Hacer el calculo del centroide fuzzy %
 for ki = 1:k
@@ -38,9 +44,9 @@ for ki = 1:k
 end
 
 %% Paso 3: Actualizar la matriz de pertenencia %%
-Uki = rand(n(1),k);
+Uki = U;
 for i = 1:n(1)
-    for ki = 1:n(2)
+    for ki = 1:k
         %% Hacer la logica del ciclo
         % Definir un acumulador de la suma interna
         % Para cada sujeto
@@ -55,14 +61,31 @@ for i = 1:n(1)
 end
 
 %% Paso 4: Actualizar la matriz de pertenencia %%
-U-Uki
+if max(max(abs(Uki - U))) < tol
+        disp(['Convergió en ', num2str(mi), ' iteraciones.']);
+        break
+else 
+    % Actualiza la matriz y sigue repitiendo
+    U = Uki;
+end
+
+end
 
 
 
-
-
-
-
+%% Pruebas para gráficar %%
+[~, etiquetas] = max(U, [], 2); % etiquetas = índice del cluster más fuerte
+colores = lines(k); % 'lines' genera colores bonitos automáticamente
+figure;
+hold on;
+grid on;
+title('Fuzzy C-Means Clustering (2D)');
+xlabel('Variable 1');
+ylabel('Variable 2');
+% Graficar los datos
+for ki = 1:k
+    scatter(X(etiquetas==ki,1), X(etiquetas==ki,2), 36, colores(ki,:), 'filled');
+end
 
 
 

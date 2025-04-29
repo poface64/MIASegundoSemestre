@@ -85,6 +85,7 @@ ylabel('Variable 2');
 for ki = 1:k
     scatter(X(etiquetas==ki,1), X(etiquetas==ki,2), 36, colores(ki,:), 'filled');
 end
+
 % Graficar los centroides
 scatter(Vc(:,1), Vc(:,2), 100, 'k', 'x', 'LineWidth', 2);
 legend(["Cluster 1", "Cluster 2", "Cluster 3", "Centroides"], 'Location', 'best');
