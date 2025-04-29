@@ -1,0 +1,134 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZpc{}\PYGZpc{} Cargar los datos de los puntos \PYGZpc{}\PYGZpc{}}
+\PYG{n}{ruta1}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}C:\PYGZbs{}\PYGZbs{}Users\PYGZbs{}\PYGZbs{}Angel\PYGZbs{}\PYGZbs{}Desktop\PYGZbs{}\PYGZbs{}BioID1520 1\PYGZbs{}\PYGZbs{}data\PYGZus{}points.mat\PYGZdq{}}\PYG{p}{;}
+\PYG{n}{data}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{load}\PYG{p}{(}\PYG{n}{ruta1}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{points}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{data}\PYG{p}{.}\PYG{n}{data}\PYG{p}{;}
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Cara de referencia}
+\PYG{n}{ruta2}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}C:\PYGZbs{}\PYGZbs{}Users\PYGZbs{}\PYGZbs{}Angel\PYGZbs{}\PYGZbs{}Desktop\PYGZbs{}\PYGZbs{}BioID1520 1\PYGZbs{}\PYGZbs{}Im\PYGZus{}Faces\PYGZbs{}\PYGZbs{}BioID\PYGZus{}0001.pgm\PYGZdq{}}\PYG{p}{;}
+\PYG{n}{face}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{imread}\PYG{p}{(}\PYG{n}{ruta2}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{NI}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1520}\PYG{p}{;}
+\PYG{c}{\PYGZpc{} Extraer los puntos de la primera imagen}
+\PYG{n}{puntos1}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{squeeze}\PYG{p}{(}\PYG{n}{points}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{:}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{:}\PYG{p}{)}\PYG{p}{)}\PYG{o}{\PYGZsq{}}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} tamaño: 20 × 2}
+
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Registrar respecto a la primer imagen \PYGZpc{}\PYGZpc{}}
+\PYG{c}{\PYGZpc{} Proceso de registro \PYGZpc{}\PYGZpc{}}
+\PYG{n}{registro}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{zeros}\PYG{p}{(}\PYG{n}{NI}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{+w}{ }\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{20}\PYG{p}{)}\PYG{p}{;}
+\PYG{k}{for}\PYG{+w}{ }\PYG{n}{m}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{NI}
+\PYG{c}{\PYGZpc{} Convertir los puntos i\PYGZhy{}esimos a matriz}
+\PYG{n}{coords}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{squeeze}\PYG{p}{(}\PYG{n}{points}\PYG{p}{(}\PYG{n}{m}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{:}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{:}\PYG{p}{)}\PYG{p}{)}\PYG{o}{\PYGZsq{}}\PYG{p}{;}
+\PYG{c}{\PYGZpc{} Obtener la transformación afín homogenea}
+\PYG{n}{tform}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{fitgeotrans}\PYG{p}{(}\PYG{n}{coords}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{puntos1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{affine\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{T}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{tform}\PYG{p}{.}\PYG{n}{T}\PYG{p}{;}
+\PYG{c}{\PYGZpc{} Obtención del registro}
+\PYG{k}{for}\PYG{+w}{ }\PYG{n+nb}{i}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{20}
+\PYG{p}{[}\PYG{n}{x2}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{y2}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{transformPointsForward}\PYG{p}{(}\PYG{n}{tform}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{...}
+\PYG{n}{coords}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{coords}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{c}{\PYGZpc{} Acomodar las nuevas coordenadas}
+\PYG{n}{registro}\PYG{p}{(}\PYG{n}{m}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{i}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{x2}\PYG{p}{;}
+\PYG{n}{registro}\PYG{p}{(}\PYG{n}{m}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{i}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{y2}\PYG{p}{;}
+\PYG{k}{end}
+\PYG{k}{end}
+
+
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Obtener el ERM \PYGZpc{}\PYGZpc{}}
+\PYG{n}{errores}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{zeros}\PYG{p}{(}\PYG{n}{NI}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{;}
+\PYG{k}{for}\PYG{+w}{ }\PYG{n}{m}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{NI}
+\PYG{c}{\PYGZpc{} Extraer los puntos registrados}
+\PYG{n}{puntos\PYGZus{}m}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{squeeze}\PYG{p}{(}\PYG{n}{registro}\PYG{p}{(}\PYG{n}{m}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{:}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{:}\PYG{p}{)}\PYG{p}{)}\PYG{o}{\PYGZsq{}}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} 20x2}
+\PYG{c}{\PYGZpc{} Calcular la diferencia entre cada par de puntos}
+\PYG{n}{dif}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{puntos\PYGZus{}m}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{puntos1}\PYG{p}{;}
+\PYG{c}{\PYGZpc{} Calcular el error cuadratico medio \PYGZpc{}}
+\PYG{n}{errores}\PYG{p}{(}\PYG{n}{m}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{mean}\PYG{p}{(}\PYG{n+nb}{sum}\PYG{p}{(}\PYG{p}{(}\PYG{n}{dif}\PYG{p}{)}\PYG{o}{.\PYGZca{}}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{k}{end}
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Ordenar los errores de menor a mayor \PYGZpc{}\PYGZpc{}}
+\PYG{p}{[}\PYG{n}{errores\PYGZus{}ordenados}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{indices\PYGZus{}ordenados}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{sort}\PYG{p}{(}\PYG{n}{errores}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Seleccionar las 99 mejores imágenes \PYGZpc{}\PYGZpc{}}
+\PYG{n}{mejores99}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{indices\PYGZus{}ordenados}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{100}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Proyectando resultados \PYGZpc{}\PYGZpc{}}
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Proyectar la imagen con sus puntos \PYGZpc{}\PYGZpc{}}
+\PYG{n+nb}{imshow}\PYG{p}{(}\PYG{n}{face}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{hold}\PYG{+w}{ }\PYG{l+s}{on}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} Mantener la imagen para dibujar encima}
+\PYG{c}{\PYGZpc{} Dibujar los puntos}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{puntos1}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{puntos1}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{ro\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{MarkerSize\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{5}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{LineWidth\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{hold}\PYG{+w}{ }\PYG{l+s}{off}\PYG{p}{;}
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Distribución de todos los puntos \PYGZpc{}\PYGZpc{}}
+\PYG{k}{for}\PYG{+w}{ }\PYG{n+nb}{i}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n+nb}{size}\PYG{p}{(}\PYG{n}{puntos1}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{c}{\PYGZpc{} Pasar por cada punto y extraer sus coordenadas}
+\PYG{n}{puntosi}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{squeeze}\PYG{p}{(}\PYG{n}{points}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{:}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{:}\PYG{p}{)}\PYG{p}{)}\PYG{o}{\PYGZsq{}}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} tamaño: 20 × 2}
+\PYG{c}{\PYGZpc{} Armar un gráfico con los puntos}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{puntosi}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{puntosi}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{ro\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{...}
+\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{MarkerSize\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{5}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{LineWidth\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{hold}\PYG{+w}{ }\PYG{l+s}{on}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} Mantener la imagen para dibujar encima}
+\PYG{k}{end}
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Distribución de todos los puntos sobre la imagen \PYGZpc{}\PYGZpc{}}
+\PYG{n+nb}{imshow}\PYG{p}{(}\PYG{n}{face}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{hold}\PYG{+w}{ }\PYG{l+s}{on}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} Mantener la imagen para dibujar encima}
+\PYG{k}{for}\PYG{+w}{ }\PYG{n+nb}{i}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n+nb}{size}\PYG{p}{(}\PYG{n}{puntos1}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{c}{\PYGZpc{} Pasar por cada punto y extraer sus coordenadas}
+\PYG{n}{puntosi}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{squeeze}\PYG{p}{(}\PYG{n}{points}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{:}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{:}\PYG{p}{)}\PYG{p}{)}\PYG{o}{\PYGZsq{}}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} tamaño: 20 × 2}
+\PYG{c}{\PYGZpc{} Armar un gráfico con los puntos}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{puntosi}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{puntosi}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{ro\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{...}
+\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{MarkerSize\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{5}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{LineWidth\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{hold}\PYG{+w}{ }\PYG{l+s}{on}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} Mantener la imagen para dibujar encima}
+\PYG{k}{end}
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Histograma de los errores \PYGZpc{}\PYGZpc{}}
+\PYG{n+nb}{histogram}\PYG{p}{(}\PYG{n}{errores}\PYG{p}{)}
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Distribución de los puntos registrados \PYGZpc{}\PYGZpc{}}
+\PYG{k}{for}\PYG{+w}{ }\PYG{n+nb}{i}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{NI}
+\PYG{c}{\PYGZpc{} Pasar por cada punto y extraer sus coordenadas}
+\PYG{n}{puntosi}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{squeeze}\PYG{p}{(}\PYG{n}{registro}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{:}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{:}\PYG{p}{)}\PYG{p}{)}\PYG{o}{\PYGZsq{}}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} tamaño: 20 × 2}
+\PYG{c}{\PYGZpc{} Armar un gráfico con los puntos}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{puntosi}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{puntosi}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{ro\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{...}
+\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{MarkerSize\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{5}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{LineWidth\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{hold}\PYG{+w}{ }\PYG{l+s}{on}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} Mantener la imagen para dibujar encima}
+\PYG{k}{end}
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Distribución de los puntos registrados sobre la imagen \PYGZpc{}\PYGZpc{}}
+\PYG{n+nb}{imshow}\PYG{p}{(}\PYG{n}{face}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{hold}\PYG{+w}{ }\PYG{l+s}{on}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} Mantener la imagen para dibujar encima}
+\PYG{k}{for}\PYG{+w}{ }\PYG{n+nb}{i}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{NI}
+\PYG{c}{\PYGZpc{} Pasar por cada punto y extraer sus coordenadas}
+\PYG{n}{puntosi}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{squeeze}\PYG{p}{(}\PYG{n}{registro}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{:}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{:}\PYG{p}{)}\PYG{p}{)}\PYG{o}{\PYGZsq{}}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} tamaño: 20 × 2}
+\PYG{c}{\PYGZpc{} Armar un gráfico con los puntos}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{puntosi}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{puntosi}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{ro\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{...}
+\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{MarkerSize\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{5}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{LineWidth\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{hold}\PYG{+w}{ }\PYG{l+s}{on}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} Mantener la imagen para dibujar encima}
+\PYG{k}{end}
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Distribución de los mejores 100 \PYGZpc{}\PYGZpc{}}
+\PYG{k}{for}\PYG{+w}{ }\PYG{n+nb}{i}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{100}
+\PYG{c}{\PYGZpc{} Mejores}
+\PYG{n}{mj}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{mejores99}\PYG{p}{;}
+\PYG{c}{\PYGZpc{} Pasar por cada punto y extraer sus coordenadas}
+\PYG{n}{puntosi}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{squeeze}\PYG{p}{(}\PYG{n}{registro}\PYG{p}{(}\PYG{n}{mj}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{:}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{:}\PYG{p}{)}\PYG{p}{)}\PYG{o}{\PYGZsq{}}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} tamaño: 20 × 2}
+\PYG{c}{\PYGZpc{} Armar un gráfico con los puntos}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{puntosi}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{puntosi}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{ro\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{...}
+\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{MarkerSize\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{5}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{LineWidth\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{hold}\PYG{+w}{ }\PYG{l+s}{on}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} Mantener la imagen para dibujar encima}
+\PYG{k}{end}
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Distribución de los mejores 100  sobre la imagen \PYGZpc{}\PYGZpc{}}
+\PYG{n+nb}{imshow}\PYG{p}{(}\PYG{n}{face}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{hold}\PYG{+w}{ }\PYG{l+s}{on}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} Mantener la imagen para dibujar encima}
+\PYG{k}{for}\PYG{+w}{ }\PYG{n+nb}{i}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{100}
+\PYG{c}{\PYGZpc{} Mejores}
+\PYG{n}{mj}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{mejores99}\PYG{p}{;}
+\PYG{c}{\PYGZpc{} Pasar por cada punto y extraer sus coordenadas}
+\PYG{n}{puntosi}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{squeeze}\PYG{p}{(}\PYG{n}{registro}\PYG{p}{(}\PYG{n}{mj}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{:}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{:}\PYG{p}{)}\PYG{p}{)}\PYG{o}{\PYGZsq{}}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} tamaño: 20 × 2}
+\PYG{c}{\PYGZpc{} Armar un gráfico con los puntos}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{puntosi}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{puntosi}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{ro\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{...}
+\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{MarkerSize\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{5}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{LineWidth\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{hold}\PYG{+w}{ }\PYG{l+s}{on}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} Mantener la imagen para dibujar encima}
+\PYG{k}{end}
+\end{MintedVerbatim}
