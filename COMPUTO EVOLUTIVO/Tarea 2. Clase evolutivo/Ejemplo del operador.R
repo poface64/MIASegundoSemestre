@@ -17,8 +17,8 @@ padre2 <- c(0.8, 0.2)
 
 # Parámetros
 a <- 0 # parametro alfa centrado en 0
-b <- c(0.1,0.9) # Valor propuesto de b 
-N <- 100  # Número de hijos
+b <- c(0.05,1) # Valor propuesto de b 
+N <- 10  # Número de hijos
 
 #### Proceso resumido ####
 
