@@ -1,0 +1,93 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZpc{}\PYGZpc{} Distancia Euclideana \PYGZpc{}\PYGZpc{}}
+\PYG{k}{function}\PYG{+w}{ }d\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nf}{distanciaE}\PYG{p}{(}x, y\PYG{p}{)}
+\PYG{n}{d}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{sqrt}\PYG{p}{(}\PYG{n+nb}{sum}\PYG{p}{(}\PYG{p}{(}\PYG{n}{x}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{y}\PYG{p}{)}\PYG{o}{.\PYGZca{}}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{k}{end}
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Función que transforma entre espacios}
+\PYG{k}{function}\PYG{+w}{ }\PYG{n+nf}{[pixel, mascara, imgres] = SegEspacios}\PYG{p}{(}img, espacio, umbral\PYG{p}{)}
+\PYG{c}{\PYGZpc{}\PYGZpc{} Mostrar imagen y seleccionar pixel \PYGZpc{}\PYGZpc{}}
+\PYG{n}{fig}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{figure}\PYG{p}{;}
+\PYG{n+nb}{imshow}\PYG{p}{(}\PYG{n}{img}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Haz zoom (botón de lupa) y presiona ENTER cuando estés listo\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{zoom}\PYG{+w}{ }\PYG{l+s}{on}\PYG{p}{;}
+\PYG{n+nb}{pause}\PYG{p}{;}
+\PYG{n}{zoom}\PYG{+w}{ }\PYG{l+s}{off}\PYG{p}{;}
+\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Ahora selecciona un pixel con un clic\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{p}{[}\PYG{n}{col}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{fila}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{ginput}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{pixel}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{img}\PYG{p}{(}\PYG{n+nb}{round}\PYG{p}{(}\PYG{n}{fila}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{round}\PYG{p}{(}\PYG{n}{col}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{:}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{close}\PYG{p}{(}\PYG{n}{fig}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{disp}\PYG{p}{(}\PYG{p}{[}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Coordenadas del pixel: x=\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{num2str}\PYG{p}{(}\PYG{n+nb}{round}\PYG{p}{(}\PYG{n}{col}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{, y=\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{num2str}\PYG{p}{(}\PYG{n+nb}{round}\PYG{p}{(}\PYG{n}{fila}\PYG{p}{)}\PYG{p}{)}\PYG{p}{]}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{disp}\PYG{p}{(}\PYG{p}{[}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Color RGB: \PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{num2str}\PYG{p}{(}\PYG{n+nb}{squeeze}\PYG{p}{(}\PYG{n}{pixel}\PYG{p}{)}\PYG{o}{\PYGZsq{}}\PYG{p}{)}\PYG{p}{]}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Conversión al espacio de color hsv o lab \PYGZpc{}\PYGZpc{}}
+\PYG{k}{switch}\PYG{+w}{ }\PYG{n+nb}{lower}\PYG{p}{(}\PYG{n}{espacio}\PYG{p}{)}
+\PYG{c}{\PYGZpc{} CASO PARA HSV}
+\PYG{k}{case}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{hsv\PYGZsq{}}
+\PYG{n}{img\PYGZus{}convertido}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{rgb2hsv}\PYG{p}{(}\PYG{n}{img}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{pixel\PYGZus{}ref}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{rgb2hsv}\PYG{p}{(}\PYG{n}{pixel}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{ref\PYGZus{}vec}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{n}{pixel\PYGZus{}ref}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{pixel\PYGZus{}ref}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{]}\PYG{p}{;}
+\PYG{n}{A}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{img\PYGZus{}convertido}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{B}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{img\PYGZus{}convertido}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{;}
+\PYG{c}{\PYGZpc{} CASO PARA LAB}
+\PYG{k}{case}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{lab\PYGZsq{}}
+\PYG{n}{img\PYGZus{}convertido}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{rgb2lab}\PYG{p}{(}\PYG{n}{img}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{pixel\PYGZus{}ref}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{rgb2lab}\PYG{p}{(}\PYG{n}{pixel}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{ref\PYGZus{}vec}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{n}{pixel\PYGZus{}ref}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{pixel\PYGZus{}ref}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{p}{]}\PYG{p}{;}
+\PYG{n}{A}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{img\PYGZus{}convertido}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{B}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{img\PYGZus{}convertido}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{p}{;}
+\PYG{k}{otherwise}
+\PYG{n+nb}{error}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Espacio de color no válido. Usa \PYGZdq{}hsv\PYGZdq{} o \PYGZdq{}lab\PYGZdq{}.\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{k}{end}
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Crear máscara basada en distancia euclideana \PYGZpc{}\PYGZpc{}}
+\PYG{p}{[}\PYG{n}{n}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{p}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{\PYGZti{}}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{size}\PYG{p}{(}\PYG{n}{img}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} Obtener las dimensiones}
+\PYG{n}{mascara}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{zeros}\PYG{p}{(}\PYG{n}{n}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{p}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} Crear la mascara vacia}
+\PYG{c}{\PYGZpc{} Identificar pixel a pixel si cumple o no el umbral}
+\PYG{k}{for}\PYG{+w}{ }\PYG{n+nb}{i}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{n}
+\PYG{k}{for}\PYG{+w}{ }\PYG{n+nb}{j}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{p}
+\PYG{n}{color\PYGZus{}vec}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{n}{A}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{,}\PYG{n+nb}{j}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{B}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{,}\PYG{n+nb}{j}\PYG{p}{)}\PYG{p}{]}\PYG{p}{;}
+\PYG{k}{if}\PYG{+w}{ }\PYG{n}{distanciaE}\PYG{p}{(}\PYG{n}{color\PYGZus{}vec}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ref\PYGZus{}vec}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{umbral}
+\PYG{n}{mascara}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{,}\PYG{n+nb}{j}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{k}{end}
+\PYG{k}{end}
+\PYG{k}{end}
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Aplicar la máscara a la imagen \PYGZpc{}\PYGZpc{}}
+\PYG{n}{imgres}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{img}\PYG{p}{;}
+\PYG{n}{imgres}\PYG{p}{(}\PYG{n+nb}{repmat}\PYG{p}{(}\PYG{o}{\PYGZti{}}\PYG{n}{mascara}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{p}{)}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Mostrar resultados \PYGZpc{}\PYGZpc{}}
+\PYG{n+nb}{figure}\PYG{p}{;}
+\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{ }\PYG{n+nb}{imshow}\PYG{p}{(}\PYG{n}{img}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{ }\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Imagen original\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{ }\PYG{n+nb}{imshow}\PYG{p}{(}\PYG{n}{pixel}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{ }\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Pixel seleccionado\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{ }\PYG{n+nb}{imshow}\PYG{p}{(}\PYG{n}{mascara}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{ }\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Máscara generada\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{4}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{ }\PYG{n+nb}{imshow}\PYG{p}{(}\PYG{n}{imgres}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{ }\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Imagen segmentada\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{k}{end}
+
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Cargar la imagen \PYGZpc{}\PYGZpc{}}
+\PYG{n}{ruta}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}REPORTE\PYGZbs{}\PYGZbs{}IMG\PYGZbs{}\PYGZbs{}IM4.jpeg\PYGZdq{}}\PYG{p}{;}
+\PYG{n}{img}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{imread}\PYG{p}{(}\PYG{n}{ruta}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Pruebas para HSV color rosa umbral 0.15 \PYGZpc{}\PYGZpc{}}
+\PYG{p}{[}\PYG{n}{pixel}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{mascara}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{imgres}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{SegEspacios}\PYG{p}{(}\PYG{n}{img}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}hsv\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{0.15}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{imwrite}\PYG{p}{(}\PYG{n}{pixel}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}R11.jpg\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{imwrite}\PYG{p}{(}\PYG{n}{mascara}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}R12.jpg\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{imwrite}\PYG{p}{(}\PYG{n}{imgres}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}R13.jpg\PYGZdq{}}\PYG{p}{)}
+\PYG{c}{\PYGZpc{}\PYGZpc{} Pruebas para HSV color rosa umbral 0.25 \PYGZpc{}\PYGZpc{}}
+\PYG{p}{[}\PYG{n}{pixel}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{mascara}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{imgres}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{SegEspacios}\PYG{p}{(}\PYG{n}{img}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}hsv\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{0.25}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{imwrite}\PYG{p}{(}\PYG{n}{pixel}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}R21.jpg\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{imwrite}\PYG{p}{(}\PYG{n}{mascara}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}R22.jpg\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{imwrite}\PYG{p}{(}\PYG{n}{imgres}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}R23.jpg\PYGZdq{}}\PYG{p}{)}
+\PYG{c}{\PYGZpc{}\PYGZpc{} Pruebas para LAB color rosa umbral 15 \PYGZpc{}\PYGZpc{}}
+\PYG{p}{[}\PYG{n}{pixel}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{mascara}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{imgres}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{SegEspacios}\PYG{p}{(}\PYG{n}{img}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}lab\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{15}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{imwrite}\PYG{p}{(}\PYG{n}{pixel}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}R31.jpg\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{imwrite}\PYG{p}{(}\PYG{n}{mascara}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}R32.jpg\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{imwrite}\PYG{p}{(}\PYG{n}{imgres}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}R33.jpg\PYGZdq{}}\PYG{p}{)}
+\PYG{c}{\PYGZpc{}\PYGZpc{} Pruebas para LAB color rosa umbral 25 \PYGZpc{}\PYGZpc{}}
+\PYG{p}{[}\PYG{n}{pixel}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{mascara}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{imgres}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{SegEspacios}\PYG{p}{(}\PYG{n}{img}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}lab\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{25}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{imwrite}\PYG{p}{(}\PYG{n}{pixel}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}R41.jpg\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{imwrite}\PYG{p}{(}\PYG{n}{mascara}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}R42.jpg\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{imwrite}\PYG{p}{(}\PYG{n}{imgres}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}R43.jpg\PYGZdq{}}\PYG{p}{)}
+\end{MintedVerbatim}
