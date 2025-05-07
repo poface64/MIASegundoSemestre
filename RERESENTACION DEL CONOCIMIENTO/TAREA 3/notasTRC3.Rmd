@@ -1,0 +1,145 @@
+---
+title: "Consideraciones y representaciones"
+output: pdf_document
+date: "2025-05-07"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Consideraciones
+
+Establecer una ontologia:
+
+- Las clases de objetos que nos interesan.
+- Las propiedades que esos objetos pueden tener.
+- Las relaciones que puedan darse entre ellos.
+
+A este que se orienta a $\Delta$ desde el nivel del conocimiento se le conoce como _Ingeniería del Conocimiento_.
+
+Vocabulario para hablar del tema
+
+
+- Comenzar por el conjunto de predicados y funciones dependientes del dominio.
+
+Dudar: ¿Qué clases de objetos habra en nuestro sistema?
+
+Las constantes seran usadas para representar individuos con nombre:
+
+Ej: _alejandro_guerra_, _rc_, etc...
+
+Es posible llegar a necesitar _multiples identificadores_:
+
+Ej: 6183 puede denotar al mismo individuo que _alejandro_guerra_.
+
+Otros individuos con nombre: Entidades legales, lugares, objetos.
+
+EJ. iphone15, iiia, etc...
+
+# Tipos de objetos
+
+Ahora, es necesario establecer los tipos de objetos que emergen de los individuos con nombres adoptados.
+
+Para ello, suelen usarse predicados de ariedad 1 (X/1):
+
+Ej: no_personal(6183), prof(nicandro_cruz), inst(iiia), etc.
+
+
+# Atributos
+
+Los predicados unarios tambien pueden representar propiedades de nuestros objetos.
+
+Ej. sni(6183), sni(nicrandro_cruz), pnpc(mia), etc...
+
+Observen que _NO PODEMOS DISTINGUIR_ entre atributos y tipos de objeto.
+
+Si esto es necesario, el lenguaje FOL (first order logic) podria extenderser.
+
+# Relaciones y funciones
+
+Las _relaciones_ están representadas como predicados n-arios:
+
+Ej: adscripcion(6183,iiia), prof(rc,6183),etc...
+
+No olvidar que hay relaciones que _NO SON BINARIAS_:
+
+Ej: horario(rc,10,12,[martes,jueves]), etc...
+
+Las _funciones_ pueden tomar varios argumentos, pero suelen ser unarias:
+
+Ej. s(6) $\implies$ 7, etc..
+
+Todas las funciones se asumen totales, si hay alguien sin sucedor en el dominio, deberiamos considerar definir s/1 como una relación binaria:
+
+Ej: s(6,7), etc...
+
+# Hechos y reglas.
+
+Con este vocabulario nuestros hechos simples pueden representarse como literales, i.e., pedicados atómicos o su negación:
+
+Ej., prof(9183), $\neg$jubilado(6183), etc... 
+
+EStos hechos constituyen una base de datos que podria almacenarse como una tabla relacional.
+
+Otros hechos básicos son los que tienen que ver con la igualdad:
+
+EJ: martin_aguilar == Rector(uv), etc...
+
+Tambien se pueden definir reglas:
+
+Ej. investigador_en(Invest) :- sni(Invest).
+
+\newpage
+
+# Reglas terminológicas I
+
+- Disjunto: Dos predicados disjuntos si la neg. de uno implica la del otro.
+  - Ej. menor_edad(X) :- \+ mayor_edad(X)
+
+- Subtipo. Un predicado subsume al otro:
+  - Ej. medico(X) :- cirujano(X)
+
+- Exhaustivo. Dos o más tipos completan el concepto:
+  - Ej. sni(X):- candidato(X); sni1(X); sni2(X), sni3(X); emerito(X).
+
+- Simétrico. Definen una relación simétrica:
+  - Ej. colega(X,Y) :- colega(Y,X).
+
+- Inverso. Definen una relación inversa:
+  - Ej. padre(X,Y) :- hijo(Y,X).
+
+- Restricción.Establecen una restricción de tipo de objeto:
+  - Ej. profEn(Prof,iiia) :-  sni(Prof).
+
+- Definición: Define un termino:
+  - Ej. matutino(Curso) :- horario(Curso,_,Fin,_), Fin
+  
+  
+\newpage
+
+# Individuos abstractos
+
+Consideremos las posibles representaciones de que _nic_ compró una _bici_:
+
+- compra(nic,bici)
+- compra(nic,bici,costco)
+- compra(nic,bici,costco,12000)
+- compra(nic,bici,costco,12000,feb14)
+- etc.
+
+La representación de este modo, se puede alargar tanto como se desea, como si fuera una tupla n-aria, pero dicha representación no logra generalizar bien el tema.
+
+La solución al caso, es definir un individuo abstracto y tantas relaciones binarias o funciones unarias como sean necesarias:
+
+- Ej: compra(f9872). precio(f9872,12000)., etc...
+
+- Permite: precioEnDolares(C,PUs) :- precio(C,PMx), PUs = PMx/19.80.
+
+
+
+
+
+
+
+

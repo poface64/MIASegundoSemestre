@@ -1,0 +1,20 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introducción}{2}{section.1}%
+\contentsline {section}{\numberline {2}Definiciones}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Distancia}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Distancia Euclidiana}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Distancia Mahalanobis}{3}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Distancia Manhattan}{4}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Algoritmo para fuzzy c-means}{5}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Paso 1}{5}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Paso 2}{5}{subsubsection.2.5.2}%
+\contentsline {subsubsection}{\numberline {2.5.3}Paso 3}{6}{subsubsection.2.5.3}%
+\contentsline {subsubsection}{\numberline {2.5.4}Paso 4}{6}{subsubsection.2.5.4}%
+\contentsline {section}{\numberline {3}Metodología}{7}{section.3}%
+\contentsline {section}{\numberline {4}Resultados}{8}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Resultados para la distancia Euclidiana}{8}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Resultados para la distancia de Mahalanobis}{9}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Resultados para la distancia de Manhattan}{10}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Conclusiones}{11}{section.5}%
+\contentsline {section}{\numberline {6}Referencias}{12}{section.6}%
+\contentsline {section}{\numberline {7}Anexos}{13}{section.7}%

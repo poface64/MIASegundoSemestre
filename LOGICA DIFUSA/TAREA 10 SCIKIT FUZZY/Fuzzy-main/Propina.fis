@@ -1,0 +1,56 @@
+[System]
+Name='Propina'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=16
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Servicio'
+Range=[0 10]
+NumMFs=4
+MF1='Malo':'trapmf',[0 0 1.5 3]
+MF2='Regular':'trapmf',[1.5 2.5 4.5 5.5]
+MF3='Bueno':'trapmf',[4 5.5 7.5 9]
+MF4='Excelente':'trapmf',[7.5 8.5 10 10]
+
+[Input2]
+Name='Comida'
+Range=[0 100]
+NumMFs=4
+MF1='Mala':'trapmf',[0 0 15 30]
+MF2='Normal':'trapmf',[15 25 45 55]
+MF3='Buena':'trapmf',[45 55 75 85]
+MF4='Excelente':'trapmf',[75 85 100 100]
+
+[Output1]
+Name='Propina'
+Range=[0 20]
+NumMFs=3
+MF1='Baja':'trapmf',[0 0 4 7]
+MF2='Normal':'trapmf',[4 7 11 14]
+MF3='Alta':'trapmf',[11 14 19.8 20]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 1 (1) : 1
+1 3, 2 (1) : 1
+1 4, 2 (1) : 1
+2 1, 1 (1) : 1
+2 2, 2 (1) : 1
+2 3, 2 (1) : 1
+2 4, 2 (1) : 1
+3 1, 2 (1) : 1
+3 2, 2 (1) : 1
+3 3, 3 (1) : 1
+3 4, 3 (1) : 1
+4 1, 2 (1) : 1
+4 2, 2 (1) : 1
+4 3, 3 (1) : 1
+4 4, 3 (1) : 1

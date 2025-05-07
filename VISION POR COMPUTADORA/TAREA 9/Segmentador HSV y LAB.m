@@ -66,7 +66,7 @@ end
 
 
 %% Cargar la imagen %%
-ruta = "REPORTE\\IMG\\IM4.jpeg";
+ruta = "/home/angel/Escritorio/MIASegundoSemestre/VISION POR COMPUTADORA/TAREA 9/REPORTE/IMG/IM4.jpeg";
 img = imread(ruta);
 
 %% Pruebas para HSV color rosa umbral 0.15 %%
