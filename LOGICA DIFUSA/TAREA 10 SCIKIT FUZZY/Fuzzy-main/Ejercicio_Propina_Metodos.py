@@ -76,11 +76,8 @@ print(f"Propina sugerida ({metodo}): {valor_propina:.2f}%")
 
 
 ### Mostrar todo automatizado ###
-import skfuzzy as fuzz
-
 # Lista de métodos de desfusificación
 metodos = ['centroid', 'bisector', 'mom', 'som', 'lom']
-
 # Iterar sobre cada método
 for metodo in metodos:
         valor_propina = fuzz.defuzz(x, aggregated, metodo)
