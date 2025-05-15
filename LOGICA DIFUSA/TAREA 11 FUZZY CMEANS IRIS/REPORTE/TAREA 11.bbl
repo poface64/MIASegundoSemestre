@@ -1,0 +1,32 @@
+\begin{thebibliography}{}
+
+\bibitem[Bishop, 2006]{bishop2006}
+Bishop, C.~M. (2006).
+\newblock {\em Pattern Recognition and Machine Learning}.
+\newblock Springer, New York.
+
+\bibitem[Edla et~al., 2020]{edla_analysis_2020}
+Edla, D.~R., Lone, T., Tapas, N., and Kuppili, V. (2020).
+\newblock Analysis of high dimensional brain data using prototype based fuzzy
+  clustering.
+\newblock {\em Clinical Epidemiology and Global Health}, 8(4):1110--1118.
+
+\bibitem[Johnson and Wichern, 2007]{johnson2007}
+Johnson, R.~A. and Wichern, D.~W. (2007).
+\newblock {\em Applied Multivariate Statistical Analysis}.
+\newblock Pearson, Upper Saddle River, NJ, 6th edition.
+
+\bibitem[Nascimento et~al., 2000]{nascimento_fuzzy_2000}
+Nascimento, S., Mirkin, B., and Moura-Pires, F. (2000).
+\newblock A fuzzy clustering model of data and fuzzy c-means.
+\newblock In {\em Ninth {IEEE} {International} {Conference} on {Fuzzy}
+  {Systems}. {FUZZ}- {IEEE} 2000 ({Cat}. {No}.{00CH37063})}, volume~1, pages
+  302--307, San Antonio, TX, USA. IEEE.
+
+\bibitem[Wang and Sun, 2015]{wang_survey_2015}
+Wang, F. and Sun, J. (2015).
+\newblock Survey on distance metric learning and dimensionality reduction in
+  data mining.
+\newblock {\em Data Mining and Knowledge Discovery}, 29(2):534--564.
+
+\end{thebibliography}
