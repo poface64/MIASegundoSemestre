@@ -99,7 +99,7 @@ function [salida, Vc, grafica] = fcmeans(X, k, m, tol, mi, distancia)
 end
 
 %% Kmeans para proyectar %%
-function [C_proj] = grkmeans(X, k, distancia)
+function [C] = grkmeans(X, k, distancia)
     % Verificar entrada
     if nargin < 3
         distancia = 'sqeuclidean'; % Distancia por defecto
@@ -146,49 +146,21 @@ load fisheriris.mat
 X = meas;
 
 
-%% Corridas para la distancia euclidiana %%
-
-%% Euclidiana con m = 1.3 %%
-[matriz_pert, centros, grafica] = fcmeans(X, 3, 1.3, 0.001, 100, "euclidiana");
-grkmeans(X,3,'sqeuclidean')
-
-%% Euclidiana con m = 1.6 %%
-subplot(3,3,2)
-[matriz_pert, centros, grafica] = fcmeans(X, 3, 1.6, 0.001, 100, "euclidiana");
-grkmeans(X,3,'sqeuclidean')
-
-%% Euclidiana con m = 1.9 %%
+%% Cmeans con M = 1.9 con distancia euclidiana %%
 [matriz_pert, centros, grafica] = fcmeans(X, 3, 1.9, 0.001, 100, "euclidiana");
+%% Revisar centros y pertenencias %%
+centros
+matriz_pert
+%% Kmeans con distancia euclidiana %%
 grkmeans(X,3,'sqeuclidean')
 
-%% Corridas para la distancia mahalanobis %%
-
-%% Mahalanobis con m = 1.3 %%
-[matriz_pert, centros, grafica] = fcmeans(X, 3, 1.3, 0.001, 100, "mahalanobis");
-grkmeans(X,3,'sqeuclidean')
-
-%% Mahalanobis con m = 1.6 %%
-[matriz_pert, centros, grafica] = fcmeans(X, 3, 1.6, 0.001, 100, "mahalanobis");
-grkmeans(X,3,'sqeuclidean')
-
-%% Mahalanobis con m = 1.9 %%
-[matriz_pert, centros, grafica] = fcmeans(X, 3, 1.9, 0.001, 100, "mahalanobis");
-grkmeans(X,3,'sqeuclidean')
-
-%% Corridas para la distancia manhattan %%
-
-%% Manhattan con m = 1.3 %%
-[matriz_pert, centros, grafica] = fcmeans(X, 3, 1.3, 0.001, 100, "manhattan");
-grkmeans(X,3,'cityblock')
-
-%% Manhattan con m = 1.6 %%
-[matriz_pert, centros, grafica] = fcmeans(X, 3, 1.6, 0.001, 100, "manhattan");
-grkmeans(X,3,'cityblock')
-
-%% Manhattan con m = 1.9 %%
+%% Cmeans con M = 1.9 con distancia Manhattan %%
 [matriz_pert, centros, grafica] = fcmeans(X, 3, 1.9, 0.001, 100, "manhattan");
+%% Revisar centros y pertenencias %%
+centros
+matriz_pert
+%% Kmeans con distancia manhatan %%
 grkmeans(X,3,'cityblock')
-
 
 
 

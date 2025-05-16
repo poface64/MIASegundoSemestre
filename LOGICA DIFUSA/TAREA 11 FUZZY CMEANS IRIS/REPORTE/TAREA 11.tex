@@ -305,7 +305,7 @@ De esta manera, podemos proyectar en apenas 2 o 3 nuevas componentes la informac
 
 \section{Metodología}
 
-Para el presente reporte, se propone un marco donde se fija el parámetro del número de grupos $k$ en 3, para el caso del algoritmo fuzzy se usa un parametro de difusividad $M = 1.9$. Para k-medias y para Fuzzy se van a comparar haciendo uso de la distancia Euclidiana y la distancia de Mahalanobis, con un tope de 100 iteraciones y una tolerancia para la convergencia $\epsilon = 0.001$.
+Para el presente reporte, se propone un marco donde se fija el parámetro del número de grupos $k$ en 3, para el caso del algoritmo fuzzy se usa un parametro de difusividad $M = 1.9$. Para k-medias y para Fuzzy se van a comparar haciendo uso de la distancia Euclidiana y la distancia de Manhattan con un tope de 100 iteraciones y una tolerancia para la convergencia $\epsilon = 0.001$.
 
 Una vez obtenidas las etiquetas de los clusters para ambos algoritmos, se aplicara PCA para reducir dimensionalidad y observar su comportamiento en un nuevo espacio de 2 dimensiones.
 
@@ -332,7 +332,7 @@ Una vez obtenidas las etiquetas de los clusters para ambos algoritmos, se aplica
 4.4          & 2.9         & 1.4          & 0.2           \\
 4.9          & 3.1         & 1.5          & 0.1          \\
 	\end{tabular}
-	\caption{Valores de Rapidez y Resistencia}
+	\caption{Matriz de variables de Iris.}
 	\label{tab:rapidez_resistencia}
 \end{table}
 
@@ -346,86 +346,188 @@ Una vez obtenidas las etiquetas de los clusters para ambos algoritmos, se aplica
 
 \begin{figure}[h!]
 	\centering
-	\begin{subfigure}[b]{0.50\textwidth}
-		\includegraphics[width=\textwidth]{IMG/R11.png}
-		\caption{Euclidiana con M = 1.3}
+	\begin{subfigure}[t]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{IMG/R1.png}
+		\caption{Fuzzy C-means con distancia Euclidiana}
 		\label{fig:r1}
-	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.50\textwidth}
-		\includegraphics[width=\textwidth]{IMG/R12.png}
-		\caption{Euclidiana con  M = 1.6}
+	\end{subfigure}
+	\hspace{0.02\textwidth}
+	\begin{subfigure}[t]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{IMG/R2.png}
+		\caption{K-means con distancia Euclidiana}
 		\label{fig:r2}
 	\end{subfigure}
-	\vspace{\baselineskip} % Espacio vertical entre filas
-	\begin{subfigure}[b]{0.50\textwidth}
-		\includegraphics[width=\textwidth]{IMG/R13.png}
-		\caption{Euclidiana con  M = 1.9}
+	\caption{Comparación entre algoritmos con distancia Euclidiana}
+\end{figure}
+
+
+
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}[t]{0.45\textwidth}
+		\centering
+		\[
+		\begin{bmatrix}
+			5.0045 & 3.4155 & 1.4813 & 0.2533 \\
+			5.8874 & 2.7578 & 4.3639 & 1.3990 \\
+			6.7848 & 3.0544 & 5.6578 & 2.0553
+		\end{bmatrix}
+		\]
+		\caption{Vectores de medias - Fuzzy C-means}
+	\end{subfigure}
+	\hspace{0.05\textwidth}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\centering
+		\[
+		\begin{bmatrix}
+			5.9016 & 2.7484 & 4.3935 & 1.4339 \\
+			5.0060 & 3.4280 & 1.4620 & 0.2460 \\
+			6.8500 & 3.0737 & 5.7421 & 2.0711
+		\end{bmatrix}
+		\]
+		\caption{Vectores de medias - K-means}
+	\end{subfigure}
+	\caption{Comparación de los vectores de medias obtenidos por dos algoritmos}
+\end{figure}
+
+\newpage
+
+El algoritmo convergió  en 18 iteraciones y a continuación se presentan las primeras 30 observaciones de la matriz de pertenencias del Fuzzy C-means.
+\[
+\begin{bmatrix}
+	0.9984 & 0.0011 & 0.0005 \\
+	0.9848 & 0.0108 & 0.0044 \\
+	0.9877 & 0.0087 & 0.0037 \\
+	0.9788 & 0.0150 & 0.0062 \\
+	0.9972 & 0.0020 & 0.0009 \\
+	0.9538 & 0.0325 & 0.0137 \\
+	0.9874 & 0.0088 & 0.0037 \\
+	0.9998 & 0.0001 & 0.0001 \\
+	0.9501 & 0.0352 & 0.0147 \\
+	0.9896 & 0.0074 & 0.0030 \\
+	0.9795 & 0.0144 & 0.0062 \\
+	0.9957 & 0.0031 & 0.0013 \\
+	0.9811 & 0.0133 & 0.0055 \\
+	0.9443 & 0.0385 & 0.0172 \\
+	0.9166 & 0.0564 & 0.0270 \\
+	0.8732 & 0.0856 & 0.0412 \\
+	0.9637 & 0.0250 & 0.0113 \\
+	0.9984 & 0.0011 & 0.0005 \\
+	0.9286 & 0.0502 & 0.0212 \\
+	0.9874 & 0.0088 & 0.0038 \\
+	0.9797 & 0.0145 & 0.0057 \\
+	0.9911 & 0.0062 & 0.0026 \\
+	0.9726 & 0.0187 & 0.0087 \\
+	0.9873 & 0.0092 & 0.0035 \\
+	0.9784 & 0.0157 & 0.0060 \\
+	0.9832 & 0.0121 & 0.0047 \\
+	0.9973 & 0.0019 & 0.0008 \\
+	0.9965 & 0.0025 & 0.0010 \\
+	0.9967 & 0.0023 & 0.0010 \\
+	0.9874 & 0.0090 & 0.0036
+\end{bmatrix}
+\]
+
+
+\newpage
+
+\subsection{Resultados para la distancia de Mahattan}
+
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}[t]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{IMG/R3.png}
+		\caption{Fuzzy C-means con distancia Manhattan}
 		\label{fig:r3}
-	\end{subfigure}\hfill
-	\caption{Resumen de los resultados con distancia Euclidiana}
-	\label{fig:cuadro_r}
-\end{figure}
-
-\newpage
-
-\subsection{Resultados para la distancia de Mahalanobis}
-
-\begin{figure}[h!]
-	\centering
-	\begin{subfigure}[b]{0.50\textwidth}
-		\includegraphics[width=\textwidth]{IMG/R21.png}
-		\caption{Mahalanobis con M = 1.3}
+	\end{subfigure}
+	\hspace{0.02\textwidth}
+	\begin{subfigure}[t]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{IMG/R4.png}
+		\caption{K-means con distancia Manhattan}
 		\label{fig:r4}
-	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.50\textwidth}
-		\includegraphics[width=\textwidth]{IMG/R22.png}
-		\caption{Mahalanobis con  M = 1.6}
-		\label{fig:r5}
 	\end{subfigure}
-	\vspace{\baselineskip} % Espacio vertical entre filas
-	\begin{subfigure}[b]{0.50\textwidth}
-		\includegraphics[width=\textwidth]{IMG/R23.png}
-		\caption{Mahalanobis con  M = 1.9}
-		\label{fig:r6}
-	\end{subfigure}\hfill
-	\caption{Resumen de los resultados con distancia Mahalanobis}
-	\label{fig:cuadro_r2}
+	\caption{Comparación entre algoritmos con distancia Manhattan}
 \end{figure}
-
-
-\newpage
-
-\subsection{Resultados para la distancia de Manhattan}
 
 \begin{figure}[h!]
 	\centering
-	\begin{subfigure}[b]{0.50\textwidth}
-		\includegraphics[width=\textwidth]{IMG/R31.png}
-		\caption{Manhattan con M = 1.3}
-		\label{fig:r7}
-	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.50\textwidth}
-		\includegraphics[width=\textwidth]{IMG/R32.png}
-		\caption{Manhattan con  M = 1.6}
-		\label{fig:r8}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\centering
+		\[
+		\begin{bmatrix}
+			5.9295 & 2.7850 & 4.3955 & 1.4139 \\
+			5.0104 & 3.4068 & 1.5099 & 0.2668 \\
+			6.6007 & 3.0000 & 5.3743 & 1.9220
+		\end{bmatrix}
+		\]
+		\caption{Vectores de medias - Fuzzy C-means}
 	\end{subfigure}
-	\vspace{\baselineskip} % Espacio vertical entre filas
-	\begin{subfigure}[b]{0.50\textwidth}
-		\includegraphics[width=\textwidth]{IMG/R33.png}
-		\caption{Manhattan con  M = 1.9}
-		\label{fig:r9}
-	\end{subfigure}\hfill
-	\caption{Resumen de los resultados con distancia Manhattan}
-	\label{fig:cuadro_r3}
+	\hspace{0.05\textwidth}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\centering
+		\[
+		\begin{bmatrix}
+			5.9000 & 2.8000 & 4.5000 & 1.4000 \\
+			5.0000 & 3.4000 & 1.5000 & 0.2000 \\
+			6.7000 & 3.0000 & 5.7000 & 2.1000
+		\end{bmatrix}
+		\]
+		\caption{Vectores de medias - K-means}
+	\end{subfigure}
+	\caption{Comparación de vectores de medias ajustados con la referencia}
 \end{figure}
+
+\newpage
+
+El algoritmo convergió  en 18 iteraciones y a continuación se presentan las primeras 30 observaciones de la matriz de pertenencias del Fuzzy C-means.
+
+\[
+\begin{bmatrix}
+	0.0019 & 0.9983 & 0.0010 \\
+	0.0701 & 0.9980 & 0.0445 \\
+	0.0159 & 0.9922 & 0.0083 \\
+	0.0873 & 0.9967 & 0.0455 \\
+	0.0051 & 0.9984 & 0.0035 \\
+	0.0710 & 0.9810 & 0.0398 \\
+	0.0264 & 0.9951 & 0.0119 \\
+	0.0007 & 0.9999 & 0.0003 \\
+	0.1409 & 0.9889 & 0.0687 \\
+	0.0597 & 0.9989 & 0.0371 \\
+	0.1168 & 0.9977 & 0.0551 \\
+	0.0058 & 0.9978 & 0.0025 \\
+	0.0567 & 0.9958 & 0.0322 \\
+	0.0655 & 0.9658 & 0.0358 \\
+	0.1977 & 0.9782 & 0.0998 \\
+	0.2998 & 0.9759 & 0.1916 \\
+	0.0609 & 0.9849 & 0.0351 \\
+	0.0018 & 0.9985 & 0.0010 \\
+	0.2190 & 0.9865 & 0.0931 \\
+	0.0641 & 0.9985 & 0.0584 \\
+	0.0393 & 0.9930 & 0.0141 \\
+	0.0332 & 0.9985 & 0.0239 \\
+	0.0232 & 0.9733 & 0.0128 \\
+	0.0103 & 0.9923 & 0.0049 \\
+	0.0155 & 0.9819 & 0.0070 \\
+	0.1168 & 0.9989 & 0.0850 \\
+	0.0023 & 0.9988 & 0.0011 \\
+	0.0158 & 0.9994 & 0.0067 \\
+	0.0053 & 0.9980 & 0.0022 \\
+	0.0239 & 0.9956 & 0.0121 \\
+	0.0349 & 0.9970 & 0.0195 
+\end{bmatrix}
+\]
+
+
 
 \newpage
 
 \section{Conclusiones}
 
-Se observa que el algoritmo logra detectar agrupaciones que se encuentran relativamente "visibiles", siendo que en para las 3 distancias, no hay diferencias internas al variar el parametro de fuzzy $M$. Tambien se encontro que la distancia Euclidiana y la distancia de Manhattan dan los mismos resultados, siendo que la distancia de Mahalanobis  detecta que un punto que las demas distancias identifican cerca del centroide que se encuentra abajo a la derecha, realmente pertenece a el centroide de la izquierda, esto se puede explicar porque la distancia de Mahalanobis pondera en función de las varianzas y covarianzas.
-
-Queda como trabajo futuro realizar la comparativa del desempeño de este algoritmo contra el algoritmo de K-medias clásico.
+Tras la realización de la aplicación, se pudo observar que entre el algoritmo Fuzzy y el K-means clásico, existen ligeras diferencias al momento de clasificar a un par de sujetos que se encuentran muy en la frontera de pertenecer a un grupo o a otro. Para este caso en particular, la distancia utilizada no tuvo un efecto tan relevante. 
 
 
 \newpage
@@ -442,8 +544,7 @@ Queda como trabajo futuro realizar la comparativa del desempeño de este algorit
 Este reporte se envía con los códigos anexos que corresponden a:
 
 \begin{enumerate}
-	\item El codigo en MATLAB del fuzzy cmeans con las pruebas
-	\item El archivo de excel donde se almacenaron los datos.
+	\item El codigo en MATLAB del fuzzy cmeans  y kmeans con las pruebas
 
 \end{enumerate}
 
