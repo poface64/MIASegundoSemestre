@@ -83,7 +83,6 @@ padreselect = function(aptitudes,indices,NP ){
   orden = order(aptitudes)
   # Convertirlos en matriz
   candidatos = cbind(aptitudes[orden], indices[orden])
-  
   #### Propuesta para calcular la cosa, Para el calculo de su prob
   ###  Sumarle 1 pero a un nuevo vector basado en el numero de ataques originales
   ### Calcular el inverso de eso y luego, estanndarizar las probs

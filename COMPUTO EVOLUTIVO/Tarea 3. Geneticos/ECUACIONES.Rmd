@@ -1,0 +1,55 @@
+---
+title: ""
+output: 
+  pdf_document:
+    toc: TRUE
+date: ""
+toc-title: "ÍNDICE"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F,
+                      warning = F,
+                      message = F)
+```
+
+\newpage
+
+# Problema 1.
+
+Se desea minimizar la siguiente función
+
+
+$$f(\vec{x}) = \sum_{i = 1}^D{x_i^2}$$
+
+Donde: 
+
+\begin{itemize}
+	\item $D = 10$ representa el número de dimensiones.
+	\item $x_i$ puede tomar valores en el rango $[-10,10]$ para $i = 1,2,\dots,D$ 
+\end{itemize}
+
+Para representarlo en un espacio de 3D, se fijan 8 de las 10 variables del vector en 0.
+
+![](P1.png)
+
+
+
+
+
+\newpage
+
+# Problema 2.
+
+Se desea minimizar la siguiente función
+
+$$f(\vec{x}) = 10D + \sum_{i = 1}^D{(x_i^2 -10\cos(2\pi x_i )) }$$
+
+Donde: 
+
+\begin{itemize}
+	\item $D = 10$ representa el número de dimensiones.
+	\item $x_i$ puede tomar valores en el rango $[-5.12,5.12]$ para $i = 1,2,\dots,D$ 
+\end{itemize}
+
+![](P2.png)

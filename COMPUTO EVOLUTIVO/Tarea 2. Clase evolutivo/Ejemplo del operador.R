@@ -1,14 +1,5 @@
 rm(list=ls())
 
-# Función para generar beta con la nueva fórmula
-generar_beta <- function(a, b) {
-  u <- runif(1)
-  if (u <= 0.5) {
-    return(a - b * log(u))
-  } else {
-    return(a + b * log(u))
-  }
-}
 
 #### Padres en 2D ####
 
