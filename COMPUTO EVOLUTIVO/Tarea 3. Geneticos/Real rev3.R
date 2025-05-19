@@ -183,3 +183,7 @@ mutacion = function(hijos, PM,problema){
   # Devolver a los hijos mutados
   return(hijos)
 }
+
+
+
+
