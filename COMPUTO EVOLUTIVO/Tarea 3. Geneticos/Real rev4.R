@@ -174,17 +174,19 @@ PM = 0.1 # Porcentaje de mutación
 b = 0.001 # Parametro para el laplaciano
 tol = 3 # Tolerancia permitida
 Dn = 10 #Parametro Dn para las dimensiones
+mostrar = 0 # Parametro para mostrar el resultado
 
 
-
-optimizar = function(problema,pobsize,ngen,PC,PM,b,tol,Dn = 10){
+optimizar = function(problema,pobsize,ngen,PC,PM,b,tol,Dn = 10,mostrar = 1){
   # Contadores del proceso #
   contadoreval = 0 # Contador de evaluaciones
   ngenaux = 0 # Contador de generaciones
   mejorsol = c() # Guardar la aptitud de la mejor solución
-  reporte = matrix(0,nrow = 1,ncol = 3)[-1,]
+  #### Convertir el reporte interno en un data frame ####
+  reporte = as.data.frame(matrix(0,nrow = 1,ncol = 3))[-1,] # Reporte interno
   ## REPORTE US PARA MOSTRAR POR ITERACIÓN ##
-  reporteUS = matrix(0,nrow = 1,ncol = Dn+2)[-1,]
+  reporteUS = as.data.frame(matrix(0,nrow = 1,ncol = Dn+2)[-1,])
+  
   ### 1.- Inicializar la población y evaluar sus aptitudes solo una vez ####
   poblacion = pob(pobsize,problema,Dn)
   aptitudes = apply(poblacion,1,fx,problema)
@@ -192,13 +194,13 @@ optimizar = function(problema,pobsize,ngen,PC,PM,b,tol,Dn = 10){
   mejorsol[ngenaux + 1] = min(aptitudes) # Guardar las soluciones a lo largo del tiempo
   ## PARA EL REPORTE US ##
   # Ordenar de mejor a peor
-  pobapt = round(cbind(ngenaux,aptitudes,poblacion),4)
+  pobapt = round(cbind(ngenaux,aptitudes,poblacion),3)
   # Mostrar el mejor #
-  reporteUS = rbind(reporteUS,pobapt[order(pobapt[,2]),][1,])
+  reporteUS = rbind.data.frame(reporteUS,pobapt[order(pobapt[,2]),][1,])
   colnames(reporteUS) = NULL
   print(reporteUS[1,])
   # Agregar al reporte la solución inicial #
-  reporte = rbind(reporte,c(ngenaux,mejorsol[ngenaux + 1],contadoreval))
+  reporte = rbind.data.frame(reporte,c(ngenaux,mejorsol[ngenaux + 1],contadoreval))
   ### Aquí inicia el ciclo while ###
   # Caso 1: La mejor solución esta en la población inicial
   if (mejorsol[1] == 0) {
@@ -232,13 +234,14 @@ optimizar = function(problema,pobsize,ngen,PC,PM,b,tol,Dn = 10){
       # Ordenar de mejor a peor
       pobapt = round(cbind(ngenaux,aptitudes,poblacion),4)
       # Mostrar el mejor #
-      reporteUS = rbind(reporteUS,pobapt[order(pobapt[,2]),][1,])
+      reporteUS = rbind.data.frame(reporteUS,pobapt[order(pobapt[,2]),][1,])
       # Reportar #
       colnames(reporteUS) = NULL
-      print(reporteUS[reporteUS[,1]==ngenaux,])
+      # Condición para reportar o no
+      if(mostrar==1){print(reporteUS[reporteUS[,1]==ngenaux,])}
       ## Reporte interno ##
       mejor_individuo = poblacion[which.min(aptitudes),]
-      reporte = rbind(reporte, c(ngenaux, mejorsol[ngenaux + 1], contadoreval))
+      reporte = rbind.data.frame(reporte, c(ngenaux, mejorsol[ngenaux + 1], contadoreval))
     }
   }
   # Reportar los resultados internos #
@@ -260,12 +263,44 @@ PM = 0.1 # Porcentaje de mutación
 b = 0.001 # Parametro para el laplaciano
 tol = 3 # Tolerancia permitida
 Dn = 10 #Parametro Dn para las dimensiones
+mostrar = 0
+
+#### Correr el algoritmo 30 veces ####
+cn = 30
+problema = 2
+recopilar = matrix(0,nrow = 1,ncol = 2 + Dn )[-1,]
+
+for(i in 1:cn){
+  # Obtener con los mismos parametros #
+  aux = optimizar(problema,pobsize,ngen,PC,PM,b,tol ,Dn,mostrar)$reporteUS
+  # Ordenar respecto a la aptitud y tomar al primero
+  recopilar = rbind(recopilar,aux[nrow(aux),])  
+}
+
+salida = optimizar(problema,pobsize,ngen,PC,PM,b,tol ,Dn,mostrar)
+salida$reporteUS
+plot(salida$reporteUS[,2])
+salida$reporteUS[,2] |> min()
+salida$reporteUS[,]
+salida$reporteUS[,2]
+
+#### Prueba de wilcoxon ####
+
+datos1 = read.csv("eva.csv")
+datos2 = read.csv("eva2.csv")
+
+ex = data.frame(apt = c(datos1$apt,datos2$apt),probl = factor(rep(c("P1","P2"),each = 30)))
+
+wilcox.test(ex$apt~ex$probl)
 
 
-correr el 
+tapply(ex$apt,ex$probl,shapiro.test)
 
 
-salida = optimizar(problema,pobsize,ngen,PC,PM,b,tol ,Dn)
+
+
+
+
 
 
 

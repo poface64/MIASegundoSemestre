@@ -46,6 +46,8 @@ b2e = function(vbits) {
 # nbits: cantidad de bits para representar el entero
 # a = limite inferior
 # b = limite superior
+x = 7.821
+
 r2b = function(x,nbits,a = -10,b = 10){
   # Convertir el valor a un número uniforme de 0 a 1
   u = (x-a)/(b-a)
@@ -56,7 +58,6 @@ r2b = function(x,nbits,a = -10,b = 10){
   bin <- e2b(entero,nbits)
   # Devolver la cadena de bits
   return(bin)
-  
 }
 
 #### Función que convierte bits a reales ####
