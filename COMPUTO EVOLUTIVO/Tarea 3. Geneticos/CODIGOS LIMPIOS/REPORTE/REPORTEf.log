@@ -1,0 +1,413 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.3.5)  20 MAY 2025 13:48
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**REPORTEf.tex
+(./REPORTEf.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(c:/texlive/2024/texmf-dist/tex/latex/llncs/llncs.cls
+Document Class: llncs 2025/02/25 v2.26 
+ LaTeX document class for Lecture Notes in Computer Science
+(c:/texlive/2024/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
+(c:/texlive/2024/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count196
+\c@section=\count197
+\c@subsection=\count198
+\c@subsubsection=\count199
+\c@paragraph=\count266
+\c@subparagraph=\count267
+\c@figure=\count268
+\c@table=\count269
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen141
+)
+(c:/texlive/2024/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2024/09/14 v1.9i multicolumn formatting (FMi)
+\c@tracingmulticols=\count270
+\mult@box=\box52
+\multicol@leftmargin=\dimen142
+\c@unbalance=\count271
+\c@collectmore=\count272
+\doublecol@number=\count273
+\multicoltolerance=\count274
+\multicolpretolerance=\count275
+\full@width=\dimen143
+\page@free=\dimen144
+\premulticols=\dimen145
+\postmulticols=\dimen146
+\multicolsep=\skip51
+\multicolbaselineskip=\skip52
+\partial@page=\box53
+\last@line=\box54
+\mc@boxedresult=\box55
+\maxbalancingoverflow=\dimen147
+\mult@rightbox=\box56
+\mult@grightbox=\box57
+\mult@firstbox=\box58
+\mult@gfirstbox=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\c@minrows=\count276
+\c@columnbadness=\count277
+\c@finalcolumnbadness=\count278
+\last@try=\dimen148
+\multicolovershoot=\dimen149
+\multicolundershoot=\dimen150
+\mult@nat@firstbox=\box96
+\colbreak@box=\box97
+\mc@col@check@num=\count279
+)
+(c:/texlive/2024/texmf-dist/tex/latex/oberdiek/aliascnt.sty
+Package: aliascnt 2018/09/07 v1.5 Alias counters (HO)
+)
+\c@chapter=\count280
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 379.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 380.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 381.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 382.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 383.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 384.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 385.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 386.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 387.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 388.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 389.
+LaTeX Info: Redefining \vec on input line 394.
+\tocchpnum=\dimen151
+\tocsecnum=\dimen152
+\tocsectotal=\dimen153
+\tocsubsecnum=\dimen154
+\tocsubsectotal=\dimen155
+\tocsubsubsecnum=\dimen156
+\tocsubsubsectotal=\dimen157
+\tocparanum=\dimen158
+\tocparatotal=\dimen159
+\tocsubparanum=\dimen160
+\@tempcntc=\count281
+\fnindent=\dimen161
+\c@@inst=\count282
+\c@@auth=\count283
+\c@auco=\count284
+\instindent=\dimen162
+\authrun=\box98
+\authorrunning=\toks17
+\tocauthor=\toks18
+\titrun=\box99
+\titlerunning=\toks19
+\toctitle=\toks20
+\c@theorem=\count285
+\c@case=\count286
+\c@conjecture=\count287
+\c@corollary=\count288
+\c@definition=\count289
+\c@example=\count290
+\c@exercise=\count291
+\c@lemma=\count292
+\c@note=\count293
+\c@problem=\count294
+\c@property=\count295
+\c@proposition=\count296
+\c@question=\count297
+\c@solution=\count298
+\c@remark=\count299
+\headlineindent=\dimen163
+)
+(c:/texlive/2024/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+)
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(c:/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen164
+\Gin@req@width=\dimen165
+)
+(c:/texlive/2024/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip53
+\subfigcapskip=\skip54
+\subfigcaptopadj=\dimen166
+\subfigbottomskip=\skip55
+\subfigcapmargin=\dimen167
+\subfiglabelskip=\skip56
+\c@subfigure=\count300
+\c@lofdepth=\count301
+\c@subtable=\count302
+\c@lotdepth=\count303
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(c:/texlive/2024/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip57
+\subfig@bottom=\skip58
+)
+(c:/texlive/2024/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+
+(c:/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(c:/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen168
+\captionmargin=\dimen169
+\caption@leftmargin=\dimen170
+\caption@rightmargin=\dimen171
+\caption@width=\dimen172
+\caption@indent=\dimen173
+\caption@parindent=\dimen174
+\caption@hangindent=\dimen175
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+Package caption Info: \@makecaption = \long macro:#1#2->\small \vskip \abovecap
+tionskip \sbox \@tempboxa {{\bfseries #1.} #2}\ifdim \wd \@tempboxa >\hsize {\b
+fseries #1.} #2\par \else \global \@minipagefalse \hb@xt@ \hsize {\hfil \box \@
+tempboxa \hfil }\fi \vskip \belowcaptionskip  on input line 1175.
+)
+
+Package caption Warning: Unknown document class (or package),
+(caption)                standard defaults will be used.
+See the caption package documentation for explanation.
+
+\c@caption@flags=\count304
+\c@continuedfloat=\count305
+Package caption Info: subfigure package is loaded.
+)
+LaTeX Info: Redefining \subref on input line 189.
+Package subcaption Info: The counter `subfigure' was already defined by
+(subcaption)             an unknown document class or package on input line 238
+.
+Package subcaption Info: The counter `subtable' was already defined by
+(subcaption)             an unknown document class or package on input line 238
+.
+) (c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count306
+\l__pdf_internal_box=\box100
+)
+(./REPORTEf.aux)
+\openout1 = `REPORTEf.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+
+(c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count307
+\scratchdimen=\dimen176
+\scratchbox=\box101
+\nofMPsegments=\count308
+\nofMParguments=\count309
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count310
+\MPscratchDim=\dimen177
+\MPnumerator=\count311
+\makeMPintoPDFobject=\count312
+\everyMPtoPDFconversion=\toks23
+) (c:/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(c:/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 14.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 14.
+
+Title too long for running head. Please supply
+a shorter form with \titlerunning prior to \maketitle
+<IMG/P1.png, id=1, 549.9747pt x 476.7411pt>
+File: IMG/P1.png Graphic file (type png)
+<use IMG/P1.png>
+Package pdftex.def Info: IMG/P1.png  used on input line 29.
+(pdftex.def)             Requested size: 79.83693pt x 69.20206pt.
+
+Underfull \hbox (badness 1303) in paragraph at lines 29--29
+[]\T1/cmr/m/n/9 (a) Prob-lema 1: Es-
+ []
+
+<IMG/P2.png, id=3, 647.2983pt x 578.6418pt>
+File: IMG/P2.png Graphic file (type png)
+<use IMG/P2.png>
+Package pdftex.def Info: IMG/P2.png  used on input line 34.
+(pdftex.def)             Requested size: 79.83693pt x 71.36765pt.
+<IMG/R3.jpg, id=4, 308.15125pt x 169.63374pt>
+File: IMG/R3.jpg Graphic file (type jpg)
+<use IMG/R3.jpg>
+Package pdftex.def Info: IMG/R3.jpg  used on input line 39.
+(pdftex.def)             Requested size: 104.1381pt x 57.32527pt.
+<IMG/R4.jpg, id=5, 567.11874pt x 121.45375pt>
+File: IMG/R4.jpg Graphic file (type jpg)
+<use IMG/R4.jpg>
+Package pdftex.def Info: IMG/R4.jpg  used on input line 53.
+(pdftex.def)             Requested size: 208.27623pt x 44.60359pt.
+
+
+[1
+
+{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2024/
+texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} <./IMG/P1.png> <./IMG/P2.p
+ng> <./IMG/R3.jpg> <./IMG/R4.jpg>]
+<IMG/RG1.jpg, id=19, 756.8275pt x 747.79375pt>
+File: IMG/RG1.jpg Graphic file (type jpg)
+<use IMG/RG1.jpg>
+Package pdftex.def Info: IMG/RG1.jpg  used on input line 65.
+(pdftex.def)             Requested size: 121.49535pt x 120.03738pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--65
+[]\T1/cmr/m/n/9 (a) Rep-re-sentación Real.
+ []
+
+<IMG/RG2.jpg, id=20, 756.8275pt x 747.79375pt>
+File: IMG/RG2.jpg Graphic file (type jpg)
+<use IMG/RG2.jpg>
+Package pdftex.def Info: IMG/RG2.jpg  used on input line 66.
+(pdftex.def)             Requested size: 121.49535pt x 120.03738pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--66
+[]\T1/cmr/m/n/9 (b) Rep-re-sentación Real.
+ []
+
+<IMG/RG3.jpg, id=21, 636.3775pt x 747.79375pt>
+File: IMG/RG3.jpg Graphic file (type jpg)
+<use IMG/RG3.jpg>
+Package pdftex.def Info: IMG/RG3.jpg  used on input line 67.
+(pdftex.def)             Requested size: 121.49535pt x 142.7555pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+[]\T1/cmr/m/n/9 (c) Rep-re-sentación Bi-na-ria
+ []
+
+<IMG/RG4.jpg, id=22, 651.43375pt x 747.79375pt>
+File: IMG/RG4.jpg Graphic file (type jpg)
+<use IMG/RG4.jpg>
+Package pdftex.def Info: IMG/RG4.jpg  used on input line 68.
+(pdftex.def)             Requested size: 121.49535pt x 139.45789pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
+[]\T1/cmr/m/n/9 (d) Rep-re-sentación Bi-na-ria
+ []
+
+
+
+[2 <./IMG/RG1.jpg> <./IMG/RG2.jpg> <./IMG/RG3.jpg> <./IMG/RG4.jpg>]
+<IMG/CP1.pdf, id=26, 355.3275pt x 214.8025pt>
+File: IMG/CP1.pdf Graphic file (type pdf)
+<use IMG/CP1.pdf>
+Package pdftex.def Info: IMG/CP1.pdf  used on input line 78.
+(pdftex.def)             Requested size: 156.20453pt x 94.43144pt.
+<IMG/CP2.pdf, id=27, 355.3275pt x 214.8025pt>
+File: IMG/CP2.pdf Graphic file (type pdf)
+<use IMG/CP2.pdf>
+Package pdftex.def Info: IMG/CP2.pdf  used on input line 80.
+(pdftex.def)             Requested size: 156.20453pt x 94.43144pt.
+
+Overfull \hbox (1.76349pt too wide) in paragraph at lines 89--90
+\T1/cmr/m/n/10 Se en-con-traron difer-en-cias sig-ni-fica-ti-vas en-tre los re-
+sul-ta-dos de las cor-ri-das aleato-
+ []
+
+
+
+[3 <./IMG/CP1.pdf> <./IMG/CP2.pdf>] (./REPORTEf.aux)
+ ***********
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 3680 strings out of 473200
+ 60735 string characters out of 5720279
+ 457322 words of memory out of 5000000
+ 26943 multiletter control sequences out of 15000+600000
+ 563448 words of font info for 42 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 67i,7n,77p,691b,316s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/tex
+live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/t
+exmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2024/texmf-dist/
+fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2024/texmf-dist/fonts/type
+1/public/cm-super/sfrm0900.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/c
+m-super/sfrm1000.pfb>
+Output written on REPORTEf.pdf (3 pages, 2958226 bytes).
+PDF statistics:
+ 68 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+

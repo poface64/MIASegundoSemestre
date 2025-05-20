@@ -47,7 +47,11 @@ b2e = function(vbits) {
 # a = limite inferior
 # b = limite superior
 
-r2b = function(x,nbits,a = -10,b = 10){
+r2b = function(x,nbits,problema){
+  # Verificar si es un problema u otro #
+  limites = if (problema == 1) c(-10, 10) else c(-5.12, 5.12)
+  a = limites[1]
+  b = limites[2]
   # Convertir el valor a un número uniforme de 0 a 1
   u = (x-a)/(b-a)
   # Calcular el máximo entero con nbits
@@ -64,7 +68,11 @@ r2b = function(x,nbits,a = -10,b = 10){
 # nbits: cantidad de bits para representar el entero
 # a = limite inferior
 # b = limite superior
-b2r = function(bin ,nbits,a = -10,b = 10){
+b2r = function(bin ,nbits,problema){
+  # Verificar si es un problema u otro #
+  limites = if (problema == 1) c(-10, 10) else c(-5.12, 5.12)
+  a = limites[1]
+  b = limites[2]
   # Convertir el binario a entero
   entero = b2e(bin)
   # Calcular el máximo entero
@@ -96,7 +104,7 @@ n_bits = function(problema,precision = 3){
 # Generar N cantidad de posibles soluciones
 # n es la cantidad de sujetos que componen a la población
 # Generador de sujetos SIN problemas de repetir casillas
-sol1 = function(Dn = 10,problema){
+sol1 = function(problema,nbits,Dn = 10){
   # Para el problema 1 o problema 2
   limites = if (problema == 1) c(-10, 10) else c(-5.12, 5.12)
   # Generar la solución random con  Dn numeros reales # 
@@ -104,16 +112,16 @@ sol1 = function(Dn = 10,problema){
   # Vectorizar la conversión para la cadena #
   # Convierte a lista cada posible salida y luego la convierte a vector
   # Aplica una función tipo lambda
-  bits =  unlist(lapply(reales, function(x) r2b(x, nbits, a = limites[1], b = limites[2])))
+  bits =  unlist(lapply(reales, function(x) r2b(x, nbits, problema)))
   # Devolver la cadena
   return(bits)
 }
 
 # Generador de la población #
-pob = function(n,problema, Dn = 10){
-  pob1 = matrix(0, nrow = n, ncol = Dn*nbits)
-  for(i in 1:n){
-    pob1[i,] = sol1(Dn, problema)
+pob = function(pobsize,problema,nbits, Dn = 10){
+  pob1 = matrix(0, nrow = pobsize, ncol = Dn*nbits)
+  for(i in 1:pobsize){
+    pob1[i,] = sol1(problema,nbits,Dn = 10 )
   }
   # Reportar la población generada #
   return(pob1)
@@ -124,7 +132,8 @@ pob = function(n,problema, Dn = 10){
 #problema: selector entre problema 1 o 2
 # Si es problema 1, el valor varia en [-10,10]
 # Si es problema 2, el valor varia en [-5.12,5.12]
-fx = function(X,problema){
+# Decofificador de sujeto de bits a reales #
+db2r = function(X,problema,nbits){
   # Definir limites del problema segun sea el caso:
   limites = if (problema == 1) c(-10, 10) else c(-5.12, 5.12)
   # Dividir X en segmentos de nbits
@@ -133,7 +142,14 @@ fx = function(X,problema){
   msegmentos = matrix(X,nrow = nbits,ncol = segmentos)
   # Cada columna como un subvector de bits
   vresu = apply(msegmentos,2,function(bits){
-    b2r(bits,nbits,a = limites[1],b = limites[2])})
+    b2r(bits,nbits,problema)})
+  # Devolver el resultado
+  return(vresu)
+}
+
+fx = function(X,problema,nbits){
+  # Enmtra el sujeto en bits y se decodifica a real #
+  vresu = db2r(X,problema,nbits)
   # Devolver la aptitud #
   # Problema 1
   if(problema==1){
@@ -251,27 +267,49 @@ mutacion = function(hijos, PM){
 ############################
 #### Función principal ####
 #### Parámetros de inicio ####
-problema = 1 # Problema a resolver (1 o 2)
-pobsize = 100 # Tamaño de la población inicial
-PC = 0.8 # Porcentaje de cruza
-PM = 0.05 # Porcentaje de mutación
-LIM = 20000 # Criterio de paro: Evaluaciones 10,000 o solución encontrada
-nbits = n_bits(problema)
+#problema = 1 # Problema a resolver (1 o 2)
+#pobsize = 30 # Tamaño de la población inicial
+#ngen = 1200 # Número de generaciones
+#PC = 0.8 # Porcentaje de cruza
+#PM = 0.1 # Porcentaje de mutación
+#tol = 3 # Tolerancia permitida
+#Dn = 10 # Numero de dimensiones
+#mostrar = 0 # Parametro para mostrar el resultado
 # Parametro adicional #
 
-optimizar = function(problema,pobsize,PC,PM,Dn = 10){
+optimizar = function(problema,pobsize,ngen,PC,PM,mostrar = 0,Dn = 10){
+  # Esto se genera solo
+  nbits = n_bits(problema) # Cantidad de bits a usar
   # Contadores del proceso #
-  contadoreval = 0
-  ngen = 0
-  mejorsol = c()
-  reporte = matrix(0,nrow = 1,ncol = 3)[-1,]
+  contadoreval = 0 # Contador de evaluaciones
+  ngenaux = 0 # Contador de generaciones
+  mejorsol = c() # Guardar la aptitud de la mejor solución
+  ### Inicializar los reportes como dataframes ###
+  # Reporte interno #
+  reporte = data.frame(gen = 1,apt = 0.1, eval = 1 )[-1,]
+  # Reporte para mostrar #
+  reporteUS = data.frame(gen = integer(), 
+                         apt = numeric(),
+                         matrix(nrow = 0, ncol = Dn))
+  colnames(reporteUS)[-(1:2)] = paste0("X", 1:Dn)
+  
   ### 1.- Inicializar la población y evaluar sus aptitudes solo una vez ####
-  poblacion = pob(pobsize,problema)
-  aptitudes = apply(poblacion,1,fx,problema)
+  poblacion = pob(pobsize,problema,nbits, Dn = 10)
+  aptitudes = apply(poblacion,1,fx,problema,nbits)
   contadoreval = contadoreval + pobsize  # Se evaluaron pobsize sujetos
-  mejorsol[ngen + 1] = min(aptitudes)
+  ### PARA EL REPORTE US ###
+  # Ordenar las aptitudes
+  mapt = which.min(aptitudes)
+  # Decoficar al sujeto antes de introducirlo #
+  decosuj = db2r(poblacion[mapt,],problema,nbits)
+  sujetom =  cbind.data.frame(ngenaux,aptitudes[mapt],t(decosuj))
+  reporteUS[ngenaux+1,] = sujetom
+  
+  ### Para el reporte interno ###
   # Agregar al reporte la solución inicial #
-  reporte = rbind(reporte,c(ngen,mejorsol[ngen + 1],contadoreval))
+  mejorsol[ngenaux + 1] = min(aptitudes) # Mejor solución por generación
+  isj = c(ngenaux,mejorsol[ngenaux + 1],contadoreval)
+  reporte[ngenaux + 1,] = isj
   ### Aquí inicia el ciclo while ###
   # Caso 1: La mejor solución esta en la población inicial
   if (mejorsol[1] == 0) {
@@ -279,51 +317,64 @@ optimizar = function(problema,pobsize,PC,PM,Dn = 10){
     print("Terminó al inicio con la solución óptima:")
   } else {
     # Bucle para iterar el genetico
-    while (min(aptitudes) > 1 & contadoreval < LIM){
+    # Condición de respaldo tolerancia
+    #min(aptitudes) > (10^-tol)
+    while (ngenaux < ngen ){
       # Aplicar el elitismo de forma discreta
       elite =  c(min(aptitudes),poblacion[which.min(aptitudes),])
       ### 2.- Seleccionar a los padres ####
       ganadores = padreselect(pobsize,aptitudes)
       ### 3.- Operador de CRUZA
-      hijos = cruza(ganadores,poblacion,PC)
+      hijos = cruza(ganadores, poblacion,PC)
       ### 4.- Operador de mutación
       hijosm = mutacion(hijos, PM)
       ## 5.- Generar a la nueva población ##
       poblacion = hijosm
       # 6.- Evaluar SOLO los hijos
-      aptitudes = apply(poblacion,1,fx,problema)
+      aptitudes = apply(poblacion,1,fx,problema,nbits)
       contadoreval = contadoreval + length(aptitudes)  
       # Agregar la mejor solución de la población y eliminar a la peor
       mj = which.max(aptitudes)
       poblacion[mj,] = elite[-1]
       aptitudes[mj] = elite[1]
-      # Actualizar generación# Actualizar y reportar #
-      ngen = ngen + 1
-      mejorsol[ngen + 1] = min(aptitudes)
-      # Mostrar progreso
-      mejor_individuo =  poblacion[which.min(aptitudes),]
-      reporte = rbind(reporte, c(ngen, mejorsol[ngen + 1], contadoreval))
+      # Actualizar generación# 
+      ngenaux = ngenaux + 1
+      ## Guardar progreso para ##
+      ## PARA EL REPORTE US ##
+      # Ordenar las aptitudes
+      # Ordenar las aptitudes
+      mapt = which.min(aptitudes)
+      # Decoficar al sujeto antes de introducirlo #
+      decosuj = db2r(poblacion[mapt,],problema,nbits)
+      sujetom =  cbind.data.frame(ngenaux,aptitudes[mapt],t(decosuj))
+      reporteUS[ngenaux+1,] = sujetom
+      
+      ### Para el reporte interno ###
+      # Agregar al reporte la solución inicial #
+      mejorsol = min(aptitudes) # Mejor solución por generación
+      isj = c(ngenaux,mejorsol,contadoreval)
+      reporte[ngenaux + 1,] = isj
     }
   }
-  # Reportar los resultados
-  return(reporte)
+  # Reportar los resultados internos #
+  reporte = round(reporte,4)
+  # Reportar los resultados externos
+  reporteUS = round(reporteUS,4)
+  # Ciclo para proyectar 
+  if(mostrar==1){
+    # Mostrar todo desde el primer sujeto para reporte us
+    for(i in 1:ngen){
+      print(round(reporteUS[i,],3))
+    }
+  }else{
+    # Proyectar solo el primero y el ultimo de la corrida
+    for(i in c(1,ngen)){
+      print(round(reporteUS[i,],3))
+    } 
+  }
+  # Devolver los reportes
+  # Reporte int para mis debugeos 
+  # ReporteUS para proyectarlo y sacar estadísticas 
+  return(list(reporteint = reporte,reporteUS = reporteUS))
 }
-
-reporte = optimizar(problema,pobsize,PC,PM,Dn = 10)
-plot(reporte[,2],type = "l")
-min(reporte[,2])
-
-
-X = mejor_individuo
-
-# Definir limites del problema segun sea el caso:
-limites = if (problema == 1) c(-10, 10) else c(-5.12, 5.12)
-# Dividir X en segmentos de nbits
-segmentos = 150/nbits
-# Hacer una matriz con segmentos
-msegmentos = matrix(X,nrow = nbits,ncol = segmentos)
-# Cada columna como un subvector de bits
-vresu = apply(msegmentos,2,function(bits){
-  b2r(bits,nbits,a = limites[1],b = limites[2])})
-vresu
-
+  

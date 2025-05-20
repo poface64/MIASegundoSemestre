@@ -182,25 +182,31 @@ optimizar = function(problema,pobsize,ngen,PC,PM,b,tol,Dn = 10,mostrar = 1){
   contadoreval = 0 # Contador de evaluaciones
   ngenaux = 0 # Contador de generaciones
   mejorsol = c() # Guardar la aptitud de la mejor solución
-  #### Convertir el reporte interno en un data frame ####
-  reporte = as.data.frame(matrix(0,nrow = 1,ncol = 3))[-1,] # Reporte interno
-  ## REPORTE US PARA MOSTRAR POR ITERACIÓN ##
-  reporteUS = as.data.frame(matrix(0,nrow = 1,ncol = Dn+2)[-1,])
-  
+  ### Inicializar los reportes como dataframes ###
+  # Reporte interno #
+  reporte = data.frame(gen = 1,apt = 0.1, eval = 1 )[-1,]
+  # Reporte para mostrar #
+  reporteUS = data.frame(gen = integer(), 
+                         apt = numeric(),
+                         matrix(nrow = 0, ncol = Dn))
+  colnames(reporteUS)[-(1:2)] = paste0("X", 1:Dn)
+
   ### 1.- Inicializar la población y evaluar sus aptitudes solo una vez ####
   poblacion = pob(pobsize,problema,Dn)
   aptitudes = apply(poblacion,1,fx,problema)
   contadoreval = contadoreval + pobsize  # Se evaluaron pobsize sujetos
-  mejorsol[ngenaux + 1] = min(aptitudes) # Guardar las soluciones a lo largo del tiempo
-  ## PARA EL REPORTE US ##
-  # Ordenar de mejor a peor
-  pobapt = round(cbind(ngenaux,aptitudes,poblacion),3)
-  # Mostrar el mejor #
-  reporteUS = rbind.data.frame(reporteUS,pobapt[order(pobapt[,2]),][1,])
-  colnames(reporteUS) = NULL
-  print(reporteUS[1,])
+
+  ### PARA EL REPORTE US ###
+  # Ordenar las aptitudes
+  mapt = which.min(aptitudes)
+  sujetom =  cbind.data.frame(ngenaux,aptitudes[mapt],t(poblacion[mapt,]))
+  reporteUS[ngenaux+1,] = sujetom
+  ### Para el reporte interno ###
   # Agregar al reporte la solución inicial #
-  reporte = rbind.data.frame(reporte,c(ngenaux,mejorsol[ngenaux + 1],contadoreval))
+  mejorsol[ngenaux + 1] = min(aptitudes) # Mejor solución por generación
+  isj = c(ngenaux,mejorsol[ngenaux + 1],contadoreval)
+  reporte[ngenaux + 1,] = isj
+  
   ### Aquí inicia el ciclo while ###
   # Caso 1: La mejor solución esta en la población inicial
   if (mejorsol[1] == 0) {
@@ -208,7 +214,9 @@ optimizar = function(problema,pobsize,ngen,PC,PM,b,tol,Dn = 10,mostrar = 1){
     print("Terminó al inicio con la solución óptima:")
   } else {
     # Bucle para iterar el genetico
-    while (min(aptitudes) > (10^-tol) & ngenaux < ngen ){
+    # Condición de respaldo tolerancia
+    #min(aptitudes) > (10^-tol)
+    while (ngenaux < ngen ){
       # Aplicar el elitismo de forma discreta
       elite =  c(min(aptitudes),poblacion[which.min(aptitudes),])
       ### 2.- Seleccionar a los padres ####
@@ -226,90 +234,103 @@ optimizar = function(problema,pobsize,ngen,PC,PM,b,tol,Dn = 10,mostrar = 1){
       mj = which.max(aptitudes)
       poblacion[mj,] = elite[-1]
       aptitudes[mj] = elite[1]
-      # Actualizar generación# Actualizar y reportar #
+      # Actualizar generación# 
       ngenaux = ngenaux + 1
-      mejorsol[ngenaux + 1] = min(aptitudes)
-      # Mostrar progreso #
+      ## Guardar progreso para ##
       ## PARA EL REPORTE US ##
-      # Ordenar de mejor a peor
-      pobapt = round(cbind(ngenaux,aptitudes,poblacion),4)
-      # Mostrar el mejor #
-      reporteUS = rbind.data.frame(reporteUS,pobapt[order(pobapt[,2]),][1,])
-      # Reportar #
-      colnames(reporteUS) = NULL
-      # Condición para reportar o no
-      if(mostrar==1){print(reporteUS[reporteUS[,1]==ngenaux,])}
-      ## Reporte interno ##
-      mejor_individuo = poblacion[which.min(aptitudes),]
-      reporte = rbind.data.frame(reporte, c(ngenaux, mejorsol[ngenaux + 1], contadoreval))
+      # Ordenar las aptitudes
+      mapt = which.min(aptitudes)
+      sujetom =  cbind.data.frame(ngenaux,aptitudes[mapt],t(poblacion[mapt,]))
+      reporteUS[ngenaux+1,] = sujetom
+      ### Para el reporte interno ###
+      # Agregar al reporte la solución inicial #
+      mejorsol = min(aptitudes) # Mejor solución por generación
+      isj = c(ngenaux,mejorsol,contadoreval)
+      reporte[ngenaux + 1,] = isj
     }
   }
   # Reportar los resultados internos #
-  colnames(reporte) = c("gen","apt","eval")
   reporte = round(reporte,4)
   # Reportar los resultados externos
-  colnames(reporteUS) = c("gen","apt",paste0("X",1:Dn) )
-  # Reportar solo el final si no se mostro el proceso
-  if(mostrar!=1){print(reporteUS[nrow(reporteUS),])}
-  
+  reporteUS = round(reporteUS,4)
+  # Ciclo para proyectar 
+  if(mostrar==1){
+    # Mostrar todo desde el primer sujeto para reporte us
+    for(i in 1:ngen){
+      print(round(reporteUS[i,],3))
+    }
+  }else{
+    # Proyectar solo el primero y el ultimo de la corrida
+    for(i in c(1,ngen)){
+      print(round(reporteUS[i,],3))
+    } 
+  }
+  # Devolver los reportes
+  # Reporte int para mis debugeos 
+  # ReporteUS para proyectarlo y sacar estadísticas 
   return(list(reporteint = reporte,reporteUS = reporteUS))
 }
 
 
 #### REPORTERIA ####
 #### Parámetros de inicio ####
-problema = 1 # Problema a resolver (1 o 2)
+problema = 2 # Problema a resolver (1 o 2)
 pobsize = 30 # Tamaño de la población inicial
-ngen = 2000# Número de generaciones
+ngen = 1200# Número de generaciones
 PC = 0.8 # Porcentaje de cruza
 PM = 0.1 # Porcentaje de mutación
 b = 0.001 # Parametro para el laplaciano
 tol = 3 # Tolerancia permitida
 Dn = 10 #Parametro Dn para las dimensiones
-mostrar = 0
+mostrar = 0 # Parametro para mostrar el resultado
 
-#### Correr el algoritmo 30 veces ####
-cn = 30
-problema = 2
-recopilar = matrix(0,nrow = 1,ncol = 2 + Dn )[-1,]
+P1 = optimizar(problema = 1,pobsize,ngen,PC,PM,b,tol,Dn = 10,mostrar = 0)
+P2 = optimizar(problema = 2,pobsize,ngen,PC,PM,b,tol,Dn = 10,mostrar = 0)
 
-for(i in 1:cn){
-  # Obtener con los mismos parametros #
-  aux = optimizar(problema,pobsize,ngen,PC,PM,b,tol ,Dn,mostrar)$reporteUS
-  # Ordenar respecto a la aptitud y tomar al primero
-  recopilar = rbind(recopilar,aux[nrow(aux),])  
+
+#### Función para calcular las 30 corridas e ir guardando los reportes
+cn = 10
+recolectorN = function(cn){
+  # Crear un objeto para ir guardando  los reportes
+  repo1 = list()
+  mejoresN = list()
+  # Ciclo para extraer info de hasta N corridas
+  for(i in 1:cn){
+    # Semilla fija del 1 al 30 #
+    set.seed(i)
+    # Corrida n
+    C1 =  optimizar(problema,pobsize,ngen,PC,PM,b,tol,Dn,mostrar)
+    # Extraer la info de los reportes
+    repo =cbind.data.frame(C1$reporteint,C1$reporteUS[,-c(1,2)])  
+    # Guardarlo en la lista
+    repo1[[i]] = repo
+    # Extraer al mejor sujeto de esta corrida
+    mejoresN[[i]] = repo[which.min(repo$apt),]
+  }
+  # Compactar en un solo objeto:
+  A1 = do.call(rbind, mejoresN) 
+  ### Estadísticas para la tabla 2 ###
+  tabla2 = round(cbind.data.frame(min(A1$apt),max(A1$apt),mean(A1$apt),
+                   median(A1$apt),sd(A1$apt)),4)
+  names(tabla2) = c("Mejor","Peor","Media","Mediana","Desviación")
+  
+  #### Seleccionar la mediana de las corridas ####
+  indices = order(A1$apt)
+  posi = round((length(indices)+1)/2)
+  indioriginal = (1:cn)[indices[posi]]
+  
+  ### Seleccionar el conjunto de datos del indice original ###
+  grafi = repo1[[indioriginal]]
+
+  #### Seleccionar los elementos a devoler ####
+  resu = list(grafimed = grafi,
+              mejores30 = A1,
+              estadisticas = tabla2
+              )
+  #### Devolver la salida ####
+  return(resu)
 }
-
-salida = optimizar(problema,pobsize,ngen,PC,PM,b,tol ,Dn,mostrar)
-salida$reporteUS
-plot(salida$reporteUS[,2])
-salida$reporteUS[,2] |> min()
-salida$reporteUS[,]
-salida$reporteUS[,2]
-
-#### Prueba de wilcoxon ####
-
-datos1 = read.csv("eva.csv")
-datos2 = read.csv("eva2.csv")
-
-ex = data.frame(apt = c(datos1$apt,datos2$apt),probl = factor(rep(c("P1","P2"),each = 30)))
-
-wilcox.test(ex$apt~ex$probl)
-
-
-tapply(ex$apt,ex$probl,shapiro.test)
+A = recolectorN(cn)
 
 
 
-
-
-
-
-
-
-
-head(reporte$reporteint)
-head(reporte$reporteUS)
-plot(reporte$reporteint[,2],type = "l")
-min(reporte$reporteint [,2])
-max(reporte$reporteint [,1])

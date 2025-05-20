@@ -1,0 +1,60 @@
+% !TeX TXS-program:compile = txs:///pdflatex/[--shell-escape]
+
+\documentclass[11pt, letterpaper]{article}
+
+\usepackage{minted}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage[round]{natbib}
+\usepackage{subcaption}
+
+
+\title{\bfseries Tarea}
+\author{Ángel García Báez}
+\date{\today}
+\setcounter{tocdepth}{3} 
+
+\begin{document}
+	
+	% Página de presentación
+	\begin{titlepage}
+		\centering
+		\includegraphics[width=0.2\textwidth]{logo.png}\par
+		\vspace{1cm}
+		{\LARGE \bfseries Universidad Veracruzana \par}
+		\vspace{1cm}
+		{\Large Maestría en Inteligencia Artificial\par}
+		\vspace{3cm}
+		{\LARGE \bfseries Visión por Computadora \par}
+		\vspace{1cm}
+		{\Large \bfseries Tarea 10. Propuesta de proyecto para visión por computadora y lógica difusa. \par}
+		\vfill
+		{\Large \textit{Ángel García Báez}\par}
+		\vspace{1cm}
+		{\Large Profesor: Dr. Héctor Acosta Mesa \par}
+		\vfill
+		{\Large \today \par}
+	\end{titlepage}
+		
+% Sección para el problema 1
+\section{Propuesta de proyecto.}
+\subsection{Comparativa entre K-means y Fuzzy C-means para la agrupación de caracteristicas en imagenes de rostros.}
+
+
+Se propone realizar una comparativa entre el desempeño de los algoritmos K-means y Fuzzy C-means para la agrupación de imágenes en un contexto no supervisado. Se plantea el uso de una red neuronal convolucional (CNN) pre-entrenada como extractor de características, generando un vector representativo por imagen. Estos vectores conforman una matriz homogénea de tamaño  N×P, donde N es el número de imágenes y P la cantidad de características extraídas. Sobre esta matriz se aplican ambos métodos de agrupamiento, su rendimiento se evalúa mediante la intra-varianza, como medida de compactación de los grupos. El objetivo es determinar cuál de los enfoques logra una mejor segmentación del espacio de características generado por la CNN.
+
+
+	
+	
+	
+\end{document}
+
