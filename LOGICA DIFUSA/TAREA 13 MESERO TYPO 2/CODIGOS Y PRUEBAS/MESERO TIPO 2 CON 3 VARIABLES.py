@@ -212,7 +212,6 @@ from matplotlib.ticker import LinearLocator, FormatStrFormatter
 # Generar la malla de evaluación
 X1, X2 = np.meshgrid(servicio_dom, comida_dom)
 Z1 = np.zeros_like(X1)
-
 # Evaluar el sistema en toda la malla
 for i, x1 in enumerate(servicio_dom):
     for j, x2 in enumerate(comida_dom):
@@ -223,6 +222,7 @@ for i, x1 in enumerate(servicio_dom):
         it2out, tr = sistema.evaluate(inputs,min_t_norm,max_s_norm,propina_dom)
         # Obtener el valor crisp de la salida
         Z1[j, i] = fz.crisp(tr["Propina"])  # Nota: j, i por el orden del meshgrid
+
 
 # Crear la figura 3D
 fig = plt.figure(figsize=(10, 7))
@@ -247,33 +247,46 @@ plt.title("Superficie de decisión difusa tipo 2")
 plt.tight_layout()
 plt.show()
 
+#############3
 
-##################3
-import plotly.graph_objects as go
-import numpy as np
+# Valores fijos de Lugar para cada superficie
+valores_lugar = [0, 10]
 
-# Supongamos que ya tienes X1, X2 y Z1 definidos
-# Si no los tienes definidos, deberías definirlos primero, por ejemplo:
-# X1, X2 = np.meshgrid(np.linspace(0, 10, 50), np.linspace(0, 10, 50))
-# Z1 = alguna función de X1 y X2
+# Crear figura con subplots
+fig = plt.figure(figsize=(16, 7))
 
-fig = go.Figure(data=[go.Surface(z=Z1, x=X1, y=X2, colorscale='Viridis')])
+for idx, lugar_val in enumerate(valores_lugar):
+    # Crear malla
+    X1, X2 = np.meshgrid(servicio_dom, comida_dom)
+    Z = np.zeros_like(X1)
 
-# Configuración del layout
-fig.update_layout(
-    title="Superficie de decisión difusa tipo 2",
-    scene=dict(
-        xaxis_title="Servicio",
-        yaxis_title="Comida",
-        zaxis_title="Propina sugerida"
-    ),
-    width=800,
-    height=700,
-    margin=dict(r=20, b=10, l=10, t=40)
-)
+    # Evaluar el sistema
+    for i, x1 in enumerate(servicio_dom):
+        for j, x2 in enumerate(comida_dom):
+            inputs = {
+                "Servicio": x1,
+                "Comida": x2,
+                "Lugar": lugar_val  # <- Aquí fijamos el valor de la tercera variable
+            }
+            it2out, tr = sistema.evaluate(inputs, min_t_norm, max_s_norm, propina_dom)
+            Z[j, i] = fz.crisp(tr["Propina"])
 
-# Mostrar el gráfico interactivo
-fig.show()
+    # Agregar subplot
+    ax = fig.add_subplot(1, 2, idx+1, projection='3d')
+    surf = ax.plot_surface(X1, X2, Z, cmap=cm.viridis,
+                           linewidth=0, antialiased=True)
 
+    ax.set_xlabel("Servicio")
+    ax.set_ylabel("Comida")
+    ax.set_zlabel("Propina sugerida")
+    ax.set_title(f"Lugar = {lugar_val}")
 
+    ax.zaxis.set_major_locator(LinearLocator(10))
+    ax.zaxis.set_major_formatter(FormatStrFormatter('%.02f'))
+
+    fig.colorbar(surf, ax=ax, shrink=0.5, aspect=8)
+
+plt.suptitle("Superficies de decisión difusa tipo 2 para distintos valores de 'Lugar'")
+plt.tight_layout()
+plt.show()
 
