@@ -1,0 +1,15 @@
+\begin{thebibliography}{}
+
+\bibitem[Haghrah et~al., 2025]{haghrah2025pyit2fls}
+Haghrah, A.~A., Ghaemi, S., and Badamchizadeh, M.~A. (2025).
+\newblock Pyit2fls: An open-source python framework for flexible and scalable
+  development of type 1 and interval type 2 fuzzy logic models.
+\newblock {\em SoftwareX}, 30:102146.
+
+\bibitem[Lu, 2015]{lu_genetic-algorithm-based_2015}
+Lu, T.-C. (2015).
+\newblock Genetic-algorithm-based type reduction algorithm for interval type-2
+  fuzzy logic controllers.
+\newblock {\em Engineering Applications of Artificial Intelligence}, 42:36--44.
+
+\end{thebibliography}

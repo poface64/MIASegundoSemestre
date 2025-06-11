@@ -81,6 +81,7 @@ propina_altaMF = fz.IT2FS(propina_dom,
                  fz.gaussian_mf, [16, 2, 1],
                  fz.gaussian_mf, [16, 1.5, 0.5],
                  check_set=True)
+
 ### Mostrar gráfica de Servicio
 fz.IT2FS_plot(propina_bajaMF,
               propina_normalMF,
@@ -194,3 +195,34 @@ fig.colorbar(surf, shrink=0.5, aspect=8)
 plt.title("Superficie de decisión difusa tipo 2")
 plt.tight_layout()
 plt.show()
+
+
+##################3
+import plotly.graph_objects as go
+import numpy as np
+
+# Supongamos que ya tienes X1, X2 y Z1 definidos
+# Si no los tienes definidos, deberías definirlos primero, por ejemplo:
+# X1, X2 = np.meshgrid(np.linspace(0, 10, 50), np.linspace(0, 10, 50))
+# Z1 = alguna función de X1 y X2
+
+fig = go.Figure(data=[go.Surface(z=Z1, x=X1, y=X2, colorscale='Viridis')])
+
+# Configuración del layout
+fig.update_layout(
+    title="Superficie de decisión difusa tipo 2",
+    scene=dict(
+        xaxis_title="Servicio",
+        yaxis_title="Comida",
+        zaxis_title="Propina sugerida"
+    ),
+    width=800,
+    height=700,
+    margin=dict(r=20, b=10, l=10, t=40)
+)
+
+# Mostrar el gráfico interactivo
+fig.show()
+
+
+
