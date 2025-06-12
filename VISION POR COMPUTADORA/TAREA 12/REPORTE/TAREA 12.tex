@@ -73,7 +73,7 @@ Una vez entendido esto, lo que se pide hacer es lo siguiente:
 \begin{itemize}
 	\item Se pide implementar una metodología usando redes neuronales convolucionales para llevar a cabo la clasificación binaria (vivos o muertos) de las imágenes.
 	
-	\item Se espera lograr un minimo de buena clasificación del 90\%
+	\item Se espera lograr un mínimo de buena clasificación del 90\%
 	
 \end{itemize}
 
@@ -85,97 +85,44 @@ Una vez entendido esto, lo que se pide hacer es lo siguiente:
 	
 \section{Metodología}
 
-\subsection{Modelo estadístico de forma usando PCA}
+\subsection{Dividir la base de datos}
 
-A continuación se describe el proceso de modelado estadístico de forma conforme a lo explicado en \cite{MPHY0026_SSM}, \cite{SSM_PCA_Basel}, \cite{cootes_pdms} y \cite{sarkalkan_statistical_2014} que retoman la idea del PCA vista en \cite{johnson2007} pero con los resultados de haber hecho el proceso de registro como se explica en \cite{coste2012image}.
+En primera instancia, se toma el conjunto de las 93 imágenes y se divide en 2 partes siguiendo la proporción 80-20. El 80\% de los datos (77 imágenes) que se seleccionaron de forma al azar, fueron utilizadas para entrenar al modelo de red neuronal mientras que el restante 20\% (19 imágenes) fueron utilizadas como prueba. Cabe mencionar que se fijo la semilla 64 para replicabilidad.
 
-Para cada rostro, se tiene un conjunto de puntos (20 observaciones) que representan los puntos claves utilizados para el proceso de registro, esto equivale a tener una matriz de datos de tamaño $20 \times 2$ por cada una de las imágenes que se ve así:
+\subsection{Propuesta para construir la red neuronal}
 
+Para llevar a cabo la clasificación automática de imágenes de gusanos vivos y muertos se pusieron en practica los conceptos expuestos en \cite{wu2017introduction} como introducción a las redes convolucionales en matlab. Se desarrolló una red neuronal convolucional (CNN) en MATLAB como sigue:
 
-$$
-\mathbf{x}^{(i)} = 
-\begin{bmatrix} 
-	x_1 & y_1 \\
-	x_2 & y_2 \\
-	\vdots & \vdots \\ 
-	x_{20} & y_20 
-\end{bmatrix} 
-$$
+\begin{itemize}
+	\item Como pre-procesamiento se tomaron todas las imágenes de gusanos vivos y muertos, se estandarizaron en un formato de 100x100 píxeles en escala de grises con ayuda de la función augmentedImageDatastore() de MATLAB.
 
-Ahora, cada uno de esa pareja de puntos va a ser concatenada como un solo vector fila tal y como se muestra a continuación:
+	\item La arquitectura de la red comienza pidiendo una capa de entrada que recibe las imágenes en escala de grises de tamaño 100x100.
+	
+	\item Se agregan dos bloques convolucionales, cada uno compuesto por una capa de convolución 2D que detecta patrones espaciales locales mediante filtros 2D.
+	
+	\item Se aplica una capa de normalización por lotes que estabiliza el aprendizaje y acelera la convergencia.
+	
+	\item Se agrega una capa con la función de activación ReLU que introduce no linealidad al modelo.
+	
+	\item Cada bloque se completa con una capa de submuestreo con maxPooling2dLayer que va reduciendo la dimensionalidad espacial y conservando las características más importantes.
+	
+	\item Se incluye una capa completamente conectada al final de la extracción de caracteristicas con 2 neuronas de salida, correspondientes a las clases de los gusanos.
+	
+	\item Se usa una capa softmax para convertir las salidas en probabilidades que finalmente terminan en una capa de clasificación que permiten a la red decir si una imagen presenta gusanos vivos o no.
+	
+	
+\end{itemize}
 
-$$
-\mathbf{x}^{(i)} = \begin{bmatrix} x_1 & y_1 & x_2 & y_2 & \cdots & x_n & y_n \end{bmatrix}
-$$
-
-Posteriormente, se construye una nueva matriz $X$ de forma que cada coordenada de cada punto pasara a ser una variable de la nueva matriz con las 100 observaciones dispuestas como filas, conformando así una nueva matriz $X$ de tamaño $100\times40$
-
-$$
-\mathbf{X} =
-\begin{bmatrix}
-	\mathbf{x}^{(1)^T} \\
-	\mathbf{x}^{(2)^T} \\
-	\vdots \\
-	\mathbf{x}^{(m)^T}
-\end{bmatrix}
-$$
-
-Una vez conformada la matriz $\mathbf{X}$ que contiene los datos de los puntos obtenidos después del proceso de registro, comienza el proceso de modelado estadístico mediante PCA, iniciando por obtener el vector de medias de la matriz que viene a representa la forma promedio de las imágenes.
-
-$$
-\bar{\mathbf{x}} = \frac{1}{m} \sum_{i=1}^{m} \mathbf{x}^{(i)}
-$$
-
-Teniendo el vector de medias listo, se procede a centrar la matriz respecto al vector como sigue:
-
-$$
-\mathbf{X}_{\text{centrada}} = \mathbf{X} - \bar{\mathbf{x}}
-$$
-
-donde \( \mathbf{1}_m \) es un vector columna de unos.
-
-Acto seguido, se procede con el calculo de la matriz de varianzas y covarianzas como normalmente se haría en la metodología de PCA:
-
-
-$$
-\mathbf{C} = \frac{1}{m - 1} \mathbf{X}_{\text{centrada}}^T \mathbf{X}_{\text{centrada}} 
-$$
-
-El siguiente paso es la obtención de los valores y vectores propios, haciendo la resolución de la ecuación característica de la matriz:
-
-
-$$
-\mathbf{C} \mathbf{u}_i = \lambda_i \mathbf{u}_i
-$$
-
-Se hace la selección de los primeros $k$ valores propios que más expliquen la variabilidad de los datos. Un criterio a tomar en cuenta es sí $k$ valores propios explican más del 70\% de la variabilidad o siendo aun más optimistas, si explican el 90\% o más.
-
-$$
-\mathbf{P} = \begin{bmatrix} \mathbf{u}_1 & \mathbf{u}_2 & \cdots & \mathbf{u}_k \end{bmatrix}
-$$
-
-Finalmente, el modelo estadístico de forma permite representar o generar una forma aproximada mediante la siguiente expresión:
-
-$$
-\mathbf{x} \approx \bar{\mathbf{x}} + \mathbf{P} \mathbf{b}
-$$
-
-donde \( \mathbf{b} \in \mathbb{R}^k \) son los parámetros del modelo (coeficientes de forma), calculados mediante:
-
-$$
-\mathbf{b} = \mathbf{P}^T (\mathbf{x} - \bar{\mathbf{x}})
-$$
-
-
+  El entrenamiento de la red se realizó con el algoritmo de optimización Adam, configurando un máximo de 20 épocas y una frecuencia de validación cada 5 iteraciones para monitorear el rendimiento. Se habilitó la visualización del progreso del entrenamiento mediante gráficos, lo que permitió observar la evolución de la precisión y la pérdida. Esta configuración balancea simplicidad y eficiencia, siendo adecuada para un problema binario de clasificación con imágenes de tamaño reducido y características visuales distinguibles.
 
 
 \newpage
 	
 \section{Resultados}
 
-\subsection{Selección de las componentes del modelo}
+\subsection{Proceso de entrenamiento de la red}
 
-A continuación se muestra la varianza explicada de las componentes del PCA para los puntos de las imágenes.
+A continuación se muestra el comportamiento de la red durante su entrenamiento hasta lograr una convergencia estable:
 
 
 \begin{figure}[h!]
@@ -184,71 +131,26 @@ A continuación se muestra la varianza explicada de las componentes del PCA para
 		\centering
 		\includegraphics[width=1\textwidth]{IMG/G1.png}
 	\end{minipage}
-	\caption{Varianza explicada por componente}
+	\caption{Proceso de entrenamiento.}
 	\label{fig:f2}
 \end{figure}
 
-El gráfico de los valores propios normalizados, muestra que para el modelo de forma generado a partir de las 100 caras más parecidas a la de referencia, es necesario tomar en cuenta los primeros 12 componentes principales para poder explicar el  90.88\% de la varianza.
+El gráfico muestra el desempeño de la red neuronal con el conjunto de prueba a lo así como la función de perdida a lo largo de 20 iteraciones.
 
 \newpage
 
-\subsection{Distribución de los parámetros para las 12 componentes del modelo}
+\subsection{Matriz de confusión}
 
-A continuación se muestran los histogramas que reflejan la variabilidad que hay entre los valores por cada una de las componentes.
+A continuación se muestra la matriz de confusión que reporta la red neuronal al clasificar el conjunto de prueba.
 
 \begin{figure}[h!]
 	\centering % Esto centrará la imagen en la página.
 	\includegraphics[width=1.35\textwidth]{IMG/G2.png} % Ajusta el ancho aquí, por ejemplo a 90% del ancho del texto.
-	\caption{Histograma de los 12 parámetros.}
+	\caption{Matriz de confusión.}
 	\label{fig:f3}
 \end{figure}
 
-Se observa que todos los componentes tienden a presentar un  comportamiento similar a la distribución normal, salvo algunos componentes que presentan valores muy alejados del resto, como se observa en el histograma del parámetro $a_2$, $a_9$, $a_{11}$ y $a_{12}$. 
-
-\newpage
-
-\subsection{Rostro generado para la cara 1.}
-
-Se muestra el resultado para la cara que genera el modelo con los puntos de la primera imagen. Se decidieron unir los puntos por razones estéticas para dejar plasmado de mejor manera la cara que se forma.
-
-\begin{figure}[h!]
-	\centering % Esto centrará la imagen en la página.
-	\includegraphics[width=1\textwidth]{IMG/G3.png} % Ajusta el ancho aquí, por ejemplo a 90% del ancho del texto.
-	\caption{Rostro 1 generado por el modelo}
-	\label{fig:f4}
-\end{figure}
-
-Se observa como el rostro generado se ajusta perfectamente al primer rostro dentro de las zonas de interés, delimitando claramente el rango donde están dichas zonas de interés (la boca, la nariz y los ojos.).
-
-\newpage
-
-\subsection{Muestra de la interfaz}
-
-Ahora, se muestra la interfaz que fue desarrollada en MATLAB para manipular de forma más cómoda los valores de los parámetros y que se refleje el impacto de mover dichos valores sobre la cara que se genera.
-
-\begin{figure}[h!]
-	\centering % Esto centrará la imagen en la página.
-	\includegraphics[width=1\textwidth]{IMG/G4.png} % Ajusta el ancho aquí, por ejemplo a 90% del ancho del texto.
-	\caption{Interfaz para la manipulación de los parámetros}
-	\label{fig:f5}
-\end{figure}
-
-Se cuentan con los 12 parametros (1 por cada componente principal utilizado), donde los rangos que puede tomar cada uno vienen dados por los valores mínimos y máximos dentro del vector de proyecciones de cada componente.
-
-\newpage
-
-\subsection{Manipulación de la interfaz}
-
-Ahora, se muestra un caso donde se fijan los valores de los primeros 2 parámetros en su mínimo permitido y el resto en su máximo permitido según el rango.
-
-\begin{figure}[h!]
-	\centering % Esto centrará la imagen en la página.
-	\includegraphics[width=1\textwidth]{IMG/G5.png} % Ajusta el ancho aquí, por ejemplo a 90% del ancho del texto.
-	\caption{Ejemplo de manipulación de los parámetros}
-	\label{fig:f6}
-\end{figure}
-
-Se observa como al modificar los valores de los parámetros, la cara va deformándose hacia una que no corresponde con la del modelo de esa foto.
+Se observa que la red tiene un desempeño perfecto para predecir correctamente al conjunto de prueba, logrando una precisión del 100\%.
 
 
 
@@ -256,8 +158,7 @@ Se observa como al modificar los valores de los parámetros, la cara va deformá
 	
 \section{Conclusiones}
 
-Tras la implementación del modelo, es destacable la potencia del modelo para modelar la distribución de los puntos de un conjunto de rostros con marcas mediante el uso de PCA para comprimir dicha información. Permite de una manera sencilla y elegante hacer la reconstrucción de rostros y resume bastante bien la información.
-	
+Después de haber realizado la implementación del problema y obtener los resultados esperados (una clasificación mayor al 90\%) cabe reflexionar lo importante que es la calibración de la red neuronal, puesto que su funcionamiento es enteramente de caja negra. Se puede llegar a un resultado satisfactorio y saber que operaciones se estan aplicando, pero la calibración de los pesos de dicha red y la forma en que extraer caracteristicas a un nivel tan abstracto, resulta un total misterio que pese a ser bueno en su trabajo, resulta poco explicable.	
 
 \newpage
 
@@ -270,146 +171,108 @@ Tras la implementación del modelo, es destacable la potencia del modelo para mo
 	
 \section{Anexos}	
 
-\subsection{Implementación  en MATLAB}
-	
-Encontrara anexo a este documento un archivo rar con los códigos implementados, incluyendo la interfaz gráfica, esto se debe a que la extensión del proyecto fue tal, que se hizo en varios scripts separados.	
+\subsection{Implementación  en MATLAB de la red convolucional}
 
-\newpage
-
-\subsection{Código fuente de la interfaz}
 
 \begin{minted}[linenos,firstnumber=1]{matlab}
+%% Mostrar una muestra de imagenes %%
+rutae = "WormData.csv";
+labelsTable = readtable(rutae);
+% Filtrar las imágenes 'alive'
+aliveFiles = labelsTable(strcmp(labelsTable.Status, 'alive'), :);
+% Filtrar las imágenes 'dead'
+deadFiles = labelsTable(strcmp(labelsTable.Status, 'dead'), :);
+%% Seleccionar las primeras 2 de cada tipo %%
+base = "WormImages\";
+subplot(2,2,1)
+imagesc(imread(strcat(base,aliveFiles.File{1})))
+title("Ejemplo vivos 1")
+subplot(2,2,2)
+imagesc(imread(strcat(base,aliveFiles.File{2})))
+title("Ejemplo vivos 2")
+subplot(2,2,3)
+imagesc(imread(strcat(base,deadFiles.File{1})))
+title("Ejemplo muertos 1")
+subplot(2,2,4)
+imagesc(imread(strcat(base,deadFiles.File{2})))
+title("Ejemplo muertos 2")
+colormap("gray")
+%% Cargar las imagenes %%
+ruta = "WormImages\wormA01.tif"
+img = imread(ruta);
+%imshow(img)
+imagesc(img)
+colormap("gray")
+% Etiquetas %
+rutae = "WormData.csv";
+labelsTable = readtable(rutae);
+labelsTable;
+%% Cargar todas las imagenes %%
+imageFolder = "WormImages";
+% Crear un arreglo de imagenDatastore
+imds = imageDatastore(fullfile(imageFolder), ...
+'IncludeSubfolders', false, ...
+'FileExtensions', '.tif', ...
+'LabelSource', 'none');
+% Agregar las etiquetas al datastore
+imds.Labels = categorical(labelsTable.Status);
+%% Dividir los datos %%
+rng(64)
+[imdsTrain, imdsValidation] = splitEachLabel(imds, 0.8, 'randomized');
+% Revisar que sale de aqui
+imdsTrain
+% Re definir el tamaño de las imagenes
+imageSize = [100 100 1]; % Usa 3 en lugar de 1 si es RGB
+augmentedTrain = augmentedImageDatastore(imageSize, imdsTrain);
+augmentedVal = augmentedImageDatastore(imageSize, imdsValidation);
+layers = [
+imageInputLayer(imageSize)
+convolution2dLayer(3, 8, 'Padding', 'same')
+batchNormalizationLayer
+reluLayer
+maxPooling2dLayer(2, 'Stride', 2)
+convolution2dLayer(3, 16, 'Padding', 'same')
+batchNormalizationLayer
+reluLayer
+maxPooling2dLayer(2, 'Stride', 2)
+fullyConnectedLayer(2)
+softmaxLayer
+classificationLayer
+];
+% Entrenar a la red %%
+options = trainingOptions('adam', ...
+'MaxEpochs', 20, ...
+'ValidationData', augmentedVal, ...
+'ValidationFrequency', 5, ...
+'Verbose', true, ...
+'Plots', 'training-progress');
+net = trainNetwork(augmentedTrain, layers, options);
+%% Evaluar red %%
+predictedLabels = classify(net, augmentedVal);
+valLabels = imdsValidation.Labels;
+accuracy = sum(predictedLabels == valLabels)/numel(valLabels);
+fprintf('Precisión en validación: %.2f%%\n', accuracy * 100);
+confusionchart(imdsValidation.Labels,predictedLabels)
+%% Evaluar red por fuera %%
+A = classify(net, augmentedVal)
+%%
+augmentedVal.NumObservations
+%% Leer la primera imagen del conjunto de validación
+img = readimage(imdsValidation, 19);
+% Mostrar la imagen
+imagesc(img);
+colormap("gray")
+title('Imagen de validación');
+% Redimensionar (si es necesario)
+imageSize = [100 100 1];  % Cambia a [100 100 3] si es RGB
+imgResized = imresize(img, imageSize(1:2));
+imagesc(imgResized);
+colormap("gray")
+% Clasificar la imagen con la red entrenada %%
+predictedLabel = classify(net, imgResized);
+% Mostrar predicción
+disp(['La red predice: ' char(predictedLabel)]);
 
-function generar_rostro_GUI
-% Cargar datos
-load("faces_eigenvecs.mat", "pcV")
-load("faces_mean.mat", "mu")
-load("alphas_caras.mat", "alphas")
-
-% Crear figura sobre la que se graficará el rostroa
-f = figure('Name', 'Generar rostros con modelo estadístico de forma', ...
-'Units', 'normalized', 'OuterPosition', [0 0 1 1], ...
-'NumberTitle','off');
-
-
-% Se muestra el primer rostro como base de la interfaz
-ax = axes('Parent', f, 'Position',[0.05 0.1 0.35 0.8]);
-cara1 = imread("BioID_0001.pgm");
-
-% Iniciar los parámetros ajustados a la cara de fondo
-alpha = [-7.7409,-3.4482,3.420,-3.3884,3.2423,-0.5002,3.7840, ...
-2.8480,-0.2839,0.2117,-0.285,2.4314];
-
-% Los límites de cada parámetro están dados por los máximos y mínimos
-% encontrados en el PCA de las 100 imágenes
-mins = min(alphas, [], 1);
-maxs = max(alphas, [], 1);
-
-% Generar rostro mediante PCA
-new_face = alpha * pcV' + mu;
-graph_face(new_face);
-
-% Número de parámetros
-N = numel(alpha);
-
-% Espaciado horizontal entre controles
-spacing = 0.04;
-base_x = 0.45;
-
-% Crear botones deslizables para ajustar parámetros alpha
-sliders = gobjects(1,N);
-% Cajas de texto para ajustar parámetros alfa
-edit_boxes = gobjects(1,N);
-
-for i = 1:N
-x_pos = base_x + (i-1) * spacing;
-
-% Texto con número de parámetro alpha
-uicontrol(f, 'Style', 'text', ...
-'Units', 'normalized', ...
-'Position', [x_pos 0.92 0.035 0.04], ...
-'String', sprintf('Alfa %d', i), ...
-'FontSize', 9);
-
-% Barras deslizantes para manipular el valor del parámetro 
-sliders(i) = uicontrol(f, 'Style', 'slider', ...
-'Units', 'normalized', ...
-'Min', mins(i), 'Max', maxs(i), ...
-'Value', alpha(i), ...
-'SliderStep', [0.01 0.1], ...
-'Position', [x_pos+0.005 0.32 0.015 0.55], ...
-'Callback', @(src,~) sliderCallback(i));
-
-% Cajas de texto editable para mostrar el valor actual del parámetro o 
-% para ajustarlo de forma exacta
-edit_boxes(i) = uicontrol(f, 'Style', 'edit', ...
-'Units', 'normalized', ...
-'Position', [x_pos 0.24 0.035 0.04], ...
-'String', num2str(alpha(i), '%.2f'), ...
-'Callback', @(src,~) editCallback(i));
-
-% Texto con rango mínimo y máximo
-uicontrol(f, 'Style', 'text', ...
-'Units', 'normalized', ...
-'Position', [x_pos 0.18 0.04 0.04], ...
-'String', sprintf('[%.1f, %.1f]', mins(i), maxs(i)), ...
-'FontSize', 8);
-end
-
-% Actualización de la cara cuando se ajustan los parámetros en
-% la interfaz
-
-% Actualización cuando se mueve una barra deslizante
-function sliderCallback(i)
-alpha(i) = sliders(i).Value; % Re-evaluar parámetro alfa
-edit_boxes(i).String = sprintf('%.2f', alpha(i)); % Ajustar cajas de texto
-actualizar_rostro(); % Encontrar nuevo rostro
-end
-
-% Actualización cuando se alteran las cajas de texto
-function editCallback(i)
-val = str2double(edit_boxes(i).String);  % obtener valor numérico del texto
-if isnan(val), return; end  % Error si no es un número
-val = max(mins(i), min(maxs(i), val));  % Limitar al rango adecuado
-alpha(i) = val;  % Actualizar alfa
-sliders(i).Value = val; % Actualizar barra deslizante
-edit_boxes(i).String = sprintf('%.2f', val); % Actualizar caja de texto
-actualizar_rostro(); % Graficar nueva cara
-end
-
-% Actualizar rostro generado
-function actualizar_rostro()
-new_face = alpha * pcV' + mu;
-graph_face(new_face);
-end
-
-% Función para graficar la cara dada lista de coordenadas (1x40)
-function graph_face(point_list)
-cla(ax); % Limpiar imagen
-imshow(cara1, 'Parent', ax); % Volver a graficar rostro
-hold(ax, "on");
-
-points = reshape(point_list, 2, [])'; % Darle forma de matriz a los 
-% puntos (20, 2)
-
-% Struct donde se indica a que parte del cuerpo pertenece cada
-% índice
-partes = {
-	[3, 18, 4, 19, 3], 'Labios';
-	[10, 1, 11, 10], 'Ojo Izquierdo';
-	[12, 2, 13, 12], 'Ojo Derecho';
-	[16, 15, 17, 16], 'Nariz';
-	[20, 14, 8, 7, 6, 5, 9, 20], 'Contorno'
-};
-
-% Se grafica cada parte del cuerpo, uniendo los puntos 
-for k = 1:size(partes,1)
-idx = partes{k,1};
-plot(ax, points(idx,1), points(idx,2), 'r.-', 'DisplayName', partes{k,2});
-end
-hold(ax, "off");
-end
-end
 \end{minted}
 
 \end{document}

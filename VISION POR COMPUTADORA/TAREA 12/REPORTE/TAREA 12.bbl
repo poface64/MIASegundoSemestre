@@ -1,42 +1,9 @@
 \begin{thebibliography}{}
 
-\bibitem[Cootes, 2025]{cootes_pdms}
-Cootes, T.~F. (2025).
-\newblock Point distribution models.
-\newblock
-  \url{https://personalpages.manchester.ac.uk/staff/timothy.f.cootes/Models/pdms.html}.
-\newblock University of Manchester.
-
-\bibitem[Coste, 2012]{coste2012image}
-Coste, A. (2012).
-\newblock Cs6640: Image processing – project 3: Affine transformation,
-  landmarks registration, non-linear warping.
-\newblock
-  \url{https://www.sci.utah.edu/~acoste/uou/Image/project3/ArthurCOSTE_Project3.pdf}.
-\newblock Course project for CS6640, University of Utah.
-
-\bibitem[Johnson and Wichern, 2007]{johnson2007}
-Johnson, R.~A. and Wichern, D.~W. (2007).
-\newblock {\em Applied Multivariate Statistical Analysis}.
-\newblock Pearson, Upper Saddle River, NJ, 6th edition.
-
-\bibitem[{Prof. Tim Cootes and Dr. Yipeng Hu}, 2019]{MPHY0026_SSM}
-{Prof. Tim Cootes and Dr. Yipeng Hu} (2019).
-\newblock {3.2. Statistical Shape Models — MPHY0026 documentation}.
-\newblock
-  \url{https://mphy0026.readthedocs.io/en/latest/segmentation/statistical_shape_models.html}.
-\newblock Accessed: 27 May 2025.
-
-\bibitem[Sarkalkan et~al., 2014]{sarkalkan_statistical_2014}
-Sarkalkan, N., Weinans, H., and Zadpoor, A.~A. (2014).
-\newblock Statistical shape and appearance models of bones.
-\newblock {\em Bone}, 60:129--140.
-
-\bibitem[{University of Basel, Department of Mathematics and Computer Science},
-  2022]{SSM_PCA_Basel}
-{University of Basel, Department of Mathematics and Computer Science} (2022).
-\newblock Principal component analysis — statistical shape modelling.
-\newblock \url{https://shapemodelling.cs.unibas.ch/ssm-course/week3/step3-7/}.
-\newblock Parte del curso en línea \textit{Statistical Shape Modelling}.
+\bibitem[Wu, 2017]{wu2017introduction}
+Wu, J. (2017).
+\newblock Introduction to convolutional neural networks.
+\newblock {\em National Key Lab for Novel Software Technology. Nanjing
+  University. China}, 5(23):495.
 
 \end{thebibliography}

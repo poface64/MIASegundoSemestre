@@ -1,0 +1,100 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZpc{}\PYGZpc{} Mostrar una muestra de imagenes \PYGZpc{}\PYGZpc{}}
+\PYG{n}{rutae}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}WormData.csv\PYGZdq{}}\PYG{p}{;}
+\PYG{n}{labelsTable}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{readtable}\PYG{p}{(}\PYG{n}{rutae}\PYG{p}{)}\PYG{p}{;}
+\PYG{c}{\PYGZpc{} Filtrar las imágenes \PYGZsq{}alive\PYGZsq{}}
+\PYG{n}{aliveFiles}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{labelsTable}\PYG{p}{(}\PYG{n+nb}{strcmp}\PYG{p}{(}\PYG{n}{labelsTable}\PYG{p}{.}\PYG{n}{Status}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{alive\PYGZsq{}}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{:}\PYG{p}{)}\PYG{p}{;}
+\PYG{c}{\PYGZpc{} Filtrar las imágenes \PYGZsq{}dead\PYGZsq{}}
+\PYG{n}{deadFiles}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{labelsTable}\PYG{p}{(}\PYG{n+nb}{strcmp}\PYG{p}{(}\PYG{n}{labelsTable}\PYG{p}{.}\PYG{n}{Status}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{dead\PYGZsq{}}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{:}\PYG{p}{)}\PYG{p}{;}
+\PYG{c}{\PYGZpc{}\PYGZpc{} Seleccionar las primeras 2 de cada tipo \PYGZpc{}\PYGZpc{}}
+\PYG{n}{base}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}WormImages\PYGZbs{}\PYGZdq{}}\PYG{p}{;}
+\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{n+nb}{imagesc}\PYG{p}{(}\PYG{n+nb}{imread}\PYG{p}{(}\PYG{n+nb}{strcat}\PYG{p}{(}\PYG{n}{base}\PYG{p}{,}\PYG{n}{aliveFiles}\PYG{p}{.}\PYG{n}{File}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}
+\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Ejemplo vivos 1\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n+nb}{imagesc}\PYG{p}{(}\PYG{n+nb}{imread}\PYG{p}{(}\PYG{n+nb}{strcat}\PYG{p}{(}\PYG{n}{base}\PYG{p}{,}\PYG{n}{aliveFiles}\PYG{p}{.}\PYG{n}{File}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{2}\PYG{p}{\PYGZcb{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}
+\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Ejemplo vivos 2\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{)}
+\PYG{n+nb}{imagesc}\PYG{p}{(}\PYG{n+nb}{imread}\PYG{p}{(}\PYG{n+nb}{strcat}\PYG{p}{(}\PYG{n}{base}\PYG{p}{,}\PYG{n}{deadFiles}\PYG{p}{.}\PYG{n}{File}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}
+\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Ejemplo muertos 1\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{4}\PYG{p}{)}
+\PYG{n+nb}{imagesc}\PYG{p}{(}\PYG{n+nb}{imread}\PYG{p}{(}\PYG{n+nb}{strcat}\PYG{p}{(}\PYG{n}{base}\PYG{p}{,}\PYG{n}{deadFiles}\PYG{p}{.}\PYG{n}{File}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{2}\PYG{p}{\PYGZcb{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}
+\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Ejemplo muertos 2\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{colormap}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}gray\PYGZdq{}}\PYG{p}{)}
+\PYG{c}{\PYGZpc{}\PYGZpc{} Cargar las imagenes \PYGZpc{}\PYGZpc{}}
+\PYG{n}{ruta}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}WormImages\PYGZbs{}wormA01.tif\PYGZdq{}}
+\PYG{n}{img}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{imread}\PYG{p}{(}\PYG{n}{ruta}\PYG{p}{)}\PYG{p}{;}
+\PYG{c}{\PYGZpc{}imshow(img)}
+\PYG{n+nb}{imagesc}\PYG{p}{(}\PYG{n}{img}\PYG{p}{)}
+\PYG{n+nb}{colormap}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}gray\PYGZdq{}}\PYG{p}{)}
+\PYG{c}{\PYGZpc{} Etiquetas \PYGZpc{}}
+\PYG{n}{rutae}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}WormData.csv\PYGZdq{}}\PYG{p}{;}
+\PYG{n}{labelsTable}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{readtable}\PYG{p}{(}\PYG{n}{rutae}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{labelsTable}\PYG{p}{;}
+\PYG{c}{\PYGZpc{}\PYGZpc{} Cargar todas las imagenes \PYGZpc{}\PYGZpc{}}
+\PYG{n}{imageFolder}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}WormImages\PYGZdq{}}\PYG{p}{;}
+\PYG{c}{\PYGZpc{} Crear un arreglo de imagenDatastore}
+\PYG{n}{imds}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{imageDatastore}\PYG{p}{(}\PYG{n+nb}{fullfile}\PYG{p}{(}\PYG{n}{imageFolder}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{...}
+\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{IncludeSubfolders\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{false}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{...}
+\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{FileExtensions\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{.tif\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{...}
+\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{LabelSource\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{none\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{c}{\PYGZpc{} Agregar las etiquetas al datastore}
+\PYG{n}{imds}\PYG{p}{.}\PYG{n}{Labels}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{categorical}\PYG{p}{(}\PYG{n}{labelsTable}\PYG{p}{.}\PYG{n}{Status}\PYG{p}{)}\PYG{p}{;}
+\PYG{c}{\PYGZpc{}\PYGZpc{} Dividir los datos \PYGZpc{}\PYGZpc{}}
+\PYG{n+nb}{rng}\PYG{p}{(}\PYG{l+m+mi}{64}\PYG{p}{)}
+\PYG{p}{[}\PYG{n}{imdsTrain}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{imdsValidation}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{splitEachLabel}\PYG{p}{(}\PYG{n}{imds}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{0.8}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{randomized\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{c}{\PYGZpc{} Revisar que sale de aqui}
+\PYG{n}{imdsTrain}
+\PYG{l+s}{\PYGZpc{}}\PYG{+w}{ }\PYG{l+s}{Re}\PYG{+w}{ }\PYG{l+s}{definir}\PYG{+w}{ }\PYG{l+s}{el}\PYG{+w}{ }\PYG{l+s}{tamaño}\PYG{+w}{ }\PYG{l+s}{de}\PYG{+w}{ }\PYG{l+s}{las}\PYG{+w}{ }\PYG{l+s}{imagenes}
+\PYG{n}{imageSize}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mi}{100}\PYG{+w}{ }\PYG{l+m+mi}{100}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} Usa 3 en lugar de 1 si es RGB}
+\PYG{n}{augmentedTrain}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{augmentedImageDatastore}\PYG{p}{(}\PYG{n}{imageSize}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{imdsTrain}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{augmentedVal}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{augmentedImageDatastore}\PYG{p}{(}\PYG{n}{imageSize}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{imdsValidation}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{layers}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{[}
+\PYG{n}{imageInputLayer}\PYG{p}{(}\PYG{n}{imageSize}\PYG{p}{)}
+\PYG{n}{convolution2dLayer}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{8}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Padding\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{same\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{batchNormalizationLayer}
+\PYG{l+s}{reluLayer}
+\PYG{n}{maxPooling2dLayer}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Stride\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n}{convolution2dLayer}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{16}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Padding\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{same\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{batchNormalizationLayer}
+\PYG{l+s}{reluLayer}
+\PYG{n}{maxPooling2dLayer}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Stride\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n}{fullyConnectedLayer}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n}{softmaxLayer}
+\PYG{l+s}{classificationLayer}
+\PYG{p}{]}\PYG{p}{;}
+\PYG{c}{\PYGZpc{} Entrenar a la red \PYGZpc{}\PYGZpc{}}
+\PYG{n}{options}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{trainingOptions}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{adam\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{...}
+\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{MaxEpochs\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{20}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{...}
+\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{ValidationData\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{augmentedVal}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{...}
+\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{ValidationFrequency\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{5}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{...}
+\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Verbose\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{...}
+\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Plots\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{training\PYGZhy{}progress\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{net}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{trainNetwork}\PYG{p}{(}\PYG{n}{augmentedTrain}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{layers}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{options}\PYG{p}{)}\PYG{p}{;}
+\PYG{c}{\PYGZpc{}\PYGZpc{} Evaluar red \PYGZpc{}\PYGZpc{}}
+\PYG{n}{predictedLabels}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{classify}\PYG{p}{(}\PYG{n}{net}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{augmentedVal}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{valLabels}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{imdsValidation}\PYG{p}{.}\PYG{n}{Labels}\PYG{p}{;}
+\PYG{n}{accuracy}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{sum}\PYG{p}{(}\PYG{n}{predictedLabels}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{valLabels}\PYG{p}{)}\PYG{o}{/}\PYG{n+nb}{numel}\PYG{p}{(}\PYG{n}{valLabels}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Precisión en validación: \PYGZpc{}.2f\PYGZpc{}\PYGZpc{}\PYGZbs{}n\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{accuracy}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{l+m+mi}{100}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{confusionchart}\PYG{p}{(}\PYG{n}{imdsValidation}\PYG{p}{.}\PYG{n}{Labels}\PYG{p}{,}\PYG{n}{predictedLabels}\PYG{p}{)}
+\PYG{c}{\PYGZpc{}\PYGZpc{} Evaluar red por fuera \PYGZpc{}\PYGZpc{}}
+\PYG{n}{A}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{classify}\PYG{p}{(}\PYG{n}{net}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{augmentedVal}\PYG{p}{)}
+\PYG{c}{\PYGZpc{}\PYGZpc{}}
+\PYG{n}{augmentedVal}\PYG{p}{.}\PYG{n}{NumObservations}
+\PYG{c}{\PYGZpc{}\PYGZpc{} Leer la primera imagen del conjunto de validación}
+\PYG{n}{img}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{readimage}\PYG{p}{(}\PYG{n}{imdsValidation}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{19}\PYG{p}{)}\PYG{p}{;}
+\PYG{c}{\PYGZpc{} Mostrar la imagen}
+\PYG{n+nb}{imagesc}\PYG{p}{(}\PYG{n}{img}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{colormap}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}gray\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Imagen de validación\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{c}{\PYGZpc{} Redimensionar (si es necesario)}
+\PYG{n}{imageSize}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mi}{100}\PYG{+w}{ }\PYG{l+m+mi}{100}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{;}\PYG{+w}{  }\PYG{c}{\PYGZpc{} Cambia a [100 100 3] si es RGB}
+\PYG{n}{imgResized}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{imresize}\PYG{p}{(}\PYG{n}{img}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{imageSize}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{imagesc}\PYG{p}{(}\PYG{n}{imgResized}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{colormap}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}gray\PYGZdq{}}\PYG{p}{)}
+\PYG{c}{\PYGZpc{} Clasificar la imagen con la red entrenada \PYGZpc{}\PYGZpc{}}
+\PYG{n}{predictedLabel}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{classify}\PYG{p}{(}\PYG{n}{net}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{imgResized}\PYG{p}{)}\PYG{p}{;}
+\PYG{c}{\PYGZpc{} Mostrar predicción}
+\PYG{n+nb}{disp}\PYG{p}{(}\PYG{p}{[}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{La red predice: \PYGZsq{}}\PYG{+w}{ }\PYG{n+nb}{char}\PYG{p}{(}\PYG{n}{predictedLabel}\PYG{p}{)}\PYG{p}{]}\PYG{p}{)}\PYG{p}{;}
+
+\end{MintedVerbatim}

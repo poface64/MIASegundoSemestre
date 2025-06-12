@@ -29,12 +29,7 @@ img = imread(ruta);
 %imshow(img)
 imagesc(img)
 colormap("gray")
-
-%% Tamaño de la imagen %%
-size(img)
-
-
-%% Etiquetas %%
+% Etiquetas %
 rutae = "WormData.csv";
 labelsTable = readtable(rutae);
 labelsTable;
@@ -48,7 +43,7 @@ imds = imageDatastore(fullfile(imageFolder), ...
     'LabelSource', 'none');
 
 
-%% Agregar las etiquetas al datastore
+% Agregar las etiquetas al datastore
 imds.Labels = categorical(labelsTable.Status);
 
 
@@ -90,9 +85,6 @@ predictedLabels = classify(net, augmentedVal);
 valLabels = imdsValidation.Labels;
 accuracy = sum(predictedLabels == valLabels)/numel(valLabels);
 fprintf('Precisión en validación: %.2f%%\n', accuracy * 100);
-
-%% Hacer la matriz de confusión %%
-
 confusionchart(imdsValidation.Labels,predictedLabels)
 
 %% Evaluar red por fuera %%
