@@ -1,0 +1,11 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+	
+\PYG{c+c1}{\PYGZpc{} Ejemplo de caso disjunto	}
+\PYG{n+nf}{esCasoSospechoso}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{casoConfirmado}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{format}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Error: \PYGZti{}w ya es un caso confirmado, no puede registrarse como sospechoso.\PYGZti{}n\PYGZdq{}}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{Persona}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{p}{!}\PYG{p}{,} \PYG{l+s+sAtom}{fail}\PYG{p}{.}
+
+\PYG{n+nf}{esCasoSospechoso}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{casoSospechoso}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{,} \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{} ya está registrado como caso sospechoso.\PYGZdq{}}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+sAtom}{nl}\PYG{p}{,} \PYG{p}{!}\PYG{p}{.}
+\end{MintedVerbatim}

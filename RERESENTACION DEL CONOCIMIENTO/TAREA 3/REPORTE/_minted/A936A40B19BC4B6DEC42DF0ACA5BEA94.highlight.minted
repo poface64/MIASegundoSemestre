@@ -1,0 +1,9 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+	
+\PYG{c+c1}{\PYGZpc{}\PYGZpc{} Tipo \PYGZpc{}\PYGZpc{}}
+\PYG{n+nf}{personal\PYGZus{}salud}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{)} \PYG{p}{:\PYGZhy{}} \PYG{n+nf}{enfermera}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{personal\PYGZus{}salud}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{)} \PYG{p}{:\PYGZhy{}} \PYG{n+nf}{epidemiologo}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{}\PYGZpc{} Subtipo \PYGZpc{}\PYGZpc{}}
+\PYG{n+nf}{enfermera}\PYG{p}{(}\PYG{l+s+sAtom}{enfermera1}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{epidemiologo}\PYG{p}{(}\PYG{l+s+sAtom}{epidemio1}\PYG{p}{)}\PYG{p}{.}
+\end{MintedVerbatim}

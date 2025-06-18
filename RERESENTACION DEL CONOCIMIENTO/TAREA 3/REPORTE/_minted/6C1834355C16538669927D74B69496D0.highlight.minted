@@ -1,0 +1,8 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n+nf}{esCasoConfirmado}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{esCasoSospechoso}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{resultado\PYGZus{}laboratorio}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{,} \PYG{l+s+sAtom}{positivo}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{format}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZti{}w es un caso confirmado porque su prueba de laboratorio resultó positiva.\PYGZti{}n\PYGZdq{}}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{Persona}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{asserta}\PYG{p}{(}\PYG{n+nf}{casoConfirmado}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,} \PYG{p}{!}\PYG{p}{.}
+	
+\end{MintedVerbatim}

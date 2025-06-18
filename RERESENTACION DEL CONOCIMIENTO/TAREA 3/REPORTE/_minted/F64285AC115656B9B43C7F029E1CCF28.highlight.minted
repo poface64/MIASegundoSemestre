@@ -1,0 +1,8 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+	
+\PYG{n+nf}{contacto\PYGZus{}directo}\PYG{p}{(}\PYG{l+s+sAtom}{juan}\PYG{p}{,} \PYG{l+s+sAtom}{maria}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{contacto\PYGZus{}con}\PYG{p}{(}\PYG{n+nv}{A}\PYG{p}{,} \PYG{n+nv}{B}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{contacto\PYGZus{}directo}\PYG{p}{(}\PYG{n+nv}{A}\PYG{p}{,} \PYG{n+nv}{B}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nf}{contacto\PYGZus{}directo}\PYG{p}{(}\PYG{n+nv}{B}\PYG{p}{,} \PYG{n+nv}{A}\PYG{p}{)}\PYG{p}{.}
+
+\end{MintedVerbatim}

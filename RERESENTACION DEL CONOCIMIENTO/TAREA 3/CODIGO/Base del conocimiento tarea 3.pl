@@ -3,12 +3,16 @@
 :- dynamic casoConfirmado/1.
 
 % --------------------------
-% Personl de salud
+% Personal de salud
 % --------------------------
 
+%% Tipo %%
+personal_salud(X) :- enfermera(X).
+personal_salud(X) :- epidemiologo(X).
 
-personal_salud(enfermera1, enfermera).
-personal_salud(epidemio1, epidemiologo).
+%% Subtipo %%
+enfermera(enfermera1).
+epidemiologo(epidemio1).
 
 
 % --------------------------
@@ -18,6 +22,7 @@ personal_salud(epidemio1, epidemiologo).
 persona(juan).
 persona(maria).
 persona(pedro).
+
 
 % --------------------------
 % Sintomatología
@@ -32,8 +37,15 @@ tiene_enfermedad_respiratoria(juan).
 % Viajes y contactos
 % --------------------------
 
+% Viajes
 viajo_a(juan, china).
-contacto_con(juan, maria).
+
+% Contacto
+contacto_directo(juan, maria).
+
+contacto_con(A, B) :-
+    contacto_directo(A, B);
+    contacto_directo(B, A).
 
 % --------------------------
 % Resultado laboratorio
@@ -101,6 +113,10 @@ aplica(enfermera1, proteccion_facial).
 aplica(enfermera1, mascarilla_quirurgica).
 aplica(enfermera1, respirador_n95).
 
+% Verificar precaucion aplicada
+precaucion_aplicada_a(Precaucion, Personal) :-
+    aplica(Personal, Precaucion).
+
 % --------------------------
 % Toma de muestras
 % --------------------------
@@ -113,6 +129,7 @@ tipo_muestra(biopsia_pulmonar).
 toma_muestra(enfermera1, juan, exudado_nasofaringeo).
 toma_muestra(enfermera1, juan, exudado_faringeo).
 
+
 % --------------------------
 % Aislamiento aplicado
 % --------------------------
@@ -120,13 +137,15 @@ toma_muestra(enfermera1, juan, exudado_faringeo).
 aislamiento_recomendado(juan, hospitalario_individual).
 aislamiento_recomendado(maria, domicilio).
 
-% Declaración de dinámicos
-:- dynamic casoSospechoso/1.
-:- dynamic casoConfirmado/1.
 
 % --------------------------
 % Definición de caso sospechoso
 % --------------------------
+
+% un confirmado ya no debe registrarse como sospechoso
+esCasoSospechoso(Persona) :-
+    casoConfirmado(Persona),
+    format("Error: ~w ya es un caso confirmado, no puede registrarse como sospechoso.~n", [Persona]), !, fail.
 
 esCasoSospechoso(Persona) :-
     casoSospechoso(Persona), 
@@ -279,3 +298,11 @@ muestra_valida(Persona) :-
 muestra_valida(Persona) :-
     format("La muestra de ~w NO cumple con los requisitos estándar de diagnóstico (faltan ambos exudados).~n", [Persona]), fail.
 
+% Clasificación exhaustiva
+persona_clasificada(X) :-
+    (casoSospechoso(X); casoConfirmado(X)),
+    format("~w está clasificado en el sistema (sospechoso o confirmado).~n", [X]), !.
+    
+persona_clasificada(X) :-
+    format("Alerta: ~w no está clasificado como sospechoso ni confirmado.~n", [X]),
+    fail.

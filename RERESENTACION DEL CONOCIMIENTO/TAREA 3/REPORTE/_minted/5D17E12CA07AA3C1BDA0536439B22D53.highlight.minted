@@ -1,0 +1,10 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n+nf}{muestra\PYGZus{}valida}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{toma\PYGZus{}muestra}\PYG{p}{(}\PYG{k}{\PYGZus{}}\PYG{p}{,} \PYG{n+nv}{Persona}\PYG{p}{,} \PYG{l+s+sAtom}{exudado\PYGZus{}nasofaringeo}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{toma\PYGZus{}muestra}\PYG{p}{(}\PYG{k}{\PYGZus{}}\PYG{p}{,} \PYG{n+nv}{Persona}\PYG{p}{,} \PYG{l+s+sAtom}{exudado\PYGZus{}faringeo}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{format}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}La muestra de \PYGZti{}w incluye exudado nasofaríngeo y faríngeo: muestra válida para diagnóstico COVID\PYGZhy{}19.\PYGZti{}n\PYGZdq{}}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{Persona}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{p}{!}\PYG{p}{.}
+
+\PYG{n+nf}{muestra\PYGZus{}valida}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{format}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}La muestra de \PYGZti{}w NO cumple con los requisitos estándar de diagnóstico (faltan ambos exudados).\PYGZti{}n\PYGZdq{}}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{Persona}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+sAtom}{fail}\PYG{p}{.}
+
+\end{MintedVerbatim}

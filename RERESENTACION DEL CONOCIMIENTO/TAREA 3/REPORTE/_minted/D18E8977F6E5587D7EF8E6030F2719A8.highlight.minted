@@ -1,0 +1,7 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+	
+\PYG{c+c1}{\PYGZpc{} Clasificación exhaustiva}
+\PYG{n+nf}{persona\PYGZus{}clasificada}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{p}{(}\PYG{n+nf}{casoSospechoso}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{)}\PYG{p}{;} \PYG{n+nf}{casoConfirmado}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{format}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZti{}w está clasificado en el sistema (sospechoso o confirmado).\PYGZti{}n\PYGZdq{}}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{X}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{p}{!}\PYG{p}{.}
+\end{MintedVerbatim}

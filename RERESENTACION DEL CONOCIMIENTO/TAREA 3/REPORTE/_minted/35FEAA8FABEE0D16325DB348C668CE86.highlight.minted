@@ -1,0 +1,235 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+	
+\PYG{c+c1}{\PYGZpc{} Declaración de dinámicos}
+\PYG{p}{:\PYGZhy{}} \PYG{l+s+sAtom}{dynamic} \PYG{l+s+sAtom}{casoSospechoso}\PYG{o}{/}\PYG{l+m+mf}{1.}
+\PYG{p}{:\PYGZhy{}} \PYG{l+s+sAtom}{dynamic} \PYG{l+s+sAtom}{casoConfirmado}\PYG{o}{/}\PYG{l+m+mf}{1.}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZpc{} Personal de salud}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZpc{}\PYGZpc{} Tipo \PYGZpc{}\PYGZpc{}}
+\PYG{n+nf}{personal\PYGZus{}salud}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{)} \PYG{p}{:\PYGZhy{}} \PYG{n+nf}{enfermera}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{personal\PYGZus{}salud}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{)} \PYG{p}{:\PYGZhy{}} \PYG{n+nf}{epidemiologo}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{}\PYGZpc{} Subtipo \PYGZpc{}\PYGZpc{}}
+\PYG{n+nf}{enfermera}\PYG{p}{(}\PYG{l+s+sAtom}{enfermera1}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{epidemiologo}\PYG{p}{(}\PYG{l+s+sAtom}{epidemio1}\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZpc{} Personas}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n+nf}{persona}\PYG{p}{(}\PYG{l+s+sAtom}{juan}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{persona}\PYG{p}{(}\PYG{l+s+sAtom}{maria}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{persona}\PYG{p}{(}\PYG{l+s+sAtom}{pedro}\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZpc{} Sintomatología}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n+nf}{presenta\PYGZus{}sintoma}\PYG{p}{(}\PYG{l+s+sAtom}{juan}\PYG{p}{,} \PYG{l+s+sAtom}{fiebre}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{presenta\PYGZus{}sintoma}\PYG{p}{(}\PYG{l+s+sAtom}{juan}\PYG{p}{,} \PYG{l+s+sAtom}{tos}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{presenta\PYGZus{}sintoma}\PYG{p}{(}\PYG{l+s+sAtom}{juan}\PYG{p}{,} \PYG{l+s+sAtom}{dificultad\PYGZus{}respiratoria}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{tiene\PYGZus{}enfermedad\PYGZus{}respiratoria}\PYG{p}{(}\PYG{l+s+sAtom}{juan}\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZpc{} Viajes y contactos}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZpc{} Viajes}
+\PYG{n+nf}{viajo\PYGZus{}a}\PYG{p}{(}\PYG{l+s+sAtom}{juan}\PYG{p}{,} \PYG{l+s+sAtom}{china}\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} Contacto}
+\PYG{n+nf}{contacto\PYGZus{}directo}\PYG{p}{(}\PYG{l+s+sAtom}{juan}\PYG{p}{,} \PYG{l+s+sAtom}{maria}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{contacto\PYGZus{}con}\PYG{p}{(}\PYG{n+nv}{A}\PYG{p}{,} \PYG{n+nv}{B}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{contacto\PYGZus{}directo}\PYG{p}{(}\PYG{n+nv}{A}\PYG{p}{,} \PYG{n+nv}{B}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nf}{contacto\PYGZus{}directo}\PYG{p}{(}\PYG{n+nv}{B}\PYG{p}{,} \PYG{n+nv}{A}\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZpc{} Resultado laboratorio}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n+nf}{resultado\PYGZus{}laboratorio}\PYG{p}{(}\PYG{l+s+sAtom}{juan}\PYG{p}{,} \PYG{l+s+sAtom}{positivo}\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZpc{} Uso de mascarilla}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n+nf}{usa\PYGZus{}mascarilla}\PYG{p}{(}\PYG{l+s+sAtom}{juan}\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZpc{} Niveles de atención}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n+nf}{nivel\PYGZus{}atencion}\PYG{p}{(}\PYG{l+s+sAtom}{juan}\PYG{p}{,} \PYG{l+s+sAtom}{primer\PYGZus{}nivel}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{nivel\PYGZus{}atencion}\PYG{p}{(}\PYG{l+s+sAtom}{maria}\PYG{p}{,} \PYG{l+s+sAtom}{tercer\PYGZus{}nivel}\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZpc{} Países de riesgo}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n+nf}{pais\PYGZus{}riesgo}\PYG{p}{(}\PYG{l+s+sAtom}{china}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{pais\PYGZus{}riesgo}\PYG{p}{(}\PYG{l+s+sAtom}{italia}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{pais\PYGZus{}riesgo}\PYG{p}{(}\PYG{l+s+sAtom}{iran}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{pais\PYGZus{}riesgo}\PYG{p}{(}\PYG{l+s+sAtom}{japon}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{pais\PYGZus{}riesgo}\PYG{p}{(}\PYG{l+s+sAtom}{hong\PYGZus{}kong}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{pais\PYGZus{}riesgo}\PYG{p}{(}\PYG{l+s+sAtom}{corea\PYGZus{}del\PYGZus{}sur}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{pais\PYGZus{}riesgo}\PYG{p}{(}\PYG{l+s+sAtom}{singapur}\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZpc{} Precauciones estándar}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n+nf}{precaucion\PYGZus{}estandar}\PYG{p}{(}\PYG{l+s+sAtom}{higiene\PYGZus{}de\PYGZus{}manos}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{precaucion\PYGZus{}estandar}\PYG{p}{(}\PYG{l+s+sAtom}{uso\PYGZus{}de\PYGZus{}guantes}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{precaucion\PYGZus{}estandar}\PYG{p}{(}\PYG{l+s+sAtom}{bata\PYGZus{}impermeable}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{precaucion\PYGZus{}estandar}\PYG{p}{(}\PYG{l+s+sAtom}{uso\PYGZus{}mascarilla}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{precaucion\PYGZus{}estandar}\PYG{p}{(}\PYG{l+s+sAtom}{uso\PYGZus{}contenedores}\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZpc{} Precauciones por gotas}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n+nf}{precaucion\PYGZus{}gotas}\PYG{p}{(}\PYG{l+s+sAtom}{uso\PYGZus{}equipo\PYGZus{}desechable}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{precaucion\PYGZus{}gotas}\PYG{p}{(}\PYG{l+s+sAtom}{mascarilla\PYGZus{}quirurgica}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{precaucion\PYGZus{}gotas}\PYG{p}{(}\PYG{l+s+sAtom}{distancia\PYGZus{}metro}\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZpc{} Precauciones por aerosoles}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n+nf}{precaucion\PYGZus{}aerosoles}\PYG{p}{(}\PYG{l+s+sAtom}{respirador\PYGZus{}n95}\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZpc{} Aplicación de precauciones por personal}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n+nf}{aplica}\PYG{p}{(}\PYG{l+s+sAtom}{enfermera1}\PYG{p}{,} \PYG{l+s+sAtom}{higiene\PYGZus{}de\PYGZus{}manos}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{aplica}\PYG{p}{(}\PYG{l+s+sAtom}{enfermera1}\PYG{p}{,} \PYG{l+s+sAtom}{uso\PYGZus{}de\PYGZus{}guantes}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{aplica}\PYG{p}{(}\PYG{l+s+sAtom}{enfermera1}\PYG{p}{,} \PYG{l+s+sAtom}{bata\PYGZus{}impermeable}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{aplica}\PYG{p}{(}\PYG{l+s+sAtom}{enfermera1}\PYG{p}{,} \PYG{l+s+sAtom}{proteccion\PYGZus{}facial}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{aplica}\PYG{p}{(}\PYG{l+s+sAtom}{enfermera1}\PYG{p}{,} \PYG{l+s+sAtom}{mascarilla\PYGZus{}quirurgica}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{aplica}\PYG{p}{(}\PYG{l+s+sAtom}{enfermera1}\PYG{p}{,} \PYG{l+s+sAtom}{respirador\PYGZus{}n95}\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} Verificar precaucion aplicada}
+\PYG{n+nf}{precaucion\PYGZus{}aplicada\PYGZus{}a}\PYG{p}{(}\PYG{n+nv}{Precaucion}\PYG{p}{,} \PYG{n+nv}{Personal}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{aplica}\PYG{p}{(}\PYG{n+nv}{Personal}\PYG{p}{,} \PYG{n+nv}{Precaucion}\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZpc{} Toma de muestras}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n+nf}{tipo\PYGZus{}muestra}\PYG{p}{(}\PYG{l+s+sAtom}{exudado\PYGZus{}nasofaringeo}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{tipo\PYGZus{}muestra}\PYG{p}{(}\PYG{l+s+sAtom}{exudado\PYGZus{}faringeo}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{tipo\PYGZus{}muestra}\PYG{p}{(}\PYG{l+s+sAtom}{lavado\PYGZus{}bronquioalveolar}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{tipo\PYGZus{}muestra}\PYG{p}{(}\PYG{l+s+sAtom}{biopsia\PYGZus{}pulmonar}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{toma\PYGZus{}muestra}\PYG{p}{(}\PYG{l+s+sAtom}{enfermera1}\PYG{p}{,} \PYG{l+s+sAtom}{juan}\PYG{p}{,} \PYG{l+s+sAtom}{exudado\PYGZus{}nasofaringeo}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{toma\PYGZus{}muestra}\PYG{p}{(}\PYG{l+s+sAtom}{enfermera1}\PYG{p}{,} \PYG{l+s+sAtom}{juan}\PYG{p}{,} \PYG{l+s+sAtom}{exudado\PYGZus{}faringeo}\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZpc{} Aislamiento aplicado}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n+nf}{aislamiento\PYGZus{}recomendado}\PYG{p}{(}\PYG{l+s+sAtom}{juan}\PYG{p}{,} \PYG{l+s+sAtom}{hospitalario\PYGZus{}individual}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{aislamiento\PYGZus{}recomendado}\PYG{p}{(}\PYG{l+s+sAtom}{maria}\PYG{p}{,} \PYG{l+s+sAtom}{domicilio}\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZpc{} Definición de caso sospechoso}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZpc{} un confirmado ya no debe registrarse como sospechoso}
+\PYG{n+nf}{esCasoSospechoso}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{casoConfirmado}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{format}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Error: \PYGZti{}w ya es un caso confirmado, no puede registrarse como sospechoso.\PYGZti{}n\PYGZdq{}}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{Persona}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{p}{!}\PYG{p}{,} \PYG{l+s+sAtom}{fail}\PYG{p}{.}
+\PYG{n+nf}{esCasoSospechoso}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{casoSospechoso}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{,} \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{} ya está registrado como caso sospechoso.\PYGZdq{}}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+sAtom}{nl}\PYG{p}{,} \PYG{p}{!}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} Variante 1: por viaje a país de riesgo}
+\PYG{n+nf}{esCasoSospechoso}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{tiene\PYGZus{}enfermedad\PYGZus{}respiratoria}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{viajo\PYGZus{}a}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{,} \PYG{n+nv}{Pais}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{pais\PYGZus{}riesgo}\PYG{p}{(}\PYG{n+nv}{Pais}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{format}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZti{}w cumple los criterios de caso sospechoso por viaje reciente a país de riesgo: \PYGZti{}w.\PYGZti{}n\PYGZdq{}}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{Persona}\PYG{p}{,} \PYG{n+nv}{Pais}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{asserta}\PYG{p}{(}\PYG{n+nf}{casoSospechoso}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,} \PYG{p}{!}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} Variante 2: por contacto con caso confirmado}
+\PYG{n+nf}{esCasoSospechoso}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{tiene\PYGZus{}enfermedad\PYGZus{}respiratoria}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{contacto\PYGZus{}con}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{,} \PYG{n+nv}{Otro}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{esCasoConfirmado}\PYG{p}{(}\PYG{n+nv}{Otro}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{format}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZti{}w cumple los criterios de caso sospechoso por contacto reciente con caso confirmado: \PYGZti{}w.\PYGZti{}n\PYGZdq{}}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{Persona}\PYG{p}{,} \PYG{n+nv}{Otro}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{asserta}\PYG{p}{(}\PYG{n+nf}{casoSospechoso}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,} \PYG{p}{!}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} Si no cumple definición}
+\PYG{n+nf}{esCasoSospechoso}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{,} \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{} no cumple definición de caso sospechoso.\PYGZdq{}}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+sAtom}{nl}\PYG{p}{,}
+\PYG{l+s+sAtom}{fail}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZpc{} Definición de caso confirmado}
+\PYG{c+c1}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n+nf}{esCasoConfirmado}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{casoConfirmado}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{,} \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{} ya está registrado como caso confirmado.\PYGZdq{}}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+sAtom}{nl}\PYG{p}{,} \PYG{p}{!}\PYG{p}{.}
+\PYG{n+nf}{esCasoConfirmado}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{esCasoSospechoso}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{resultado\PYGZus{}laboratorio}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{,} \PYG{l+s+sAtom}{positivo}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{format}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZti{}w es un caso confirmado porque su prueba de laboratorio resultó positiva.\PYGZti{}n\PYGZdq{}}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{Persona}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{asserta}\PYG{p}{(}\PYG{n+nf}{casoConfirmado}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,} \PYG{p}{!}\PYG{p}{.}
+\PYG{n+nf}{esCasoConfirmado}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{,} \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{} no cumple definición de caso confirmado.\PYGZdq{}}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+sAtom}{nl}\PYG{p}{,}
+\PYG{l+s+sAtom}{fail}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{}\PYGZpc{} precauciones \PYGZpc{}\PYGZpc{}}
+\PYG{c+c1}{\PYGZpc{} Verificador general para cualquier categoría de precauciones}
+\PYG{n+nf}{cumple\PYGZus{}todas}\PYG{p}{(}\PYG{n+nv}{Personal}\PYG{p}{,} \PYG{n+nv}{Categoria}\PYG{p}{,} \PYG{n+nv}{PrecaucionList}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{forall}\PYG{p}{(}\PYG{n+nf}{member}\PYG{p}{(}\PYG{n+nv}{Precaucion}\PYG{p}{,} \PYG{n+nv}{PrecaucionList}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{aplica}\PYG{p}{(}\PYG{n+nv}{Personal}\PYG{p}{,} \PYG{n+nv}{Precaucion}\PYG{p}{)}\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} Definición para cada tipo de precaución}
+\PYG{n+nf}{cumple\PYGZus{}precauciones\PYGZus{}estandar}\PYG{p}{(}\PYG{n+nv}{Personal}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{findall}\PYG{p}{(}\PYG{n+nv}{Prec}\PYG{p}{,} \PYG{n+nf}{precaucion\PYGZus{}estandar}\PYG{p}{(}\PYG{n+nv}{Prec}\PYG{p}{)}\PYG{p}{,} \PYG{n+nv}{Lista}\PYG{p}{)}\PYG{p}{,}
+\PYG{p}{(} \PYG{n+nf}{cumple\PYGZus{}todas}\PYG{p}{(}\PYG{n+nv}{Personal}\PYG{p}{,} \PYG{l+s+sAtom}{estandar}\PYG{p}{,} \PYG{n+nv}{Lista}\PYG{p}{)}
+\PYG{l+s+sAtom}{\PYGZhy{}\PYGZgt{}} \PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{Personal}\PYG{p}{)}\PYG{p}{,} \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{} cumple todas las precauciones estándar.\PYGZdq{}}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+sAtom}{nl}
+\PYG{p}{;}  \PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{Personal}\PYG{p}{)}\PYG{p}{,} \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{} NO cumple todas las precauciones estándar.\PYGZdq{}}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+sAtom}{nl}\PYG{p}{,}
+\PYG{n+nf}{mostrar\PYGZus{}faltantes}\PYG{p}{(}\PYG{n+nv}{Personal}\PYG{p}{,} \PYG{l+s+sAtom}{estandar}\PYG{p}{)}
+\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{cumple\PYGZus{}precauciones\PYGZus{}gotas}\PYG{p}{(}\PYG{n+nv}{Personal}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{findall}\PYG{p}{(}\PYG{n+nv}{Prec}\PYG{p}{,} \PYG{n+nf}{precaucion\PYGZus{}gotas}\PYG{p}{(}\PYG{n+nv}{Prec}\PYG{p}{)}\PYG{p}{,} \PYG{n+nv}{Lista}\PYG{p}{)}\PYG{p}{,}
+\PYG{p}{(} \PYG{n+nf}{cumple\PYGZus{}todas}\PYG{p}{(}\PYG{n+nv}{Personal}\PYG{p}{,} \PYG{l+s+sAtom}{gotas}\PYG{p}{,} \PYG{n+nv}{Lista}\PYG{p}{)}
+\PYG{l+s+sAtom}{\PYGZhy{}\PYGZgt{}} \PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{Personal}\PYG{p}{)}\PYG{p}{,} \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{} cumple todas las precauciones por gotas.\PYGZdq{}}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+sAtom}{nl}
+\PYG{p}{;}  \PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{Personal}\PYG{p}{)}\PYG{p}{,} \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{} NO cumple todas las precauciones por gotas.\PYGZdq{}}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+sAtom}{nl}\PYG{p}{,}
+\PYG{n+nf}{mostrar\PYGZus{}faltantes}\PYG{p}{(}\PYG{n+nv}{Personal}\PYG{p}{,} \PYG{l+s+sAtom}{gotas}\PYG{p}{)}
+\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{cumple\PYGZus{}precauciones\PYGZus{}aerosoles}\PYG{p}{(}\PYG{n+nv}{Personal}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{findall}\PYG{p}{(}\PYG{n+nv}{Prec}\PYG{p}{,} \PYG{n+nf}{precaucion\PYGZus{}aerosoles}\PYG{p}{(}\PYG{n+nv}{Prec}\PYG{p}{)}\PYG{p}{,} \PYG{n+nv}{Lista}\PYG{p}{)}\PYG{p}{,}
+\PYG{p}{(} \PYG{n+nf}{cumple\PYGZus{}todas}\PYG{p}{(}\PYG{n+nv}{Personal}\PYG{p}{,} \PYG{l+s+sAtom}{aerosoles}\PYG{p}{,} \PYG{n+nv}{Lista}\PYG{p}{)}
+\PYG{l+s+sAtom}{\PYGZhy{}\PYGZgt{}} \PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{Personal}\PYG{p}{)}\PYG{p}{,} \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{} cumple todas las precauciones por aerosoles.\PYGZdq{}}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+sAtom}{nl}
+\PYG{p}{;}  \PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{Personal}\PYG{p}{)}\PYG{p}{,} \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{} NO cumple todas las precauciones por aerosoles.\PYGZdq{}}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+sAtom}{nl}\PYG{p}{,}
+\PYG{n+nf}{mostrar\PYGZus{}faltantes}\PYG{p}{(}\PYG{n+nv}{Personal}\PYG{p}{,} \PYG{l+s+sAtom}{aerosoles}\PYG{p}{)}
+\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} Mostrar faltantes}
+\PYG{n+nf}{mostrar\PYGZus{}faltantes}\PYG{p}{(}\PYG{n+nv}{Personal}\PYG{p}{,} \PYG{n+nv}{Categoria}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{obtener\PYGZus{}precauciones}\PYG{p}{(}\PYG{n+nv}{Categoria}\PYG{p}{,} \PYG{n+nv}{Lista}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{findall}\PYG{p}{(}\PYG{n+nv}{Prec}\PYG{p}{,} \PYG{p}{(}\PYG{n+nf}{member}\PYG{p}{(}\PYG{n+nv}{Prec}\PYG{p}{,} \PYG{n+nv}{Lista}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+sAtom}{\PYGZbs{}+} \PYG{n+nf}{aplica}\PYG{p}{(}\PYG{n+nv}{Personal}\PYG{p}{,} \PYG{n+nv}{Prec}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,} \PYG{n+nv}{Faltantes}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Faltan las siguientes medidas: \PYGZdq{}}\PYG{p}{)}\PYG{p}{,} \PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{Faltantes}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+sAtom}{nl}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} Obtener lista según categoría}
+\PYG{n+nf}{obtener\PYGZus{}precauciones}\PYG{p}{(}\PYG{l+s+sAtom}{estandar}\PYG{p}{,} \PYG{n+nv}{Lista}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{findall}\PYG{p}{(}\PYG{n+nv}{Prec}\PYG{p}{,} \PYG{n+nf}{precaucion\PYGZus{}estandar}\PYG{p}{(}\PYG{n+nv}{Prec}\PYG{p}{)}\PYG{p}{,} \PYG{n+nv}{Lista}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{obtener\PYGZus{}precauciones}\PYG{p}{(}\PYG{l+s+sAtom}{gotas}\PYG{p}{,} \PYG{n+nv}{Lista}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{findall}\PYG{p}{(}\PYG{n+nv}{Prec}\PYG{p}{,} \PYG{n+nf}{precaucion\PYGZus{}gotas}\PYG{p}{(}\PYG{n+nv}{Prec}\PYG{p}{)}\PYG{p}{,} \PYG{n+nv}{Lista}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nf}{obtener\PYGZus{}precauciones}\PYG{p}{(}\PYG{l+s+sAtom}{aerosoles}\PYG{p}{,} \PYG{n+nv}{Lista}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{findall}\PYG{p}{(}\PYG{n+nv}{Prec}\PYG{p}{,} \PYG{n+nf}{precaucion\PYGZus{}aerosoles}\PYG{p}{(}\PYG{n+nv}{Prec}\PYG{p}{)}\PYG{p}{,} \PYG{n+nv}{Lista}\PYG{p}{)}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{}\PYGZpc{} Aislamiento inferido \PYGZpc{}\PYGZpc{}}
+\PYG{n+nf}{aislamiento\PYGZus{}inferido}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{,} \PYG{n+nv}{Tipo}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{casoConfirmado}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{nivel\PYGZus{}atencion}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{,} \PYG{l+s+sAtom}{tercer\PYGZus{}nivel}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nv}{Tipo} \PYG{o}{=} \PYG{l+s+sAtom}{hospitalario\PYGZus{}individual}\PYG{p}{,}
+\PYG{n+nf}{format}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZti{}w requiere aislamiento hospitalario individual por ser caso confirmado en tercer nivel de atención.\PYGZti{}n\PYGZdq{}}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{Persona}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{p}{!}\PYG{p}{.}
+\PYG{n+nf}{aislamiento\PYGZus{}inferido}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{,} \PYG{n+nv}{Tipo}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{casoSospechoso}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{nivel\PYGZus{}atencion}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{,} \PYG{l+s+sAtom}{primer\PYGZus{}nivel}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nv}{Tipo} \PYG{o}{=} \PYG{l+s+sAtom}{domicilio}\PYG{p}{,}
+\PYG{n+nf}{format}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZti{}w debe permanecer en aislamiento domiciliario por ser caso sospechoso sin necesidad de hospitalización.\PYGZti{}n\PYGZdq{}}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{Persona}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{p}{!}\PYG{p}{.}
+\PYG{n+nf}{aislamiento\PYGZus{}inferido}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{,} \PYG{l+s+sAtom}{sin\PYGZus{}dato}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{format}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}No se pudo inferir el tipo de aislamiento para \PYGZti{}w. Verifique el estado del caso y su nivel de atención.\PYGZti{}n\PYGZdq{}}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{Persona}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+sAtom}{fail}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{}\PYGZpc{} Notificar el caso \PYGZpc{}\PYGZpc{}}
+\PYG{n+nf}{notificar\PYGZus{}UIES}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{casoSospechoso}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{format}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Notificando de inmediato a UIES y jurisdicción sanitaria sobre \PYGZti{}w...\PYGZti{}n\PYGZdq{}}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{Persona}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Correo: ncov@dgepi.salud.gob.mx\PYGZdq{}}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+sAtom}{nl}\PYG{p}{,}
+\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Teléfonos: 5337\PYGZhy{}1845 / 800\PYGZhy{}00\PYGZhy{}44\PYGZhy{}800\PYGZdq{}}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+sAtom}{nl}\PYG{p}{,}
+\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Formato: SUIVE\PYGZhy{}1 con Epiclave No. 191\PYGZdq{}}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+sAtom}{nl}\PYG{p}{,} \PYG{p}{!}\PYG{p}{.}
+\PYG{n+nf}{notificar\PYGZus{}UIES}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}No se puede notificar porque \PYGZdq{}}\PYG{p}{)}\PYG{p}{,} \PYG{n+nf}{write}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{,} \PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{} no es un caso sospechoso registrado.\PYGZdq{}}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+sAtom}{nl}\PYG{p}{,} \PYG{l+s+sAtom}{fail}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{}\PYGZpc{} realizar seguimiento \PYGZpc{}\PYGZpc{}}
+\PYG{n+nf}{realizar\PYGZus{}seguimiento}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{casoConfirmado}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{contacto\PYGZus{}con}\PYG{p}{(}\PYG{n+nv}{Otro}\PYG{p}{,} \PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{format}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZti{}w tuvo contacto con el caso confirmado \PYGZti{}w.\PYGZti{}n\PYGZdq{}}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{Otro}\PYG{p}{,} \PYG{n+nv}{Persona}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Se debe iniciar monitoreo diario y estudio epidemiológico a la persona en contacto.\PYGZdq{}}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+sAtom}{nl}\PYG{p}{,} \PYG{p}{!}\PYG{p}{.}
+\PYG{n+nf}{realizar\PYGZus{}seguimiento}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{l+s+sAtom}{\PYGZbs{}+} \PYG{n+nf}{casoConfirmado}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{format}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZti{}w no es un caso confirmado, no se inicia seguimiento de contactos.\PYGZti{}n\PYGZdq{}}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{Persona}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+sAtom}{fail}\PYG{p}{.}
+\PYG{n+nf}{realizar\PYGZus{}seguimiento}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{casoConfirmado}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{,}
+\PYG{l+s+sAtom}{\PYGZbs{}+} \PYG{n+nf}{contacto\PYGZus{}con}\PYG{p}{(}\PYG{k}{\PYGZus{}}\PYG{p}{,} \PYG{n+nv}{Persona}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{format}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}No se registraron contactos directos con \PYGZti{}w para seguimiento.\PYGZti{}n\PYGZdq{}}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{Persona}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{p}{!}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{}\PYGZpc{} Muestra tomada \PYGZpc{}\PYGZpc{}}
+\PYG{n+nf}{muestra\PYGZus{}valida}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{toma\PYGZus{}muestra}\PYG{p}{(}\PYG{k}{\PYGZus{}}\PYG{p}{,} \PYG{n+nv}{Persona}\PYG{p}{,} \PYG{l+s+sAtom}{exudado\PYGZus{}nasofaringeo}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{toma\PYGZus{}muestra}\PYG{p}{(}\PYG{k}{\PYGZus{}}\PYG{p}{,} \PYG{n+nv}{Persona}\PYG{p}{,} \PYG{l+s+sAtom}{exudado\PYGZus{}faringeo}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{format}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}La muestra de \PYGZti{}w incluye exudado nasofaríngeo y faríngeo: muestra válida para diagnóstico COVID\PYGZhy{}19.\PYGZti{}n\PYGZdq{}}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{Persona}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{p}{!}\PYG{p}{.}
+\PYG{n+nf}{muestra\PYGZus{}valida}\PYG{p}{(}\PYG{n+nv}{Persona}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{format}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}La muestra de \PYGZti{}w NO cumple con los requisitos estándar de diagnóstico (faltan ambos exudados).\PYGZti{}n\PYGZdq{}}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{Persona}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+sAtom}{fail}\PYG{p}{.}
+\PYG{c+c1}{\PYGZpc{} Clasificación exhaustiva}
+\PYG{n+nf}{persona\PYGZus{}clasificada}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{p}{(}\PYG{n+nf}{casoSospechoso}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{)}\PYG{p}{;} \PYG{n+nf}{casoConfirmado}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,}
+\PYG{n+nf}{format}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZti{}w está clasificado en el sistema (sospechoso o confirmado).\PYGZti{}n\PYGZdq{}}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{X}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{p}{!}\PYG{p}{.}
+\PYG{n+nf}{persona\PYGZus{}clasificada}\PYG{p}{(}\PYG{n+nv}{X}\PYG{p}{)} \PYG{p}{:\PYGZhy{}}
+\PYG{n+nf}{format}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Alerta: \PYGZti{}w no está clasificado como sospechoso ni confirmado.\PYGZti{}n\PYGZdq{}}\PYG{p}{,} \PYG{p}{[}\PYG{n+nv}{X}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,}
+\PYG{l+s+sAtom}{fail}\PYG{p}{.}
+\end{MintedVerbatim}

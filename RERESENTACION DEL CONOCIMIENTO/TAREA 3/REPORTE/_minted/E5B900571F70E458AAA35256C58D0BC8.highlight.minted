@@ -1,0 +1,51 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZpc{} 1: Evaluar si Juan es caso sospechoso}
+\PYG{n+nf}{esCasoSospechoso}\PYG{p}{(}\PYG{l+s+sAtom}{juan}\PYG{p}{)}\PYG{p}{.}
+\PYG{l+s+sAtom}{juan} \PYG{l+s+sAtom}{cumple} \PYG{l+s+sAtom}{los} \PYG{l+s+sAtom}{criterios} \PYG{l+s+sAtom}{de} \PYG{l+s+sAtom}{caso} \PYG{l+s+sAtom}{sospechoso} \PYG{l+s+sAtom}{por} \PYG{l+s+sAtom}{viaje} \PYG{l+s+sAtom}{reciente} \PYG{l+s+sAtom}{a} \PYG{l+s+sAtom}{país} \PYG{l+s+sAtom}{de} \PYG{n+nn}{riesgo}\PYG{p}{:} \PYG{l+s+sAtom}{china}\PYG{p}{.}
+
+
+\PYG{c+c1}{\PYGZpc{} 2: Evaluar si Juan es caso confirmado}
+\PYG{l+s+sAtom}{?\PYGZhy{}} \PYG{n+nf}{esCasoConfirmado}\PYG{p}{(}\PYG{l+s+sAtom}{juan}\PYG{p}{)}	
+\PYG{l+s+sAtom}{juan} \PYG{l+s+sAtom}{cumple} \PYG{l+s+sAtom}{los} \PYG{l+s+sAtom}{criterios} \PYG{l+s+sAtom}{de} \PYG{l+s+sAtom}{caso} \PYG{l+s+sAtom}{sospechoso} \PYG{l+s+sAtom}{por} \PYG{l+s+sAtom}{viaje} \PYG{l+s+sAtom}{reciente} \PYG{l+s+sAtom}{a} \PYG{l+s+sAtom}{país} \PYG{l+s+sAtom}{de} \PYG{n+nn}{riesgo}\PYG{p}{:} \PYG{l+s+sAtom}{china}\PYG{p}{.}
+\PYG{l+s+sAtom}{juan} \PYG{l+s+sAtom}{es} \PYG{l+s+sAtom}{un} \PYG{l+s+sAtom}{caso} \PYG{l+s+sAtom}{confirmado} \PYG{l+s+sAtom}{porque} \PYG{l+s+sAtom}{su} \PYG{l+s+sAtom}{prueba} \PYG{l+s+sAtom}{de} \PYG{l+s+sAtom}{laboratorio} \PYG{l+s+sAtom}{resultó} \PYG{l+s+sAtom}{positiva}\PYG{p}{.}
+
+
+\PYG{c+c1}{\PYGZpc{} 3.\PYGZhy{} Inferir el tipo de aislamiento para Juan}
+\PYG{l+s+sAtom}{?\PYGZhy{}} \PYG{n+nf}{aislamiento\PYGZus{}inferido}\PYG{p}{(}\PYG{l+s+sAtom}{juan}\PYG{p}{,} \PYG{n+nv}{Tipo}\PYG{p}{)}\PYG{p}{.}
+\PYG{l+s+sAtom}{juan} \PYG{l+s+sAtom}{debe} \PYG{l+s+sAtom}{permanecer} \PYG{l+s+sAtom}{en} \PYG{l+s+sAtom}{aislamiento} \PYG{l+s+sAtom}{domiciliario} \PYG{l+s+sAtom}{por} \PYG{l+s+sAtom}{ser} \PYG{l+s+sAtom}{caso} \PYG{l+s+sAtom}{sospechoso} \PYG{l+s+sAtom}{sin} \PYG{l+s+sAtom}{necesidad} \PYG{l+s+sAtom}{de} \PYG{l+s+sAtom}{hospitalización}\PYG{p}{.}
+\PYG{n+nv}{Tipo} \PYG{o}{=} \PYG{l+s+sAtom}{domicilio}\PYG{p}{.}
+
+\PYG{c+c1}{\PYGZpc{} 4: Verificar si se debe notificar a UIES}
+\PYG{l+s+sAtom}{?\PYGZhy{}} \PYG{n+nf}{notificar\PYGZus{}UIES}\PYG{p}{(}\PYG{l+s+sAtom}{juan}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nv}{Notificando} \PYG{l+s+sAtom}{de} \PYG{l+s+sAtom}{inmediato} \PYG{l+s+sAtom}{a} \PYG{n+nv}{UIES} \PYG{l+s+sAtom}{y} \PYG{l+s+sAtom}{jurisdicción} \PYG{l+s+sAtom}{sanitaria} \PYG{l+s+sAtom}{sobre} \PYG{l+s+sAtom}{juan}\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}
+\PYG{n+nv}{Correo}\PYG{l+s+sAtom}{:} \PYG{l+s+sAtom}{ncov}\PYG{l+s+sAtom}{@}\PYG{l+s+sAtom}{dgepi}\PYG{p}{.}\PYG{l+s+sAtom}{salud}\PYG{p}{.}\PYG{l+s+sAtom}{gob}\PYG{p}{.}\PYG{l+s+sAtom}{mx}
+\PYG{n+nv}{Teléfonos}\PYG{l+s+sAtom}{:} \PYG{l+m+mi}{5337}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1845} \PYG{o}{/} \PYG{l+m+mi}{800}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{00}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{44}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{800}
+\PYG{n+nv}{Formato}\PYG{l+s+sAtom}{:} \PYG{n+nv}{SUIVE}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1} \PYG{l+s+sAtom}{con} \PYG{n+nv}{Epiclave} \PYG{n+nv}{No}\PYG{p}{.} \PYG{l+m+mi}{191}
+\PYG{l+s+sAtom}{true}\PYG{p}{.}
+
+\PYG{c+c1}{\PYGZpc{} 5: Verificar si debe hacerse seguimiento a contactos}
+\PYG{l+s+sAtom}{?\PYGZhy{}} \PYG{n+nf}{realizar\PYGZus{}seguimiento}\PYG{p}{(}\PYG{l+s+sAtom}{maria}\PYG{p}{)}\PYG{p}{.}
+\PYG{l+s+sAtom}{maria} \PYG{l+s+sAtom}{no} \PYG{l+s+sAtom}{es} \PYG{l+s+sAtom}{un} \PYG{l+s+sAtom}{caso} \PYG{l+s+sAtom}{confirmado}\PYG{p}{,} \PYG{l+s+sAtom}{no} \PYG{l+s+sAtom}{se} \PYG{l+s+sAtom}{inicia} \PYG{l+s+sAtom}{seguimiento} \PYG{l+s+sAtom}{de} \PYG{l+s+sAtom}{contactos}\PYG{p}{.}
+\PYG{l+s+sAtom}{false}\PYG{p}{.}
+
+\PYG{c+c1}{\PYGZpc{} 6: Validar si la muestra tomada a Juan es válida}
+\PYG{l+s+sAtom}{?\PYGZhy{}} \PYG{n+nf}{muestra\PYGZus{}valida}\PYG{p}{(}\PYG{l+s+sAtom}{juan}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nv}{La} \PYG{l+s+sAtom}{muestra} \PYG{l+s+sAtom}{de} \PYG{l+s+sAtom}{juan} \PYG{l+s+sAtom}{incluye} \PYG{l+s+sAtom}{exudado} \PYG{l+s+sAtom}{nasofaríngeo} \PYG{l+s+sAtom}{y} \PYG{l+s+sAtom}{farí}\PYG{l+s+sAtom}{­}\PYG{n+nn}{ngeo}\PYG{p}{:} \PYG{l+s+sAtom}{muestra} \PYG{l+s+sAtom}{válida} \PYG{l+s+sAtom}{para} \PYG{l+s+sAtom}{diagnóstico} \PYG{n+nv}{COVID}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{19.}
+\PYG{l+s+sAtom}{true}\PYG{p}{.}
+
+\PYG{c+c1}{\PYGZpc{} 7: ¿Está clasificado como sospechoso o confirmado?}
+\PYG{l+s+sAtom}{?\PYGZhy{}} \PYG{n+nf}{persona\PYGZus{}clasificada}\PYG{p}{(}\PYG{l+s+sAtom}{juan}\PYG{p}{)}\PYG{p}{.}
+\PYG{l+s+sAtom}{juan} \PYG{l+s+sAtom}{está} \PYG{l+s+sAtom}{clasificado} \PYG{l+s+sAtom}{en} \PYG{l+s+sAtom}{el} \PYG{n+nf}{sistema} \PYG{p}{(}\PYG{l+s+sAtom}{sospechoso} \PYG{l+s+sAtom}{o} \PYG{l+s+sAtom}{confirmado}\PYG{p}{)}\PYG{p}{.}
+\PYG{l+s+sAtom}{true}\PYG{p}{.}
+
+\PYG{c+c1}{\PYGZpc{} 8: ¿Se puede clasificar a alguien no registrado aún?}
+\PYG{l+s+sAtom}{?\PYGZhy{}} \PYG{n+nf}{persona\PYGZus{}clasificada}\PYG{p}{(}\PYG{l+s+sAtom}{pedro}\PYG{p}{)}\PYG{p}{.}
+\PYG{n+nv}{Alerta}\PYG{l+s+sAtom}{:} \PYG{l+s+sAtom}{pedro} \PYG{l+s+sAtom}{no} \PYG{l+s+sAtom}{está} \PYG{l+s+sAtom}{clasificado} \PYG{l+s+sAtom}{como} \PYG{l+s+sAtom}{sospechoso} \PYG{l+s+sAtom}{ni} \PYG{l+s+sAtom}{confirmado}\PYG{p}{.}
+\PYG{l+s+sAtom}{false}\PYG{p}{.}
+
+\PYG{c+c1}{\PYGZpc{} 9: Cumple con las precauciones estandar}
+\PYG{n+nf}{cumple\PYGZus{}precauciones\PYGZus{}estandar}\PYG{p}{(}\PYG{l+s+sAtom}{enfermera1}\PYG{p}{)}\PYG{p}{.}
+\PYG{l+s+sAtom}{enfermera1} \PYG{n+nv}{NO} \PYG{l+s+sAtom}{cumple} \PYG{l+s+sAtom}{todas} \PYG{l+s+sAtom}{las} \PYG{l+s+sAtom}{precauciones} \PYG{l+s+sAtom}{estándar}\PYG{p}{.}
+\PYG{n+nv}{Faltan} \PYG{l+s+sAtom}{las} \PYG{l+s+sAtom}{siguientes} \PYG{n+nn}{medidas}\PYG{p}{:} \PYG{p}{[}\PYG{l+s+sAtom}{uso\PYGZus{}mascarilla}\PYG{p}{,}\PYG{l+s+sAtom}{uso\PYGZus{}contenedores}\PYG{p}{]}
+\PYG{l+s+sAtom}{true}\PYG{p}{.}
+\end{MintedVerbatim}
