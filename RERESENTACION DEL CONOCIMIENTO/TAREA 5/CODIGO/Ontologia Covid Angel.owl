@@ -1,0 +1,1170 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Prefix name="ex" IRI="http://www.salud.gob.mx/covid#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl#"/>
+    <Declaration>
+        <Class abbreviatedIRI="ex:Aislamiento"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ex:Caso"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ex:CasoConfirmado"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ex:CasoSospechoso"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ex:CumplePrecaucionesAerosoles"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ex:CumplePrecaucionesEstandar"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ex:CumplePrecaucionesGotas"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ex:Enfermedad"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ex:Enfermera"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ex:Epidemiologo"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ex:Muestra"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ex:NivelAtencion"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ex:Pais"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ex:PaisDeRiesgo"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ex:Persona"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ex:PersonaConMuestraValida"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ex:PersonalSalud"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ex:Precaucion"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ex:PrecaucionAerosoles"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ex:PrecaucionEstandar"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ex:PrecaucionGotas"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ex:RequiereSeguimiento"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ex:ResultadoLaboratorio"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ex:Sintoma"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ex:aislamientoRecomendado"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ex:aplica"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ex:contactoCon"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ex:nivelAtencion"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ex:presentaSintoma"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ex:resultadoLaboratorio"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ex:tieneEnfermedad"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ex:tieneEnfermedadRespiratoria"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ex:tomaMuestra"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ex:usaMascarilla"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ex:viajoA"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:higiene_de_manos"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:bata_impermeable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:uso_contenedores"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:china"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:exudado_nasofaringeo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:japon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:uso_de_guantes"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:juan"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="swrl:body"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="swrl:classPredicate"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="swrl:argument1"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="swrl:argument2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:exudado_faringeo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:italia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:pedro"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:fiebre"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:tercer_nivel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:mascarilla_quirurgica"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:tos"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:enfermera1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:corea_del_sur"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:uso_equipo_desechable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:iran"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:uso_mascarilla"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:hong_kong"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:singapur"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:dificultad_respiratoria"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:respirador_n95"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="swrl:head"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="swrl:propertyPredicate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:distancia_metro"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:enfermedad_respiratoria"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:hospitalario_individual"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:epidemio1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:positivo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:domicilio"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:negativo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:primer_nivel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:maria"/>
+    </Declaration>
+    <SubClassOf>
+        <Class abbreviatedIRI="ex:CasoConfirmado"/>
+        <Class abbreviatedIRI="ex:Caso"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ex:CasoSospechoso"/>
+        <Class abbreviatedIRI="ex:Caso"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ex:Enfermera"/>
+        <Class abbreviatedIRI="ex:PersonalSalud"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ex:Epidemiologo"/>
+        <Class abbreviatedIRI="ex:PersonalSalud"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ex:PaisDeRiesgo"/>
+        <Class abbreviatedIRI="ex:Pais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ex:PrecaucionAerosoles"/>
+        <Class abbreviatedIRI="ex:Precaucion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ex:PrecaucionEstandar"/>
+        <Class abbreviatedIRI="ex:Precaucion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ex:PrecaucionGotas"/>
+        <Class abbreviatedIRI="ex:Precaucion"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:PrecaucionEstandar"/>
+        <NamedIndividual abbreviatedIRI="ex:bata_impermeable"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:PaisDeRiesgo"/>
+        <NamedIndividual abbreviatedIRI="ex:china"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:PaisDeRiesgo"/>
+        <NamedIndividual abbreviatedIRI="ex:corea_del_sur"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:Sintoma"/>
+        <NamedIndividual abbreviatedIRI="ex:dificultad_respiratoria"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:PrecaucionGotas"/>
+        <NamedIndividual abbreviatedIRI="ex:distancia_metro"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:Aislamiento"/>
+        <NamedIndividual abbreviatedIRI="ex:domicilio"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:Enfermedad"/>
+        <NamedIndividual abbreviatedIRI="ex:enfermedad_respiratoria"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:Enfermera"/>
+        <NamedIndividual abbreviatedIRI="ex:enfermera1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:Epidemiologo"/>
+        <NamedIndividual abbreviatedIRI="ex:epidemio1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:Muestra"/>
+        <NamedIndividual abbreviatedIRI="ex:exudado_faringeo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:Muestra"/>
+        <NamedIndividual abbreviatedIRI="ex:exudado_nasofaringeo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:Sintoma"/>
+        <NamedIndividual abbreviatedIRI="ex:fiebre"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:PrecaucionEstandar"/>
+        <NamedIndividual abbreviatedIRI="ex:higiene_de_manos"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:PaisDeRiesgo"/>
+        <NamedIndividual abbreviatedIRI="ex:hong_kong"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:Aislamiento"/>
+        <NamedIndividual abbreviatedIRI="ex:hospitalario_individual"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:PaisDeRiesgo"/>
+        <NamedIndividual abbreviatedIRI="ex:iran"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:PaisDeRiesgo"/>
+        <NamedIndividual abbreviatedIRI="ex:italia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:PaisDeRiesgo"/>
+        <NamedIndividual abbreviatedIRI="ex:japon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:Persona"/>
+        <NamedIndividual abbreviatedIRI="ex:juan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:Persona"/>
+        <NamedIndividual abbreviatedIRI="ex:maria"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:PrecaucionGotas"/>
+        <NamedIndividual abbreviatedIRI="ex:mascarilla_quirurgica"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:ResultadoLaboratorio"/>
+        <NamedIndividual abbreviatedIRI="ex:negativo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:Persona"/>
+        <NamedIndividual abbreviatedIRI="ex:pedro"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:ResultadoLaboratorio"/>
+        <NamedIndividual abbreviatedIRI="ex:positivo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:NivelAtencion"/>
+        <NamedIndividual abbreviatedIRI="ex:primer_nivel"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:PrecaucionAerosoles"/>
+        <NamedIndividual abbreviatedIRI="ex:respirador_n95"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:PaisDeRiesgo"/>
+        <NamedIndividual abbreviatedIRI="ex:singapur"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:NivelAtencion"/>
+        <NamedIndividual abbreviatedIRI="ex:tercer_nivel"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:Sintoma"/>
+        <NamedIndividual abbreviatedIRI="ex:tos"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:PrecaucionEstandar"/>
+        <NamedIndividual abbreviatedIRI="ex:uso_contenedores"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:PrecaucionEstandar"/>
+        <NamedIndividual abbreviatedIRI="ex:uso_de_guantes"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:PrecaucionGotas"/>
+        <NamedIndividual abbreviatedIRI="ex:uso_equipo_desechable"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ex:PrecaucionEstandar"/>
+        <NamedIndividual abbreviatedIRI="ex:uso_mascarilla"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:aplica"/>
+        <NamedIndividual abbreviatedIRI="ex:enfermera1"/>
+        <NamedIndividual abbreviatedIRI="ex:bata_impermeable"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:aplica"/>
+        <NamedIndividual abbreviatedIRI="ex:enfermera1"/>
+        <NamedIndividual abbreviatedIRI="ex:distancia_metro"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:aplica"/>
+        <NamedIndividual abbreviatedIRI="ex:enfermera1"/>
+        <NamedIndividual abbreviatedIRI="ex:higiene_de_manos"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:aplica"/>
+        <NamedIndividual abbreviatedIRI="ex:enfermera1"/>
+        <NamedIndividual abbreviatedIRI="ex:mascarilla_quirurgica"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:aplica"/>
+        <NamedIndividual abbreviatedIRI="ex:enfermera1"/>
+        <NamedIndividual abbreviatedIRI="ex:respirador_n95"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:aplica"/>
+        <NamedIndividual abbreviatedIRI="ex:enfermera1"/>
+        <NamedIndividual abbreviatedIRI="ex:uso_contenedores"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:aplica"/>
+        <NamedIndividual abbreviatedIRI="ex:enfermera1"/>
+        <NamedIndividual abbreviatedIRI="ex:uso_de_guantes"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:aplica"/>
+        <NamedIndividual abbreviatedIRI="ex:enfermera1"/>
+        <NamedIndividual abbreviatedIRI="ex:uso_equipo_desechable"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:aplica"/>
+        <NamedIndividual abbreviatedIRI="ex:enfermera1"/>
+        <NamedIndividual abbreviatedIRI="ex:uso_mascarilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:tomaMuestra"/>
+        <NamedIndividual abbreviatedIRI="ex:enfermera1"/>
+        <NamedIndividual abbreviatedIRI="ex:exudado_faringeo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:tomaMuestra"/>
+        <NamedIndividual abbreviatedIRI="ex:enfermera1"/>
+        <NamedIndividual abbreviatedIRI="ex:exudado_nasofaringeo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:aislamientoRecomendado"/>
+        <NamedIndividual abbreviatedIRI="ex:juan"/>
+        <NamedIndividual abbreviatedIRI="ex:hospitalario_individual"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:contactoCon"/>
+        <NamedIndividual abbreviatedIRI="ex:juan"/>
+        <NamedIndividual abbreviatedIRI="ex:maria"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:nivelAtencion"/>
+        <NamedIndividual abbreviatedIRI="ex:juan"/>
+        <NamedIndividual abbreviatedIRI="ex:primer_nivel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:presentaSintoma"/>
+        <NamedIndividual abbreviatedIRI="ex:juan"/>
+        <NamedIndividual abbreviatedIRI="ex:dificultad_respiratoria"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:presentaSintoma"/>
+        <NamedIndividual abbreviatedIRI="ex:juan"/>
+        <NamedIndividual abbreviatedIRI="ex:fiebre"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:presentaSintoma"/>
+        <NamedIndividual abbreviatedIRI="ex:juan"/>
+        <NamedIndividual abbreviatedIRI="ex:tos"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:resultadoLaboratorio"/>
+        <NamedIndividual abbreviatedIRI="ex:juan"/>
+        <NamedIndividual abbreviatedIRI="ex:positivo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:tieneEnfermedadRespiratoria"/>
+        <NamedIndividual abbreviatedIRI="ex:juan"/>
+        <NamedIndividual abbreviatedIRI="ex:enfermedad_respiratoria"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:tomaMuestra"/>
+        <NamedIndividual abbreviatedIRI="ex:juan"/>
+        <NamedIndividual abbreviatedIRI="ex:exudado_faringeo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:tomaMuestra"/>
+        <NamedIndividual abbreviatedIRI="ex:juan"/>
+        <NamedIndividual abbreviatedIRI="ex:exudado_nasofaringeo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:viajoA"/>
+        <NamedIndividual abbreviatedIRI="ex:juan"/>
+        <NamedIndividual abbreviatedIRI="ex:china"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:aislamientoRecomendado"/>
+        <NamedIndividual abbreviatedIRI="ex:maria"/>
+        <NamedIndividual abbreviatedIRI="ex:domicilio"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:contactoCon"/>
+        <NamedIndividual abbreviatedIRI="ex:maria"/>
+        <NamedIndividual abbreviatedIRI="ex:juan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:nivelAtencion"/>
+        <NamedIndividual abbreviatedIRI="ex:maria"/>
+        <NamedIndividual abbreviatedIRI="ex:tercer_nivel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:resultadoLaboratorio"/>
+        <NamedIndividual abbreviatedIRI="ex:maria"/>
+        <NamedIndividual abbreviatedIRI="ex:negativo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ex:tieneEnfermedadRespiratoria"/>
+        <NamedIndividual abbreviatedIRI="ex:maria"/>
+        <NamedIndividual abbreviatedIRI="ex:enfermedad_respiratoria"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="ex:aislamientoRecomendado"/>
+        <Class abbreviatedIRI="ex:Persona"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="ex:aplica"/>
+        <Class abbreviatedIRI="ex:PersonalSalud"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="ex:contactoCon"/>
+        <Class abbreviatedIRI="ex:Persona"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="ex:nivelAtencion"/>
+        <Class abbreviatedIRI="ex:Persona"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="ex:presentaSintoma"/>
+        <Class abbreviatedIRI="ex:Persona"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="ex:resultadoLaboratorio"/>
+        <Class abbreviatedIRI="ex:Persona"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="ex:tieneEnfermedad"/>
+        <Class abbreviatedIRI="ex:Persona"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="ex:tieneEnfermedadRespiratoria"/>
+        <Class abbreviatedIRI="ex:Persona"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="ex:tomaMuestra"/>
+        <Class abbreviatedIRI="ex:PersonalSalud"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="ex:usaMascarilla"/>
+        <Class abbreviatedIRI="ex:Persona"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="ex:viajoA"/>
+        <Class abbreviatedIRI="ex:Persona"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ex:aislamientoRecomendado"/>
+        <Class abbreviatedIRI="ex:Aislamiento"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ex:aplica"/>
+        <Class abbreviatedIRI="ex:Precaucion"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ex:contactoCon"/>
+        <Class abbreviatedIRI="ex:Persona"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ex:nivelAtencion"/>
+        <Class abbreviatedIRI="ex:NivelAtencion"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ex:presentaSintoma"/>
+        <Class abbreviatedIRI="ex:Sintoma"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ex:resultadoLaboratorio"/>
+        <Class abbreviatedIRI="ex:ResultadoLaboratorio"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ex:tieneEnfermedad"/>
+        <Class abbreviatedIRI="ex:Enfermedad"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ex:tieneEnfermedadRespiratoria"/>
+        <Class abbreviatedIRI="ex:Enfermedad"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ex:tomaMuestra"/>
+        <Class abbreviatedIRI="ex:Muestra"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ex:usaMascarilla"/>
+        <Class abbreviatedIRI="ex:Precaucion"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ex:viajoA"/>
+        <Class abbreviatedIRI="ex:Pais"/>
+    </ObjectPropertyRange>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Regla 10 – Requiere seguimiento si tuvo contacto con confirmado</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S10</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="ex:CasoConfirmado"/>
+                <Variable IRI="x"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ex:contactoCon"/>
+                <Variable IRI="y"/>
+                <Variable IRI="x"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class abbreviatedIRI="ex:RequiereSeguimiento"/>
+                <Variable IRI="y"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Regla 9 – Confirmado en tercer nivel → aislamiento hospitalario individual</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S9</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="ex:CasoConfirmado"/>
+                <Variable IRI="x"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ex:nivelAtencion"/>
+                <Variable IRI="x"/>
+                <NamedIndividual abbreviatedIRI="ex:tercer_nivel"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ex:aislamientoRecomendado"/>
+                <Variable IRI="x"/>
+                <NamedIndividual abbreviatedIRI="ex:hospitalario_individual"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Regla 2 – Sospechoso por contacto con caso confirmado</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S2</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="ex:Persona"/>
+                <Variable IRI="x"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ex:tieneEnfermedadRespiratoria"/>
+                <Variable IRI="x"/>
+                <Variable IRI="e"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ex:contactoCon"/>
+                <Variable IRI="x"/>
+                <Variable IRI="y"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class abbreviatedIRI="ex:CasoConfirmado"/>
+                <Variable IRI="y"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class abbreviatedIRI="ex:CasoSospechoso"/>
+                <Variable IRI="x"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Regla 8 – Sospechoso en primer nivel → aislamiento domiciliario</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S8</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="ex:CasoSospechoso"/>
+                <Variable IRI="x"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ex:nivelAtencion"/>
+                <Variable IRI="x"/>
+                <NamedIndividual abbreviatedIRI="ex:primer_nivel"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ex:aislamientoRecomendado"/>
+                <Variable IRI="x"/>
+                <NamedIndividual abbreviatedIRI="ex:domicilio"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Regla 3 – Confirmado por resultado positivo</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S3</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="ex:CasoSospechoso"/>
+                <Variable IRI="x"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ex:resultadoLaboratorio"/>
+                <Variable IRI="x"/>
+                <NamedIndividual abbreviatedIRI="ex:positivo"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class abbreviatedIRI="ex:CasoConfirmado"/>
+                <Variable IRI="x"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Regla 1 – Sospechoso por viaje a país de riesgo</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S1</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="ex:Persona"/>
+                <Variable IRI="x"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ex:tieneEnfermedadRespiratoria"/>
+                <Variable IRI="x"/>
+                <Variable IRI="e"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ex:viajoA"/>
+                <Variable IRI="x"/>
+                <Variable IRI="p"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class abbreviatedIRI="ex:PaisDeRiesgo"/>
+                <Variable IRI="p"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class abbreviatedIRI="ex:CasoSospechoso"/>
+                <Variable IRI="x"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Regla 4 – Persona con muestra válida</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S4</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="ex:Persona"/>
+                <Variable IRI="x"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ex:tomaMuestra"/>
+                <Variable IRI="x"/>
+                <NamedIndividual abbreviatedIRI="ex:exudado_nasofaringeo"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ex:tomaMuestra"/>
+                <Variable IRI="x"/>
+                <NamedIndividual abbreviatedIRI="ex:exudado_faringeo"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class abbreviatedIRI="ex:PersonaConMuestraValida"/>
+                <Variable IRI="x"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Regla 5 – Cumple precauciones estándar</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S5</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ex:aplica"/>
+                <Variable IRI="x"/>
+                <NamedIndividual abbreviatedIRI="ex:higiene_de_manos"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ex:aplica"/>
+                <Variable IRI="x"/>
+                <NamedIndividual abbreviatedIRI="ex:uso_de_guantes"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ex:aplica"/>
+                <Variable IRI="x"/>
+                <NamedIndividual abbreviatedIRI="ex:bata_impermeable"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ex:aplica"/>
+                <Variable IRI="x"/>
+                <NamedIndividual abbreviatedIRI="ex:uso_mascarilla"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ex:aplica"/>
+                <Variable IRI="x"/>
+                <NamedIndividual abbreviatedIRI="ex:uso_contenedores"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class abbreviatedIRI="ex:CumplePrecaucionesEstandar"/>
+                <Variable IRI="x"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Regla 6 – Cumple precauciones por gotas</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S6</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ex:aplica"/>
+                <Variable IRI="x"/>
+                <NamedIndividual abbreviatedIRI="ex:uso_equipo_desechable"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ex:aplica"/>
+                <Variable IRI="x"/>
+                <NamedIndividual abbreviatedIRI="ex:mascarilla_quirurgica"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ex:aplica"/>
+                <Variable IRI="x"/>
+                <NamedIndividual abbreviatedIRI="ex:distancia_metro"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class abbreviatedIRI="ex:CumplePrecaucionesGotas"/>
+                <Variable IRI="x"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Regla 7 – Cumple precauciones por aerosoles</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S7</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ex:aplica"/>
+                <Variable IRI="x"/>
+                <NamedIndividual abbreviatedIRI="ex:respirador_n95"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class abbreviatedIRI="ex:CumplePrecaucionesAerosoles"/>
+                <Variable IRI="x"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:body"/>
+        <AbbreviatedIRI>ex:ReglaConfirmadoLab</AbbreviatedIRI>
+        <AnonymousIndividual nodeID="_:genid2147483651"/>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:head"/>
+        <AbbreviatedIRI>ex:ReglaConfirmadoLab</AbbreviatedIRI>
+        <AnonymousIndividual nodeID="_:genid2147483652"/>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:body"/>
+        <AbbreviatedIRI>ex:ReglaSospechosoContacto</AbbreviatedIRI>
+        <AnonymousIndividual nodeID="_:genid2147483668"/>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:head"/>
+        <AbbreviatedIRI>ex:ReglaSospechosoContacto</AbbreviatedIRI>
+        <AnonymousIndividual nodeID="_:genid2147483669"/>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:body"/>
+        <AbbreviatedIRI>ex:ReglaSospechosoViaje</AbbreviatedIRI>
+        <AnonymousIndividual nodeID="_:genid2147483654"/>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:head"/>
+        <AbbreviatedIRI>ex:ReglaSospechosoViaje</AbbreviatedIRI>
+        <AnonymousIndividual nodeID="_:genid2147483655"/>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument1"/>
+        <AnonymousIndividual nodeID="_:genid2147483653"/>
+        <IRI>urn:swrl#x</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:classPredicate"/>
+        <AnonymousIndividual nodeID="_:genid2147483653"/>
+        <AbbreviatedIRI>ex:Persona</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument1"/>
+        <AnonymousIndividual nodeID="_:genid2147483656"/>
+        <IRI>urn:swrl#x</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument2"/>
+        <AnonymousIndividual nodeID="_:genid2147483656"/>
+        <IRI>urn:swrl#e</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:propertyPredicate"/>
+        <AnonymousIndividual nodeID="_:genid2147483656"/>
+        <AbbreviatedIRI>ex:tieneEnfermedadRespiratoria</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument1"/>
+        <AnonymousIndividual nodeID="_:genid2147483657"/>
+        <IRI>urn:swrl#x</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument2"/>
+        <AnonymousIndividual nodeID="_:genid2147483657"/>
+        <IRI>urn:swrl#p</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:propertyPredicate"/>
+        <AnonymousIndividual nodeID="_:genid2147483657"/>
+        <AbbreviatedIRI>ex:viajoA</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument1"/>
+        <AnonymousIndividual nodeID="_:genid2147483658"/>
+        <IRI>urn:swrl#p</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:classPredicate"/>
+        <AnonymousIndividual nodeID="_:genid2147483658"/>
+        <AbbreviatedIRI>ex:PaisDeRiesgo</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument1"/>
+        <AnonymousIndividual nodeID="_:genid2147483659"/>
+        <IRI>urn:swrl#x</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:classPredicate"/>
+        <AnonymousIndividual nodeID="_:genid2147483659"/>
+        <AbbreviatedIRI>ex:CasoSospechoso</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument1"/>
+        <AnonymousIndividual nodeID="_:genid2147483660"/>
+        <IRI>urn:swrl#x</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:classPredicate"/>
+        <AnonymousIndividual nodeID="_:genid2147483660"/>
+        <AbbreviatedIRI>ex:CasoSospechoso</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument1"/>
+        <AnonymousIndividual nodeID="_:genid2147483661"/>
+        <IRI>urn:swrl#x</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument2"/>
+        <AnonymousIndividual nodeID="_:genid2147483661"/>
+        <AbbreviatedIRI>ex:positivo</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:propertyPredicate"/>
+        <AnonymousIndividual nodeID="_:genid2147483661"/>
+        <AbbreviatedIRI>ex:resultadoLaboratorio</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument1"/>
+        <AnonymousIndividual nodeID="_:genid2147483662"/>
+        <IRI>urn:swrl#x</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:classPredicate"/>
+        <AnonymousIndividual nodeID="_:genid2147483662"/>
+        <AbbreviatedIRI>ex:CasoConfirmado</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument1"/>
+        <AnonymousIndividual nodeID="_:genid2147483663"/>
+        <IRI>urn:swrl#x</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:classPredicate"/>
+        <AnonymousIndividual nodeID="_:genid2147483663"/>
+        <AbbreviatedIRI>ex:Persona</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument1"/>
+        <AnonymousIndividual nodeID="_:genid2147483664"/>
+        <IRI>urn:swrl#x</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument2"/>
+        <AnonymousIndividual nodeID="_:genid2147483664"/>
+        <IRI>urn:swrl#e</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:propertyPredicate"/>
+        <AnonymousIndividual nodeID="_:genid2147483664"/>
+        <AbbreviatedIRI>ex:tieneEnfermedadRespiratoria</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument1"/>
+        <AnonymousIndividual nodeID="_:genid2147483665"/>
+        <IRI>urn:swrl#x</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument2"/>
+        <AnonymousIndividual nodeID="_:genid2147483665"/>
+        <IRI>urn:swrl#y</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:propertyPredicate"/>
+        <AnonymousIndividual nodeID="_:genid2147483665"/>
+        <AbbreviatedIRI>ex:contactoCon</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument1"/>
+        <AnonymousIndividual nodeID="_:genid2147483666"/>
+        <IRI>urn:swrl#y</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:classPredicate"/>
+        <AnonymousIndividual nodeID="_:genid2147483666"/>
+        <AbbreviatedIRI>ex:CasoConfirmado</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument1"/>
+        <AnonymousIndividual nodeID="_:genid2147483667"/>
+        <IRI>urn:swrl#x</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:classPredicate"/>
+        <AnonymousIndividual nodeID="_:genid2147483667"/>
+        <AbbreviatedIRI>ex:CasoSospechoso</AbbreviatedIRI>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

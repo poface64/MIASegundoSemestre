@@ -1,0 +1,867 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia/"
+     xml:base="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:CovidOntologia="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneAntecedente -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneAntecedente">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneContactoSospechoso -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneContactoSospechoso">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneAntecedente"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Persona"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#CasoConfirmado"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#CasoSospechoso"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneDiagnosticoLaboratorio -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneDiagnosticoLaboratorio">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Persona"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#DiagnosticoLaboratorio"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneEnfermedadRespiratoria -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneEnfermedadRespiratoria">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneAntecedente"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Paciente"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#EnfermedadRespiratoria"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneIdentificaA -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneIdentificaA">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Medico"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Paciente"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneNivelAtencionMedica -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneNivelAtencionMedica">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#CentroMedico"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#NivelAtencionMedica"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneSigueMedidas -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneSigueMedidas">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#MedicoPrimerContacto"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneTrabajaEn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneTrabajaEn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Medico"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#CentroMedico"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneViajeA -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneViajeA">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneAntecedente"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Persona"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#PaisRiesgo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#esPaisRiesgo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#esPaisRiesgo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Pais"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#esRequiereHospitalizacion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#esRequiereHospitalizacion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Paciente"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#esToleraMascarilla -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#esToleraMascarilla">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Caso -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Caso">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Paciente"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#CasoConfirmado -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#CasoConfirmado">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#CasoSospechoso"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneDiagnosticoLaboratorio"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#DiagnosticoPositivo"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#CasoNegativo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#CasoNegativo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#CasoNegativo">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#CasoSospechoso"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneDiagnosticoLaboratorio"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#DiagnostivoNegativo"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#CasoSospechoso -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#CasoSospechoso">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Caso"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneAntecedente"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#CentroMedico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#CentroMedico"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#DiagnosticoLaboratorio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#DiagnosticoLaboratorio">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#DiagnosticoPositivo"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#DiagnostivoNegativo"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#EnfermedadRespiratoria -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#EnfermedadRespiratoria">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#EnfermedadAguda"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#EnfermedadGrave"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#EnfermedadLeve"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Medico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Medico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Persona"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#MedicoPrimerContacto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#MedicoPrimerContacto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Medico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#MedidaPrecaucion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#MedidaPrecaucion"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#NivelAtencionMedica -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#NivelAtencionMedica">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#PrimerNivelAtencionMedica"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#SegundoNivelAtencionMedica"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TercerNivelAtencionMedica"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Paciente -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Paciente">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Persona"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneEnfermedadRespiratoria"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#EnfermedadRespiratoria"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Pais -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Pais"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#PaisRiesgo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#PaisRiesgo">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Pais"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#esPaisRiesgo"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:oneOf>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </owl:oneOf>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#PaisSeguro"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#PaisSeguro -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#PaisSeguro">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Pais"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#esPaisRiesgo"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:oneOf>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </owl:oneOf>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Persona -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Persona"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#PrecaucionEstandar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#PrecaucionEstandar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#MedidaPrecaucion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#PrecaucionGotas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#PrecaucionGotas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#MedidaPrecaucion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaAislamiento14Dias -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaAislamiento14Dias">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#CasoConfirmado"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Paciente"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaAislamientoDomiciliario -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaAislamientoDomiciliario">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Paciente"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#esRequiereHospitalizacion"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:oneOf>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </owl:oneOf>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaInterrogatorio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaInterrogatorio">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#MedicoPrimerContacto"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TieneIdentificaA"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#CasoSospechoso"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#UsaHigieneRespiratoria -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#UsaHigieneRespiratoria">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Paciente"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#esToleraMascarilla"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:oneOf>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </owl:oneOf>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#UsaMascarilla -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#UsaMascarilla">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Paciente"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#esToleraMascarilla"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:oneOf>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </owl:oneOf>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Chad -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Chad">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Pais"/>
+        <CovidOntologia:esPaisRiesgo rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</CovidOntologia:esPaisRiesgo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#China -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#China">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Pais"/>
+        <CovidOntologia:esPaisRiesgo rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</CovidOntologia:esPaisRiesgo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#ClinicaIMSS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#ClinicaIMSS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#CentroMedico"/>
+        <CovidOntologia:TieneNivelAtencionMedica rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#PrimerNivelAtencionMedica"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#CoreaSur -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#CoreaSur">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Pais"/>
+        <CovidOntologia:esPaisRiesgo rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</CovidOntologia:esPaisRiesgo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#DiagnosticoPositivo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#DiagnosticoPositivo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#DiagnosticoLaboratorio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#DiagnostivoNegativo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#DiagnostivoNegativo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#DiagnosticoLaboratorio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#DrPaulo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#DrPaulo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#MedicoPrimerContacto"/>
+        <CovidOntologia:TieneIdentificaA rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Pepe"/>
+        <CovidOntologia:TieneSigueMedidas rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaCerrarPuerta"/>
+        <CovidOntologia:TieneSigueMedidas rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaHigieneManos"/>
+        <CovidOntologia:TieneSigueMedidas rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaMantenerDistancia"/>
+        <CovidOntologia:TieneSigueMedidas rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaUsarEquipoDesechable"/>
+        <CovidOntologia:TieneSigueMedidas rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaUsoBata"/>
+        <CovidOntologia:TieneSigueMedidas rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaUsoGuantes"/>
+        <CovidOntologia:TieneSigueMedidas rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaUsoMascarilla"/>
+        <CovidOntologia:TieneTrabajaEn rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#HospitalCovadonga"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#DrPedro -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#DrPedro">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#MedicoPrimerContacto"/>
+        <CovidOntologia:TieneIdentificaA rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Luis"/>
+        <CovidOntologia:TieneSigueMedidas rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaHigieneManos"/>
+        <CovidOntologia:TieneSigueMedidas rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaUsoBata"/>
+        <CovidOntologia:TieneSigueMedidas rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaUsoGuantes"/>
+        <CovidOntologia:TieneSigueMedidas rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaUsoMascarilla"/>
+        <CovidOntologia:TieneTrabajaEn rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#ClinicaIMSS"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#EnfermedadAguda -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#EnfermedadAguda">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#EnfermedadRespiratoria"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#EnfermedadGrave -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#EnfermedadGrave">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#EnfermedadRespiratoria"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#EnfermedadLeve -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#EnfermedadLeve">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#EnfermedadRespiratoria"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#HongKong -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#HongKong">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Pais"/>
+        <CovidOntologia:esPaisRiesgo rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</CovidOntologia:esPaisRiesgo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#HospitalCovadonga -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#HospitalCovadonga">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#CentroMedico"/>
+        <CovidOntologia:TieneNivelAtencionMedica rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#SegundoNivelAtencionMedica"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#HospitalRioBlanco -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#HospitalRioBlanco">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#CentroMedico"/>
+        <CovidOntologia:TieneNivelAtencionMedica rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TercerNivelAtencionMedica"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#InterrogatorioMedico -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#InterrogatorioMedico"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Iran -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Iran">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Pais"/>
+        <CovidOntologia:esPaisRiesgo rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</CovidOntologia:esPaisRiesgo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Italia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Italia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Pais"/>
+        <CovidOntologia:esPaisRiesgo rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</CovidOntologia:esPaisRiesgo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Japon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Japon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Pais"/>
+        <CovidOntologia:esPaisRiesgo rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</CovidOntologia:esPaisRiesgo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Josue -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Josue">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Persona"/>
+        <CovidOntologia:TieneDiagnosticoLaboratorio rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#DiagnostivoNegativo"/>
+        <CovidOntologia:esToleraMascarilla rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</CovidOntologia:esToleraMascarilla>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Luis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Luis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Persona"/>
+        <CovidOntologia:TieneEnfermedadRespiratoria rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#EnfermedadAguda"/>
+        <CovidOntologia:TieneViajeA rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#China"/>
+        <CovidOntologia:esRequiereHospitalizacion rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</CovidOntologia:esRequiereHospitalizacion>
+        <CovidOntologia:esToleraMascarilla rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</CovidOntologia:esToleraMascarilla>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Pepe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Pepe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Persona"/>
+        <CovidOntologia:TieneContactoSospechoso rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Luis"/>
+        <CovidOntologia:TieneDiagnosticoLaboratorio rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#DiagnosticoPositivo"/>
+        <CovidOntologia:TieneEnfermedadRespiratoria rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#EnfermedadLeve"/>
+        <CovidOntologia:esRequiereHospitalizacion rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</CovidOntologia:esRequiereHospitalizacion>
+        <CovidOntologia:esToleraMascarilla rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</CovidOntologia:esToleraMascarilla>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#PrimerNivelAtencionMedica -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#PrimerNivelAtencionMedica">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#NivelAtencionMedica"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaCerrarPuerta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaCerrarPuerta">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#PrecaucionGotas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaHigieneManos -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaHigieneManos">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#PrecaucionEstandar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaMantenerDistancia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaMantenerDistancia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#PrecaucionGotas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaUsarEquipoDesechable -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaUsarEquipoDesechable">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#PrecaucionGotas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaUsoBata -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaUsoBata">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#PrecaucionEstandar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaUsoGuantes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaUsoGuantes">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#PrecaucionEstandar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaUsoMascarilla -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#RealizaUsoMascarilla">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#PrecaucionEstandar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#ReinoUnido -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#ReinoUnido">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Pais"/>
+        <CovidOntologia:esPaisRiesgo rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</CovidOntologia:esPaisRiesgo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Rusia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Rusia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Pais"/>
+        <CovidOntologia:esPaisRiesgo rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</CovidOntologia:esPaisRiesgo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#SegundoNivelAtencionMedica -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#SegundoNivelAtencionMedica">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#NivelAtencionMedica"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Singapur -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Singapur">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Pais"/>
+        <CovidOntologia:esPaisRiesgo rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</CovidOntologia:esPaisRiesgo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TercerNivelAtencionMedica -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#TercerNivelAtencionMedica">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#NivelAtencionMedica"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Toño -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Toño">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Persona"/>
+        <CovidOntologia:TieneContactoSospechoso rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Luis"/>
+        <CovidOntologia:TieneDiagnosticoLaboratorio rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#DiagnostivoNegativo"/>
+        <CovidOntologia:TieneEnfermedadRespiratoria rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#EnfermedadGrave"/>
+        <CovidOntologia:esRequiereHospitalizacion rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</CovidOntologia:esRequiereHospitalizacion>
+        <CovidOntologia:esToleraMascarilla rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</CovidOntologia:esToleraMascarilla>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Ucrania -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Ucrania">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulisex/ontologies/2025/5/CovidOntologia#Pais"/>
+        <CovidOntologia:esPaisRiesgo rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</CovidOntologia:esPaisRiesgo>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->

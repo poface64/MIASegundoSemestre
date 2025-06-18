@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#PersonalDeSalud">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#Enfermera">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologias/covid#PersonalDeSalud"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#primer_nivel">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologias/covid#NivelAtencion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#contactoCon">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologias/covid#Persona"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/ontologias/covid#Persona"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#maria">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologias/covid#Persona"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#Epidemiologo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologias/covid#PersonalDeSalud"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#tomaMuestra">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologias/covid#PersonalDeSalud"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/ontologias/covid#Muestra"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#dificultad_respiratoria">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologias/covid#Sintoma"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#Muestra">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#fiebre">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologias/covid#Sintoma"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#usaMascarilla">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologias/covid#Persona"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#resultadoLaboratorio">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologias/covid#Persona"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#exudado_faringeo">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologias/covid#Muestra"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#nivelAtencion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologias/covid#Persona"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/ontologias/covid#NivelAtencion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#enfermera1">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologias/covid#Enfermera"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#tercer_nivel">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologias/covid#NivelAtencion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#viajoA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologias/covid#Persona"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/ontologias/covid#PaisDeRiesgo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#CasoConfirmado">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologias/covid#Persona"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#presentaSintoma">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologias/covid#Persona"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/ontologias/covid#Sintoma"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#Sintoma">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#aplica">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologias/covid#PersonalDeSalud"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/ontologias/covid#Precaucion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#pedro">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologias/covid#Persona"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#PaisDeRiesgo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#Precaucion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#juan">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologias/covid#Persona"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#china">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologias/covid#PaisDeRiesgo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#exudado_nasofaringeo">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologias/covid#Muestra"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#epidemio1">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologias/covid#Epidemiologo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#NivelAtencion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#Persona">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#CasoSospechoso">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologias/covid#Persona"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologias/covid#tos">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologias/covid#Sintoma"/>
+  </rdf:Description>
+</rdf:RDF>

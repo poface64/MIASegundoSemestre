@@ -1,0 +1,150 @@
+@prefix ex: <http://www.salud.gob.mx/covid#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+
+ex:Enfermera a owl:Class ;
+    rdfs:subClassOf ex:PersonalSalud .
+
+ex:Epidemiologo a owl:Class ;
+    rdfs:subClassOf ex:PersonalSalud .
+
+ex:PrecaucionAerosoles a owl:Class ;
+    rdfs:subClassOf ex:Precaucion .
+
+ex:PrecaucionEstandar a owl:Class ;
+    rdfs:subClassOf ex:Precaucion .
+
+ex:PrecaucionGotas a owl:Class ;
+    rdfs:subClassOf ex:Precaucion .
+
+ex:ReglaConfirmadoLab a swrl:Imp ;
+    swrl:body ( [ a swrl:ClassAtom ;
+                swrl:argument1 <urn:swrl#x> ;
+                swrl:classPredicate ex:CasoSospechoso ] [ a swrl:IndividualPropertyAtom ;
+                swrl:argument1 <urn:swrl#x> ;
+                swrl:argument2 ex:positivo ;
+                swrl:propertyPredicate ex:resultadoLaboratorio ] ) ;
+    swrl:head ( [ a swrl:ClassAtom ;
+                swrl:argument1 <urn:swrl#x> ;
+                swrl:classPredicate ex:CasoConfirmado ] ) .
+
+ex:ReglaSospechosoContacto a swrl:Imp ;
+    swrl:body ( [ a swrl:ClassAtom ;
+                swrl:argument1 <urn:swrl#x> ;
+                swrl:classPredicate ex:Persona ] [ a swrl:IndividualPropertyAtom ;
+                swrl:argument1 <urn:swrl#x> ;
+                swrl:argument2 <urn:swrl#e> ;
+                swrl:propertyPredicate ex:tieneEnfermedadRespiratoria ] [ a swrl:IndividualPropertyAtom ;
+                swrl:argument1 <urn:swrl#x> ;
+                swrl:argument2 <urn:swrl#y> ;
+                swrl:propertyPredicate ex:contactoCon ] [ a swrl:ClassAtom ;
+                swrl:argument1 <urn:swrl#y> ;
+                swrl:classPredicate ex:CasoConfirmado ] ) ;
+    swrl:head ( [ a swrl:ClassAtom ;
+                swrl:argument1 <urn:swrl#x> ;
+                swrl:classPredicate ex:CasoSospechoso ] ) .
+
+ex:ReglaSospechosoViaje a swrl:Imp ;
+    swrl:body ( [ a swrl:ClassAtom ;
+                swrl:argument1 <urn:swrl#x> ;
+                swrl:classPredicate ex:Persona ] [ a swrl:IndividualPropertyAtom ;
+                swrl:argument1 <urn:swrl#x> ;
+                swrl:argument2 <urn:swrl#e> ;
+                swrl:propertyPredicate ex:tieneEnfermedadRespiratoria ] [ a swrl:IndividualPropertyAtom ;
+                swrl:argument1 <urn:swrl#x> ;
+                swrl:argument2 <urn:swrl#p> ;
+                swrl:propertyPredicate ex:viajoA ] [ a swrl:ClassAtom ;
+                swrl:argument1 <urn:swrl#p> ;
+                swrl:classPredicate ex:PaisDeRiesgo ] ) ;
+    swrl:head ( [ a swrl:ClassAtom ;
+                swrl:argument1 <urn:swrl#x> ;
+                swrl:classPredicate ex:CasoSospechoso ] ) .
+
+ex:aislamientoRecomendado a owl:ObjectProperty ;
+    rdfs:domain ex:Persona ;
+    rdfs:range ex:Aislamiento .
+
+ex:aplica a owl:ObjectProperty ;
+    rdfs:domain ex:PersonalSalud ;
+    rdfs:range ex:Precaucion .
+
+ex:juan a ex:Persona ;
+    ex:resultadoLaboratorio ex:positivo ;
+    ex:tieneEnfermedadRespiratoria ex:enfermedad_respiratoria ;
+    ex:viajoA ex:china .
+
+ex:nivelAtencion a owl:ObjectProperty ;
+    rdfs:domain ex:Persona ;
+    rdfs:range ex:NivelAtencion .
+
+ex:presentaSintoma a owl:ObjectProperty ;
+    rdfs:domain ex:Persona ;
+    rdfs:range ex:Sintoma .
+
+ex:tieneEnfermedad a owl:ObjectProperty ;
+    rdfs:domain ex:Persona ;
+    rdfs:range ex:Enfermedad .
+
+ex:tomaMuestra a owl:ObjectProperty ;
+    rdfs:domain ex:PersonalSalud ;
+    rdfs:range ex:Muestra .
+
+ex:usaMascarilla a owl:ObjectProperty ;
+    rdfs:domain ex:Persona ;
+    rdfs:range ex:Precaucion .
+
+ex:Aislamiento a owl:Class .
+
+ex:Muestra a owl:Class .
+
+ex:NivelAtencion a owl:Class .
+
+ex:Sintoma a owl:Class .
+
+ex:china a ex:PaisDeRiesgo .
+
+ex:contactoCon a owl:ObjectProperty ;
+    rdfs:domain ex:Persona ;
+    rdfs:range ex:Persona .
+
+ex:enfermedad_respiratoria a ex:Enfermedad .
+
+ex:resultadoLaboratorio a owl:ObjectProperty ;
+    rdfs:domain ex:Persona ;
+    rdfs:range ex:ResultadoLaboratorio .
+
+ex:viajoA a owl:ObjectProperty ;
+    rdfs:domain ex:Persona ;
+    rdfs:range ex:Pais .
+
+ex:Caso a owl:Class .
+
+ex:CasoConfirmado a owl:Class ;
+    rdfs:subClassOf ex:Caso .
+
+ex:Pais a owl:Class .
+
+ex:PaisDeRiesgo a owl:Class ;
+    rdfs:subClassOf ex:Pais .
+
+ex:ResultadoLaboratorio a owl:Class .
+
+ex:positivo a ex:ResultadoLaboratorio .
+
+ex:tieneEnfermedadRespiratoria a owl:ObjectProperty ;
+    rdfs:domain ex:Persona ;
+    rdfs:range ex:Enfermedad .
+
+ex:CasoSospechoso a owl:Class ;
+    rdfs:subClassOf ex:Caso .
+
+ex:Enfermedad a owl:Class .
+
+ex:PersonalSalud a owl:Class .
+
+ex:Precaucion a owl:Class .
+
+ex:Persona a owl:Class .
+

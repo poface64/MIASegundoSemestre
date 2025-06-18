@@ -1,0 +1,833 @@
+@prefix ex: <http://www.salud.gob.mx/covid#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2003/11/swrl#argument1
+swrl:argument1 rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2003/11/swrl#argument2
+swrl:argument2 rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2003/11/swrl#body
+swrl:body rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2003/11/swrl#classPredicate
+swrl:classPredicate rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2003/11/swrl#head
+swrl:head rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2003/11/swrl#propertyPredicate
+swrl:propertyPredicate rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.salud.gob.mx/covid#aislamientoRecomendado
+ex:aislamientoRecomendado rdf:type owl:ObjectProperty ;
+                          rdfs:domain ex:Persona ;
+                          rdfs:range ex:Aislamiento .
+
+
+###  http://www.salud.gob.mx/covid#aplica
+ex:aplica rdf:type owl:ObjectProperty ;
+          rdfs:domain ex:PersonalSalud ;
+          rdfs:range ex:Precaucion .
+
+
+###  http://www.salud.gob.mx/covid#contactoCon
+ex:contactoCon rdf:type owl:ObjectProperty ;
+               rdfs:domain ex:Persona ;
+               rdfs:range ex:Persona .
+
+
+###  http://www.salud.gob.mx/covid#nivelAtencion
+ex:nivelAtencion rdf:type owl:ObjectProperty ;
+                 rdfs:domain ex:Persona ;
+                 rdfs:range ex:NivelAtencion .
+
+
+###  http://www.salud.gob.mx/covid#presentaSintoma
+ex:presentaSintoma rdf:type owl:ObjectProperty ;
+                   rdfs:domain ex:Persona ;
+                   rdfs:range ex:Sintoma .
+
+
+###  http://www.salud.gob.mx/covid#resultadoLaboratorio
+ex:resultadoLaboratorio rdf:type owl:ObjectProperty ;
+                        rdfs:domain ex:Persona ;
+                        rdfs:range ex:ResultadoLaboratorio .
+
+
+###  http://www.salud.gob.mx/covid#tieneEnfermedad
+ex:tieneEnfermedad rdf:type owl:ObjectProperty ;
+                   rdfs:domain ex:Persona ;
+                   rdfs:range ex:Enfermedad .
+
+
+###  http://www.salud.gob.mx/covid#tieneEnfermedadRespiratoria
+ex:tieneEnfermedadRespiratoria rdf:type owl:ObjectProperty ;
+                               rdfs:domain ex:Persona ;
+                               rdfs:range ex:Enfermedad .
+
+
+###  http://www.salud.gob.mx/covid#tomaMuestra
+ex:tomaMuestra rdf:type owl:ObjectProperty ;
+               rdfs:domain ex:PersonalSalud ;
+               rdfs:range ex:Muestra .
+
+
+###  http://www.salud.gob.mx/covid#usaMascarilla
+ex:usaMascarilla rdf:type owl:ObjectProperty ;
+                 rdfs:domain ex:Persona ;
+                 rdfs:range ex:Precaucion .
+
+
+###  http://www.salud.gob.mx/covid#viajoA
+ex:viajoA rdf:type owl:ObjectProperty ;
+          rdfs:domain ex:Persona ;
+          rdfs:range ex:Pais .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.salud.gob.mx/covid#Aislamiento
+ex:Aislamiento rdf:type owl:Class .
+
+
+###  http://www.salud.gob.mx/covid#Caso
+ex:Caso rdf:type owl:Class .
+
+
+###  http://www.salud.gob.mx/covid#CasoConfirmado
+ex:CasoConfirmado rdf:type owl:Class ;
+                  rdfs:subClassOf ex:Caso .
+
+
+###  http://www.salud.gob.mx/covid#CasoSospechoso
+ex:CasoSospechoso rdf:type owl:Class ;
+                  rdfs:subClassOf ex:Caso .
+
+
+###  http://www.salud.gob.mx/covid#CumplePrecaucionesAerosoles
+ex:CumplePrecaucionesAerosoles rdf:type owl:Class .
+
+
+###  http://www.salud.gob.mx/covid#CumplePrecaucionesEstandar
+ex:CumplePrecaucionesEstandar rdf:type owl:Class .
+
+
+###  http://www.salud.gob.mx/covid#CumplePrecaucionesGotas
+ex:CumplePrecaucionesGotas rdf:type owl:Class .
+
+
+###  http://www.salud.gob.mx/covid#Enfermedad
+ex:Enfermedad rdf:type owl:Class .
+
+
+###  http://www.salud.gob.mx/covid#Enfermera
+ex:Enfermera rdf:type owl:Class ;
+             rdfs:subClassOf ex:PersonalSalud .
+
+
+###  http://www.salud.gob.mx/covid#Epidemiologo
+ex:Epidemiologo rdf:type owl:Class ;
+                rdfs:subClassOf ex:PersonalSalud .
+
+
+###  http://www.salud.gob.mx/covid#Muestra
+ex:Muestra rdf:type owl:Class .
+
+
+###  http://www.salud.gob.mx/covid#NivelAtencion
+ex:NivelAtencion rdf:type owl:Class .
+
+
+###  http://www.salud.gob.mx/covid#Pais
+ex:Pais rdf:type owl:Class .
+
+
+###  http://www.salud.gob.mx/covid#PaisDeRiesgo
+ex:PaisDeRiesgo rdf:type owl:Class ;
+                rdfs:subClassOf ex:Pais .
+
+
+###  http://www.salud.gob.mx/covid#Persona
+ex:Persona rdf:type owl:Class .
+
+
+###  http://www.salud.gob.mx/covid#PersonaConMuestraValida
+ex:PersonaConMuestraValida rdf:type owl:Class .
+
+
+###  http://www.salud.gob.mx/covid#PersonalSalud
+ex:PersonalSalud rdf:type owl:Class .
+
+
+###  http://www.salud.gob.mx/covid#Precaucion
+ex:Precaucion rdf:type owl:Class .
+
+
+###  http://www.salud.gob.mx/covid#PrecaucionAerosoles
+ex:PrecaucionAerosoles rdf:type owl:Class ;
+                       rdfs:subClassOf ex:Precaucion .
+
+
+###  http://www.salud.gob.mx/covid#PrecaucionEstandar
+ex:PrecaucionEstandar rdf:type owl:Class ;
+                      rdfs:subClassOf ex:Precaucion .
+
+
+###  http://www.salud.gob.mx/covid#PrecaucionGotas
+ex:PrecaucionGotas rdf:type owl:Class ;
+                   rdfs:subClassOf ex:Precaucion .
+
+
+###  http://www.salud.gob.mx/covid#RequiereSeguimiento
+ex:RequiereSeguimiento rdf:type owl:Class .
+
+
+###  http://www.salud.gob.mx/covid#ResultadoLaboratorio
+ex:ResultadoLaboratorio rdf:type owl:Class .
+
+
+###  http://www.salud.gob.mx/covid#Sintoma
+ex:Sintoma rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.salud.gob.mx/covid#bata_impermeable
+ex:bata_impermeable rdf:type owl:NamedIndividual ,
+                             ex:PrecaucionEstandar .
+
+
+###  http://www.salud.gob.mx/covid#china
+ex:china rdf:type owl:NamedIndividual ,
+                  ex:PaisDeRiesgo .
+
+
+###  http://www.salud.gob.mx/covid#corea_del_sur
+ex:corea_del_sur rdf:type owl:NamedIndividual ,
+                          ex:PaisDeRiesgo .
+
+
+###  http://www.salud.gob.mx/covid#dificultad_respiratoria
+ex:dificultad_respiratoria rdf:type owl:NamedIndividual ,
+                                    ex:Sintoma .
+
+
+###  http://www.salud.gob.mx/covid#distancia_metro
+ex:distancia_metro rdf:type owl:NamedIndividual ,
+                            ex:PrecaucionGotas .
+
+
+###  http://www.salud.gob.mx/covid#domicilio
+ex:domicilio rdf:type owl:NamedIndividual ,
+                      ex:Aislamiento .
+
+
+###  http://www.salud.gob.mx/covid#enfermedad_respiratoria
+ex:enfermedad_respiratoria rdf:type owl:NamedIndividual ,
+                                    ex:Enfermedad .
+
+
+###  http://www.salud.gob.mx/covid#enfermera1
+ex:enfermera1 rdf:type owl:NamedIndividual ,
+                       ex:Enfermera ;
+              ex:aplica ex:bata_impermeable ,
+                        ex:distancia_metro ,
+                        ex:higiene_de_manos ,
+                        ex:mascarilla_quirurgica ,
+                        ex:respirador_n95 ,
+                        ex:uso_contenedores ,
+                        ex:uso_de_guantes ,
+                        ex:uso_equipo_desechable ,
+                        ex:uso_mascarilla ;
+              ex:tomaMuestra ex:exudado_faringeo ,
+                             ex:exudado_nasofaringeo .
+
+
+###  http://www.salud.gob.mx/covid#epidemio1
+ex:epidemio1 rdf:type owl:NamedIndividual ,
+                      ex:Epidemiologo .
+
+
+###  http://www.salud.gob.mx/covid#exudado_faringeo
+ex:exudado_faringeo rdf:type owl:NamedIndividual ,
+                             ex:Muestra .
+
+
+###  http://www.salud.gob.mx/covid#exudado_nasofaringeo
+ex:exudado_nasofaringeo rdf:type owl:NamedIndividual ,
+                                 ex:Muestra .
+
+
+###  http://www.salud.gob.mx/covid#fiebre
+ex:fiebre rdf:type owl:NamedIndividual ,
+                   ex:Sintoma .
+
+
+###  http://www.salud.gob.mx/covid#higiene_de_manos
+ex:higiene_de_manos rdf:type owl:NamedIndividual ,
+                             ex:PrecaucionEstandar .
+
+
+###  http://www.salud.gob.mx/covid#hong_kong
+ex:hong_kong rdf:type owl:NamedIndividual ,
+                      ex:PaisDeRiesgo .
+
+
+###  http://www.salud.gob.mx/covid#hospitalario_individual
+ex:hospitalario_individual rdf:type owl:NamedIndividual ,
+                                    ex:Aislamiento .
+
+
+###  http://www.salud.gob.mx/covid#iran
+ex:iran rdf:type owl:NamedIndividual ,
+                 ex:PaisDeRiesgo .
+
+
+###  http://www.salud.gob.mx/covid#italia
+ex:italia rdf:type owl:NamedIndividual ,
+                   ex:PaisDeRiesgo .
+
+
+###  http://www.salud.gob.mx/covid#japon
+ex:japon rdf:type owl:NamedIndividual ,
+                  ex:PaisDeRiesgo .
+
+
+###  http://www.salud.gob.mx/covid#juan
+ex:juan rdf:type owl:NamedIndividual ,
+                 ex:Persona ;
+        ex:aislamientoRecomendado ex:hospitalario_individual ;
+        ex:contactoCon ex:maria ;
+        ex:nivelAtencion ex:primer_nivel ;
+        ex:presentaSintoma ex:dificultad_respiratoria ,
+                           ex:fiebre ,
+                           ex:tos ;
+        ex:resultadoLaboratorio ex:positivo ;
+        ex:tieneEnfermedadRespiratoria ex:enfermedad_respiratoria ;
+        ex:tomaMuestra ex:exudado_faringeo ,
+                       ex:exudado_nasofaringeo ;
+        ex:viajoA ex:china .
+
+
+###  http://www.salud.gob.mx/covid#maria
+ex:maria rdf:type owl:NamedIndividual ,
+                  ex:Persona ;
+         ex:aislamientoRecomendado ex:domicilio ;
+         ex:contactoCon ex:juan ;
+         ex:nivelAtencion ex:tercer_nivel ;
+         ex:resultadoLaboratorio ex:negativo ;
+         ex:tieneEnfermedadRespiratoria ex:enfermedad_respiratoria .
+
+
+###  http://www.salud.gob.mx/covid#mascarilla_quirurgica
+ex:mascarilla_quirurgica rdf:type owl:NamedIndividual ,
+                                  ex:PrecaucionGotas .
+
+
+###  http://www.salud.gob.mx/covid#negativo
+ex:negativo rdf:type owl:NamedIndividual ,
+                     ex:ResultadoLaboratorio .
+
+
+###  http://www.salud.gob.mx/covid#pedro
+ex:pedro rdf:type owl:NamedIndividual ,
+                  ex:Persona .
+
+
+###  http://www.salud.gob.mx/covid#positivo
+ex:positivo rdf:type owl:NamedIndividual ,
+                     ex:ResultadoLaboratorio .
+
+
+###  http://www.salud.gob.mx/covid#primer_nivel
+ex:primer_nivel rdf:type owl:NamedIndividual ,
+                         ex:NivelAtencion .
+
+
+###  http://www.salud.gob.mx/covid#respirador_n95
+ex:respirador_n95 rdf:type owl:NamedIndividual ,
+                           ex:PrecaucionAerosoles .
+
+
+###  http://www.salud.gob.mx/covid#singapur
+ex:singapur rdf:type owl:NamedIndividual ,
+                     ex:PaisDeRiesgo .
+
+
+###  http://www.salud.gob.mx/covid#tercer_nivel
+ex:tercer_nivel rdf:type owl:NamedIndividual ,
+                         ex:NivelAtencion .
+
+
+###  http://www.salud.gob.mx/covid#tos
+ex:tos rdf:type owl:NamedIndividual ,
+                ex:Sintoma .
+
+
+###  http://www.salud.gob.mx/covid#uso_contenedores
+ex:uso_contenedores rdf:type owl:NamedIndividual ,
+                             ex:PrecaucionEstandar .
+
+
+###  http://www.salud.gob.mx/covid#uso_de_guantes
+ex:uso_de_guantes rdf:type owl:NamedIndividual ,
+                           ex:PrecaucionEstandar .
+
+
+###  http://www.salud.gob.mx/covid#uso_equipo_desechable
+ex:uso_equipo_desechable rdf:type owl:NamedIndividual ,
+                                  ex:PrecaucionGotas .
+
+
+###  http://www.salud.gob.mx/covid#uso_mascarilla
+ex:uso_mascarilla rdf:type owl:NamedIndividual ,
+                           ex:PrecaucionEstandar .
+
+
+[ swrl:argument1 <urn:swrl#x> ;
+  swrl:classPredicate ex:Persona
+] .
+
+[ swrl:argument1 <urn:swrl#x> ;
+   swrl:argument2 <urn:swrl#e> ;
+   swrl:propertyPredicate ex:tieneEnfermedadRespiratoria
+ ] .
+
+[ swrl:argument1 <urn:swrl#x> ;
+   swrl:argument2 <urn:swrl#p> ;
+   swrl:propertyPredicate ex:viajoA
+ ] .
+
+[ swrl:argument1 <urn:swrl#p> ;
+   swrl:classPredicate ex:PaisDeRiesgo
+ ] .
+
+[ swrl:argument1 <urn:swrl#x> ;
+   swrl:classPredicate ex:CasoSospechoso
+ ] .
+
+[ swrl:argument1 <urn:swrl#x> ;
+   swrl:classPredicate ex:CasoSospechoso
+ ] .
+
+[ swrl:argument1 <urn:swrl#x> ;
+   swrl:argument2 ex:positivo ;
+   swrl:propertyPredicate ex:resultadoLaboratorio
+ ] .
+
+[ swrl:argument1 <urn:swrl#x> ;
+   swrl:classPredicate ex:CasoConfirmado
+ ] .
+
+[ swrl:argument1 <urn:swrl#x> ;
+   swrl:classPredicate ex:Persona
+ ] .
+
+[ swrl:argument1 <urn:swrl#x> ;
+   swrl:argument2 <urn:swrl#e> ;
+   swrl:propertyPredicate ex:tieneEnfermedadRespiratoria
+ ] .
+
+[ swrl:argument1 <urn:swrl#x> ;
+   swrl:argument2 <urn:swrl#y> ;
+   swrl:propertyPredicate ex:contactoCon
+ ] .
+
+[ swrl:argument1 <urn:swrl#y> ;
+   swrl:classPredicate ex:CasoConfirmado
+ ] .
+
+[ swrl:argument1 <urn:swrl#x> ;
+   swrl:classPredicate ex:CasoSospechoso
+ ] .
+
+#################################################################
+#    Annotations
+#################################################################
+
+ex:ReglaConfirmadoLab swrl:head [ ] ;
+swrl:body [ ] .
+
+
+ex:ReglaSospechosoContacto swrl:head [ ] ;
+swrl:body [ ] .
+
+
+ex:ReglaSospechosoViaje swrl:head [ ] ;
+swrl:body [ ] .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+<x> rdf:type swrl:Variable .
+
+<y> rdf:type swrl:Variable .
+
+<e> rdf:type swrl:Variable .
+
+<p> rdf:type swrl:Variable .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Regla 7 – Cumple precauciones por aerosoles"^^xsd:string ;
+   rdfs:label "S7"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate ex:aplica ;
+                           swrl:argument1 <x> ;
+                           swrl:argument2 ex:respirador_n95
+                         ] ;
+               rdf:rest rdf:nil
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate ex:CumplePrecaucionesAerosoles ;
+                           swrl:argument1 <x>
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Regla 10 – Requiere seguimiento si tuvo contacto con confirmado"^^xsd:string ;
+   rdfs:label "S10"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate ex:CasoConfirmado ;
+                           swrl:argument1 <x>
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate ex:contactoCon ;
+                                      swrl:argument1 <y> ;
+                                      swrl:argument2 <x>
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate ex:RequiereSeguimiento ;
+                           swrl:argument1 <y>
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Regla 9 – Confirmado en tercer nivel → aislamiento hospitalario individual"^^xsd:string ;
+   rdfs:label "S9"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate ex:CasoConfirmado ;
+                           swrl:argument1 <x>
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate ex:nivelAtencion ;
+                                      swrl:argument1 <x> ;
+                                      swrl:argument2 ex:tercer_nivel
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate ex:aislamientoRecomendado ;
+                           swrl:argument1 <x> ;
+                           swrl:argument2 ex:hospitalario_individual
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Regla 2 – Sospechoso por contacto con caso confirmado"^^xsd:string ;
+   rdfs:label "S2"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate ex:Persona ;
+                           swrl:argument1 <x>
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate ex:tieneEnfermedadRespiratoria ;
+                                      swrl:argument1 <x> ;
+                                      swrl:argument2 <e>
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate ex:contactoCon ;
+                                                 swrl:argument1 <x> ;
+                                                 swrl:argument2 <y>
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:ClassAtom ;
+                                                            swrl:classPredicate ex:CasoConfirmado ;
+                                                            swrl:argument1 <y>
+                                                          ] ;
+                                                rdf:rest rdf:nil
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate ex:CasoSospechoso ;
+                           swrl:argument1 <x>
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Regla 8 – Sospechoso en primer nivel → aislamiento domiciliario"^^xsd:string ;
+   rdfs:label "S8"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate ex:CasoSospechoso ;
+                           swrl:argument1 <x>
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate ex:nivelAtencion ;
+                                      swrl:argument1 <x> ;
+                                      swrl:argument2 ex:primer_nivel
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate ex:aislamientoRecomendado ;
+                           swrl:argument1 <x> ;
+                           swrl:argument2 ex:domicilio
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Regla 3 – Confirmado por resultado positivo"^^xsd:string ;
+   rdfs:label "S3"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate ex:CasoSospechoso ;
+                           swrl:argument1 <x>
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate ex:resultadoLaboratorio ;
+                                      swrl:argument1 <x> ;
+                                      swrl:argument2 ex:positivo
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate ex:CasoConfirmado ;
+                           swrl:argument1 <x>
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Regla 1 – Sospechoso por viaje a país de riesgo"^^xsd:string ;
+   rdfs:label "S1"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate ex:Persona ;
+                           swrl:argument1 <x>
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate ex:tieneEnfermedadRespiratoria ;
+                                      swrl:argument1 <x> ;
+                                      swrl:argument2 <e>
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate ex:viajoA ;
+                                                 swrl:argument1 <x> ;
+                                                 swrl:argument2 <p>
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:ClassAtom ;
+                                                            swrl:classPredicate ex:PaisDeRiesgo ;
+                                                            swrl:argument1 <p>
+                                                          ] ;
+                                                rdf:rest rdf:nil
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate ex:CasoSospechoso ;
+                           swrl:argument1 <x>
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Regla 4 – Persona con muestra válida"^^xsd:string ;
+   rdfs:label "S4"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate ex:Persona ;
+                           swrl:argument1 <x>
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate ex:tomaMuestra ;
+                                      swrl:argument1 <x> ;
+                                      swrl:argument2 ex:exudado_nasofaringeo
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate ex:tomaMuestra ;
+                                                 swrl:argument1 <x> ;
+                                                 swrl:argument2 ex:exudado_faringeo
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate ex:PersonaConMuestraValida ;
+                           swrl:argument1 <x>
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Regla 5 – Cumple precauciones estándar"^^xsd:string ;
+   rdfs:label "S5"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate ex:aplica ;
+                           swrl:argument1 <x> ;
+                           swrl:argument2 ex:higiene_de_manos
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate ex:aplica ;
+                                      swrl:argument1 <x> ;
+                                      swrl:argument2 ex:uso_de_guantes
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate ex:aplica ;
+                                                 swrl:argument1 <x> ;
+                                                 swrl:argument2 ex:bata_impermeable
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                            swrl:propertyPredicate ex:aplica ;
+                                                            swrl:argument1 <x> ;
+                                                            swrl:argument2 ex:uso_mascarilla
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                       swrl:propertyPredicate ex:aplica ;
+                                                                       swrl:argument1 <x> ;
+                                                                       swrl:argument2 ex:uso_contenedores
+                                                                     ] ;
+                                                           rdf:rest rdf:nil
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate ex:CumplePrecaucionesEstandar ;
+                           swrl:argument1 <x>
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Regla 6 – Cumple precauciones por gotas"^^xsd:string ;
+   rdfs:label "S6"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate ex:aplica ;
+                           swrl:argument1 <x> ;
+                           swrl:argument2 ex:uso_equipo_desechable
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate ex:aplica ;
+                                      swrl:argument1 <x> ;
+                                      swrl:argument2 ex:mascarilla_quirurgica
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate ex:aplica ;
+                                                 swrl:argument1 <x> ;
+                                                 swrl:argument2 ex:distancia_metro
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate ex:CumplePrecaucionesGotas ;
+                           swrl:argument1 <x>
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

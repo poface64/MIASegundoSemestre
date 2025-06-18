@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+  xmlns:ex="http://www.salud.gob.mx/covid#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+>
+  <swrl:Imp rdf:about="http://www.salud.gob.mx/covid#ReglaSospechosoContacto">
+    <swrl:body rdf:parseType="Collection">
+      <swrl:ClassAtom rdf:nodeID="Nb2eeadf4ff994a41a0cb90653fd61714">
+        <swrl:classPredicate rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+        <swrl:argument1 rdf:nodeID="N4e34dee60a6548e3995f08f1603a319e"/>
+      </swrl:ClassAtom>
+      <swrl:IndividualPropertyAtom rdf:nodeID="N3c9b91f4d9e6415ba5769e511ecd53a6">
+        <swrl:propertyPredicate>
+          <owl:ObjectProperty rdf:about="http://www.salud.gob.mx/covid#tieneEnfermedadRespiratoria">
+            <rdfs:domain rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+            <rdfs:range rdf:resource="http://www.salud.gob.mx/covid#Enfermedad"/>
+          </owl:ObjectProperty>
+        </swrl:propertyPredicate>
+        <swrl:argument1 rdf:nodeID="N4e34dee60a6548e3995f08f1603a319e"/>
+        <swrl:argument2 rdf:nodeID="Nd7b638945c8c4655a8688aab2fb3be6a"/>
+      </swrl:IndividualPropertyAtom>
+      <swrl:IndividualPropertyAtom rdf:nodeID="Nece4e92f954848299db716ee7e4f45bd">
+        <swrl:propertyPredicate>
+          <owl:ObjectProperty rdf:about="http://www.salud.gob.mx/covid#contactoCon">
+            <rdfs:domain rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+            <rdfs:range rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+          </owl:ObjectProperty>
+        </swrl:propertyPredicate>
+        <swrl:argument1 rdf:nodeID="N4e34dee60a6548e3995f08f1603a319e"/>
+        <swrl:argument2 rdf:nodeID="N7125d47fc6e5448a9c4474b36ab19830"/>
+      </swrl:IndividualPropertyAtom>
+      <swrl:ClassAtom rdf:nodeID="Nfab58d79a147488fbc2fb04f8a803382">
+        <swrl:classPredicate rdf:resource="http://www.salud.gob.mx/covid#CasoConfirmado"/>
+        <swrl:argument1 rdf:nodeID="N7125d47fc6e5448a9c4474b36ab19830"/>
+      </swrl:ClassAtom>
+    </swrl:body>
+    <swrl:head rdf:parseType="Collection">
+      <swrl:ClassAtom rdf:nodeID="N8aeffca6f7964bf681e4d581d5cf172b">
+        <swrl:classPredicate rdf:resource="http://www.salud.gob.mx/covid#CasoSospechoso"/>
+        <swrl:argument1 rdf:nodeID="N4e34dee60a6548e3995f08f1603a319e"/>
+      </swrl:ClassAtom>
+    </swrl:head>
+  </swrl:Imp>
+  <owl:ObjectProperty rdf:about="http://www.salud.gob.mx/covid#usaMascarilla">
+    <rdfs:domain rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+    <rdfs:range rdf:resource="http://www.salud.gob.mx/covid#Precaucion"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.salud.gob.mx/covid#tieneEnfermedad">
+    <rdfs:domain rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+    <rdfs:range rdf:resource="http://www.salud.gob.mx/covid#Enfermedad"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.salud.gob.mx/covid#nivelAtencion">
+    <rdfs:domain rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+    <rdfs:range rdf:resource="http://www.salud.gob.mx/covid#NivelAtencion"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.salud.gob.mx/covid#tomaMuestra">
+    <rdfs:domain rdf:resource="http://www.salud.gob.mx/covid#PersonalSalud"/>
+    <rdfs:range rdf:resource="http://www.salud.gob.mx/covid#Muestra"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.salud.gob.mx/covid#aplica">
+    <rdfs:domain rdf:resource="http://www.salud.gob.mx/covid#PersonalSalud"/>
+    <rdfs:range rdf:resource="http://www.salud.gob.mx/covid#Precaucion"/>
+  </owl:ObjectProperty>
+  <ex:Muestra rdf:about="http://www.salud.gob.mx/covid#exudado_nasofaringeo"/>
+  <owl:ObjectProperty rdf:about="http://www.salud.gob.mx/covid#aislamientoRecomendado">
+    <rdfs:domain rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+    <rdfs:range rdf:resource="http://www.salud.gob.mx/covid#Aislamiento"/>
+  </owl:ObjectProperty>
+  <ex:Enfermera rdf:about="http://www.salud.gob.mx/covid#enfermera1">
+    <ex:aplica>
+      <ex:PrecaucionEstandar rdf:about="http://www.salud.gob.mx/covid#higiene_de_manos"/>
+    </ex:aplica>
+  </ex:Enfermera>
+  <owl:Class rdf:about="http://www.salud.gob.mx/covid#PrecaucionAerosoles">
+    <rdfs:subClassOf rdf:resource="http://www.salud.gob.mx/covid#Precaucion"/>
+  </owl:Class>
+  <ex:Pais rdf:about="http://www.salud.gob.mx/covid#iran"/>
+  <ex:Pais rdf:about="http://www.salud.gob.mx/covid#singapur"/>
+  <ex:Pais rdf:about="http://www.salud.gob.mx/covid#hong_kong"/>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#ReglaDiagnostico">
+    <rdfs:comment>Persona(?x) ^ tieneEnfermedadRespiratoria(?x, ?e) ^ viajoA(?x, ?p) ^ Pais(?p)
+    -&gt; CasoSospechoso(?x)</rdfs:comment>
+    <rdfs:comment>Persona(?x) ^ tieneEnfermedadRespiratoria(?x, ?e) ^ contactoCon(?x, ?y) ^ CasoConfirmado(?y)
+    -&gt; CasoSospechoso(?x)</rdfs:comment>
+    <rdfs:comment>CasoSospechoso(?x) ^ resultadoLaboratorio(?x, ex:positivo)
+    -&gt; CasoConfirmado(?x)</rdfs:comment>
+  </rdf:Description>
+  <ex:Persona rdf:about="http://www.salud.gob.mx/covid#juan">
+    <ex:presentaSintoma>
+      <ex:Sintoma rdf:about="http://www.salud.gob.mx/covid#fiebre"/>
+    </ex:presentaSintoma>
+    <ex:presentaSintoma>
+      <ex:Sintoma rdf:about="http://www.salud.gob.mx/covid#tos"/>
+    </ex:presentaSintoma>
+    <ex:presentaSintoma>
+      <ex:Sintoma rdf:about="http://www.salud.gob.mx/covid#dificultad_respiratoria"/>
+    </ex:presentaSintoma>
+    <ex:tieneEnfermedadRespiratoria>
+      <ex:Enfermedad rdf:about="http://www.salud.gob.mx/covid#enfermedad_respiratoria"/>
+    </ex:tieneEnfermedadRespiratoria>
+    <ex:viajoA>
+      <ex:Pais rdf:about="http://www.salud.gob.mx/covid#china"/>
+    </ex:viajoA>
+  </ex:Persona>
+  <owl:Class rdf:about="http://www.salud.gob.mx/covid#PrecaucionGotas">
+    <rdfs:subClassOf rdf:resource="http://www.salud.gob.mx/covid#Precaucion"/>
+  </owl:Class>
+  <ex:NivelAtencion rdf:about="http://www.salud.gob.mx/covid#tercer_nivel"/>
+  <owl:ObjectProperty rdf:about="http://www.salud.gob.mx/covid#presentaSintoma">
+    <rdfs:domain rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+    <rdfs:range rdf:resource="http://www.salud.gob.mx/covid#Sintoma"/>
+  </owl:ObjectProperty>
+  <swrl:Imp rdf:about="http://www.salud.gob.mx/covid#ReglaSospechosoViaje">
+    <swrl:body rdf:parseType="Collection">
+      <swrl:ClassAtom rdf:nodeID="N5a1c319771514257b497b64d563644cd">
+        <swrl:classPredicate rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+        <swrl:argument1 rdf:nodeID="N4e34dee60a6548e3995f08f1603a319e"/>
+      </swrl:ClassAtom>
+      <swrl:IndividualPropertyAtom rdf:nodeID="Nb608465cc944460291c4c8f82426d4c4">
+        <swrl:propertyPredicate rdf:resource="http://www.salud.gob.mx/covid#tieneEnfermedadRespiratoria"/>
+        <swrl:argument1 rdf:nodeID="N4e34dee60a6548e3995f08f1603a319e"/>
+        <swrl:argument2 rdf:nodeID="Nd7b638945c8c4655a8688aab2fb3be6a"/>
+      </swrl:IndividualPropertyAtom>
+      <swrl:IndividualPropertyAtom rdf:nodeID="N4cd76ccba49e4e3988b4a95d133d0277">
+        <swrl:propertyPredicate>
+          <owl:ObjectProperty rdf:about="http://www.salud.gob.mx/covid#viajoA">
+            <rdfs:domain rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+            <rdfs:range rdf:resource="http://www.salud.gob.mx/covid#Pais"/>
+          </owl:ObjectProperty>
+        </swrl:propertyPredicate>
+        <swrl:argument1 rdf:nodeID="N4e34dee60a6548e3995f08f1603a319e"/>
+        <swrl:argument2 rdf:nodeID="N6665af139482499797fe8188bdfa1652"/>
+      </swrl:IndividualPropertyAtom>
+      <swrl:ClassAtom rdf:nodeID="N70ccdd8ca4bd425e9afd8e52fb7adac7">
+        <swrl:classPredicate rdf:resource="http://www.salud.gob.mx/covid#Pais"/>
+        <swrl:argument1 rdf:nodeID="N6665af139482499797fe8188bdfa1652"/>
+      </swrl:ClassAtom>
+    </swrl:body>
+    <swrl:head rdf:parseType="Collection">
+      <swrl:ClassAtom rdf:nodeID="Naa09c14b0adc458b83f4c5ed5f507ab1">
+        <swrl:classPredicate rdf:resource="http://www.salud.gob.mx/covid#CasoSospechoso"/>
+        <swrl:argument1 rdf:nodeID="N4e34dee60a6548e3995f08f1603a319e"/>
+      </swrl:ClassAtom>
+    </swrl:head>
+  </swrl:Imp>
+  <ex:Persona rdf:about="http://www.salud.gob.mx/covid#pedro"/>
+  <ex:NivelAtencion rdf:about="http://www.salud.gob.mx/covid#primer_nivel"/>
+  <swrl:Imp rdf:about="http://www.salud.gob.mx/covid#ReglaConfirmadoLaboratorio">
+    <swrl:body rdf:parseType="Collection">
+      <swrl:ClassAtom rdf:nodeID="Nd2eba1917df644b4b2979f29959be81b">
+        <swrl:classPredicate rdf:resource="http://www.salud.gob.mx/covid#CasoSospechoso"/>
+        <swrl:argument1 rdf:nodeID="N4e34dee60a6548e3995f08f1603a319e"/>
+      </swrl:ClassAtom>
+      <swrl:IndividualPropertyAtom rdf:nodeID="N2027c3a17beb49d1a7bd4f0dd858f099">
+        <swrl:propertyPredicate>
+          <owl:ObjectProperty rdf:about="http://www.salud.gob.mx/covid#resultadoLaboratorio">
+            <rdfs:domain rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+            <rdfs:range rdf:resource="http://www.salud.gob.mx/covid#ResultadoLaboratorio"/>
+          </owl:ObjectProperty>
+        </swrl:propertyPredicate>
+        <swrl:argument1 rdf:nodeID="N4e34dee60a6548e3995f08f1603a319e"/>
+        <swrl:argument2>
+          <ex:ResultadoLaboratorio rdf:about="http://www.salud.gob.mx/covid#positivo"/>
+        </swrl:argument2>
+      </swrl:IndividualPropertyAtom>
+    </swrl:body>
+    <swrl:head rdf:parseType="Collection">
+      <swrl:ClassAtom rdf:nodeID="N9c0783c655bb405faae5bdb5f22935f7">
+        <swrl:classPredicate rdf:resource="http://www.salud.gob.mx/covid#CasoConfirmado"/>
+        <swrl:argument1 rdf:nodeID="N4e34dee60a6548e3995f08f1603a319e"/>
+      </swrl:ClassAtom>
+    </swrl:head>
+  </swrl:Imp>
+  <ex:Persona rdf:about="http://www.salud.gob.mx/covid#maria"/>
+  <ex:Pais rdf:about="http://www.salud.gob.mx/covid#japon"/>
+  <ex:Muestra rdf:about="http://www.salud.gob.mx/covid#exudado_faringeo"/>
+  <ex:Epidemiologo rdf:about="http://www.salud.gob.mx/covid#epidemio1"/>
+  <ex:Pais rdf:about="http://www.salud.gob.mx/covid#italia"/>
+  <ex:Pais rdf:about="http://www.salud.gob.mx/covid#corea_del_sur"/>
+  <owl:Class rdf:about="http://www.salud.gob.mx/covid#Enfermedad"/>
+  <owl:Class rdf:about="http://www.salud.gob.mx/covid#Muestra"/>
+  <owl:Class rdf:about="http://www.salud.gob.mx/covid#PrecaucionEstandar">
+    <rdfs:subClassOf rdf:resource="http://www.salud.gob.mx/covid#Precaucion"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.salud.gob.mx/covid#CasoSospechoso">
+    <rdfs:subClassOf rdf:resource="http://www.salud.gob.mx/covid#Caso"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.salud.gob.mx/covid#Enfermera">
+    <rdfs:subClassOf rdf:resource="http://www.salud.gob.mx/covid#PersonalSalud"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.salud.gob.mx/covid#CasoConfirmado">
+    <rdfs:subClassOf rdf:resource="http://www.salud.gob.mx/covid#Caso"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.salud.gob.mx/covid#Precaucion"/>
+  <owl:Class rdf:about="http://www.salud.gob.mx/covid#Persona"/>
+  <owl:Class rdf:about="http://www.salud.gob.mx/covid#Aislamiento"/>
+  <owl:Class rdf:about="http://www.salud.gob.mx/covid#Epidemiologo">
+    <rdfs:subClassOf rdf:resource="http://www.salud.gob.mx/covid#PersonalSalud"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.salud.gob.mx/covid#NivelAtencion"/>
+  <owl:Class rdf:about="http://www.salud.gob.mx/covid#Sintoma"/>
+  <owl:Class rdf:about="http://www.salud.gob.mx/covid#Caso"/>
+  <owl:Class rdf:about="http://www.salud.gob.mx/covid#PersonalSalud"/>
+  <owl:Class rdf:about="http://www.salud.gob.mx/covid#Pais"/>
+  <owl:Class rdf:about="http://www.salud.gob.mx/covid#ResultadoLaboratorio"/>
+</rdf:RDF>

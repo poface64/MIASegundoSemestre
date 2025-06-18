@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:ex="http://www.salud.gob.mx/covid#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:nodeID="N90427005b8a04d748bb3c21710d42e3d">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Axiom"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+    <rdfs:comment>Persona(?x) ^ tieneEnfermedadRespiratoria(?x, ?e) ^ contactoCon(?x, ?y) ^ CasoConfirmado(?y)
+    -&gt; CasoSospechoso(?x)</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#juan">
+    <rdf:type rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+    <ex:presentaSintoma rdf:resource="http://www.salud.gob.mx/covid#fiebre"/>
+    <ex:presentaSintoma rdf:resource="http://www.salud.gob.mx/covid#tos"/>
+    <ex:presentaSintoma rdf:resource="http://www.salud.gob.mx/covid#dificultad_respiratoria"/>
+    <ex:tieneEnfermedad rdf:resource="http://www.salud.gob.mx/covid#enfermedad_respiratoria"/>
+    <ex:viajoA rdf:resource="http://www.salud.gob.mx/covid#china"/>
+    <ex:tieneEnfermedadRespiratoria rdf:resource="http://www.salud.gob.mx/covid#enfermedad_respiratoria"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#usaMascarilla">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+    <rdfs:range rdf:resource="http://www.salud.gob.mx/covid#Precaucion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#tieneEnfermedad">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+    <rdfs:range rdf:resource="http://www.salud.gob.mx/covid#Enfermedad"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#nivelAtencion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+    <rdfs:range rdf:resource="http://www.salud.gob.mx/covid#NivelAtencion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#resultadoLaboratorio">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+    <rdfs:range rdf:resource="http://www.salud.gob.mx/covid#ResultadoLaboratorio"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#tomaMuestra">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.salud.gob.mx/covid#PersonalSalud"/>
+    <rdfs:range rdf:resource="http://www.salud.gob.mx/covid#Muestra"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#Enfermera">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.salud.gob.mx/covid#PersonalSalud"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#aplica">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.salud.gob.mx/covid#PersonalSalud"/>
+    <rdfs:range rdf:resource="http://www.salud.gob.mx/covid#Precaucion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#exudado_nasofaringeo">
+    <rdf:type rdf:resource="http://www.salud.gob.mx/covid#Muestra"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#Enfermedad">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#Aislamiento">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#china">
+    <rdf:type rdf:resource="http://www.salud.gob.mx/covid#Pais"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#Muestra">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#fiebre">
+    <rdf:type rdf:resource="http://www.salud.gob.mx/covid#Sintoma"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#CasoSospechoso">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.salud.gob.mx/covid#Caso"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#aislamientoRecomendado">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+    <rdfs:range rdf:resource="http://www.salud.gob.mx/covid#Aislamiento"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#enfermera1">
+    <rdf:type rdf:resource="http://www.salud.gob.mx/covid#Enfermera"/>
+    <ex:aplica rdf:resource="http://www.salud.gob.mx/covid#higiene_de_manos"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne16be4c038984b81aa23dfe4caa9f091">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Axiom"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+    <rdfs:comment>Persona(?x) ^ tieneEnfermedadRespiratoria(?x, ?e) ^ viajoA(?x, ?p) ^ Pais(?p)
+    -&gt; CasoSospechoso(?x)</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#PrecaucionEstandar">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.salud.gob.mx/covid#Precaucion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#tos">
+    <rdf:type rdf:resource="http://www.salud.gob.mx/covid#Sintoma"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#positivo">
+    <rdf:type rdf:resource="http://www.salud.gob.mx/covid#ResultadoLaboratorio"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#presentaSintoma">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+    <rdfs:range rdf:resource="http://www.salud.gob.mx/covid#Sintoma"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#Epidemiologo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.salud.gob.mx/covid#PersonalSalud"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#viajoA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+    <rdfs:range rdf:resource="http://www.salud.gob.mx/covid#Pais"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#tieneEnfermedadRespiratoria">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+    <rdfs:range rdf:resource="http://www.salud.gob.mx/covid#Enfermedad"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#higiene_de_manos">
+    <rdf:type rdf:resource="http://www.salud.gob.mx/covid#PrecaucionEstandar"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#NivelAtencion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#CasoConfirmado">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.salud.gob.mx/covid#Caso"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#PrecaucionAerosoles">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.salud.gob.mx/covid#Precaucion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#pedro">
+    <rdf:type rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#iran">
+    <rdf:type rdf:resource="http://www.salud.gob.mx/covid#Pais"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbeb7274938a949bf9cd08ee6f856a99f">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Axiom"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+    <rdfs:comment>CasoSospechoso(?x) ^ resultadoLaboratorio(?x, ex:positivo)
+    -&gt; CasoConfirmado(?x)</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#contactoCon">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+    <rdfs:range rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#primer_nivel">
+    <rdf:type rdf:resource="http://www.salud.gob.mx/covid#NivelAtencion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#Sintoma">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#Caso">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#singapur">
+    <rdf:type rdf:resource="http://www.salud.gob.mx/covid#Pais"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#maria">
+    <rdf:type rdf:resource="http://www.salud.gob.mx/covid#Persona"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#japon">
+    <rdf:type rdf:resource="http://www.salud.gob.mx/covid#Pais"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#hong_kong">
+    <rdf:type rdf:resource="http://www.salud.gob.mx/covid#Pais"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#exudado_faringeo">
+    <rdf:type rdf:resource="http://www.salud.gob.mx/covid#Muestra"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#Precaucion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#PersonalSalud">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#dificultad_respiratoria">
+    <rdf:type rdf:resource="http://www.salud.gob.mx/covid#Sintoma"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#epidemio1">
+    <rdf:type rdf:resource="http://www.salud.gob.mx/covid#Epidemiologo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#italia">
+    <rdf:type rdf:resource="http://www.salud.gob.mx/covid#Pais"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#corea_del_sur">
+    <rdf:type rdf:resource="http://www.salud.gob.mx/covid#Pais"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#PrecaucionGotas">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.salud.gob.mx/covid#Precaucion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#Pais">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#ResultadoLaboratorio">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#enfermedad_respiratoria">
+    <rdf:type rdf:resource="http://www.salud.gob.mx/covid#Enfermedad"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#tercer_nivel">
+    <rdf:type rdf:resource="http://www.salud.gob.mx/covid#NivelAtencion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.salud.gob.mx/covid#Persona">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+</rdf:RDF>

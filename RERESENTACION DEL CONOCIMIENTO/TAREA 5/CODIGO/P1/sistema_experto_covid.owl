@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#clasificadoComo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.ejemplo.org/covid#Persona"/>
+    <rdfs:range rdf:resource="http://www.ejemplo.org/covid#EstadoCaso"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#Enfermera">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.ejemplo.org/covid#PersonalDeSalud"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#presentaSintoma">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.ejemplo.org/covid#Persona"/>
+    <rdfs:range rdf:resource="http://www.ejemplo.org/covid#Sintoma"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#uso_de_guantes">
+    <rdf:type rdf:resource="http://www.ejemplo.org/covid#Precaucion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#contactoCon">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.ejemplo.org/covid#Persona"/>
+    <rdfs:range rdf:resource="http://www.ejemplo.org/covid#Persona"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#maria">
+    <rdf:type rdf:resource="http://www.ejemplo.org/covid#Persona"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#EstadoCaso">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#CasoConfirmado">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#Sintoma">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#aplicaPrecaucion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.ejemplo.org/covid#PersonalDeSalud"/>
+    <rdfs:range rdf:resource="http://www.ejemplo.org/covid#Precaucion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#china">
+    <rdf:type rdf:resource="http://www.ejemplo.org/covid#PaisDeRiesgo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#exudado_faringeo">
+    <rdf:type rdf:resource="http://www.ejemplo.org/covid#TipoDeMuestra"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#viajoA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.ejemplo.org/covid#Persona"/>
+    <rdfs:range rdf:resource="http://www.ejemplo.org/covid#PaisDeRiesgo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#pedro">
+    <rdf:type rdf:resource="http://www.ejemplo.org/covid#Persona"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#enfermera1">
+    <rdf:type rdf:resource="http://www.ejemplo.org/covid#Enfermera"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#exudado_nasofaringeo">
+    <rdf:type rdf:resource="http://www.ejemplo.org/covid#TipoDeMuestra"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#fiebre">
+    <rdf:type rdf:resource="http://www.ejemplo.org/covid#Sintoma"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#tomaMuestra">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.ejemplo.org/covid#PersonalDeSalud"/>
+    <rdfs:range rdf:resource="http://www.ejemplo.org/covid#Persona"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#tos">
+    <rdf:type rdf:resource="http://www.ejemplo.org/covid#Sintoma"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#Epidemiologo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.ejemplo.org/covid#PersonalDeSalud"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#CasoSospechoso">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#juan">
+    <rdf:type rdf:resource="http://www.ejemplo.org/covid#Persona"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#aislamientoRecomendado">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.ejemplo.org/covid#Persona"/>
+    <rdfs:range rdf:resource="http://www.ejemplo.org/covid#TipoAislamiento"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#Precaucion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#dificultad_respiratoria">
+    <rdf:type rdf:resource="http://www.ejemplo.org/covid#Sintoma"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#TipoDeMuestra">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#Persona">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#PersonalDeSalud">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#epidemio1">
+    <rdf:type rdf:resource="http://www.ejemplo.org/covid#Epidemiologo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ejemplo.org/covid#PaisDeRiesgo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+</rdf:RDF>
