@@ -1,0 +1,69 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Cargar la imagen de las verduras \PYGZpc{}\PYGZpc{}}
+\PYG{n}{I}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{imread}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}imagen1.jpg\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{imshow}\PYG{p}{(}\PYG{n}{I}\PYG{p}{)}
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Pedir un kmeans con k = 3 \PYGZpc{}\PYGZpc{}}
+\PYG{p}{[}\PYG{n}{seg}\PYG{p}{,}\PYG{n}{centros}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{imsegkmeans}\PYG{p}{(}\PYG{n}{I}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{imagesc}\PYG{p}{(}\PYG{n}{seg}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Imagen segmentada\PYGZdq{}}\PYG{p}{)}
+\PYG{c}{\PYGZpc{} Agregar los colores de los centros como el colormap \PYGZpc{}}
+\PYG{n+nb}{colormap}\PYG{p}{(}\PYG{n}{centros}\PYG{p}{)}\PYG{p}{;}
+
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Cargar la imagen para el segundo ejercicio \PYGZpc{}\PYGZpc{}}
+\PYG{n}{I}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{imread}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}imagen2.jpg\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{imshow}\PYG{p}{(}\PYG{n}{I}\PYG{p}{)}
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Convertir la imagen en escala de grises \PYGZpc{}\PYGZpc{}}
+\PYG{n}{BI}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{rgb2gray}\PYG{p}{(}\PYG{n}{I}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Aplicar la transformada con canny y volver a proyectar}
+\PYG{n}{BW}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{edge}\PYG{p}{(}\PYG{n}{BI}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{canny\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{imshow}\PYG{p}{(}\PYG{n}{BW}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Bordes detectados con Canny\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} 4. Realizar la Transformada de Hough y proyectar su espacio \PYGZpc{}\PYGZpc{}}
+\PYG{p}{[}\PYG{n}{H}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{T}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{R}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{hough}\PYG{p}{(}\PYG{n}{BW}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{imshow}\PYG{p}{(}\PYG{n}{imadjust}\PYG{p}{(}\PYG{n+nb}{rescale}\PYG{p}{(}\PYG{n}{H}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{XData\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{T}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{YData\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{R}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{...}
+\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{InitialMagnification\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{fit\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Espacio de Hough\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{xlabel}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZbs{}theta (degrees)\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{ylabel}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZbs{}rho\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{axis}\PYG{+w}{ }\PYG{l+s}{on,}\PYG{+w}{ }\PYG{l+s}{axis}\PYG{+w}{ }\PYG{l+s}{normal,}\PYG{+w}{ }\PYG{l+s}{hold}\PYG{+w}{ }\PYG{l+s}{on}\PYG{p}{;}
+\PYG{n+nb}{colormap}\PYG{p}{(}\PYG{n+nb}{gca}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{hot}\PYG{p}{)}\PYG{p}{;}
+
+
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} 5. Encontrar los picos en el espacio de Hough}
+\PYG{n}{P}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{houghpeaks}\PYG{p}{(}\PYG{n}{H}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{5}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{threshold\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{ceil}\PYG{p}{(}\PYG{l+m+mf}{0.6}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{H}\PYG{p}{(}\PYG{p}{:}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{x}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{T}\PYG{p}{(}\PYG{n}{P}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{y}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{R}\PYG{p}{(}\PYG{n}{P}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{y}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{s\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Color\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{black\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} 6. Extraer las líneas de los picos encontrados}
+\PYG{n+nb}{lines}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{houghlines}\PYG{p}{(}\PYG{n}{BW}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{T}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{R}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{P}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{FillGap\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{20}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{MinLength\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{40}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{imshow}\PYG{p}{(}\PYG{n}{I}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} Muestra la imagen original}
+\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Líneas de la pista de aterrizaje detectadas\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{hold}\PYG{+w}{ }\PYG{l+s}{on}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} Permite dibujar sobre la imagen}
+\PYG{n}{max\PYGZus{}len}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} Para encontrar la línea más larga, opcional}
+\PYG{k}{for}\PYG{+w}{ }\PYG{n}{k}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n+nb}{length}\PYG{p}{(}\PYG{n+nb}{lines}\PYG{p}{)}
+\PYG{n}{xy}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{n+nb}{lines}\PYG{p}{(}\PYG{n}{k}\PYG{p}{)}\PYG{p}{.}\PYG{n}{point1}\PYG{p}{;}\PYG{+w}{ }\PYG{n+nb}{lines}\PYG{p}{(}\PYG{n}{k}\PYG{p}{)}\PYG{p}{.}\PYG{n}{point2}\PYG{p}{]}\PYG{p}{;}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{xy}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{xy}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{LineWidth\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Color\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{red\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{} Dibuja la línea en rojo}
+\PYG{c}{\PYGZpc{} Marca los puntos inicial y final de la línea (opcional)}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{xy}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{xy}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{x\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{LineWidth\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Color\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{yellow\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{xy}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{xy}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{x\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{LineWidth\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Color\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{green\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{c}{\PYGZpc{} Determina la línea más larga (opcional)}
+\PYG{n}{len}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{norm}\PYG{p}{(}\PYG{n+nb}{lines}\PYG{p}{(}\PYG{n}{k}\PYG{p}{)}\PYG{p}{.}\PYG{n}{point1}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nb}{lines}\PYG{p}{(}\PYG{n}{k}\PYG{p}{)}\PYG{p}{.}\PYG{n}{point2}\PYG{p}{)}\PYG{p}{;}
+\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{+w}{ }\PYG{n}{len}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{max\PYGZus{}len}\PYG{p}{)}
+\PYG{n}{max\PYGZus{}len}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{len}\PYG{p}{;}
+\PYG{n}{longest\PYGZus{}line}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{xy}\PYG{p}{;}
+\PYG{k}{end}
+\PYG{k}{end}
+\PYG{k}{if}\PYG{+w}{ }\PYG{n+nb}{exist}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{longest\PYGZus{}line\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{var\PYGZsq{}}\PYG{p}{)}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{longest\PYGZus{}line}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{longest\PYGZus{}line}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{LineWidth\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Color\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{blue\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{k}{end}
+\PYG{n+nb}{hold}\PYG{+w}{ }\PYG{n}{off}\PYG{p}{;}
+
+\end{MintedVerbatim}
