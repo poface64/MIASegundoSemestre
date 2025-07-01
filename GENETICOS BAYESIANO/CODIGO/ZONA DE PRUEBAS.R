@@ -115,7 +115,6 @@ vars <- colnames(data)
 dag <- empty.graph(nodes = vars)
 amat(dag) <- resultado$mejor$adj
 
-
 #### Aprender los parametros con bnlearn ####
 mejor_adj = resultado$mejor$adj
 bn_estructura <- empty.graph(nodes = colnames(mejor_adj))

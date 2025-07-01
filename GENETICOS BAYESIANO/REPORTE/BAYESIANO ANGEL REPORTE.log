@@ -1,0 +1,658 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  27 JUN 2025 23:58
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**"BAYESIANO ANGEL REPORTE.tex"
+(./BAYESIANO ANGEL REPORTE.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(./llncs.cls
+Document Class: llncs 2024/01/29 v2.24 
+ LaTeX document class for Lecture Notes in Computer Science
+(c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
+(c:/texlive/2025/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count196
+\c@section=\count197
+\c@subsection=\count198
+\c@subsubsection=\count199
+\c@paragraph=\count266
+\c@subparagraph=\count267
+\c@figure=\count268
+\c@table=\count269
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen141
+)
+(c:/texlive/2025/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2024/09/14 v1.9i multicolumn formatting (FMi)
+\c@tracingmulticols=\count270
+\mult@box=\box52
+\multicol@leftmargin=\dimen142
+\c@unbalance=\count271
+\c@collectmore=\count272
+\doublecol@number=\count273
+\multicoltolerance=\count274
+\multicolpretolerance=\count275
+\full@width=\dimen143
+\page@free=\dimen144
+\premulticols=\dimen145
+\postmulticols=\dimen146
+\multicolsep=\skip51
+\multicolbaselineskip=\skip52
+\partial@page=\box53
+\last@line=\box54
+\mc@boxedresult=\box55
+\maxbalancingoverflow=\dimen147
+\mult@rightbox=\box56
+\mult@grightbox=\box57
+\mult@firstbox=\box58
+\mult@gfirstbox=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\c@minrows=\count276
+\c@columnbadness=\count277
+\c@finalcolumnbadness=\count278
+\last@try=\dimen148
+\multicolovershoot=\dimen149
+\multicolundershoot=\dimen150
+\mult@nat@firstbox=\box96
+\colbreak@box=\box97
+\mc@col@check@num=\count279
+)
+(c:/texlive/2025/texmf-dist/tex/latex/oberdiek/aliascnt.sty
+Package: aliascnt 2018/09/07 v1.5 Alias counters (HO)
+)
+\c@chapter=\count280
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 379.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 380.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 381.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 382.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 383.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 384.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 385.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 386.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 387.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 388.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 389.
+LaTeX Info: Redefining \vec on input line 394.
+\tocchpnum=\dimen151
+\tocsecnum=\dimen152
+\tocsectotal=\dimen153
+\tocsubsecnum=\dimen154
+\tocsubsectotal=\dimen155
+\tocsubsubsecnum=\dimen156
+\tocsubsubsectotal=\dimen157
+\tocparanum=\dimen158
+\tocparatotal=\dimen159
+\tocsubparanum=\dimen160
+\@tempcntc=\count281
+\fnindent=\dimen161
+\c@@inst=\count282
+\c@@auth=\count283
+\c@auco=\count284
+\instindent=\dimen162
+\authrun=\box98
+\authorrunning=\toks17
+\tocauthor=\toks18
+\titrun=\box99
+\titlerunning=\toks19
+\toctitle=\toks20
+\c@theorem=\count285
+\c@case=\count286
+\c@conjecture=\count287
+\c@corollary=\count288
+\c@definition=\count289
+\c@example=\count290
+\c@exercise=\count291
+\c@lemma=\count292
+\c@note=\count293
+\c@problem=\count294
+\c@property=\count295
+\c@proposition=\count296
+\c@question=\count297
+\c@solution=\count298
+\c@remark=\count299
+\headlineindent=\dimen163
+)
+(c:/texlive/2025/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(c:/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+)
+(c:/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2025/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(c:/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+
+(c:/texlive/2025/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen164
+\Gin@req@width=\dimen165
+)
+(c:/texlive/2025/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(c:/texlive/2025/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen166
+\captionmargin=\dimen167
+\caption@leftmargin=\dimen168
+\caption@rightmargin=\dimen169
+\caption@width=\dimen170
+\caption@indent=\dimen171
+\caption@parindent=\dimen172
+\caption@hangindent=\dimen173
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+Package caption Info: \@makecaption = \long macro:#1#2->\small \vskip \abovecap
+tionskip \sbox \@tempboxa {{\bfseries #1.} #2}\ifdim \wd \@tempboxa >\hsize {\b
+fseries #1.} #2\par \else \global \@minipagefalse \hb@xt@ \hsize {\hfil \box \@
+tempboxa \hfil }\fi \vskip \belowcaptionskip  on input line 1175.
+)
+
+Package caption Warning: Unknown document class (or package),
+(caption)                standard defaults will be used.
+See the caption package documentation for explanation.
+
+\c@caption@flags=\count300
+\c@continuedfloat=\count301
+) (c:/texlive/2025/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count302
+\float@exts=\toks22
+\float@box=\box100
+\@float@everytoks=\toks23
+\@floatcapt=\box101
+)
+(c:/texlive/2025/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(c:/texlive/2025/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks24
+\c@algorithm=\count303
+)
+(c:/texlive/2025/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+
+(c:/texlive/2025/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count304
+\c@ALG@rem=\count305
+\c@ALG@nested=\count306
+\ALG@tlm=\skip53
+\ALG@thistlm=\skip54
+\c@ALG@Lnr=\count307
+\c@ALG@blocknr=\count308
+\c@ALG@storecount=\count309
+\c@ALG@tmpcounter=\count310
+\ALG@tmplength=\skip55
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (c:/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2024/11/05 v2.17t AMS math features
+\@mathmargin=\skip56
+
+For additional information on amsmath, use the `?' option.
+(c:/texlive/2025/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(c:/texlive/2025/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks25
+\ex@=\dimen174
+))
+(c:/texlive/2025/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen175
+)
+(c:/texlive/2025/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count311
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count312
+\leftroot@=\count313
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count314
+\DOTSCASE@=\count315
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box102
+\strutbox@=\box103
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen176
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+
+
+Package amsmath Warning: Unable to redefine math accent \vec.
+
+\macc@depth=\count316
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count317
+\dotsspace@=\muskip17
+\c@parentequation=\count318
+\dspbrk@lvl=\count319
+\tag@help=\toks26
+\row@=\count320
+\column@=\count321
+\maxfields@=\count322
+\andhelp@=\toks27
+\eqnshift@=\dimen177
+\alignsep@=\dimen178
+\tagshift@=\dimen179
+\tagwidth@=\dimen180
+\totwidth@=\dimen181
+\lineht@=\dimen182
+\@envbody=\toks28
+\multlinegap=\skip57
+\multlinetaggap=\skip58
+\mathdisplay@stack=\toks29
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count323
+\l__pdf_internal_box=\box104
+)
+(./BAYESIANO ANGEL REPORTE.aux)
+\openout1 = `"BAYESIANO ANGEL REPORTE.aux"'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+
+(c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count324
+\scratchdimen=\dimen183
+\scratchbox=\box105
+\nofMPsegments=\count325
+\nofMParguments=\count326
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count327
+\MPscratchDim=\dimen184
+\MPnumerator=\count328
+\makeMPintoPDFobject=\count329
+\everyMPtoPDFconversion=\toks31
+) (c:/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+(c:/texlive/2025/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(c:/texlive/2025/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+
+(c:/texlive/2025/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+))
+(c:/texlive/2025/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(c:/texlive/2025/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(c:/texlive/2025/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))
+(c:/texlive/2025/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(c:/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+
+(c:/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+Title too long for running head. Please supply
+a shorter form with \titlerunning prior to \maketitle
+
+
+[1
+
+{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2025/
+texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
+
+[2]
+<IMG/P1.png, id=17, 308.95425pt x 130.68825pt>
+File: IMG/P1.png Graphic file (type png)
+<use IMG/P1.png>
+Package pdftex.def Info: IMG/P1.png  used on input line 99.
+(pdftex.def)             Requested size: 242.98541pt x 102.78192pt.
+
+
+[3 <./IMG/P1.PNG>]
+
+[4]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+
+[5]
+
+[6]
+Overfull \hbox (63.92241pt too wide) detected at line 275
+[]\OML/cmm/m/it/10 SHD\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G[]; G[]\OT1/cmr/m/n/10
+ ) = []\OML/cmm/m/it/10 G[][]G[]
+ []
+
+
+
+[7]
+Overfull \hbox (15.22408pt too wide) in paragraph at lines 293--294
+[]\T1/cmr/bx/n/10 HeartAttack and Ma-ter-nal-HealthRisk: \T1/cmr/m/n/10 While m
+od-er-ately com-plex, showed
+ []
+
+
+Overfull \hbox (46.01093pt too wide) in paragraph at lines 302--319
+ [][] 
+ []
+
+<IMG/1RED.png, id=47, 578.16pt x 433.62pt>
+File: IMG/1RED.png Graphic file (type png)
+<use IMG/1RED.png>
+Package pdftex.def Info: IMG/1RED.png  used on input line 323.
+(pdftex.def)             Requested size: 138.84729pt x 104.13046pt.
+<IMG/2RED.png, id=48, 578.16pt x 433.62pt>
+File: IMG/2RED.png Graphic file (type png)
+<use IMG/2RED.png>
+Package pdftex.def Info: IMG/2RED.png  used on input line 324.
+(pdftex.def)             Requested size: 138.84729pt x 104.13046pt.
+<IMG/3RED.png, id=49, 578.16pt x 433.62pt>
+File: IMG/3RED.png Graphic file (type png)
+<use IMG/3RED.png>
+Package pdftex.def Info: IMG/3RED.png  used on input line 325.
+(pdftex.def)             Requested size: 138.84729pt x 104.13046pt.
+<IMG/4RED.png, id=50, 578.16pt x 433.62pt>
+File: IMG/4RED.png Graphic file (type png)
+<use IMG/4RED.png>
+Package pdftex.def Info: IMG/4RED.png  used on input line 326.
+(pdftex.def)             Requested size: 138.84729pt x 104.13046pt.
+<IMG/5RED.png, id=51, 578.16pt x 433.62pt>
+File: IMG/5RED.png Graphic file (type png)
+<use IMG/5RED.png>
+Package pdftex.def Info: IMG/5RED.png  used on input line 327.
+(pdftex.def)             Requested size: 138.84729pt x 104.13046pt.
+<IMG/6RED.png, id=52, 578.16pt x 433.62pt>
+File: IMG/6RED.png Graphic file (type png)
+<use IMG/6RED.png>
+Package pdftex.def Info: IMG/6RED.png  used on input line 334.
+(pdftex.def)             Requested size: 138.84729pt x 104.13046pt.
+<IMG/7RED.png, id=53, 578.16pt x 433.62pt>
+File: IMG/7RED.png Graphic file (type png)
+<use IMG/7RED.png>
+Package pdftex.def Info: IMG/7RED.png  used on input line 335.
+(pdftex.def)             Requested size: 138.84729pt x 104.13046pt.
+<IMG/8RED.png, id=54, 578.16pt x 433.62pt>
+File: IMG/8RED.png Graphic file (type png)
+<use IMG/8RED.png>
+Package pdftex.def Info: IMG/8RED.png  used on input line 336.
+(pdftex.def)             Requested size: 138.84729pt x 104.13046pt.
+<IMG/9RED.png, id=55, 578.16pt x 433.62pt>
+File: IMG/9RED.png Graphic file (type png)
+<use IMG/9RED.png>
+Package pdftex.def Info: IMG/9RED.png  used on input line 337.
+(pdftex.def)             Requested size: 138.84729pt x 104.13046pt.
+<IMG/10RED.png, id=56, 578.16pt x 433.62pt>
+File: IMG/10RED.png Graphic file (type png)
+<use IMG/10RED.png>
+Package pdftex.def Info: IMG/10RED.png  used on input line 338.
+(pdftex.def)             Requested size: 138.84729pt x 104.13046pt.
+
+Underfull \hbox (badness 1708) in paragraph at lines 339--339
+[]\T1/cmr/m/n/10 Fig.3: |Bayesian net-works learned for the re-main-ing dataset
+s: Ma-ter-nal-
+ []
+
+
+
+[8]
+
+[9 <./IMG/1RED.png> <./IMG/2RED.png> <./IMG/3RED.png> <./IMG/4RED.png> <./IMG/5
+RED.png>]
+
+[10 <./IMG/6RED.png> <./IMG/7RED.png> <./IMG/8RED.png> <./IMG/9RED.png> <./IMG/
+10RED.png>]
+
+[11]
+Overfull \hbox (15.98288pt too wide) in paragraph at lines 360--374
+ [][] 
+ []
+
+
+
+[12]
+<IMG/G5.png, id=82, 375.20175pt x 419.76825pt>
+File: IMG/G5.png Graphic file (type png)
+<use IMG/G5.png>
+Package pdftex.def Info: IMG/G5.png  used on input line 382.
+(pdftex.def)             Requested size: 104.1381pt x 116.50307pt.
+<IMG/G1.png, id=83, 386.04225pt x 418.56375pt>
+File: IMG/G1.png Graphic file (type png)
+<use IMG/G1.png>
+Package pdftex.def Info: IMG/G1.png  used on input line 383.
+(pdftex.def)             Requested size: 104.1381pt x 112.91153pt.
+<IMG/G6.png, id=84, 450.483pt x 432.4155pt>
+File: IMG/G6.png Graphic file (type png)
+<use IMG/G6.png>
+Package pdftex.def Info: IMG/G6.png  used on input line 384.
+(pdftex.def)             Requested size: 104.1381pt x 99.96152pt.
+<IMG/1gr.png, id=85, 578.16pt x 433.62pt>
+File: IMG/1gr.png Graphic file (type png)
+<use IMG/1gr.png>
+Package pdftex.def Info: IMG/1gr.png  used on input line 386.
+(pdftex.def)             Requested size: 104.1381pt x 78.10115pt.
+<IMG/2gr.png, id=86, 578.16pt x 433.62pt>
+File: IMG/2gr.png Graphic file (type png)
+<use IMG/2gr.png>
+Package pdftex.def Info: IMG/2gr.png  used on input line 387.
+(pdftex.def)             Requested size: 104.1381pt x 78.10115pt.
+<IMG/3gr.png, id=87, 578.16pt x 433.62pt>
+File: IMG/3gr.png Graphic file (type png)
+<use IMG/3gr.png>
+Package pdftex.def Info: IMG/3gr.png  used on input line 388.
+(pdftex.def)             Requested size: 104.1381pt x 78.10115pt.
+<IMG/G3.png, id=88, 337.86224pt x 405.9165pt>
+File: IMG/G3.png Graphic file (type png)
+<use IMG/G3.png>
+Package pdftex.def Info: IMG/G3.png  used on input line 391.
+(pdftex.def)             Requested size: 104.1381pt x 125.11433pt.
+<IMG/G4.png, id=89, 424.58624pt x 428.802pt>
+File: IMG/G4.png Graphic file (type png)
+<use IMG/G4.png>
+Package pdftex.def Info: IMG/G4.png  used on input line 392.
+(pdftex.def)             Requested size: 104.1381pt x 105.1719pt.
+<IMG/G7.png, id=90, 443.256pt x 445.665pt>
+File: IMG/G7.png Graphic file (type png)
+<use IMG/G7.png>
+Package pdftex.def Info: IMG/G7.png  used on input line 393.
+(pdftex.def)             Requested size: 104.1381pt x 104.70409pt.
+<IMG/4gr.png, id=91, 578.16pt x 433.62pt>
+File: IMG/4gr.png Graphic file (type png)
+<use IMG/4gr.png>
+Package pdftex.def Info: IMG/4gr.png  used on input line 395.
+(pdftex.def)             Requested size: 104.1381pt x 78.10115pt.
+<IMG/5gr.png, id=92, 578.16pt x 433.62pt>
+File: IMG/5gr.png Graphic file (type png)
+<use IMG/5gr.png>
+Package pdftex.def Info: IMG/5gr.png  used on input line 396.
+(pdftex.def)             Requested size: 104.1381pt x 78.10115pt.
+<IMG/6gr.png, id=93, 578.16pt x 433.62pt>
+File: IMG/6gr.png Graphic file (type png)
+<use IMG/6gr.png>
+Package pdftex.def Info: IMG/6gr.png  used on input line 397.
+(pdftex.def)             Requested size: 104.1381pt x 78.10115pt.
+<IMG/G2.png, id=94, 337.86224pt x 396.88275pt>
+File: IMG/G2.png Graphic file (type png)
+<use IMG/G2.png>
+Package pdftex.def Info: IMG/G2.png  used on input line 400.
+(pdftex.def)             Requested size: 104.1381pt x 122.32988pt.
+<IMG/7gr.png, id=95, 578.16pt x 433.62pt>
+File: IMG/7gr.png Graphic file (type png)
+<use IMG/7gr.png>
+Package pdftex.def Info: IMG/7gr.png  used on input line 402.
+(pdftex.def)             Requested size: 104.1381pt x 78.10115pt.
+
+Overfull \hbox (22.1021pt too wide) in paragraph at lines 381--405
+ [][] 
+ []
+
+
+Overfull \vbox (180.91266pt too high) has occurred while \output is active []
+
+
+
+[13 <./IMG/G5.PNG> <./IMG/G1.PNG> <./IMG/G6.PNG> <./IMG/1gr.png> <./IMG/2gr.png
+> <./IMG/3gr.png> <./IMG/G3.PNG> <./IMG/G4.PNG> <./IMG/G7.PNG> <./IMG/4gr.png> 
+<./IMG/5gr.png> <./IMG/6gr.png> <./IMG/G2.PNG> <./IMG/7gr.png>]
+Underfull \hbox (badness 7796) in paragraph at lines 453--454
+[]\T1/cmr/m/n/9 Dua, D., Graff, C.: UCI Ma-chine Learn-ing Repos-i-tory. Uni-ve
+r-sity of
+ []
+
+
+Underfull \hbox (badness 4378) in paragraph at lines 453--454
+\T1/cmr/m/n/9 Cal-i-for-nia, Irvine, School of In-for-ma-tion and Com-puter Sci
+-ences (2024).
+ []
+
+
+
+[14]
+
+[15] (./BAYESIANO ANGEL REPORTE.aux)
+ ***********
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 5547 strings out of 473189
+ 89789 string characters out of 5719958
+ 498334 words of memory out of 5000000
+ 28741 multiletter control sequences out of 15000+600000
+ 570575 words of font info for 59 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 59i,12n,67p,670b,410s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/tex
+live/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
+><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texl
+ive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2025/t
+exmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb><c:/texlive/2025/texmf-dist/
+fonts/type1/public/cm-super/sfbx1000.pfb><c:/texlive/2025/texmf-dist/fonts/type
+1/public/cm-super/sfbx1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/c
+m-super/sfbx1440.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sf
+rm0700.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb
+><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texli
+ve/2025/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb><c:/texlive/2025/te
+xmf-dist/fonts/type1/public/cm-super/sftt0900.pfb><c:/texlive/2025/texmf-dist/f
+onts/type1/public/cm-super/sftt1000.pfb>
+Output written on "BAYESIANO ANGEL REPORTE.pdf" (15 pages, 672119 bytes).
+PDF statistics:
+ 205 PDF objects out of 1000 (max. 8388607)
+ 97 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 126 words of extra memory for PDF output out of 10000 (max. 10000000)
+
