@@ -1,0 +1,264 @@
+% !TeX TXS-program:compile = txs:///pdflatex/[--shell-escape]
+
+\documentclass[11pt, letterpaper]{article}
+
+\usepackage{minted}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage[round]{natbib}
+\usepackage{subcaption}
+
+
+\title{\bfseries Tarea}
+\author{Ángel García Báez}
+\date{\today}
+\setcounter{tocdepth}{3} 
+
+\begin{document}
+	
+\textbf{Cruza Intermedia}
+
+Sean:
+\[
+P_1 = (v_1, v_2, \ldots, v_m)
+\]
+\[
+P_2 = (w_1, w_2, \ldots, w_m)
+\]
+
+Si se cruzan en la posición \( k \), los hijos son:
+
+\[
+H_1 = (v_1, \ldots, v_k, \, a w_{k+1} + (1-a) v_{k+1}, \ldots, a w_m + (1-a) v_m), \quad a \in [0, 1]
+\]
+
+\[
+H_2 = (w_1, \ldots, w_k, \, a v_{k+1} + (1-a) w_{k+1}, \ldots, a v_m + (1-a) w_m), \quad a \in [0, 1]
+\]
+
+\textbf{Cruza Aritmética Simple}
+
+El valor de \( a \) depende de la comparación entre \( v_k \) y \( w_k \):
+
+\[
+a \in
+\begin{cases}
+	\left[ \max(\alpha, \beta), \min(\gamma, \delta) \right], & \text{si } v_k > w_k \\
+	[0, 0], & \text{si } v_k = w_k \\
+	\left[ \max(\gamma, \delta), \min(\alpha, \beta) \right], & \text{si } v_k < w_k
+\end{cases}
+\]
+
+\text{Donde:}
+\[
+\alpha = \frac{l_k^w - w_k}{v_k - w_k}, \quad
+\beta = \frac{u_k^v - v_k}{w_k - v_k}, \quad
+\gamma = \frac{l_k^v - v_k}{w_k - v_k}, \quad
+\delta = \frac{u_k^w - w_k}{v_k - w_k}
+\]
+
+\text{Rangos de validez:}
+\[
+v_k \in [l_k^v, u_k^v], \quad
+w_k \in [l_k^w, u_k^w]
+\]
+
+
+\textbf{Mutación Simple}
+
+Sea un individuo \( x = (x_1, x_2, \ldots, x_m) \), se selecciona un gen \( x_i \) y se modifica de la siguiente forma:
+
+\[
+x_i' =  \Delta
+\]
+
+donde \( \Delta \) es un pequeño valor aleatorio, típicamente:
+
+\[
+\Delta \sim \mathcal{U}(Lower, Upper)
+\]
+
+o
+
+\[
+\Delta \sim \mathcal{N}(0, \sigma^2)
+\]
+
+$\text{Rango de validez:} \quad x_i' \in [l_i, u_i]$
+
+
+\textbf{Mutación por Reordenamiento}
+
+Sea un individuo representado por una permutación:
+
+\[
+x = (x_1, x_2, \ldots, x_i, \ldots, x_j, \ldots, x_m)
+\]
+
+Se selecciona aleatoriamente un subconjunto de posiciones \( i \) a \( j \), donde \( 1 \leq i < j \leq m \), y se reordena esa subsecuencia:
+
+\[
+x' = (x_1, x_2, \ldots, \underbrace{\text{perm}(x_i, \ldots, x_j)}_{\text{reordenamiento}}, \ldots, x_m)
+\]
+
+$\text{Donde } \text{perm}(x_i, \ldots, x_j) \text{ es una permutación aleatoria de los elementos } x_i, \ldots, x_j.$
+
+
+
+\section*{Escalamiento Sigma}
+
+\[
+v_{ei} =
+\begin{cases}
+	1 + \dfrac{\text{Apt}_i - \overline{\text{Apt}}}{2\sigma}, & \text{si } \sigma^2 \neq 0 \\
+	1, & \text{si } \sigma = 0
+\end{cases}
+\]
+
+\[
+\sigma = \sqrt{ \dfrac{n \sum \text{Apt}_i^2 - \left( \sum \text{Apt}_i \right)^2}{n^2} }
+\]
+
+\section*{Selección de Jerarquías}
+
+\textbf{Algoritmo:}
+\begin{enumerate}
+	\item Ordenar (jerarquizar) la población con base en su aptitud, de 1 a \( N \) (donde 1 representa al menos apto).
+	\item Elegir \( \text{Max} \) tal que \( 1 \leq \text{Max} \leq 2 \)
+	\item Calcular \( \text{Min} = 2 - \text{Max} \)
+	\item Calcular el valor esperado:
+	\[
+	\text{Valesp}_{(i,t)} = \text{Min} + (\text{Max} - \text{Min}) \cdot \dfrac{\text{jerarquía}_{(i,t)} - 1}{N - 1}
+	\]
+\end{enumerate}
+
+Este método considera únicamente el orden, ignorando los valores reales de aptitud.
+
+\section*{Selección de Boltzmann}
+
+\[
+\text{Valesp}_{(i,t)} = \dfrac{e^{f(i)/T}}{ \langle e^{f(i)/T} \rangle^t }
+\]
+
+Donde:
+\begin{itemize}
+	\item \( T \) es la temperatura.
+	\item \( \langle \cdot \rangle^t \) denota el promedio de la población en la generación \( t \).
+\end{itemize}
+
+\section*{Selección por Ruleta}
+
+\begin{enumerate}
+	\item Calcular la suma de los valores esperados \( T \).
+	\item Repetir \( N \) veces (donde \( N \) es el tamaño de la población):
+	\begin{itemize}
+		\item Generar un número aleatorio \( r \in [0, T] \).
+		\item Recorrer la población sumando los valores esperados hasta que la suma sea mayor o igual a \( r \).
+		\item El individuo que exceda este umbral es seleccionado.
+	\end{itemize}
+\end{enumerate}
+
+\[
+v_{ei} = \dfrac{\text{Aptitud}_i}{\overline{\text{Aptitud}}}, \quad \sum v_{ei} \approx \text{popsize}
+\]
+
+\section*{Selección por Torneo}
+
+\begin{itemize}
+	\item Seleccionar aleatoriamente \( t \) individuos.
+	\item \textbf{Determinística:} Se elige al individuo con la mejor aptitud.
+	\item \textbf{Probabilística:} El mejor individuo se selecciona con probabilidad \( p \), donde \( 0.5 \leq p < 1 \).
+\end{itemize}
+
+\section*{Sobrante Estocástico}
+
+\[
+\text{Valesp}_{(i)} = \dfrac{f_i}{f}
+\]
+
+\textbf{Algoritmo:}
+\begin{enumerate}
+	\item Asignar de manera determinística los valores enteros de los valores esperados.
+	\item Los valores decimales restantes se usan probabilísticamente para llenar la población.
+	\item \textbf{Sin reemplazo:} Usar un lanzamiento (flip) con las partes decimales.
+	\item \textbf{Con reemplazo:} Construir una ruleta con las partes decimales y seleccionar los padres restantes.
+\end{enumerate}
+
+\section*{Selección Universal Estocástica}
+
+\section*{Selección Universal Estocástica}
+
+Sea \( N \) el número de individuos en la población y \( V_i \) el valor esperado del individuo \( i \). Primero calculamos:
+
+\[
+T = \sum_{i=1}^N V_i
+\]
+
+Luego, se generan \( N \) punteros equiespaciados a partir de un valor aleatorio \( r \in [0, \frac{T}{N}) \):
+
+\[
+\text{Punteros: } p_k = r + \dfrac{k \cdot T}{N}, \quad k = 0, 1, \ldots, N-1
+\]
+
+Después, para cada puntero \( p_k \), se selecciona el individuo \( i \) tal que:
+
+\[
+\sum_{j=1}^{i-1} V_j < p_k \leq \sum_{j=1}^{i} V_j
+\]
+
+Este individuo \( i \) es entonces seleccionado como parte de la nueva población.
+
+
+
+\textbf{Algoritmo:}
+\begin{verbatim}
+	ptr = Rand(); /* Aleatorio en (0,1] */
+	for (sum = 0, i = 1; i <= n; i++)
+	for (sum += Valesp(i,t); sum > ptr; ptr++)
+	Seleccionar(i);
+\end{verbatim}
+
+\section*{Muestreo Determinístico}
+
+\textbf{Algoritmo:}
+\begin{enumerate}
+	\item Calcular:
+	\[
+	p_{\text{select}} = \dfrac{f_i}{\sum f}
+	\]
+	\item Calcular:
+	\[
+	\text{Valesp}_i = p_{\text{select}} \cdot n
+	\]
+	\item Asignar la parte entera de \( \text{Valesp}_i \) de forma determinística.
+	\item Ordenar la población según la parte decimal de \( \text{Valesp}_i \) (de mayor a menor).
+	\item Seleccionar los padres faltantes de la parte superior de la lista.
+\end{enumerate}
+
+\section*{Conversión de Binario a Real}
+
+\subsection*{Discretización}
+
+\[
+L = \left\lfloor \log_2 \left[ (l_{\text{sup}} - l_{\text{inf}}) \cdot 10^{\text{precisión}} \right] + 0.9 \right\rfloor
+\]
+
+\[
+X_{\text{real}} = l_{\text{inf}} + \dfrac{X_{\text{ent}} \cdot (l_{\text{sup}} - l_{\text{inf}})}{2^L - 1}
+\]
+
+	
+	
+\end{document}
+
+
+

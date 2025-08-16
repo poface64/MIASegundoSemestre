@@ -1,0 +1,145 @@
+\documentclass[11pt, letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{minted}
+
+\title{\bfseries Conceptos de Algoritmos Genéticos}
+\author{Ángel García Báez}
+\date{\today}
+
+\begin{document}
+	\maketitle
+	
+	\section*{Operadores Genéticos}
+	
+	\subsection*{Cruza Intermedia}
+	Dados los padres $P_1 = (v_1, \ldots, v_m)$ y $P_2 = (w_1, \ldots, w_m)$, y un punto de cruza $k$, los hijos $H_1$ y $H_2$ se definen como:
+	\begin{align*}
+		H_1 &= (v_1, \ldots, v_k, \, a w_{k+1} + (1-a) v_{k+1}, \ldots, a w_m + (1-a) v_m) \\
+		H_2 &= (w_1, \ldots, w_k, \, a v_{k+1} + (1-a) w_{k+1}, \ldots, a v_m + (1-a) w_m)
+	\end{align*}
+	Donde $a \in [0, 1]$.
+	
+	\subsection*{Cruza Aritmética Simple}
+	El valor de $a$ se determina por la comparación entre $v_k$ y $w_k$:
+	\[
+	a \in
+	\begin{cases}
+		\left[ \max(\alpha, \beta), \min(\gamma, \delta) \right], & \text{si } v_k > w_k \\
+		[0, 0], & \text{si } v_k = w_k \\
+		\left[ \max(\gamma, \delta), \min(\alpha, \beta) \right], & \text{si } v_k < w_k
+	\end{cases}
+	\]
+	Donde:
+	\[
+	\alpha = \frac{l_k^w - w_k}{v_k - w_k}, \quad
+	\beta = \frac{u_k^v - v_k}{w_k - v_k}, \quad
+	\gamma = \frac{l_k^v - v_k}{w_k - v_k}, \quad
+	\delta = \frac{u_k^w - w_k}{v_k - w_k}
+	\]
+	Los rangos de validez son $v_k \in [l_k^v, u_k^v]$ y $w_k \in [l_k^w, u_k^w]$.
+	
+	\subsection*{Mutación Simple}
+	Para un individuo $x = (x_1, \ldots, x_m)$, un gen $x_i$ seleccionado se modifica a $x_i' = \Delta$.
+	$\Delta$ es un valor aleatorio pequeño, típicamente $\Delta \sim \mathcal{U}(Lower, Upper)$ o $\Delta \sim \mathcal{N}(0, \sigma^2)$.
+	El rango de validez es $x_i' \in [l_i, u_i]$.
+	
+	\subsection*{Mutación por Reordenamiento}
+	Para un individuo $x = (x_1, \ldots, x_m)$, se selecciona un subconjunto de posiciones de $i$ a $j$ ($1 \leq i < j \leq m$) y se reordena esa subsecuencia:
+	\[
+	x' = (x_1, \ldots, \text{perm}(x_i, \ldots, x_j), \ldots, x_m)
+	\]
+	Donde $\text{perm}(x_i, \ldots, x_j)$ es una permutación aleatoria de los elementos $x_i, \ldots, x_j$.
+	
+	\section*{Métodos de Selección}
+	
+	\subsection*{Escalamiento Sigma}
+	La aptitud esperada $v_{ei}$ se calcula como:
+	\[
+	v_{ei} =
+	\begin{cases}
+		1 + \dfrac{\text{Apt}_i - \overline{\text{Apt}}}{2\sigma}, & \text{si } \sigma^2 \neq 0 \\
+		1, & \text{si } \sigma = 0
+	\end{cases}
+	\]
+	Donde $\sigma = \sqrt{ \dfrac{n \sum \text{Apt}_i^2 - \left( \sum \text{Apt}_i \right)^2}{n^2} }$.
+	
+	\subsection*{Selección de Jerarquías}
+	1. Ordenar la población por aptitud de 1 (menos apto) a $N$ (más apto).
+	2. Elegir $\text{Max}$ tal que $1 \leq \text{Max} \leq 2$.
+	3. Calcular $\text{Min} = 2 - \text{Max}$.
+	4. El valor esperado se calcula como:
+	\[
+	\text{Valesp}_{(i,t)} = \text{Min} + (\text{Max} - \text{Min}) \cdot \dfrac{\text{jerarquía}_{(i,t)} - 1}{N - 1}
+	\]
+	Este método solo considera el orden de aptitud.
+	
+	\subsection*{Selección de Boltzmann}
+	El valor esperado se define como:
+	\[
+	\text{Valesp}_{(i,t)} = \dfrac{e^{f(i)/T}}{ \langle e^{f(i)/T} \rangle^t }
+	\]
+	Donde $T$ es la temperatura y $\langle \cdot \rangle^t$ es el promedio de la población en la generación $t$.
+	
+	\subsection*{Selección por Ruleta}
+	1. Calcular la suma total de los valores esperados $T$.
+	2. Repetir $N$ veces:
+	\begin{itemize}
+		\item Generar un número aleatorio $r \in [0, T]$.
+		\item Seleccionar el individuo cuya suma acumulada de valores esperados sea $\ge r$.
+	\end{itemize}
+	La aptitud esperada se normaliza como $v_{ei} = \dfrac{\text{Aptitud}_i}{\overline{\text{Aptitud}}}$, con $\sum v_{ei} \approx \text{popsize}$.
+	
+	\subsection*{Selección por Torneo}
+	Se seleccionan aleatoriamente $t$ individuos.
+	\begin{itemize}
+		\item \textbf{Determinística:} Se elige al individuo con la mejor aptitud.
+		\item \textbf{Probabilística:} El mejor individuo se selecciona con probabilidad $p$ ($0.5 \leq p < 1$).
+	\end{itemize}
+	
+	\subsection*{Sobrante Estocástico}
+	El valor esperado se calcula como $\text{Valesp}_{(i)} = \dfrac{f_i}{f}$.
+	1. Asignar determinísticamente las partes enteras de $\text{Valesp}_i$.
+	2. Usar las partes decimales probabilísticamente para los individuos restantes.
+	\begin{itemize}
+		\item \textbf{Sin reemplazo:} Un lanzamiento (flip) con las partes decimales.
+		\item \textbf{Con reemplazo:} Construir una ruleta con las partes decimales.
+	\end{itemize}
+	
+	\subsection*{Selección Universal Estocástica}
+	Dados $N$ individuos con valores esperados $V_i$:
+	1. Calcular $T = \sum_{i=1}^N V_i$.
+	2. Generar $N$ punteros equiespaciados $p_k = r + \dfrac{k \cdot T}{N}$, para $k = 0, \ldots, N-1$, donde $r \in [0, \frac{T}{N})$.
+	3. Para cada puntero $p_k$, seleccionar el individuo $i$ tal que $\sum_{j=1}^{i-1} V_j < p_k \leq \sum_{j=1}^{i} V_j$.
+	
+	\begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.2,bgcolor=lightgray,fontsize=\small]{c}
+		ptr = Rand(); /* Aleatorio en (0,1] */
+		for (sum = 0, i = 1; i <= n; i++)
+		for (sum += Valesp(i,t); sum > ptr; ptr++)
+		Seleccionar(i);
+	\end{minted}
+	
+	\subsection*{Muestreo Determinístico}
+	1. Calcular la probabilidad de selección $p_{\text{select}} = \dfrac{f_i}{\sum f}$.
+	2. Calcular el valor esperado $\text{Valesp}_i = p_{\text{select}} \cdot n$.
+	3. Asignar la parte entera de $\text{Valesp}_i$ de forma determinística.
+	4. Ordenar la población por la parte decimal de $\text{Valesp}_i$ (descendente).
+	5. Seleccionar los padres faltantes de la parte superior de la lista.
+	
+	\section*{Conversión de Binario a Real}
+	
+	\subsection*{Discretización}
+	El número de bits $L$ se calcula como:
+	\[
+	L = \left\lfloor \log_2 \left[ (l_{\text{sup}} - l_{\text{inf}}) \cdot 10^{\text{precisión}} \right] + 0.9 \right\rfloor
+	\]
+	La conversión de un valor entero $X_{\text{ent}}$ a un valor real $X_{\text{real}}$ es:
+	\[
+	X_{\text{real}} = l_{\text{inf}} + \dfrac{X_{\text{ent}} \cdot (l_{\text{sup}} - l_{\text{inf}})}{2^L - 1}
+	\]
+	
+\end{document}

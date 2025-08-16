@@ -1,0 +1,6 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{+w}{		}\PYG{n}{ptr}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Rand}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{ }\PYG{c+cm}{/* Aleatorio en (0,1] */}
+\PYG{+w}{		}\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{sum}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{o}{=}\PYG{+w}{ }\PYG{n}{n}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{+}\PYG{o}{+}\PYG{p}{)}
+\PYG{+w}{		}\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{sum}\PYG{+w}{ }\PYG{o}{+}\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Valesp}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,}\PYG{n}{t}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{sum}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{ptr}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{ptr}\PYG{o}{+}\PYG{o}{+}\PYG{p}{)}
+\PYG{+w}{		}\PYG{n}{Seleccionar}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}\PYG{p}{;}
+\end{MintedVerbatim}
